@@ -1,0 +1,66 @@
+/* Reset
+ *= require reset
+ */
+
+/* {{{ Typography and basic styles */
+
+html { font: normal 13px/20px Arial, sans-serif; }
+
+a { color: #e2007f; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+
+p, blockquote, pre, ul, ol { margin: 8px 0; }
+
+code, pre, textarea.code {
+  font: normal 12px/16px monospace;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+
+ul { list-style: disc; }
+ul > li { margin-left: 14px; }
+ol { list-style: decimal; }
+ol > li { margin-left: 19px; }
+
+q { font-style: italic; }
+
+blockquote {
+  padding: 5px 5px 5px 10px;
+  border-left: 4px solid #ccc;
+}
+blockquote *:first-child { margin-top: 0; }
+blockquote *:last-child  { margin-bottom: 0; }
+
+p.alert, em.alert, strong.alert,
+p.error, em.error, strong.error { color: #942; }
+
+/* Micro clearfix */
+.cf:before, .cf:after { content:""; display:table; }
+.cf:after { clear:both; }
+.cf { zoom: 1; }
+
+/* }}} Typography and basic styles */
+/* {{{ Layout */
+
+html {
+  color: #000;
+  background: #f9f9f9;
+  overflow-y: scroll;
+}
+
+#content {
+  position: relative;
+  margin: 0 auto 60px;
+  width: 800px;
+  text-align: left;
+  z-index: 1;
+}
+
+/* }}} Layout */
