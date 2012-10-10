@@ -51,8 +51,12 @@ p.error, em.error, strong.error { color: #942; }
 
 html {
   color: #000;
-  background: #f9f9f9;
+  background: #fbfbfb;
   overflow-y: scroll;
+}
+
+body {
+  margin: 100px;
 }
 
 #content {
@@ -61,6 +65,15 @@ html {
   width: 800px;
   text-align: left;
   z-index: 1;
+}
+
+#logo {
+  display: block;
+  color: #000;
+  background: url(<%= image_path 'logo.png' %>) no-repeat 0 0;
+  text-indent: -2222px;
+  width: 222px;
+  height: 110px;
 }
 
 /* }}} Layout */

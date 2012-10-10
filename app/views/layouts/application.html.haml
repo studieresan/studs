@@ -9,7 +9,7 @@
     = yield :head
   %body{ id: "#{controller_name}-#{action_name}" }
     #header
-      %h1#title= t('common.title')
+      %h1= link_to t('common.title'), root_path, id: :logo
 
       %ul#nav
         - %w(start cv contact).each do |target|
