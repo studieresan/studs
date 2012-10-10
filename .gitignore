@@ -1,0 +1,8 @@
+/.bundle
+/config/database.yml
+/config/email.yml
+/db/*.sqlite3
+/log/*.log
+/tmp
+/public/uploads/**/*
+/public/assets/
