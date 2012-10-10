@@ -1,0 +1,22 @@
+!!! Strict
+%html(xmlns="http://www.w3.org/1999/xhtml")
+  %head
+    %title= t('common.title')
+    %meta(http-equiv='Content-Type' content='text/html;charset=UTF-8')/
+    = stylesheet_link_tag 'application'
+    -#= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
+    -#= javascript_include_tag 'application'
+    = yield :head
+  %body{ id: "#{controller_name}-#{action_name}" }
+    #header
+      %h1#title= t('common.title')
+
+      %ul#nav
+        - %w(start cv contact).each do |target|
+          - path = send("#{target}_path".to_sym)
+          %li= link_to t("titles.#{target}"), path, :class => (request.fullpath.start_with?("/#{path}") ? :active : nil)
+
+    #content.cf
+      = content_for?(:content) ? yield(:content) : yield
+
+    = yield :additional
