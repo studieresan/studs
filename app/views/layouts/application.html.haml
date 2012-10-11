@@ -8,13 +8,13 @@
     -#= javascript_include_tag 'application'
     = yield :head
   %body{ id: "#{controller_name}-#{action_name}" }
-    #header
-      %h1= link_to t('common.title'), root_path, id: :logo
-
-      %ul#nav
-        - %w(start cv contact).each do |target|
-          - path = send("#{target}_path".to_sym)
-          %li= link_to t("titles.#{target}"), path, :class => (request.fullpath.start_with?("/#{path}") ? :active : nil)
+    #top
+      #header.cf
+        %h1= link_to t('common.title'), root_path, id: :logo
+        %ul#nav
+          - %w(start cvs contact).each do |target|
+            - path = send("#{target}_path".to_sym)
+            %li= link_to t("titles.#{target}"), path, :class => (request.fullpath.start_with?("/#{path}") ? :active : nil)
 
     #content.cf
       = content_for?(:content) ? yield(:content) : yield

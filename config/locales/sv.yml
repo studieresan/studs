@@ -1,10 +1,11 @@
 sv:
   common:
     title: StuDs 2013
+    year: 2013
     delimeter_html: ' - '
   titles:
     start: Startsida
-    cv: CV-databas
+    cvs: CV-databas
     contact: Kontakt
   actions:
     create: Skapa
