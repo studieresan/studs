@@ -4,7 +4,7 @@ sv:
     year: 2013
     delimeter_html: ' - '
   titles:
-    start: Startsida
+    index: Startsida
     cvs: CV-databas
     contact: Kontakt
   actions:

@@ -51,29 +51,63 @@ p.error, em.error, strong.error { color: #942; }
 
 html {
   color: #000;
-  background: #fbfbfb;
+  background: #f6f6f6;
   overflow-y: scroll;
 }
 
-body {
-  margin: 100px;
+#top {
+  background: #fff;
+  border-bottom: 2px solid #777;
 }
 
-#content {
-  position: relative;
-  margin: 0 auto 60px;
+#header, #content {
+  margin: 0 auto;
   width: 800px;
-  text-align: left;
-  z-index: 1;
 }
 
+#header {
+  padding-top: 10px;
+}
+
+#header h1 {
+  float: left;
+}
 #logo {
-  display: block;
+  float: left;
   color: #000;
   background: url(<%= image_path 'logo.png' %>) no-repeat 0 0;
   text-indent: -2222px;
   width: 222px;
   height: 110px;
+}
+
+#nav {
+  float: left;
+  margin: 85px 0 0 30px;
+}
+
+#nav li {
+  display: inline;
+  list-style-type: none;
+}
+#nav a {
+  float: left;
+  margin-left: 6px;
+  padding: 3px 8px;
+  background: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#nav a.active {
+  color: #fff;
+  background: #777;
+}
+
+#content {
+  margin-top: 10px;
+  margin-bottom: 80px;
 }
 
 /* }}} Layout */

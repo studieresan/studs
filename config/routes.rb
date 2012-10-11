@@ -3,6 +3,6 @@ Studs::Application.routes.draw do
 
   get '/contact' => 'main#contact', as: :contact
 
-  get '/' => 'main#index', as: :start
+  get '/' => 'main#index', as: :index
   root to: 'main#index'
 end
