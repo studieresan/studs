@@ -1,0 +1,105 @@
+%{{{ Document setup
+\documentclass[a4paper,11pt]{article}
+
+% Text configuration
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{lmodern} % font
+%\renewcommand{\familydefault}{\sfdefault} % default family
+
+% Additional symbols
+\usepackage{amssymb}
+% [http://www.tex.ac.uk/tex-archive/info/symbols/comprehensive/symbols-a4.pdf]
+\usepackage{marvosym}
+\usepackage{textcomp}
+
+% Colors [http://ctan.uib.no/macros/latex/contrib/xcolor/xcolor.pdf]
+\usepackage[svgnames]{xcolor}
+
+% Paragraphs
+\parindent 0mm
+\parskip 0mm
+
+% Margins
+\usepackage[top=1.6cm, bottom=1.6cm, left=2.5cm, right=2cm]{geometry}
+\newlength{\titleleft}
+\newlength{\titlefwidth}
+\setlength{\titlefwidth}{\textwidth}
+\setlength{\titleleft}{-0.5cm}
+\addtolength{\titlefwidth}{0.5cm}
+
+% Header and text formatting
+\usepackage{titlesec}
+
+% CV sections
+\titleformat{\section}{\sf \bfseries \Large}{\thesection}{}{}[\vspace{-5mm}\rule{\titlefwidth}{1pt}]
+% Work places / bold leaders
+\titleformat{\subsection}[runin]{\normalsize}{\thesubsection}{}{}
+% Work titles
+\titleformat{\subsubsection}{\normalsize}{\thesubsubsection}{}{}
+
+% Spacing
+\titlespacing{\section}{\titleleft}{5mm}{1mm}
+\titlespacing{\subsection}{\titleleft}{3mm}{1mm}
+\titlespacing{\subsubsection}{0cm}{2mm}{1mm}
+
+% Hyperlinking
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+colorlinks = true,
+linkcolor = Black,
+urlcolor = MidnightBlue
+}
+
+% Footer
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{Updated \thedate \ -- \thepage\ / \pageref{LastPage}}
+
+%}}}
+%{{{ Custom formats and commands
+
+\newcommand{\icon}[1]{\textcolor{lightgray}{#1}}
+\newcommand{\iconl}[1]{\hspace{-0.5cm}\makebox[0.3cm][c]{\icon{#1}}\hspace{0.2cm}}
+
+% Headers
+\newcommand{\theheader}[0]{\sf \LARGE \bfseries \name}
+\newcommand{\worktitle}[1]{\textbf{#1}}
+\newcommand{\duration}[1]{\textsl{#1}}
+\newcommand{\theplace}[2][]{\subsection*{\textbf{#2}#1}}
+\newcommand{\thework}[2]{\subsubsection*{%
+  \iconl{$\blacksquare$}%
+  \worktitle{#1}%
+  \hfill\duration{#2}}\par%
+}
+\newcommand{\thebold}[1]{\subsection*{\textbf{#1}}\vspace{-1mm}}
+%}}}
+
+%{{{ Keywords
+%\def\html{\href{http://en.wikipedia.org/wiki/HTML}{HTML}}
+%\def\javascript{\href{http://en.wikipedia.org/wiki/JavaScript}{JavaScript}}
+%\def\css{\href{http://en.wikipedia.org/wiki/Cascading_Style_Sheets}{CSS}}
+%\def\clang{\href{http://en.wikipedia.org/wiki/C_\%28programming_language\%29}{C}}
+%\def\regex{\href{http://en.wikipedia.org/wiki/Regular_expressions}{Regular expressions}}
+%\def\git{\href{http://git-scm.com/}{Git}}
+%\def\svn{\href{http://subversion.apache.org/}{Subversion}}
+%\def\jquery{\href{http://jquery.com/}{jQuery}}
+%\def\wordpress{\href{http://wordpress.org}{WordPress}}
+%\def\ror{\href{http://rubyonrails.org}{Ruby on Rails}}
+%\def\java{\href{http://www.java.com/}{Java}}
+%\def\php{\href{http://php.net}{PHP}}
+%\def\ruby{\href{http://www.ruby-lang.org/}{Ruby}}
+%\def\csharp{\href{http://en.wikipedia.org/wiki/C_Sharp_\%28programming_language\%29}{C\#.net}}
+%\def\python{\href{http://www.python.org/}{Python}}
+%\def\mysql{\href{http://www.mysql.com/}{MySQL}}
+%\def\apache{\href{http://httpd.apache.org/}{Apache}}
+%\def\iis{\href{http://www.iis.net/}{IIS}}
+%\def\eclipse{\href{http://www.eclipse.org/eclipse/}{Eclipse}}
+%\def\vs{\href{http://www.microsoft.com/visualstudio/}{Visual Studio}}
+%\def\vim{\href{http://www.vim.org/}{vim}}
+%\def\photoshop{\href{http://www.adobe.com/products/photoshop.html}{Adobe Photoshop}}
+%\def\office{\href{http://office.microsoft.com/}{Mirosoft Office}}
+%\def\latex{\href{http://en.wikipedia.org/wiki/LaTeX}{LaTeX}}
+%}}}
