@@ -5,6 +5,9 @@ set :application, 'studs'
 # Source repository
 set :repository, 'git@mogel.nu:studs.git'
 set :scm, :git
+
+# Specify branch to deploy with:
+# cap deploy -s branch={name}
 set :branch, fetch(:branch, 'master')
 
 # Stages
