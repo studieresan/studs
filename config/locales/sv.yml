@@ -7,6 +7,29 @@ sv:
     index: Startsida
     cvs: CV-databas
     contact: Kontakt
+  roles:
+    project_leader: Projektledare
+    sales_manager: Säljansvarig
+    event_manager: Eventansvarig
+    report_manager: Rapportansvarig
+    travel_manager: Reseansvarig
+    it_manager: IT-ansvarig
+  main:
+    index:
+      title: Bli bästis med 30 färska civilingenjörer!
+      body_html: >
+        StuDs, eller Datasektionens Studieresa, är en unik möjlighet att träffa
+        ett helt gäng med Datateknik-studenter som är på gränsen att bli
+        fullfjädrade Civilingenjörer. StuDs erbjuder helt nya, mer fokuserade
+        sätt att mötas och knyta kontakt med blivande medarbetare.<br /><br />
+
+        Låt oss skippa de stora arbetsmarknadsmässorna och istället ordna roliga
+        event som ni och vi får ut mer av! 
+    contact:
+      title: Konktakta oss
+  cvs:
+    index:
+      title: Kommer snart
   actions:
     create: Skapa
     save: Spara

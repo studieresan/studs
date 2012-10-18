@@ -20,7 +20,7 @@ code, pre, textarea.code {
   text-align: left;
 }
 
-h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; line-height: 1.5; }
 h2 { font-size: 20px; }
 h3 { font-size: 16px; }
 
@@ -94,6 +94,7 @@ html {
   float: left;
   margin-left: 6px;
   padding: 3px 8px;
+  color: #444;
   background: #fff;
   font-weight: bold;
   font-size: 14px;
@@ -111,3 +112,23 @@ html {
 }
 
 /* }}} Layout */
+/* {{{ Content */
+
+ul.contacts {
+  list-style: none;
+}
+
+ul.contacts li {
+  float: left;
+  width: 200px;
+  margin: 10px 30px 20px 0;
+}
+
+ul.contacts .role { font-size: 14px; color: #444; }
+ul.contacts .name { font-size: 18px; }
+
+ul.contacts dl dt { display: none; }
+ul.contacts dl { margin: 4px 0; }
+
+
+/* }}} Content */
