@@ -5,7 +5,15 @@ set :application, 'studs'
 # Source repository
 set :repository, 'git@mogel.nu:studs.git'
 set :scm, :git
-set :branch, :master
+
+# Branch to deploy
+if !branch.nil? && branch == 'current'
+   set :branch, $1 if `git branch` =~ /\* (\S+)\s/m
+elsif !branch.nil?
+   set :branch, branch
+else
+   set :branch, :master
+end
 
 # Stages
 set :stages, %w(production)
