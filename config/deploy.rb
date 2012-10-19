@@ -24,6 +24,10 @@ set :user, 'rails'
 set :use_sudo, false
 set :ssh_options, { :forward_agent => true }
 
+# Number of versions to keep
+set :keep_releases, 10
+after 'deploy:update_code', 'deploy:cleanup'
+
 # Roles
 clusterfluff_domain = 'clusterfluff.ben-and-jerrys.stacken.kth.se'
 role :app, clusterfluff_domain, :alias => 'clusterfluff'
@@ -71,56 +75,6 @@ namespace :deploy do
     restart
   end
 end
-
-=begin
-
-set(:latest_release)  { fetch(:current_path) }
-set(:release_path)    { fetch(:current_path) }
-set(:current_release) { fetch(:current_path) }
-
-rev_cmd = "cd #{current_path}; git rev-parse --short"
-set(:current_revision)  { capture("#{rev_cmd} HEAD").strip }
-set(:latest_revision)   { capture("#{rev_cmd} HEAD").strip }
-set(:previous_revision) { capture("#{rev_cmd} HEAD@{1}").strip }
-
-namespace :deploy do
-
-  desc "Update the deployed code."
-  task :update_code, :except => { :no_release => true } do
-    run "cd #{current_path}; git pull; git reset --hard #{branch}"
-    finalize_update
-  end
-  
-  desc "Update the database (overwritten to avoid symlink)"
-  task :migrations do
-    transaction do
-      update_code
-    end
-    migrate
-    restart
-  end
-
-  namespace :rollback do
-    desc "Moves the repo back to the previous version of HEAD"
-    task :repo, :except => { :no_release => true } do
-      set :branch, "HEAD@{1}"
-      deploy.default
-    end
-    
-    desc "Rewrite reflog so HEAD@{1} will continue to point to at the next previous release."
-    task :cleanup, :except => { :no_release => true } do
-      run "cd #{current_path}; git reflog delete --rewrite HEAD@{1}; git reflog delete --rewrite HEAD@{1}"
-    end
-    
-    desc "Rolls back to the previously deployed version."
-    task :default do
-      rollback.repo
-      rollback.cleanup
-    end
-  end
-end
-
-=end
 
 # Shorten remote output prefixes
 class Capistrano::ServerDefinition
