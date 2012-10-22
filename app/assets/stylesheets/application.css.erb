@@ -1,5 +1,5 @@
 /* Reset
- *= require reset
+ *= require normalize
  */
 
 /* {{{ Typography and basic styles */
@@ -13,7 +13,10 @@ a:hover { text-decoration: underline; }
 em { font-style: italic; }
 strong { font-weight: bold; }
 
-p, blockquote, pre, ul, ol { margin: 8px 0; }
+p, blockquote, pre, ul, ol {
+  margin: 8px 0;
+  padding: 0;
+}
 
 code, pre, textarea.code {
   font: normal 12px/16px monospace;
@@ -21,11 +24,16 @@ code, pre, textarea.code {
   text-align: left;
 }
 
-h1, h2, h3, h4, h5, h6 { font-weight: normal; line-height: 1.5; }
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+  line-height: 1.5;
+}
 h2 { font-size: 24px; }
 h3 { font-size: 20px; }
 h4 { font-size: 14px; font-weight: bold; }
 
+li { margin: 0; }
 ul { list-style: disc; }
 ul > li { margin-left: 14px; }
 ol { list-style: decimal; }
@@ -39,6 +47,8 @@ blockquote {
 }
 blockquote *:first-child { margin-top: 0; }
 blockquote *:last-child  { margin-bottom: 0; }
+
+dl, dt, dd { margin: 0; }
 
 p.alert, em.alert, strong.alert,
 p.error, em.error, strong.error { color: #942; }
@@ -89,6 +99,7 @@ html {
 }
 
 #nav li {
+  margin: 0;
   display: inline;
   list-style-type: none;
 }
@@ -136,6 +147,11 @@ html {
   margin-right: 0;
 }
 
+.dialog {
+  margin: 0 auto;
+  width: 300px;
+}
+
 ul.contacts {
   list-style: none;
 }
@@ -153,3 +169,10 @@ ul.contacts dl { margin: 4px 0; }
 
 
 /* }}} Content */
+/* {{{ Forms */
+
+label, input[type=submit], input[type=button], input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+
+/* }}} Forms */
