@@ -1,5 +1,5 @@
 Studs::Application.routes.draw do
-  resources :cvs
+  resources :resumes
 
   # Authentication
   get  'login'  => 'session#new',     as: :login

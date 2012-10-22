@@ -5,7 +5,7 @@ sv:
     delimeter_html: ' - '
   titles:
     index: Startsida
-    cvs: CV-databas
+    resumes: CV-databas
     contact: Kontakt
   roles:
     project_leader: Projektledare
@@ -32,7 +32,7 @@ sv:
         event som ni och vi får ut mer av! 
     contact:
       title: Konktakta oss
-  cvs:
+  resumes:
     index:
       title: Kommer snart
       body_html: >
@@ -79,13 +79,13 @@ sv:
     'false': Nej
   models:
     a: &a_model
-      cv: CV
+      resume: CV
       user: användare
     the: &the_model
-      cv: CV:t
+      resume: CV:t
       user: användaren
     plural: &the_models
-      cv: CV:n
+      resume: CV:n
       user: användarna
   flash:
     actions:

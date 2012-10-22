@@ -13,7 +13,7 @@
       #header.cf
         %h1= link_to t('common.title'), root_path, id: :logo
         %ul#nav
-          - %w(index cvs contact).each do |target|
+          - %w(index resumes contact).each do |target|
             - path = send("#{target}_path".to_sym)
             %li= link_to t("titles.#{target}"), path, :class => (target.to_sym == active_menu ? :active : nil)
 

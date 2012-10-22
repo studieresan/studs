@@ -1,9 +1,9 @@
-class CvsController < ApplicationController
+class ResumesController < ApplicationController
   respond_to :html, :xml
   responders :flash, :collection
 
   before_filter :require_login, except: :index
-  before_filter :fetch_cv, except: [:index]
+  before_filter :fetch_resume, except: [:index]
 
   def index
   end
@@ -31,7 +31,7 @@ class CvsController < ApplicationController
 
   private
 
-  def fetch_cv
-    @cv = CV.find(params[:id])
+  def fetch_resume
+    @resume = Resume.find(params[:id])
   end
 end
