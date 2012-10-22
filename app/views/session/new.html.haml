@@ -13,6 +13,4 @@
       = t('attributes.remember_me')
     = submit_tag t('session.login'), :class => :commit
 
-- [:alert, :warning, :notice].each do |key|
-  - if flash[key]
-    %p.flash.box.dialog{ :class => key }= flash[key]
+= render partial: '/flash', locals: { flash: flash }
