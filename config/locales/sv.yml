@@ -4,8 +4,10 @@ sv:
     year: 2013
     delimeter_html: ' - '
     languages:
-      sv: se
-      en: en
+      sv: svenska
+      en: engelska
+      sv_short: se
+      en_short: en
   titles:
     index: Startsida
     resumes: CV-databas
@@ -18,10 +20,21 @@ sv:
     travel_manager: Reseansvarig
     it_manager: IT-ansvarig
     company: Företag
+
   session:
     login: Logga in
     logout: Logga ut
     invalid_credentials: Ogiltiga inloggningsuppgifter
+  not_found:
+    title: Sidan kunde inte hittas
+    body_html: Det du söker finns tyvärr inte här.
+  error_occurred:
+    title: Ett fel inträffade
+    body_html: >
+      Tyvärr uppstod en fel på servern.<br />
+      Kontakta gärna <a href="mailto:studs-it@d.kth.se">IT-ansvarig</a>
+      om problemet kvarstår.
+
   main:
     index:
       title: Bli bästis med 30 färska civilingenjörer!
@@ -42,29 +55,7 @@ sv:
         CV-databasen innehåller meriter och kontaktuppgifter till alla
         studenter som deltar i StuDs-projektet och är tillgänglig för de
         företag vi samarbetar med.
-  actions:
-    create: Skapa
-    save: Spara
-    edit: Redigera
-    delete: Ta bort
-    cancel: Avbryt
-    login: Logga in
-    logout: logga ut
-    close: Stäng
-    new_type: "Skapa %{type}"
-    edit_type: "Redigera %{type}"
-    delete_type: "Ta bort %{type}"
-    delete_prompt_html: "Är du säker på att du vill ta bort <em>%{name}</em>?"
-  not_found:
-    title: Sidan kunde inte hittas
-    body_html: Det du söker finns tyvärr inte här.
-  error_occurred:
-    title: Ett fel inträffade
-    body_html: >
-      Tyvärr uppstod en fel på servern.<br />
-      Kontakta gärna <a href="mailto:it@djubileet.se">IT-ansvarig</a>
-      om problemet kvarstår.<br />
-      Eventuellt felmeddelande visas nedan.
+
   attributes:
     created_at: Skapad
     updated_at: Uppdaterad
@@ -90,6 +81,19 @@ sv:
     plural: &the_models
       resume: CV:n
       user: användarna
+  actions:
+    create: Skapa
+    save: Spara
+    edit: Redigera
+    delete: Ta bort
+    cancel: Avbryt
+    login: Logga in
+    logout: logga ut
+    close: Stäng
+    new_type: "Skapa %{type}"
+    edit_type: "Redigera %{type}"
+    delete_type: "Ta bort %{type}"
+    delete_prompt_html: "Är du säker på att du vill ta bort <em>%{name}</em>?"
   flash:
     actions:
       create:
@@ -101,6 +105,8 @@ sv:
       destroy:
         notice: "Tog bort %{resource_name}."
         alert: "Kunde inte ta bort %{resource_name}."
+
+  # Default i18n
   date:
     abbr_month_names:
     - 

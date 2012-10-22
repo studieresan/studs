@@ -19,7 +19,7 @@
         %ul#languages
           - %w(sv en).each do |lang|
             - css_class = [lang, (:active if params[:locale] == lang)].join(' ')
-            %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
+            %li= link_to lang, url_for(locale: lang), title: t("common.languages.#{lang}"), :class => css_class
 
     #content.cf
       = content_for?(:content) ? yield(:content) : yield
