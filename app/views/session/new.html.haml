@@ -1,0 +1,18 @@
+= form_tag login_do_path, :class => :dialog do
+  %h2.title= t 'session.login'
+  %fieldset
+    .input.text
+      = label_tag :login, t('attributes.login')
+      = text_field_tag :login
+    .input.text
+      = label_tag :password, t('attributes.password')
+      = password_field_tag :password
+  %fieldset.actions
+    = label_tag :remember, :class => :check do
+      = check_box_tag :remember, 1, true
+      = t('attributes.remember_me')
+    = submit_tag t('session.login'), :class => :commit
+
+- [:alert, :warning, :notice].each do |key|
+  - if flash[key]
+    %p.flash.box.dialog{ :class => key }= flash[key]

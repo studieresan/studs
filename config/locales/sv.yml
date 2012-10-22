@@ -14,6 +14,11 @@ sv:
     report_manager: Rapportansvarig
     travel_manager: Reseansvarig
     it_manager: IT-ansvarig
+    company: Företag
+  session:
+    login: Logga in
+    logout: Logga ut
+    invalid_credentials: Ogiltiga inloggningsuppgifter
   main:
     index:
       title: Bli bästis med 30 färska civilingenjörer!

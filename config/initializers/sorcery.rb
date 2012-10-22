@@ -13,7 +13,7 @@ Rails.application.config.sorcery.configure do |config|
   # the URL he wanted to reach, and send him there after login, using 'redirect_back_or_to'.
   # Default: `true`
   #
-  # config.save_return_to_url =
+  config.save_return_to_url = true
 
 
   # Set domain option for cookies; Useful for remember_me submodule.
@@ -290,5 +290,5 @@ Rails.application.config.sorcery.configure do |config|
 
   # This line must come after the 'user config' block.
   # Define which model authenticates with sorcery.
-  config.user_class = "User"
+  config.user_class = User
 end
