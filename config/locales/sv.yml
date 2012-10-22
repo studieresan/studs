@@ -3,11 +3,6 @@ sv:
     title: StuDs 2013
     year: 2013
     delimeter_html: ' - '
-    languages:
-      sv: svenska
-      en: engelska
-      sv_short: se
-      en_short: en
   titles:
     index: Startsida
     resumes: CV-databas
