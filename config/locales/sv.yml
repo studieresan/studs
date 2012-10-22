@@ -30,6 +30,10 @@ sv:
   cvs:
     index:
       title: Kommer snart
+      body_html: >
+        CV-databasen innehåller meriter och kontaktuppgifter till alla
+        studenter som deltar i StuDs-projektet och är tillgänglig för de
+        företag vi samarbetar med.
   actions:
     create: Skapa
     save: Spara
