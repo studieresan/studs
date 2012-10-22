@@ -1,10 +1,10 @@
 /* Reset
- *= require normalize
+ *= require reset
  */
 
 /* {{{ Typography and basic styles */
 
-html { font: normal 14px/24px Arial, sans-serif; }
+html { font: normal 14px/22px Arial, sans-serif; }
 h1, h2, h3 { font-family: 'Ubuntu Condensed', Arial, sans-serif; }
 
 a { color: #e2007f; text-decoration: none; }
@@ -147,7 +147,10 @@ html {
   margin-right: 0;
 }
 
+.wide { clear: both; }
+
 .dialog {
+  clear: both;
   margin: 0 auto;
   width: 300px;
 }
@@ -171,8 +174,29 @@ ul.contacts dl { margin: 4px 0; }
 /* }}} Content */
 /* {{{ Forms */
 
+fieldset {
+  margin: 8px 0;
+  padding: 0;
+  border: 0;
+}
+
+fieldset.actions {
+  margin-top: 10px;
+}
+
+input, textarea, select {
+  margin: 0;
+  color: #000;
+  font: normal 13px/18px Arial, sans-serif;
+}
+
 label, input[type=submit], input[type=button], input[type=checkbox], input[type=radio] {
   cursor: pointer;
 }
+
+input.commit { font-weight: bold; }
+.actions .commit, .actions .destroy { float: right; }
+
+
 
 /* }}} Forms */
