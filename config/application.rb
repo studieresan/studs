@@ -6,9 +6,9 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Studs
   class Application < Rails::Application
+    config.encoding = 'utf-8'
     config.time_zone = 'Stockholm'
     config.i18n.default_locale = :sv
-    config.encoding = 'utf-8'
 
     config.filter_parameters += [:password, :password_confirmation]
     config.active_record.whitelist_attributes = true

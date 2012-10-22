@@ -3,6 +3,9 @@ sv:
     title: StuDs 2013
     year: 2013
     delimeter_html: ' - '
+    languages:
+      sv: se
+      en: en
   titles:
     index: Startsida
     resumes: CV-databas
@@ -34,7 +37,7 @@ sv:
       title: Konktakta oss
   resumes:
     index:
-      title: Kommer snart
+      title: CV-databas
       body_html: >
         CV-databasen innehåller meriter och kontaktuppgifter till alla
         studenter som deltar i StuDs-projektet och är tillgänglig för de

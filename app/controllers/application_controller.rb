@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   helper MenuHelper
 
+  before_filter :set_locale
   after_filter :flash_to_xhr_headers
 
   protect_from_forgery
@@ -22,10 +23,6 @@ class ApplicationController < ActionController::Base
     response.headers['X-Messages'] = flash_json
     flash.discard
   end
-
-  def not_authenticated
-    redirect_to login_path
-  end
   
   def custom_log_error(err)
     if err.kind_of? Exception
@@ -33,5 +30,14 @@ class ApplicationController < ActionController::Base
     else
       Rails.logger.error("ERROR: #{err}")
     end
+  end
+
+  # I18n URL handling
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options(options={})
+    {:locale => I18n.locale}
   end
 end

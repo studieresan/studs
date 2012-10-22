@@ -11,11 +11,15 @@
   %body{ id: "#{controller_name}-#{action_name}" }
     #top
       #header.cf
-        %h1= link_to t('common.title'), root_path, id: :logo
+        %h1= link_to t('common.title'), index_path, id: :logo
         %ul#nav
           - %w(index resumes contact).each do |target|
             - path = send("#{target}_path".to_sym)
             %li= link_to t("titles.#{target}"), path, :class => (target.to_sym == active_menu ? :active : nil)
+        %ul#languages
+          - %w(sv en).each do |lang|
+            - css_class = [lang, (:active if params[:locale] == lang)].join(' ')
+            %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
 
     #content.cf
       = content_for?(:content) ? yield(:content) : yield

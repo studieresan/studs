@@ -3,9 +3,10 @@ class ResumesController < ApplicationController
   responders :flash, :collection
 
   before_filter :require_login, except: :index
-  before_filter :fetch_resume, except: [:index]
+  before_filter :fetch_resume, except: [:index, :new]
 
   def index
+    render 'logged_out' and return unless logged_in?
   end
 
   def show
