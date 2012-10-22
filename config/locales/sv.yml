@@ -4,7 +4,7 @@ sv:
     year: 2013
     delimeter_html: ' - '
   titles:
-    index: Startsida
+    index: Start
     resumes: CV-databas
     contact: Kontakt
   roles:
@@ -63,6 +63,7 @@ sv:
     email: Epostadress
     pid: Personnummer
     remember_me: Kom ihåg mig
+    skills: Färdigheter
   values:
     'true': Ja
     'false': Nej
@@ -82,9 +83,8 @@ sv:
     edit: Redigera
     delete: Ta bort
     cancel: Avbryt
-    login: Logga in
-    logout: logga ut
     close: Stäng
+    filter: Filtrera
     new_type: "Skapa %{type}"
     edit_type: "Redigera %{type}"
     delete_type: "Ta bort %{type}"

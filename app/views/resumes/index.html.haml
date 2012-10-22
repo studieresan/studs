@@ -1,2 +1,17 @@
 - active_menu :resumes
+%h2= t '.title'
 
+-# TODO: Convert into a virtual Search model encapsulating Resume?
+= form_tag resumes_path, method: :get, :class => :search do
+  %fieldset.name
+    = label_tag :name, t('attributes.name')
+    = text_field_tag :name, params[:name]
+  %fieldset.skills
+    = label_tag :skills, t('attributes.skills')
+    = text_field_tag :skills, params[:skills]
+  %fieldset.commit
+    = submit_tag t('actions.filter')
+
+= render partial: '/flash', locals: { flash: flash }
+
+= render partial: 'list'

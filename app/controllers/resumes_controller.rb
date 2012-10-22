@@ -2,11 +2,11 @@ class ResumesController < ApplicationController
   respond_to :html, :xml
   responders :flash, :collection
 
-  before_filter :require_login, except: :index
+  before_filter :review_authorization
   before_filter :fetch_resume, except: [:index, :new]
 
   def index
-    render 'logged_out' and return unless logged_in?
+    @resumes = Resume.all
   end
 
   def show
@@ -31,6 +31,10 @@ class ResumesController < ApplicationController
   end
 
   private
+
+  def review_authorization
+    render 'logged_out' and return unless logged_in?
+  end
 
   def fetch_resume
     @resume = Resume.find(params[:id])
