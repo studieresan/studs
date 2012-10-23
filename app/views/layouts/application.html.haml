@@ -12,18 +12,24 @@
     #top
       #header.cf
         %h1= link_to t('common.title'), index_path, id: :logo
-        %ul#nav
+
+        %ul#nav.nav
           - %w(index resumes contact).each do |target|
             - path = send("#{target}_path".to_sym)
             %li= link_to t("titles.#{target}"), path, :class => (target.to_sym == active_menu ? :active : nil)
-        %ul#languages
+
+        %ul#languages.nav
           - [%w(sv Svenska), %w(en English)].each do |lang, name|
+            - next if I18n.locale.to_s == lang
             - css_class = [lang, (:active if I18n.locale.to_s == lang)].join(' ')
-            %li= link_to lang, url_for(locale: lang), title: name, :class => css_class
+            %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), title: name, :class => css_class
+
         - if logged_in?
-          %p#userbar
-            %span.user= current_user.login
-            = link_to t('session.logout'), logout_path, :class => :logout
+          %ul#userbar
+            - if current_user.student?
+              %li.resume= link_to t('models.a.resume').capitalize, resumes_path
+            %li.user= current_user.login
+            %li.logout= link_to t('session.logout'), logout_path
             
 
     #content.cf

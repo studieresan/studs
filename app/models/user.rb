@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   ROLES = %w(organization student admin).freeze
 
+  has_many :resumes
+
   authenticates_with_sorcery!
 
   attr_accessible :login, :email, :name, :password, :password_confirmation

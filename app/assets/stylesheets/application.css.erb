@@ -102,19 +102,20 @@ html {
   height: 110px;
 }
 
-#header ul {
+#header ul { list-style-type: none; }
+
+ul.nav {
   float: left;
   margin: 85px 0 0 30px;
 }
-#header #languages { float: right; }
 
-#header ul li {
+ul.nav li {
   margin: 0;
   display: inline;
   list-style-type: none;
 }
 
-#header ul a {
+ul.nav a {
   float: left;
   margin-left: 6px;
   padding: 3px 8px;
@@ -125,15 +126,22 @@ html {
   line-height: 20px;
 }
 
-#header ul a.active {
+ul.nav a.active {
   color: #fff;
   background: #777;
 }
 
-#header #languages a { font-size: 12px; }
+#languages { float: right; }
+#languages a {
+  padding-left: 20px;
+  background: #fff url(<%= image_path 'sprites.png' %>) no-repeat 0 -49px;
+  font-size: 12px;
+}
 
 #userbar {
   position: absolute;
+  float: none;
+  margin: 0;
   top: 24px;
   right: 0;
   color: #444;
@@ -141,14 +149,24 @@ html {
   font-size: 13px;
   line-height: 18px;
 }
-#userbar .user, #userbar a {
+#userbar li, #userbar .logout a {
   float: left;
-  padding: 3px 6px;
+  margin: 0;
+  padding: 3px 8px;
 }
-#userbar .user { font-weight: bold; }
-#userbar .logout {
+#userbar li.logout { display: inline; padding: 0; }
+#userbar a {
+  color: #444;
+  font-weight: bold;
+}
+#userbar .user {
   color: #000;
   border-left: 2px solid #fff;
+}
+#userbar .logout a {
+  padding-left: 18px;
+  background: transparent url(<%= image_path 'sprites.png' %>) no-repeat 0 -22px;
+  text-transform: lowercase;
   font-size: 12px;
 }
 
