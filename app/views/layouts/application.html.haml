@@ -18,7 +18,7 @@
             %li= link_to t("titles.#{target}"), path, :class => (target.to_sym == active_menu ? :active : nil)
         %ul#languages
           - [%w(sv Svenska), %w(en English)].each do |lang, name|
-            - css_class = [lang, (:active if params[:locale] == lang)].join(' ')
+            - css_class = [lang, (:active if I18n.locale.to_s == lang)].join(' ')
             %li= link_to lang, url_for(locale: lang), title: name, :class => css_class
 
     #content.cf
