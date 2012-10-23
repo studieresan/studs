@@ -20,3 +20,68 @@ en:
     login: Log in
     logout: Log out
     invalid_credentials: Invalid credentials
+
+  main:
+    index:
+      title: Get to know 30 civil engineers!
+      body_html: >
+        Studs 2013
+    contact:
+      title: Contact Us
+  resumes:
+    index:
+      title: CV Database
+    logged_out:
+      title: CV Database
+      body_html: >
+        Body
+
+  attributes:
+    created_at: Created
+    updated_at: Updated
+    title: Title
+    body: Body
+    image: Image
+    login: Login
+    password: Password
+    name: Name
+    email: Email
+    pid: Social security number
+    remember_me: Remember me
+    skills: Skills
+  values:
+    'true': Yes
+    'false': No
+  models:
+    a: &a_model
+      resume: resume
+      user: user
+    the: &the_model
+      resume: resume
+      user: user
+    plural: &the_models
+      resume: resumes
+      user: users
+  actions:
+    create: Create
+    save: Save
+    edit: Edit
+    delete: Delete
+    cancel: Cancel
+    close: Close
+    filter: Filter
+    new_type: "Create %{type}"
+    edit_type: "Edit %{type}"
+    delete_type: "Delete %{type}"
+    delete_prompt_html: "Are you sure that you wish to delete <em>%{name}</em>?"
+  flash:
+    actions:
+      create:
+        notice: "Created %{resource_name}."
+        alert: "Could not create %{resource_name}."
+      update:
+        notice: "Updated %{resource_name}."
+        alert: "Could not update %{resource_name}."
+      destroy:
+        notice: "Deleted %{resource_name}."
+        alert: "Could not delete %{resource_name}."
