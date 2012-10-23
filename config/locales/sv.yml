@@ -46,6 +46,8 @@ sv:
   resumes:
     index:
       title: CV-databas
+    logged_out:
+      title: CV-databas
       body_html: >
         CV-databasen innehåller meriter och kontaktuppgifter till alla
         studenter som deltar i StuDs-projektet och är tillgänglig för de

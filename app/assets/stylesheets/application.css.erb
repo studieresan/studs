@@ -78,8 +78,17 @@ html {
 }
 
 #header {
+  position: relative;
   padding-top: 10px;
 }
+
+#content {
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+/* }}} Layout */
+/* {{{ Header */
 
 #header h1 {
   float: left;
@@ -123,12 +132,27 @@ html {
 
 #header #languages a { font-size: 12px; }
 
-#content {
-  margin-top: 20px;
-  margin-bottom: 80px;
+#userbar {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  color: #444;
+  background: #ddd;
+  font-size: 13px;
+  line-height: 18px;
+}
+#userbar .user, #userbar a {
+  float: left;
+  padding: 3px 6px;
+}
+#userbar .user { font-weight: bold; }
+#userbar .logout {
+  color: #000;
+  border-left: 2px solid #fff;
+  font-size: 12px;
 }
 
-/* }}} Layout */
+/* }}} Header */
 /* {{{ Content */
 
 .justify {
