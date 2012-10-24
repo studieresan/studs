@@ -13,6 +13,12 @@ class ResumesController < ApplicationController
   end
 
   def new
+    @resume = Resume.new
+    if current_user.student?
+      [:name, :email].each do |attr|
+        @resume.send("#{attr}=".to_sym, current_user.send(attr))
+      end
+    end
   end
 
   def create

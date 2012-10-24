@@ -15,5 +15,6 @@ class User < ActiveRecord::Base
   # returning if the user belongs to that group (or a higher one).
   ROLES.each.with_index do |role, val|
     define_method("#{role}?".to_sym) { self.role >= val }
+    scope "#{role}s".to_sym, lambda { where(role: val) }
   end
 end

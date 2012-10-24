@@ -1,0 +1,18 @@
+= ext_form_for @resume, :class => :resume do |f|
+  %fieldset.user
+    - if current_user.admin?
+      = f.collection_select :user, User.students, :id, :name, include_blank: true
+
+  %fieldset.personal
+    = f.text_field :name
+    = f.date_select :birthdate, start_year: 1980, include_blank: false
+    = f.text_field :email
+    = f.text_field :phone
+
+  %fieldset.skills
+    = f.text_field :skills
+
+  %fieldset.experiences
+
+  %fieldset.actions
+    = f.submit

@@ -103,6 +103,7 @@ html {
 }
 
 #header ul { list-style-type: none; }
+#header li { margin: 0; }
 
 ul.nav {
   float: left;
@@ -149,23 +150,20 @@ ul.nav a.active {
   font-size: 13px;
   line-height: 18px;
 }
-#userbar li, #userbar .logout a {
+#userbar li { float: left; }
+#userbar a {
   float: left;
   margin: 0;
   padding: 3px 8px;
 }
-#userbar li.logout { display: inline; padding: 0; }
 #userbar a {
+  padding-left: 26px;
+  background: transparent url(<%= image_path 'sprites.png' %>) no-repeat 6px 6px;
   color: #444;
   font-weight: bold;
 }
-#userbar .user {
-  color: #000;
-  border-left: 2px solid #fff;
-}
 #userbar .logout a {
-  padding-left: 18px;
-  background: transparent url(<%= image_path 'sprites.png' %>) no-repeat 0 -22px;
+  background-position: 6px -22px;
   text-transform: lowercase;
   font-size: 12px;
 }

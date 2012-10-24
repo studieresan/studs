@@ -26,9 +26,7 @@
 
         - if logged_in?
           %ul#userbar
-            - if current_user.student?
-              %li.resume= link_to t('models.a.resume').capitalize, resumes_path
-            %li.user= current_user.login
+            %li.user= link_to current_user.login, index_path
             %li.logout= link_to t('session.logout'), logout_path
             
 
