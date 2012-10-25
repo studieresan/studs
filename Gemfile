@@ -24,3 +24,9 @@ group :production do
   gem 'unicorn'
   gem 'yui-compressor'
 end
+
+group :assets do
+  # Improves assets:precompile by only compiling what's needed.
+  # Can potentially cause problems with asset rollback and invalidation.
+  gem 'turbo-sprockets-rails3'
+end
