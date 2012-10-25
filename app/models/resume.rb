@@ -2,7 +2,7 @@ class Resume < ActiveRecord::Base
   belongs_to :user
   has_many :experiences, inverse_of: :resume, dependent: :destroy
 
-  attr_accessible :name, :birthdate, :email, :phone, :address
+  attr_protected :user, as: :admin
 
   acts_as_taggable_on :skills
 

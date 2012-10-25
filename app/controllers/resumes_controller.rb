@@ -3,10 +3,19 @@ class ResumesController < ApplicationController
   responders :flash, :collection
 
   before_filter :review_authorization
-  before_filter :fetch_resume, except: [:index, :new]
+  before_filter :fetch_resume, except: [:index, :mine, :new, :create]
 
   def index
     @resumes = Resume.all
+  end
+
+  def mine
+    @resume = current_user.resume
+    if @resume
+      render 'show'
+    else
+      redirect_to action: :new
+    end
   end
 
   def show
@@ -14,6 +23,7 @@ class ResumesController < ApplicationController
 
   def new
     @resume = Resume.new
+    @resume.user = current_user
     if current_user.student?
       [:name, :email].each do |attr|
         @resume.send("#{attr}=".to_sym, current_user.send(attr))
@@ -22,6 +32,10 @@ class ResumesController < ApplicationController
   end
 
   def create
+    @resume = Resume.new(params[:resume], as: current_user.role.to_sym)
+    @resume.user = current_user unless current_user.admin?
+    @resume.save
+    respond_with @resume
   end
 
   def edit

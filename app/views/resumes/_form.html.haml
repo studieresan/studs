@@ -2,6 +2,8 @@
   %fieldset.user
     - if current_user.admin?
       = f.collection_select :user, User.students, :id, :name, include_blank: true
+    - else
+      = f.hidden_field :user_id
 
   %fieldset.personal
     = f.text_field :name
@@ -10,7 +12,7 @@
     = f.text_field :phone
 
   %fieldset.skills
-    = f.text_field :skills
+    = f.text_field :skill_list
 
   %fieldset.experiences
 

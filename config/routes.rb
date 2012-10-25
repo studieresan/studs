@@ -1,6 +1,8 @@
 Studs::Application.routes.draw do
   scope '/(:locale)', locale: /en|sv/ do
-    resources :resumes
+    resources :resumes do
+      get 'mine', on: :collection
+    end
 
     # Authentication
     get  'login'  => 'session#new',     as: :login

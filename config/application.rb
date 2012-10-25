@@ -11,7 +11,7 @@ module Studs
     config.i18n.default_locale = :sv
 
     config.filter_parameters += [:password, :password_confirmation]
-    config.active_record.whitelist_attributes = true
+    config.active_record.whitelist_attributes = false
 
     #config.autoload_paths << "#{config.root}/app/libs"
 
