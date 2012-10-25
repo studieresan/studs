@@ -28,6 +28,17 @@ class User < ActiveRecord::Base
     role > 1
   end
 
+  # Assign role for user. Value can be integer or name of role.
+  def role=(val)
+    val = (val =~ /\d+/) ? val.to_i : ROLES.index(val.to_s) || 0
+    write_attribute(:role, val)
+  end
+
+  # Return name of role.
+  def role_name
+    ROLES[role]
+  end
+
   def to_s
     login
   end

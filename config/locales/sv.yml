@@ -75,13 +75,13 @@ sv:
   models:
     a: &a_model
       resume: CV
-      user: användare
+      user: Användare
     the: &the_model
       resume: CV:t
-      user: användaren
+      user: Användaren
     plural: &the_models
       resume: CV:n
-      user: användarna
+      user: Användarna
   actions:
     create: Skapa
     save: Spara

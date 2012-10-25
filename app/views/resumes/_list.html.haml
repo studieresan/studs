@@ -10,7 +10,7 @@
         %td.empty{ colspan: cols.size}>= t('resumes.none')
     - @resumes.each do |res|
       %tr
-        %td.name= res.name
+        %td.name= link_to res.name, res
         %td.email= mail_to res.email
         %td.skills<
           - res.skills.each do |s|

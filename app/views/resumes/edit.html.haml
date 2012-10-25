@@ -1,3 +1,4 @@
 - active_menu :resumes
-%h1 Cvs#edit
-%p Find me in app/views/resumes/edit.html.haml
+%h2= t('actions.edit_type', type: t('models.a.resume'))
+
+= render partial: 'form'

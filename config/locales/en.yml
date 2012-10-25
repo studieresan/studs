@@ -57,14 +57,14 @@ en:
     'false': No
   models:
     a: &a_model
-      resume: resume
-      user: user
+      resume: Resume
+      user: User
     the: &the_model
-      resume: resume
-      user: user
+      resume: Resume
+      user: User
     plural: &the_models
-      resume: resumes
-      user: users
+      resume: Resumes
+      user: Users
   actions:
     create: Create
     save: Save
