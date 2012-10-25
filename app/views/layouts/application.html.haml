@@ -1,5 +1,5 @@
 !!! Strict
-%html(xmlns="http://www.w3.org/1999/xhtml")
+%html(xmlns="http://www.w3.org/1999/xhtml"){ lang: I18n.locale }
   %head
     %title= t('common.title')
     %meta(http-equiv='Content-Type' content='text/html;charset=UTF-8')/
@@ -26,6 +26,8 @@
 
         - if logged_in?
           %ul#userbar
+            - if current_user.student?
+              %li.resume= link_to t('models.a.resume'), mine_resumes_path
             %li.user= link_to current_user.login, index_path
             %li.logout= link_to t('session.logout'), logout_path
             
