@@ -1,4 +1,8 @@
 - active_menu :resumes
+
+- if can? :edit, @resume
+  = link_to t('actions.edit'), [:edit, @resume], :class => 'head edit'
+
 %h2
   %span.prefix= t('models.a.resume') + ': '
   = @resume.name

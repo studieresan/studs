@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027181214) do
+ActiveRecord::Schema.define(:version => 20121027191052) do
 
   create_table "experiences", :force => true do |t|
     t.integer  "resume_id"
@@ -56,14 +56,14 @@ ActiveRecord::Schema.define(:version => 20121027181214) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "login",                                       :null => false
+    t.string   "login",                                                    :null => false
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
     t.string   "name"
-    t.integer  "role",                         :default => 1, :null => false
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
+    t.string   "role",                         :default => "organization", :null => false
+    t.datetime "created_at",                                               :null => false
+    t.datetime "updated_at",                                               :null => false
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
     t.datetime "last_login_at"

@@ -3,10 +3,10 @@ class ResumesController < ApplicationController
   responders :flash, :collection
 
   before_filter :review_authorization
-  before_filter :fetch_resume, except: [:index, :mine, :new, :create]
+
+  load_and_authorize_resource except: [:mine, :create]
 
   def index
-    @resumes = Resume.all
   end
 
   def mine
@@ -22,8 +22,8 @@ class ResumesController < ApplicationController
   end
 
   def new
-    @resume = Resume.new
     @resume.user = current_user
+
     if current_user.student?
       [:name, :email].each do |attr|
         @resume.send("#{attr}=".to_sym, current_user.send(attr))
@@ -34,6 +34,7 @@ class ResumesController < ApplicationController
   def create
     @resume = Resume.new(params[:resume], as: current_user.role.to_sym)
     @resume.user = current_user unless current_user.admin?
+    authorize! :create, @resume
     @resume.save
     respond_with @resume
   end
@@ -42,6 +43,9 @@ class ResumesController < ApplicationController
   end
 
   def update
+    @resume.update_attributes(params[:resume])
+    @resume.save
+    respond_with @resume
   end
 
   def delete
@@ -54,9 +58,5 @@ class ResumesController < ApplicationController
 
   def review_authorization
     render 'logged_out' and return unless logged_in?
-  end
-
-  def fetch_resume
-    @resume = Resume.find(params[:id])
   end
 end

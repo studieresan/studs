@@ -9,6 +9,7 @@ gem 'acts-as-taggable-on'
 
 gem 'bcrypt-ruby'
 gem 'sorcery'
+gem 'cancan'
 
 gem 'responders'
 

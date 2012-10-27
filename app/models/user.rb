@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   ROLES = %w(organization student admin).freeze
+  STUDENT_ROLES = (ROLES - %w(organization)).freeze
 
   has_one :resume
 
@@ -10,33 +11,18 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_presence_of :password, on: :create
   validates :email, presence: true
+  validates_inclusion_of :role, in: ROLES
 
-  # Role scopes
-  ROLES.each.with_index do |role, val|
-    scope "#{role}s".to_sym, lambda { where(role: val) }
+  # Scopes and inclusion testing for each user role.
+  (ROLES - %w(student)).each do |role|
+    scope "#{role}s".to_sym, lambda { where(role: role) }
+    define_method "#{role}?".to_sym, lambda { self.role == role }
   end
 
-  def organization?
-    role < 1
-  end
-
-  def student?
-    role > 0
-  end
-
-  def admin?
-    role > 1
-  end
-
-  # Assign role for user. Value can be integer or name of role.
-  def role=(val)
-    val = (val =~ /\d+/) ? val.to_i : ROLES.index(val.to_s) || 0
-    write_attribute(:role, val)
-  end
-
-  # Return name of role.
-  def role_name
-    ROLES[role]
+  # The student role is special since it includes admins as well.
+  scope :students, lambda { where(role: STUDENT_ROLES) }
+  def student? # admins are also students
+    STUDENT_ROLES.include?(role)
   end
 
   def to_s
