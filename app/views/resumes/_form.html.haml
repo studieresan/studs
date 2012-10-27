@@ -1,26 +1,21 @@
 = ext_form_for @resume, :class => :resume do |f|
-  .col.left
-    %fieldset.author
-      - if can? :manage, User
-        = f.collection_select_row :user_id, User.students, :id, :name, include_blank: true
-      - else
-        = f.hidden_field :user_id
+  %fieldset.author
+    - if can? :manage, User
+      = f.collection_select_row :user_id, User.students, :id, :name, include_blank: true, hint: true
+    - else
+      = f.hidden_field :user_id
 
-    %fieldset.credentials
-      %legend= t 'resumes.parts.credentials'
-      = f.text_field_row :name
-      = f.select_row :masters, Resume::MASTERS.map { |m| [t("masters.#{m}"), m] }, include_blank: false
-      = f.date_select_row :birthdate, start_year: 1980, include_blank: false
-      = f.text_field_row :email
-      = f.text_field_row :phone
+  %fieldset.credentials
+    = f.text_field_row :name, hint: true
+    = f.select_row :masters, Resume::MASTERS.map { |m| [t("masters.#{m}"), m] }, include_blank: false, hint: true
+    = f.date_select_row :birthdate, start_year: 1980, include_blank: false, hint: true
+    = f.text_field_row :email, hint: true
+    = f.text_field_row :phone, hint: true
 
-    %fieldset.skills
-      %legend= t 'resumes.parts.skills'
-      = f.text_field :skill_list
+  %fieldset.skills
+    = f.text_field_row :skill_list
 
-  .col.right
-    %fieldset.experiences
+  %fieldset.experiences
 
-  .wide
-    %fieldset.actions
-      = f.submit
+  %fieldset.actions
+    = f.submit

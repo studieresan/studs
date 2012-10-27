@@ -243,7 +243,7 @@ a.head.edit {
 /* {{{ Forms */
 
 fieldset {
-  margin: 8px 0;
+  margin: 10px 0;
   padding: 0;
   border: 0;
 }
@@ -264,6 +264,40 @@ label, input[type=submit], input[type=button], input[type=checkbox], input[type=
 input.commit { font-weight: bold; }
 .actions .commit, .actions .destroy { float: right; }
 
+.input {
+  position: relative;
+  margin: 6px 0;
+  overflow: auto;
+}
 
+.input label {
+  float: left;
+  clear: left;
+  padding-right: 10px;
+  width: 120px;
+  border-top: 1px dotted #bbb;
+  font-style: italic;
+}
+
+span.wrap {
+  float: left;
+  width: 220px;
+}
+span.wrap input[type=text], span.wrap textarea, .input.select select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.input span.hint, .input span.error {
+  float: left;
+  margin-left: 15px;
+  color: #444;
+  font-size: 12px;
+}
+.input span.error {
+  color: #a33;
+}
 
 /* }}} Forms */

@@ -18,6 +18,7 @@ module ExtFormHelper
               %w(hidden_field label fields_for) # Don't decorate these
 
     helpers.each do |name|
+      # Normal tag generators (without labels)
       define_method(name) do |field, *args|
         opts = args.last.is_a?(Hash) ? args.pop : {}
         classes = [] # css classes for field
@@ -44,7 +45,7 @@ module ExtFormHelper
         super(field, *args)
       end
 
-      # Field row wrapper with container and error message included
+      # Field row wrapper with label, container and error message included
       define_method(name + '_row') do |field, *args|
         opts = args.last.is_a?(Hash) ? args.last : {}
         classes = %w(input) # css classes for container element
@@ -59,13 +60,15 @@ module ExtFormHelper
 
         label_opts = {}
 
+        error = error_on(field)
+
         # Include error message
-        if label_opts[:title] = error_on(field)
+        if label_opts[:title] = error
           label_opts[:class] = 'error'
           classes << 'error'
         end
 
-        field_html = send(name.to_sym, field, *args)
+        field_html = @template.content_tag(:span, send(name.to_sym, field, *args), :class => :wrap)
 
         # Place inputs for radio buttons and check boxes inside label
         if %w(check_box radio_button).include?(name)
@@ -76,6 +79,13 @@ module ExtFormHelper
           output = label(field, opts.delete(:label), label_opts) + ' ' + field_html
         end
 
+        # Append hint if specified (replaced with error if present)
+        if opts[:hint]
+          hint = opts.delete(:hint)
+          text = error ? error : hint.is_a?(String) ? hint : i18n_hint_text(field)
+          output += (' ' + @template.content_tag(:span, text, :class => error ? :error : :hint)).html_safe
+        end
+
         @template.content_tag(:div, output, :class => classes.join(' '))
       end
     end
@@ -84,6 +94,10 @@ module ExtFormHelper
 
     def i18n_field_name(field)
       I18n.t("attributes.#{field}")
+    end
+
+    def i18n_hint_text(field)
+      I18n.t("hints.#{@object_name}.#{field}")
     end
 
     def object
@@ -104,6 +118,7 @@ module ExtFormHelper
       when 'password' then 'text'
       when 'check_box' then 'check'
       when 'radio_button' then 'radio'
+      when 'collection' then 'select'
       else name
       end
     end

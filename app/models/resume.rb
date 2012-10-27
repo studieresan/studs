@@ -6,6 +6,8 @@ class Resume < ActiveRecord::Base
 
   attr_protected :user, as: :admin
 
+  validates_presence_of :name, :email
+
   acts_as_taggable_on :skills
 
   def person_age

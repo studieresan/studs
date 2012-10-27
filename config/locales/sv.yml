@@ -91,8 +91,17 @@ sv:
     phone: Telefonnummer
     masters: Masterprogram
     skills: Färdigheter
+    skill_list: Färdigheter
     birthdate: Födelsedatum
     user_id: Författare
+  hints:
+    resume:
+      user_id: Användare som administrerar detta CV
+      name: För- och efternamn
+      masters: Masterprogramet du läser på KTH
+      birthdate: Ditt födelsedatum
+      email: Förslagsvis din @kth.se-adress
+      phone: Mobiltelefonnummer är att föredra
   values:
     'true': Ja
     'false': Nej
