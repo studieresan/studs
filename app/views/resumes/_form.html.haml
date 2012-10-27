@@ -1,20 +1,26 @@
 = ext_form_for @resume, :class => :resume do |f|
-  %fieldset.user
-    - if current_user.admin?
-      = f.collection_select :user, User.students, :id, :name, include_blank: true
-    - else
-      = f.hidden_field :user_id
+  .col.left
+    %fieldset.author
+      - if can? :manage, User
+        = f.collection_select_row :user_id, User.students, :id, :name, include_blank: true
+      - else
+        = f.hidden_field :user_id
 
-  %fieldset.personal
-    = f.text_field :name
-    = f.date_select :birthdate, start_year: 1980, include_blank: false
-    = f.text_field :email
-    = f.text_field :phone
+    %fieldset.credentials
+      %legend= t 'resumes.parts.credentials'
+      = f.text_field_row :name
+      = f.select_row :masters, Resume::MASTERS.map { |m| [t("masters.#{m}"), m] }, include_blank: false
+      = f.date_select_row :birthdate, start_year: 1980, include_blank: false
+      = f.text_field_row :email
+      = f.text_field_row :phone
 
-  %fieldset.skills
-    = f.text_field :skill_list
+    %fieldset.skills
+      %legend= t 'resumes.parts.skills'
+      = f.text_field :skill_list
 
-  %fieldset.experiences
+  .col.right
+    %fieldset.experiences
 
-  %fieldset.actions
-    = f.submit
+  .wide
+    %fieldset.actions
+      = f.submit

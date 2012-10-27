@@ -18,6 +18,25 @@ sv:
     travel_manager: Reseansvarig
     it_manager: IT-ansvarig
     company: Företag
+  masters:
+    bsb:  Beräknings- och systembiologi
+    csc:  Datalogi
+    dtn:  Datorsimulering inom teknik och naturvetenskap
+    dis:  Distribuerade system
+    ine:  Industriell ekonomi
+    int:  Internationell inriktning
+    com:  Kommunikationssystem
+    hci:  Människa-datorinteraktion
+    mai2: Maskininlärning
+    mth:  Matematik
+    meg:  Medicinsk teknik
+    nss:  Nätverkstjänster och system
+    sed:  Programvaruteknik för distribuerade system
+    stek: Språkteknologi
+    syb:  Systembiologi
+    skk:  Systemkonstruktion på kisel
+    scr:  Systemteknik och robotik
+    tls:  Trådlösa system
 
   session:
     login: Logga in
@@ -73,6 +92,7 @@ sv:
     masters: Masterprogram
     skills: Färdigheter
     birthdate: Födelsedatum
+    user_id: Författare
   values:
     'true': Ja
     'false': Nej
