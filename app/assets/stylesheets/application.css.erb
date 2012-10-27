@@ -6,6 +6,7 @@
 
 html { font: normal 14px/22px Arial, sans-serif; }
 h1, h2, h3 { font-family: 'Ubuntu Condensed', Arial, sans-serif; }
+input, textarea, select { font: normal 13px/18px Arial, sans-serif; }
 
 a { color: #e2007f; text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -194,6 +195,17 @@ ul.nav a.active {
   width: 300px;
 }
 
+dl.credentials dt, dl.credentials dd {
+  float: left;
+  padding: 1px 0;
+}
+dl.credentials dt {
+  clear: left;
+  width: 120px;
+  color: #333;
+  font-style: italic;
+}
+
 ul.contacts {
   list-style: none;
   overflow: auto;
@@ -238,7 +250,6 @@ fieldset.actions {
 input, textarea, select {
   margin: 0;
   color: #000;
-  font: normal 13px/18px Arial, sans-serif;
 }
 
 label, input[type=submit], input[type=button], input[type=checkbox], input[type=radio] {

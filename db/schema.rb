@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024142257) do
+ActiveRecord::Schema.define(:version => 20121027181214) do
 
   create_table "experiences", :force => true do |t|
     t.integer  "resume_id"
@@ -28,12 +28,14 @@ ActiveRecord::Schema.define(:version => 20121024142257) do
 
   create_table "resumes", :force => true do |t|
     t.integer  "user_id"
-    t.string   "name",       :null => false
+    t.string   "name",         :null => false
     t.date     "birthdate"
     t.string   "email"
     t.string   "phone"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "masters"
+    t.text     "presentation"
   end
 
   create_table "taggings", :force => true do |t|

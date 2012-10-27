@@ -55,6 +55,8 @@ sv:
         CV-databasen innehåller meriter och kontaktuppgifter till alla
         studenter som deltar i StuDs-projektet och är tillgänglig för de
         företag vi samarbetar med.
+    show:
+      birthdate: "%{date} (%{age} år)"
 
   attributes:
     created_at: Skapad
@@ -64,11 +66,13 @@ sv:
     image: Bild
     login: Användarnamn
     password: Lösenord
+    remember_me: Kom ihåg mig
     name: Namn
     email: Epostadress
-    pid: Personnummer
-    remember_me: Kom ihåg mig
+    phone: Telefonnummer
+    masters: Masterprogram
     skills: Färdigheter
+    birthdate: Födelsedatum
   values:
     'true': Ja
     'false': Nej

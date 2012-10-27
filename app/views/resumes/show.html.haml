@@ -2,3 +2,14 @@
 %h2
   %span.prefix= t('models.a.resume') + ': '
   = @resume.name
+
+%dl.col.left.credentials
+  = attribute_definition :masters, @resume.masters
+  = attribute_definition :birthdate, t('.birthdate', date: l(@resume.birthdate), age: @resume.person_age)
+  = attribute_definition :email, mail_to(@resume.email)
+  = attribute_definition :phone, @resume.phone
+
+- if @resume.presentation.present?
+  %div.col.left.presentation
+    %h3= t 'attributes.presentation'
+    .body= @resume.presentation

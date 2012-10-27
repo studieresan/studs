@@ -6,6 +6,10 @@ class Resume < ActiveRecord::Base
 
   acts_as_taggable_on :skills
 
+  def person_age
+    (Time.now.to_s(:number).to_i - self.birthdate.to_time.to_s(:number).to_i) / 10e9.to_i
+  end
+
   def to_s
     name
   end
