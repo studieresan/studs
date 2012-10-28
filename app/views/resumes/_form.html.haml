@@ -8,7 +8,7 @@
   %fieldset.credentials
     = f.text_field_row :name, hint: true
     = f.select_row :masters, Resume::MASTERS.map { |m| [t("masters.#{m}"), m] }, include_blank: false, hint: true
-    = f.date_select_row :birthdate, start_year: 1980, include_blank: false, hint: true
+    = f.date_select_row :birthdate, start_year: 1980, end_year: 1995, include_blank: false, hint: true
     = f.text_field_row :email, hint: true
     = f.text_field_row :phone, hint: true
 
