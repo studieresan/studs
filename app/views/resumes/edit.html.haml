@@ -1,4 +1,8 @@
 - active_menu :resumes
+
+- if can? :read, Resume
+  = link_to t('actions.cancel'), [@resume], :class => 'head cancel'
+
 %h2= t('actions.edit_type', type: t('models.a.resume'))
 
 = render partial: 'form'

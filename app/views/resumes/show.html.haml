@@ -8,7 +8,7 @@
   = @resume.name
 
 %dl.col.left.credentials
-  = attribute_definition :masters, @resume.masters
+  = attribute_definition :masters, @resume.masters_name
   = attribute_definition :birthdate, t('.birthdate', date: l(@resume.birthdate), age: @resume.person_age)
   = attribute_definition :email, mail_to(@resume.email)
   = attribute_definition :phone, @resume.phone

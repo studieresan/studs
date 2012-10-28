@@ -53,7 +53,7 @@ module ExtFormHelper
 
         # Include classes describing the actual field name and type
         classes << css_class_for_name(name)
-        classes << field.to_s unless name == 'submit'
+        classes << field.to_s
         classes << 'disabled' if opts.include?(:disabled) && opts[:disabled]
         # Do not include these in the field as well
         opts[:limit_classes] = true
@@ -88,6 +88,18 @@ module ExtFormHelper
 
         @template.content_tag(:div, output, :class => classes.join(' '))
       end
+    end
+
+    # Submit tag which also classifies the input by the input name.
+    def submit(value = nil, opts = {})
+      value, opts = nil, value if value.is_a?(Hash)
+      value ||= object ? (object.persisted? ? :update : :create) : :submit
+      if value.is_a?(Symbol)
+        value = I18n.t("helpers.submit.#{value}", default: "#{value.to_s.humanize}")
+      end
+      opts[:name] ||= :commit
+      opts[:class] = Array(opts[:class]) << opts[:name]
+      @template.submit_tag(value, opts)
     end
 
     private
