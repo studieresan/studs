@@ -99,13 +99,14 @@
 
         self.showOrUpdate();
       }).bind('focus.'+pluginName, function(event) {
-        self._hasFocus = 1;
+        self._hasFocus++;
       }).bind('click.'+pluginName, function(event) {
-        if (self._hasFocus++ % 2 < 1 && !self.isVisible())
+        if (self._hasFocus % 2 < 1 && !self.isVisible())
           self.show();
         else
           self.hide();
       }).bind('blur.'+pluginName, function(event) {
+        self._hasFocus = 0;
         if (!self._mouseDownOnList)
           self.hide();
       });
@@ -141,7 +142,6 @@
       if (!this.isVisible())
         return false;
       this.list.hide();
-      this._active = -1;
       return true;
     }, //}}}
 
@@ -157,7 +157,7 @@
       // Check for changes before updating list
       var currentText = this.input.val();
       if (currentText == this._previousValue)
-        return;
+        return true;
       this._previousValue = currentText;
 
       // Array of matching terms
