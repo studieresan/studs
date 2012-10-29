@@ -5,8 +5,7 @@
     %meta(http-equiv='Content-Type' content='text/html;charset=UTF-8')/
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu+Condensed'
     = stylesheet_link_tag 'application'
-    -#= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
-    -#= javascript_include_tag 'application'
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'
     = yield :head
   %body{ id: "#{controller_name}-#{action_name}" }
     #top
@@ -30,7 +29,6 @@
               %li.resume= link_to t('models.a.resume'), mine_resumes_path
             %li.user= link_to current_user.login, index_path
             %li.logout= link_to t('session.logout'), logout_path
-            
 
     #content.cf
       = content_for?(:content) ? yield(:content) : yield

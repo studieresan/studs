@@ -10,6 +10,10 @@ class Resume < ActiveRecord::Base
 
   acts_as_taggable_on :skills
 
+  def self.existing_skills
+    self.tag_counts_on(:skills).order("count DESC").map(&:name)
+  end
+
   def masters_name
     I18n.t("masters.#{self.masters}")
   end

@@ -17,7 +17,7 @@ module Studs
 
     config.assets.enabled = true
     config.assets.version = '1.0'
-    config.assets.precompile += %w(application.js admin.js application.css admin.css)
+    config.assets.precompile += %w(application.js application.css resumes.js)
 
     config.generators do |g|
       g.template_engine :haml
