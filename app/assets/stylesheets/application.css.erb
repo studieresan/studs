@@ -239,6 +239,35 @@ a.head.edit, a.head.cancel {
   line-height: 36px;
 }
 
+/* Tags */
+
+.tag, a.tag {
+  float: left;
+  margin: 1px;
+  padding: 0px 4px;
+  color: #333;
+  background: #ddd;
+  border: 1px solid #999;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.tag span {
+  margin-left: 2px;
+  color: #999;
+  font-size: 11px;
+  line-height: 14px;
+  vertical-align: text-top;
+}
+a.tag:hover { border-color: #777; background: #ccc; }
+a.tag:hover span { color: #a00; }
+.tag.highlight { background: #ee6; }
+
 /* }}} Content */
 /* {{{ Forms */
 
@@ -255,6 +284,16 @@ fieldset.actions {
 input, textarea, select {
   margin: 0;
   color: #000;
+}
+
+input[type=text], textarea, select, .tag-container {
+  padding: 2px;
+  color: #000;
+  background: #fff;
+  border: 1px solid #aaa;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 
 label, input[type=submit], input[type=button], input[type=checkbox], input[type=radio] {
@@ -298,6 +337,57 @@ span.wrap input[type=text], span.wrap textarea, .input.select select {
 }
 .input span.error {
   color: #a33;
+}
+
+/* Tag input */
+
+.tag-container {
+  padding: 1px;
+  overflow: auto;
+  cursor: text;
+}
+.tag-container input.tag {
+  margin: 1px;
+  border: 0;
+}
+.tag-container input.tag:focus { outline: none; }
+
+/* Suggestions list */
+
+ul.suggestions {
+  margin: 0;
+  padding: 1px;
+  background: #f6f6f6;
+  border: 1px solid #666;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  list-style: none;
+  min-width: 100px;
+
+}
+ul.suggestions li { margin: 0; }
+ul.suggestions li a {
+  display: block;
+  padding: 4px 5px;
+  color: #333;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 14px;
+}
+ul.suggestions li.active a {
+  background: #ddd;
+}
+ul.suggestions li a em {
+  color: #000;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: underline;
+}
+ul.suggestions li.more {
+  margin-top: 2px;
+  border-top: 1px dotted #666;
+  height: 2px;
 }
 
 /* }}} Forms */
