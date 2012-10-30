@@ -282,6 +282,7 @@ a.tag:hover span, a.itag:hover span { color: #a00; }
   display: inline;
   margin: 0;
 }
+li.tag { list-style-type: none; }
 
 /* }}} Tags */
 /* {{{ Forms */
@@ -406,12 +407,42 @@ ul.suggestions li.more {
 }
 
 /* }}} Forms */
-/* {{{ Specific forms */
+/* {{{ Tables */
 
+table {
+  border-collapse: collapse;
+  border: 1px solid #999;
+  width: 100%;
+  text-align: left;
+}
+th, td {
+  padding: 2px 6px;
+  color: #333;
+  background: #fbfbfb;
+  font-size: 13px;
+  line-height: 18px;
+  vertical-align: top;
+}
+th {
+  border-bottom: 1px solid #999;
+  background: #ddd;
+  font-weight: bold;
+}
+td { border-bottom: 1px solid #ccc; }
+
+tbody tr:last-child td { border-bottom: 0; }
+
+/* }}} Tables */
+/* {{{ Specific elements */
+
+/* Skills input */
 .input.skill_list .wrap { width: 500px; }
 .input.skill_list .hint {
   clear: left;
   margin-left: 130px;
 }
 
-/* }}} Specific forms */
+/* Resumes table */
+td.name, td.email, td.skills { white-space: nowrap; }
+
+/* }}} Specific elements */

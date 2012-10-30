@@ -1,17 +1,23 @@
-%table
+- max_skills_shown = 3
+- resumes ||= @resumes
+- filtered_skills ||= @skills || []
+%table.resumes
   - cols = %w(name email skills)
   %thead
     %tr
       - cols.each do |col|
         %th{ :class => col }= t("attributes.#{col}")
   %tbody
-    - if @resumes.empty?
+    - if resumes.empty?
       %tr
         %td.empty{ colspan: cols.size}>= t('resumes.none')
-    - @resumes.each do |res|
+    - resumes.each do |res|
       %tr
         %td.name= link_to res.name, res
         %td.email= mail_to res.email
         %td.skills<
-          - res.skills.each do |s|
+          - skills = res.skills - filtered_skills
+          - skills[0...max_skills_shown].each do |s|
             %span.itag<= s
+          - if skills.size > max_skills_shown
+            %span.more &hellip;
