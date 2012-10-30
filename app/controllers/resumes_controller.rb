@@ -7,7 +7,10 @@ class ResumesController < ApplicationController
   load_and_authorize_resource except: [:mine, :create]
 
   def index
-    @resumes = @resumes.tagged_with(params[:skills]) if params[:skills].present?
+    if params[:skills].present?
+      @skills = ActsAsTaggableOn::TagList.from(params[:skills]).to_a
+      @resumes = @resumes.tagged_with(@skills)
+    end
   end
 
   def mine

@@ -16,7 +16,7 @@
         %td.name= link_to res.name, res
         %td.email= mail_to res.email
         %td.skills<
-          - skills = res.skills - filtered_skills
+          - skills = res.skills_except(@skills)
           - skills[0...max_skills_shown].each do |s|
             %span.itag<= s
           - if skills.size > max_skills_shown

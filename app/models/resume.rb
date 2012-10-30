@@ -8,10 +8,19 @@ class Resume < ActiveRecord::Base
 
   validates_presence_of :name, :email
 
-  acts_as_taggable_on :skills
+  acts_as_ordered_taggable_on :skills
 
   def self.existing_skills
     self.tag_counts_on(:skills).order("count DESC").map(&:name)
+  end
+
+  # Returns all skills for this resume excluding the ones provided.
+  # list can be a String, TagList or Array.
+  def skills_except(list)
+    list = ActsAsTaggableOn::TagList.from(list) if list.is_a?(String)
+    list = list.to_a if list.is_a?(ActsAsTaggableOn::TagList)
+    list ||= []
+    skills.map(&:name) - list
   end
 
   def masters_name
