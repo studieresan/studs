@@ -337,10 +337,8 @@ input.commit { font-weight: bold; }
   font-style: italic;
 }
 
-span.wrap {
-  float: left;
-  width: 220px;
-}
+span.wrap { float: left; width: 220px; }
+.input.wide span.wrap { width: 350px; }
 span.wrap input[type=text], span.wrap textarea, .input.select select {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -355,7 +353,7 @@ span.wrap input[type=text], span.wrap textarea, .input.select select {
   font-size: 12px;
 }
 .input span.error { color: #a33; }
-.input .hint.block, .input .error.block {
+.input.wide .hint, .input .hint.block, .input .error.block {
   clear: left;
   margin-left: 130px;
 }
@@ -437,13 +435,6 @@ tbody tr:last-child td { border-bottom: 0; }
 
 /* }}} Tables */
 /* {{{ Specific elements */
-
-/* Skills input */
-.input.skill_list .wrap { width: 500px; }
-.input.skill_list .hint {
-  clear: left;
-  margin-left: 130px;
-}
 
 /* Resumes table */
 td.name, td.email, td.skills { white-space: nowrap; }

@@ -103,6 +103,7 @@ sv:
       email: Förslagsvis din @kth.se-adress
       phone: Mobiltelefonnummer är att föredra
       skill_list: Ange kunskaper och teknisk kompetens som du innehar
+      presentation: En kort presentation av dig (valfri)
   values:
     'true': Ja
     'false': Nej
