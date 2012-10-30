@@ -49,7 +49,7 @@ module ExtFormHelper
       define_method(name + '_row') do |field, *args|
         opts = args.last.is_a?(Hash) ? args.last : {}
         classes = %w(input) # css classes for container element
-        classes += opts.delete(:row_class) if opts.include?(:row_class)
+        classes << opts.delete(:row_class) if opts.include?(:row_class)
 
         # Include classes describing the actual field name and type
         classes << css_class_for_name(name)
