@@ -239,9 +239,10 @@ a.head.edit, a.head.cancel {
   line-height: 36px;
 }
 
-/* Tags */
+/* }}} Content */
+/* {{{ Tags (tag = floated block tag, itag = inline tag) */
 
-.tag, a.tag {
+.itag, a.itag, .tag, a.tag {
   float: left;
   margin: 1px;
   padding: 0px 4px;
@@ -257,18 +258,23 @@ a.head.edit, a.head.cancel {
   text-decoration: none;
   white-space: nowrap;
 }
-.tag span {
+.itag span, .tag span {
   margin-left: 2px;
   color: #999;
   font-size: 11px;
   line-height: 14px;
   vertical-align: text-top;
 }
-a.tag:hover { border-color: #777; background: #ccc; }
-a.tag:hover span { color: #a00; }
-.tag.highlight { background: #ee6; }
+a.tag:hover, a.itag:hover { border-color: #777; background: #ccc; }
+a.tag:hover span, a.itag:hover span { color: #a00; }
+.tag.highlight, .itag.highlight { background: #ee6; }
+.itag {
+  float: none;
+  display: inline;
+  margin: 0;
+}
 
-/* }}} Content */
+/* }}} Tags */
 /* {{{ Forms */
 
 fieldset {
@@ -364,7 +370,6 @@ ul.suggestions {
   border-radius: 3px;
   list-style: none;
   min-width: 100px;
-
 }
 ul.suggestions li { margin: 0; }
 ul.suggestions li a {
