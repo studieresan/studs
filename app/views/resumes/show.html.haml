@@ -16,7 +16,7 @@
 - if @resume.presentation.present?
   %div.col.left.presentation
     %h3= t 'attributes.presentation'
-    .body= @resume.presentation
+    .body= paragraphize @resume.presentation
 
 .col.left.skills
   %h3= t 'attributes.skills'
