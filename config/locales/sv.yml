@@ -117,6 +117,7 @@ sv:
       resume: CV:n
       user: Användarna
   actions:
+    show: Visa
     create: Skapa
     save: Spara
     edit: Redigera

@@ -20,6 +20,6 @@
 
 .col.left.skills
   %h3= t 'attributes.skills'
-  %ul.skills
+  %ul.tags
     - @resume.skills.each do |s|
       %li.tag= link_to s, resumes_path(skills: s.name)

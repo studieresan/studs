@@ -7,6 +7,7 @@
     %tr
       - cols.each do |col|
         %th{ :class => col }= t("attributes.#{col}")
+      %th.actions &nbsp;
   %tbody
     - if resumes.empty?
       %tr
@@ -21,3 +22,7 @@
             %span.itag<= s
           - if skills.size > max_skills_shown
             %span.more &hellip;
+        %td.actions
+          = link_to t('actions.show'), res
+          - if can? :manage, Resume
+            = link_to t('actions.edit'), [:edit, res]
