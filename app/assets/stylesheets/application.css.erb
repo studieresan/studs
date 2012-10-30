@@ -123,6 +123,12 @@ ul.nav a {
   padding: 3px 8px;
   color: #444;
   background: #fff;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
   font-weight: bold;
   font-size: 14px;
   line-height: 20px;
@@ -148,6 +154,9 @@ ul.nav a.active {
   right: 0;
   color: #444;
   background: #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   font-size: 13px;
   line-height: 18px;
 }
@@ -164,7 +173,7 @@ ul.nav a.active {
   font-weight: bold;
 }
 #userbar .resume a { background-position: 6px -107px; }
-#userbar .user a { border-left: 4px solid #fff; }
+#userbar .user a { border-left: 2px solid #fff; }
 #userbar .logout a {
   background-position: 6px -22px;
   text-transform: lowercase;
@@ -341,8 +350,10 @@ span.wrap input[type=text], span.wrap textarea, .input.select select {
   color: #444;
   font-size: 12px;
 }
-.input span.error {
-  color: #a33;
+.input span.error { color: #a33; }
+.input .hint.block, .input .error.block {
+  clear: left;
+  margin-left: 130px;
 }
 
 /* Tag input */
@@ -395,3 +406,12 @@ ul.suggestions li.more {
 }
 
 /* }}} Forms */
+/* {{{ Specific forms */
+
+.input.skill_list .wrap { width: 500px; }
+.input.skill_list .hint {
+  clear: left;
+  margin-left: 130px;
+}
+
+/* }}} Specific forms */

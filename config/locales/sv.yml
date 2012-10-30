@@ -102,6 +102,7 @@ sv:
       birthdate: Ditt födelsedatum
       email: Förslagsvis din @kth.se-adress
       phone: Mobiltelefonnummer är att föredra
+      skill_list: Ange kunskaper och teknisk kompetens som du innehar
   values:
     'true': Ja
     'false': Nej

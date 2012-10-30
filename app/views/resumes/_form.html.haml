@@ -16,7 +16,7 @@
     = f.text_field_row :phone, hint: true
 
   %fieldset.skills
-    = f.text_field_row :skill_list, :'data-suggestions' => Resume.existing_skills.to_json
+    = f.text_field_row :skill_list, hint: true, :'data-suggestions' => Resume.existing_skills.to_json
 
   %fieldset.experiences
 
