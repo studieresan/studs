@@ -3,10 +3,10 @@
   %fieldset
     .input.text
       = label_tag :login, t('attributes.login')
-      = text_field_tag :login
+      .wrap= text_field_tag :login
     .input.text
       = label_tag :password, t('attributes.password')
-      = password_field_tag :password
+      .wrap= password_field_tag :password
   %fieldset.actions
     = label_tag :remember, :class => :check do
       = check_box_tag :remember, 1, true

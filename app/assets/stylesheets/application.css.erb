@@ -305,7 +305,7 @@ input, textarea, select {
   color: #000;
 }
 
-input[type=text], textarea, select, .tag-container {
+input[type=text], input[type=password], textarea, select, .tag-container {
   padding: 2px;
   color: #000;
   background: #fff;
@@ -337,9 +337,10 @@ input.commit { font-weight: bold; }
   font-style: italic;
 }
 
-span.wrap { float: left; width: 220px; }
-.input.wide span.wrap { width: 350px; }
-span.wrap input[type=text], span.wrap textarea, .input.select select {
+.input .wrap { float: left; width: 220px; }
+.input.wide .wrap { width: 350px; }
+.input .wrap input[type=text], .input .wrap input[type=password],
+.input .wrap textarea, .input.select select {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
