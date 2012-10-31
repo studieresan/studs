@@ -253,7 +253,7 @@ a.head.edit, a.head.cancel {
 /* }}} Content */
 /* {{{ Tags (tag = floated block tag, itag = inline tag) */
 
-.itag, a.itag, .tag, a.tag {
+.itag, a.itag, .tag, a.tag, .tag-container .placeholder {
   float: left;
   margin: 1px;
   padding: 0px 4px;
@@ -371,6 +371,10 @@ input.commit { font-weight: bold; }
   border: 0;
 }
 .tag-container input.tag:focus { outline: none; }
+.tag-container .placeholder { float: left; border: none; background-color: #ddd; }
+.tag-container a.tag { cursor: move; }
+.tag.dragging { opacity: 0.8; }
+
 
 /* Suggestions list */
 
