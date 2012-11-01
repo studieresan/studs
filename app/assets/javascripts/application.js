@@ -8,7 +8,7 @@ $(function() {
   // Resume search form
   $('form.resume-search').each(function() {
     var $form = $(this);
-    $form.find('input#skills').suggester().tagger({
+    $form.find('input#s').suggester().tagger({
       allowDragging: false
     });
   })
