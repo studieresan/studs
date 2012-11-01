@@ -116,16 +116,16 @@ sv:
   models:
     a: &a_model
       resume: CV
-      user: Användare
+      experience: erfarenhet
+      user: användare
     the: &the_model
       resume: CV:t
-      user: Användaren
-    plural: &the_models
-      resume: CV:n
-      user: Användarna
+      experience: erfarenheten
+      user: användaren
   actions:
     show: Visa
     add: Skapa ny
+    new: Skapa
     create: Skapa
     save: Spara
     edit: Redigera
@@ -134,9 +134,6 @@ sv:
     close: Stäng
     filter: Filtrera
     reset: Nollställ
-    new_type: "Skapa %{type}"
-    edit_type: "Redigera %{type}"
-    delete_type: "Ta bort %{type}"
     delete_prompt_html: "Är du säker på att du vill ta bort <em>%{name}</em>?"
   flash:
     actions:

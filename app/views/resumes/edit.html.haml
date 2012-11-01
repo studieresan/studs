@@ -1,7 +1,7 @@
 - active_menu :resumes
 .full
   %h2<
-    = t('actions.edit_type', type: t('models.a.resume'))
+    = t_model_action
     - if can? :read, Resume
       = link_to t('actions.cancel'), [@resume], :class => :action
 
