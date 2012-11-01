@@ -3,6 +3,8 @@ class Experience < ActiveRecord::Base
 
   belongs_to :resume, inverse_of: :experiences
 
+  validates_presence_of :organization, :title, :location, :start_date
+
   default_scope order('end_date DESC')
 
   def duration
