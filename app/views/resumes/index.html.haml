@@ -5,7 +5,7 @@
   %fieldset.inline
     .input.text.name
       = label_tag :n, t_attribute(:name)
-      .wrap= text_field_tag :n, @filter.n
+      .wrap= text_field_tag :n, @filter.n, :'data-suggestions' => Resume.pluck(:name).to_json
     .input.text.skills
       = label_tag :s, t_attribute(:skills)
       .wrap= text_field_tag :s, @filter.s, :'data-suggestions' => Resume.existing_skills.to_json
