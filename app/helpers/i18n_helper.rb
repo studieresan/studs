@@ -3,7 +3,7 @@ module I18nHelper
   # Lookups are done in attributes.{scope}.{attribute}, falling back to
   # attributes.defaults.{attribute} if the former isn't defined.
   def t_attribute(*scope, attribute)
-    default = scope.empty? ? nil : "attributes.defaults.#{attribute}"
+    default = scope.empty? ? nil : :"attributes.defaults.#{attribute}"
     scope = scope.empty? ? 'defaults' : scope.join('.')
     I18n.t("attributes.#{scope}.#{attribute}", default: default)
   end
