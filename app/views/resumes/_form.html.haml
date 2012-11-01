@@ -14,7 +14,5 @@
     = f.text_area_row :presentation, rows: 4, row_class: :wide, hint: true
     = f.text_field_row :skill_list, row_class: :wide, hint: true, :'data-suggestions' => Resume.existing_skills.to_json
 
-  %fieldset.experiences
-
   %fieldset.actions.align
     = f.submit
