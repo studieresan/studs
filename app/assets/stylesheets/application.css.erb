@@ -30,9 +30,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   line-height: 1.5;
 }
-h2 { font-size: 24px; }
-h3 { font-size: 20px; }
-h4 { font-size: 14px; font-weight: bold; }
+h2, h3, h4 { margin: 0 0 6px;}
+h2 { font-size: 24px; line-height: 30px; }
+h3 { font-size: 20px; line-height: 26px; }
+h4 { font-size: 14px; line-height: 20px; font-weight: bold; }
 
 li { margin: 0; }
 ul { list-style: disc; }
@@ -49,7 +50,21 @@ blockquote {
 blockquote *:first-child { margin-top: 0; }
 blockquote *:last-child  { margin-bottom: 0; }
 
-dl, dt, dd { margin: 0; }
+dl {
+  overflow: auto;
+  margin: 0;
+}
+dl dt, dl dd {
+  float: left;
+  margin: 0;
+  padding: 1px 0;
+}
+dl dt {
+  clear: left;
+  width: 120px;
+  color: #333;
+  font-style: italic;
+}
 
 p.alert, em.alert, strong.alert,
 p.error, em.error, strong.error { color: #942; }
@@ -206,17 +221,6 @@ ul.nav a.active {
   width: 300px;
 }
 
-dl.credentials dt, dl.credentials dd {
-  float: left;
-  padding: 1px 0;
-}
-dl.credentials dt {
-  clear: left;
-  width: 120px;
-  color: #333;
-  font-style: italic;
-}
-
 ul.contacts {
   list-style: none;
   overflow: auto;
@@ -235,16 +239,10 @@ ul.contacts dl { margin: 4px 0; }
   color: #666;
 }
 
-.justify {
-  text-align: justify;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
-
-a.head.edit, a.head.cancel {
+h2 a.action, h3 a.action, h4 a.action {
   float: right;
-  line-height: 36px;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 /* }}} Content */
@@ -316,9 +314,6 @@ label, input[type=submit], input[type=button], input[type=checkbox], input[type=
   cursor: pointer;
 }
 
-input.commit { font-weight: bold; }
-.actions input.commit, .actions input.destroy { float: right; }
-
 .input {
   position: relative;
   margin: 6px 0;
@@ -357,6 +352,11 @@ input.commit { font-weight: bold; }
   clear: left;
   margin-left: 130px;
 }
+
+input.commit { font-weight: bold; }
+.actions input.commit, .actions input.destroy { float: right; }
+.actions.align { margin-left: 130px;}
+.actions.align input.commit, .actions.align input.destroy { float: left; }
 
 /* Inline fieldsets */
 

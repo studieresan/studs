@@ -1,23 +1,35 @@
 - active_menu :resumes
 
-.col.left.title
-  - if can? :edit, @resume
-    = link_to t('actions.edit'), [:edit, @resume], :class => 'head edit'
-  %h2= @resume.name
+.column.general
+  %h2.section.title<
+    = @resume.name
+    - if can? :edit, @resume
+      = link_to t('actions.edit'), [:edit, @resume], :class => :action
 
-%dl.col.left.credentials
-  = attribute_definition :masters, t_masters(@resume.masters)
-  = attribute_definition :birthdate, t('.birthdate', date: l(@resume.birthdate), age: @resume.person_age)
-  = attribute_definition :email, mail_to(@resume.email)
-  = attribute_definition :phone, @resume.phone
+  %dl.section.credentials
+    = attribute_definition :masters, t_masters(@resume.masters)
+    = attribute_definition :birthdate, t('.birthdate', date: l(@resume.birthdate), age: @resume.person_age)
+    = attribute_definition :email, mail_to(@resume.email)
+    = attribute_definition :phone, @resume.phone
 
-- if @resume.presentation.present?
-  %div.col.left.presentation
-    %h3= t_attribute :presentation
-    .body= paragraphize @resume.presentation
+  - if @resume.presentation.present?
+    .section.presentation
+      %h3= t_attribute :presentation
+      .body= paragraphize @resume.presentation
 
-.col.left.skills
-  %h3= t_attribute :skills
-  %ul.tags
-    - @resume.skills.each do |s|
-      %li= link_to s, resumes_path(s: s.name), :class => :tag
+  .section.skills
+    %h3= t_attribute :skills
+    %ul.tags
+      - @resume.skills.each do |s|
+        %li= link_to s, resumes_path(s: s.name), :class => :tag
+
+.column.experiences
+  - experiences = @resume.experiences_by_kind
+  - Experience::KINDS.each do |kind|
+    - next unless experiences.include?(kind) || can?(:edit, @resume)
+    .section{ :class => kind }
+      %h3<
+        = t "values.kind.#{kind}"
+        - if can?(:edit, @resume)
+          = link_to t('actions.add'), new_resume_experience_path(@resume), :class => :action
+

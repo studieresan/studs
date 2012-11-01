@@ -2,6 +2,7 @@ Studs::Application.routes.draw do
   scope '/(:locale)', locale: /en|sv/ do
     resources :resumes do
       get 'mine', on: :collection
+      resources :experiences, except: [:index, :show]
     end
 
     # Authentication
