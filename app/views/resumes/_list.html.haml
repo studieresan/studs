@@ -6,7 +6,7 @@
   %thead
     %tr
       - cols.each do |col|
-        %th{ :class => col }= t("attributes.#{col}")
+        %th{ :class => col }= t_attribute(col)
       %th.actions &nbsp;
   %tbody
     - if resumes.empty?
