@@ -3,8 +3,10 @@ class Experience < ActiveRecord::Base
 
   belongs_to :resume, inverse_of: :experiences
 
+  default_scope order('end_date DESC')
+
   def duration
-    start_time..end_time
+    start_date..end_date
   end
 
   def to_s
