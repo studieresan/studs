@@ -1,8 +1,7 @@
 class Experience < ActiveRecord::Base
-  belongs_to :resume, inverse_of: :experiences
+  KINDS = %w(education work extracurricular).freeze
 
-  attr_accessible :start_time, :end_time
-  attr_accessible :kind, :organization, :location, :title, :description
+  belongs_to :resume, inverse_of: :experiences
 
   def duration
     start_time..end_time

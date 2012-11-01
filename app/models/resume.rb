@@ -10,6 +10,8 @@ class Resume < ActiveRecord::Base
 
   acts_as_ordered_taggable_on :skills
 
+  accepts_nested_attributes_for :experiences, allow_destroy: true, reject_if: :all_blank
+
   def self.existing_skills
     self.tag_counts_on(:skills).order("count DESC").map(&:name)
   end
