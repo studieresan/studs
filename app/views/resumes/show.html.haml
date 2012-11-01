@@ -14,11 +14,11 @@
 
   - if @resume.presentation.present?
     .section.presentation
-      %h3= t_attribute :presentation
+      %h3= t_attribute :resume, :presentation
       .body= paragraphize @resume.presentation
 
   .section.skills
-    %h3= t_attribute :skills
+    %h3= t_attribute :resume, :skills
     %ul.tags
       - @resume.skills.each do |s|
         %li= link_to s, resumes_path(s: s.name), :class => :tag

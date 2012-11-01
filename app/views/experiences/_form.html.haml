@@ -1,3 +1,17 @@
 = ext_form_for [@resume, @experience], :class => :experience do |f|
+  %fieldset.kind
+    = f.select_row :kind, Experience::KINDS.map { |k| [t_experience_kind(k), k] }, include_blank: false, hint: true
+
+  %fieldset.general
+    = f.text_field_row :organization, hint: true
+    = f.text_field_row :title, hint: true
+    = f.text_field_row :location, hint: true
+
+  %fieldset.duration
+    = f.date_select_row :start_date, start_year: 1980, end_year: Time.now.year, discard_day: true, hint: true
+    = f.date_select_row :end_date, start_year: 1980, discard_day: true, hint: true
+  %fieldset.description
+    = f.text_area_row :description, rows: 4, row_class: :wide, hint: true
+
   %fieldset.actions.align
     = f.submit

@@ -62,21 +62,28 @@ sv:
     defaults:
       created_at: Skapad
       updated_at: Uppdaterad
-      title: Titel
-      body: Innehåll
-      image: Bild
       login: Användarnamn
       password: Lösenord
       remember_me: Kom ihåg mig
+      title: Titel
       name: Namn
       email: Epostadress
+      presentation: Presentation
       phone: Telefonnummer
       masters: Masterprogram
+      birthdate: Födelsedatum
+    resume:
       skills: Kunskaper
       skill_list: Kunskaper
-      birthdate: Födelsedatum
       user_id: Författare
-      presentation: Presentation
+    experience:
+      kind: Kategori
+      organization: Organisation
+      title: Titel
+      location: Plats
+      start_date: Startdatum
+      end_date: Slutdatum
+      description: Beskrivning
   hints:
     resume:
       user_id: Användare som administrerar detta CV
@@ -87,6 +94,14 @@ sv:
       phone: Mobiltelefonnummer är att föredra
       skill_list: Ange kunskaper och teknisk kompetens som du innehar
       presentation: En kort presentation av dig (valfri)
+    experience:
+      kind: Vilket typ av  erfarenhet detta är
+      organization: Företag, organisation eller läroverk (ex. KTH)
+      title: Den roll du hade, program/inriktning om utbildning
+      location: Stad/område, följt av land om annat än Sverige
+      start_date: Månad under vilken erfarenheten inleddes
+      end_date: Datum då erfarenheten avslutades
+      description: En kort beskrivning av vad du gjorde, inkludera gärna relevanta nyckelord
   values:
     'true': Ja
     'false': Nej
@@ -109,7 +124,7 @@ sv:
       skk:  Systemkonstruktion på kisel
       scr:  Systemteknik och robotik
       tls:  Trådlösa system
-    kind:
+    experience_kind:
       education: Utbildning
       work: Arbetserfarenheter
       extracurricular: Övriga aktiviteter
