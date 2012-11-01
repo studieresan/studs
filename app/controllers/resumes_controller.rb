@@ -7,10 +7,8 @@ class ResumesController < ApplicationController
   load_and_authorize_resource except: [:mine, :create]
 
   def index
-    if params[:skills].present?
-      @skills = ActsAsTaggableOn::TagList.from(params[:skills]).to_a
-      @resumes = @resumes.tagged_with(@skills)
-    end
+    @filter = ResumeFilter.new(params.to_hash.slice(*%w(n name s skill_list)))
+    @resumes = @filter.resumes
   end
 
   def mine
