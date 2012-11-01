@@ -78,22 +78,24 @@ sv:
       birthdate: "%{date} (%{age} år)"
 
   attributes:
-    created_at: Skapad
-    updated_at: Uppdaterad
-    title: Titel
-    body: Innehåll
-    image: Bild
-    login: Användarnamn
-    password: Lösenord
-    remember_me: Kom ihåg mig
-    name: Namn
-    email: Epostadress
-    phone: Telefonnummer
-    masters: Masterprogram
-    skills: Färdigheter
-    skill_list: Färdigheter
-    birthdate: Födelsedatum
-    user_id: Författare
+    defaults:
+      created_at: Skapad
+      updated_at: Uppdaterad
+      title: Titel
+      body: Innehåll
+      image: Bild
+      login: Användarnamn
+      password: Lösenord
+      remember_me: Kom ihåg mig
+      name: Namn
+      email: Epostadress
+      phone: Telefonnummer
+      masters: Masterprogram
+      skills: Kunskaper
+      skill_list: Kunskaper
+      birthdate: Födelsedatum
+      user_id: Författare
+      presentation: Presentation
   hints:
     resume:
       user_id: Användare som administrerar detta CV

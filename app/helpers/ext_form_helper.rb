@@ -73,7 +73,7 @@ module ExtFormHelper
         # Place inputs for radio buttons and check boxes inside label
         if %w(check_box radio_button).include?(name)
           output = label(field, opts.delete(:label), label_opts) do
-            "#{field_html} #{i18n_field_name(field)}".html_safe
+            "#{field_html} #{i18n_text(:attributes, field)}".html_safe
           end
         else
           output = label(field, opts.delete(:label), label_opts) + ' ' + field_html
@@ -82,12 +82,18 @@ module ExtFormHelper
         # Append hint if specified (replaced with error if present)
         if opts[:hint]
           hint = opts.delete(:hint)
-          text = error ? error : hint.is_a?(String) ? hint : i18n_hint_text(field)
+          text = error ? error : hint.is_a?(String) ? hint : i18n_text(:hints, field)
           output += (' ' + @template.content_tag(:span, text, :class => error ? :error : :hint)).html_safe
         end
 
         @template.content_tag(:div, output, :class => classes.join(' '))
       end
+    end
+
+    # Override label generation with custom i18n lookup.
+    def label(field, text = nil, options = {}, &block)
+      text ||= i18n_text(:attributes, field)
+      @template.label(@object_name, field, text, objectify_options(options), &block)
     end
 
     # Submit tag which also classifies the input by the input name.
@@ -104,12 +110,9 @@ module ExtFormHelper
 
     private
 
-    def i18n_field_name(field)
-      I18n.t("attributes.#{field}")
-    end
-
-    def i18n_hint_text(field)
-      I18n.t("hints.#{@object_name}.#{field}")
+    def i18n_text(type, field)
+      I18n.t("#{type}.#{@object_name}.#{field}",
+        default: :"#{type}.defaults.#{field}")
     end
 
     def object

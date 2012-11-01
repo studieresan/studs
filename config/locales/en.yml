@@ -60,19 +60,20 @@ en:
         Body
 
   attributes:
-    created_at: Created
-    updated_at: Updated
-    title: Title
-    body: Body
-    image: Image
-    login: Login
-    password: Password
-    name: Name
-    email: Email
-    pid: Social security number
-    remember_me: Remember me
-    skills: Skills
-    user: Användare
+    defaults:
+      created_at: Created
+      updated_at: Updated
+      title: Title
+      body: Body
+      image: Image
+      login: Login
+      password: Password
+      name: Name
+      email: Email
+      pid: Social security number
+      remember_me: Remember me
+      skills: Skills
+      user: Användare
   values:
     'true': Yes
     'false': No
