@@ -2,13 +2,13 @@
 %h2= t '.title'
 
 -# TODO: Convert into a virtual Search model encapsulating Resume?
-= form_tag resumes_path, method: :get, :class => :search do
+= form_tag resumes_path, method: :get, :class => 'resume-search' do
   %fieldset.name
     = label_tag :name, t('attributes.name')
     = text_field_tag :name, params[:name]
   %fieldset.skills
     = label_tag :skills, t('attributes.skills')
-    = text_field_tag :skills, params[:skills]
+    = text_field_tag :skills, params[:skills], :'data-suggestions' => Resume.existing_skills.to_json
   %fieldset.commit
     = submit_tag t('actions.filter')
 
