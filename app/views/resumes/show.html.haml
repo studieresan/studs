@@ -24,12 +24,11 @@
         %li= link_to s, resumes_path(s: s.name), :class => :tag
 
 .column.experiences
+  - if can?(:edit, @resume)
+    %h2= link_to t_model_action(:experience, :add), [:new, @resume, :experience], :class => :action
   - experiences = @resume.experiences_by_kind
   - Experience::KINDS.each do |kind|
-    - next unless experiences.include?(kind) || can?(:edit, @resume)
+    - next unless experiences.include?(kind)
     .section{ :class => kind }
-      %h3<
-        = t "values.kind.#{kind}"
-        - if can?(:edit, @resume)
-          = link_to t('actions.add'), new_resume_experience_path(@resume), :class => :action
+      %h3= t "values.kind.#{kind}"
 

@@ -124,7 +124,7 @@ sv:
       user: användaren
   actions:
     show: Visa
-    add: Skapa ny
+    add: Lägg till ny
     new: Skapa
     create: Skapa
     save: Spara
