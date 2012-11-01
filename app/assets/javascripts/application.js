@@ -2,13 +2,15 @@
 //= require tagger
 
 $(function() {
+  $('input[data-suggestions]').suggester();
+
   // Resume form tag input
-  $('#resume_skill_list').suggester().tagger();
+  $('#resume_skill_list').tagger();
 
   // Resume search form & listing
   var $searchForm = $('form.resume-search');
   if ($searchForm.length) {
-    var $tagger = $searchForm.find('input#s').suggester().tagger({
+    var $tagger = $searchForm.find('input#s').tagger({
       allowDragging: false
     });
 
