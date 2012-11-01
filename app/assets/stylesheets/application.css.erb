@@ -73,7 +73,7 @@ html {
   border-bottom: 2px solid #777;
 }
 
-#header, #content {
+#header, #main {
   margin: 0 auto;
   width: 800px;
 }
@@ -83,9 +83,26 @@ html {
   padding-top: 10px;
 }
 
-#content {
+#main {
   margin-top: 20px;
   margin-bottom: 80px;
+}
+
+#content {
+  margin: 0 -40px;
+}
+
+#content .column, #content .full {
+  margin: 0 40px 40px 40px;
+}
+#content .column {
+  float: left;
+  width: 360px;
+}
+#content .full { clear: both; }
+
+#content .section {
+  margin-bottom: 20px;
 }
 
 /* }}} Layout */
@@ -183,23 +200,6 @@ ul.nav a.active {
 /* }}} Header */
 /* {{{ Content */
 
-.col, .wide { margin-bottom: 20px; }
-
-.col, .col.left {
-  float: left;
-  clear: left;
-  width: 380px;
-  margin-right: 20px;
-}
-
-.col.right {
-  clear: right;
-  margin-left: 20px;
-  margin-right: 0;
-}
-
-.wide { clear: both; }
-
 .dialog {
   clear: both;
   margin: 0 auto;
@@ -221,15 +221,12 @@ ul.contacts {
   list-style: none;
   overflow: auto;
 }
-
 ul.contacts li {
   float: left;
   width: 200px;
   margin: 10px 30px 20px 0;
 }
-
 ul.contacts .role { font-size: 18px; color: #444; }
-
 ul.contacts dl dt { display: none; }
 ul.contacts dl { margin: 4px 0; }
 

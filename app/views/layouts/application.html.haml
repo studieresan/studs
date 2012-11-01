@@ -31,7 +31,8 @@
             %li.user= link_to current_user.login, index_path
             %li.logout= link_to t('session.logout'), logout_path
 
-    #content.cf
-      = content_for?(:content) ? yield(:content) : yield
+    #main
+      #content.cf
+        = content_for?(:content) ? yield(:content) : yield
 
     = yield :additional
