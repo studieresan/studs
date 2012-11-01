@@ -25,10 +25,6 @@ class Resume < ActiveRecord::Base
     skills.map(&:name) - list
   end
 
-  def masters_name
-    I18n.t("masters.#{self.masters}")
-  end
-
   def person_age
     (Time.now.to_s(:number).to_i - self.birthdate.to_time.to_s(:number).to_i) / 10e9.to_i
   end

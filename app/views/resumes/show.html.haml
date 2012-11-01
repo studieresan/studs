@@ -1,14 +1,12 @@
 - active_menu :resumes
 
-- if can? :edit, @resume
-  = link_to t('actions.edit'), [:edit, @resume], :class => 'head edit'
-
-%h2
-  %span.prefix= t('models.a.resume') + ': '
-  = @resume.name
+.col.left.title
+  - if can? :edit, @resume
+    = link_to t('actions.edit'), [:edit, @resume], :class => 'head edit'
+  %h2= @resume.name
 
 %dl.col.left.credentials
-  = attribute_definition :masters, @resume.masters_name
+  = attribute_definition :masters, t_masters(@resume.masters)
   = attribute_definition :birthdate, t('.birthdate', date: l(@resume.birthdate), age: @resume.person_age)
   = attribute_definition :email, mail_to(@resume.email)
   = attribute_definition :phone, @resume.phone
