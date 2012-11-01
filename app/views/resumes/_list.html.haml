@@ -19,7 +19,7 @@
         %td.skills<
           - skills = res.skills_except(@skills)
           - skills[0...max_skills_shown].each do |s|
-            %span.itag<= s
+            = link_to s, url_for(params.merge({s: s})), :class => :itag
           - if skills.size > max_skills_shown
             %span.more &hellip;
         %td.actions
