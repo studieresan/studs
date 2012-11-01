@@ -16,6 +16,10 @@ class Resume < ActiveRecord::Base
     self.tag_counts_on(:skills).order("count DESC").map(&:name)
   end
 
+  def experiences_by_kind
+    experiences.to_a.group_by(&:kind)
+  end
+
   # Returns all skills for this resume excluding the ones provided.
   # list can be a String, TagList or Array.
   def skills_except(list)
