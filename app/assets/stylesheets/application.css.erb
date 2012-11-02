@@ -364,6 +364,15 @@ label, input[type=submit], input[type=button], input[type=checkbox], input[type=
   font-style: italic;
 }
 .input label.error { color: #900; }
+.input label.inline {
+  clear: none;
+  margin-right: 15px;
+  padding: 0;
+  width: auto;
+  border: 0;
+  font-size: 14px;
+  font-style: normal;
+}
 
 .input .wrap { float: left; width: 220px; }
 .input.wide .wrap { width: 350px; }
@@ -502,6 +511,9 @@ tbody tr:last-child td { border-bottom: 0; }
 /* Resumes table */
 td.name, td.email, td.skills { white-space: nowrap; }
 td.actions { text-align: right; }
+
+/* Experience form */
+.input.date.end_date label.inline { float: none; margin-bottom: 2px; }
 
 /* Delete dialog */
 .dialog.delete .actions .action { float: left; margin-top: 3px; }

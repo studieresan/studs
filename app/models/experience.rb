@@ -3,6 +3,9 @@ class Experience < ActiveRecord::Base
 
   belongs_to :resume, inverse_of: :experiences
 
+  include NullableDateTime
+  nullable_datetime :end_date, :no_end_date, true
+
   validates_presence_of :organization, :title, :start_date
 
   default_scope order('end_date DESC')
