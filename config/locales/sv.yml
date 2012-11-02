@@ -270,32 +270,29 @@ sv:
       second: Sekund
       year: År
   errors: &errors
-    format: ! '%{attribute} %{message}'
+    format: ! '%{message}'
     messages:
-      accepted: måste accepteras
-      blank: måste anges
-      confirmation: stämmer inte överens
-      empty: får ej vara tom
-      equal_to: måste vara samma som
-      even: måste vara jämnt
-      exclusion: är reserverat
-      greater_than: måste vara större än %{count}
-      greater_than_or_equal_to: måste vara större än eller lika med %{count}
-      inclusion: finns inte i listan
-      invalid: har fel format
-      less_than: måste vara mindre än %{count}
-      less_than_or_equal_to: måste vara mindre än eller lika med %{count}
-      not_a_number: är inte ett nummer
-      not_an_integer: måste vara ett heltal
-      odd: måste vara udda
+      accepted: Måste accepteras
+      blank: Måste anges
+      confirmation: Stämmer inte överens
+      empty: Får ej vara tom
+      equal_to: Måste vara samma som
+      even: Måste vara jämnt
+      exclusion: Är reserverat
+      greater_than: Måste vara större än %{count}
+      greater_than_or_equal_to: Måste vara större än eller lika med %{count}
+      inclusion: Finns inte i listan
+      invalid: Har fel format
+      less_than: Måste vara mindre än %{count}
+      less_than_or_equal_to: Måste vara mindre än eller lika med %{count}
+      not_a_number: Är inte ett nummer
+      not_an_integer: Måste vara ett heltal
+      odd: Måste vara udda
       record_invalid: ! 'Ett fel uppstod: %{errors}'
-      taken: har redan tagits
-      too_long: är för lång (maximum är %{count} tecken)
-      too_short: är för kort (minimum är %{count} tecken)
-      wrong_length: har fel längd (ska vara %{count} tecken)
-      carrierwave_processing_error: Bilden kunde inte bearbetas.
-      carrierwave_integrity_error: Filen är inte en bild.
-      carrierwave_download_error: Filen kunde inte hämtas.
+      taken: Har redan tagits
+      too_long: Är för lång (maximum är %{count} tecken)
+      too_short: Är för kort (minimum är %{count} tecken)
+      wrong_length: Har fel längd (ska vara %{count} tecken)
     template:
       body: ! 'Det var problem med följande fält:'
       header:
@@ -308,8 +305,6 @@ sv:
       create: Skapa
       submit: Spara
       update: Uppdatera
-      reply:
-        create: Skicka anmälan
   number:
     currency:
       format:
