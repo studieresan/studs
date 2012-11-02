@@ -13,7 +13,8 @@
       = f.label :end_date
       .wrap
         = f.check_box_label :no_end_date
-        = f.date_select :end_date, start_year: 1990, discard_day: true
+        .select
+          = f.date_select :end_date, start_year: 1990, discard_day: true
       = f.hint :end_date
   %fieldset.description
     = f.text_area_row :description, rows: 4, row_class: :wide, hint: true
