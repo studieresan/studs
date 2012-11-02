@@ -3,6 +3,6 @@
   %h2<
     = t_model_action(nil, :add)
     - if can? :read, @resume
-      = link_to t('actions.cancel'), @resume, :class => :action
+      = action_link :cancel, @resume
 
   = render partial: 'form'

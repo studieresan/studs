@@ -23,4 +23,7 @@ class ExperiencesController < ApplicationController
     @experience.save
     respond_with @resume, @experience, location: @resume
   end
+
+  def delete
+  end
 end

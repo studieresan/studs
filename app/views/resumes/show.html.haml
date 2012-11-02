@@ -4,7 +4,7 @@
   %h2.section.title<
     = @resume.name
     - if can? :edit, @resume
-      = link_to t('actions.edit'), [:edit, @resume], :class => :action
+      = action_link :edit, [:edit, @resume]
 
   %dl.section.credentials
     = attribute_definition :masters, t_masters(@resume.masters)
@@ -25,7 +25,7 @@
 
 .column.experiences
   - if can?(:edit, @resume)
-    %h2= link_to t_model_action(:experience, :add), [:new, @resume, :experience], :class => :action
+    %h2= action_link t_model_action(:experience, :add), [:new, @resume, :experience], :add
   - experiences = @resume.experiences_by_kind
   - Experience::KINDS.each do |kind|
     - next unless experiences.include?(kind)
@@ -37,7 +37,8 @@
             %h4.title<
               = exp.title
               - if can? :edit, exp
-                = link_to t('actions.edit'), [:edit, @resume, exp], :class => :action
+                = action_link :delete, [:delete, @resume, exp], :small
+                = action_link :edit, [:edit, @resume, exp], :small
             %p.at<
               %span.organization= exp.organization
               - if exp.location.present?

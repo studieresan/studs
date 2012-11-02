@@ -4,7 +4,7 @@
 
 /* {{{ Typography and basic styles */
 
-html { font: normal 14px/22px Arial, sans-serif; }
+html, a.action { font: normal 14px/22px Arial, sans-serif; }
 h1, h2, h3 { font-family: 'Ubuntu Condensed', Arial, sans-serif; }
 input, textarea, select { font: normal 13px/18px Arial, sans-serif; }
 
@@ -222,12 +222,30 @@ ul.nav a.active {
 /* }}} Header */
 /* {{{ Content */
 
+a.action {
+  padding-left: 18px;
+  color: #333;
+  background: transparent url(<%= image_path 'sprites.png' %>) no-repeat 0 -194px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: bold;
+}
+a.action.add, a.action.new { background-position: 0 -110px; }
+a.action.delete { background-position: 0 -222px; }
+a.action.cancel, a.action.reset { background-position: 0 -250px; }
+a.action.small {
+  width: 15px;
+  padding-left: 0;
+  text-indent: -3333px;
+}
+a.action.small + a.action.small { margin-right: 5px; }
+
 h2 a.action, h3 a.action, h4 a.action {
   float: right;
-  font-weight: normal;
-  font-size: 16px;
+  margin-top: 8px;
 }
-h4 a.action { font-size: 13px; }
+h3 a.action { margin-top: 4px; }
+h4 a.action { margin-top: 0; }
 
 ul.experiences li {
   margin: 0 0 15px;
@@ -479,7 +497,7 @@ tbody tr:last-child td { border-bottom: 0; }
 .resume-search .input.name .wrap { width: 150px; }
 .resume-search .input.skills .wrap { width: 400px; }
 .resume-search .input.actions input { float: left; }
-.resume-search .input.actions a.reset { float: left; margin-left: 30px; }
+.resume-search .input.actions a.reset { float: left; margin: 2px 0 0 30px; }
 
 /* Resumes table */
 td.name, td.email, td.skills { white-space: nowrap; }
