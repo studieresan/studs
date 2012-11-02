@@ -30,10 +30,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   line-height: 1.5;
 }
-h2, h3, h4 { margin: 0 0 6px;}
+h2, h3 { margin: 0 0 6px;}
 h2 { font-size: 24px; line-height: 30px; }
 h3 { font-size: 20px; line-height: 26px; }
-h4 { font-size: 14px; line-height: 20px; font-weight: bold; }
+h4 { font-size: 15px; line-height: 20px; font-weight: bold; }
 
 li { margin: 0; }
 ul { list-style: disc; }
@@ -115,6 +115,12 @@ html {
   width: 360px;
 }
 #content .full { clear: both; }
+
+#content .dialog {
+  clear: both;
+  margin: 0 auto;
+  width: 300px;
+}
 
 #content .section {
   margin-bottom: 20px;
@@ -216,11 +222,26 @@ ul.nav a.active {
 /* }}} Header */
 /* {{{ Content */
 
-.dialog {
-  clear: both;
-  margin: 0 auto;
-  width: 300px;
+h2 a.action, h3 a.action, h4 a.action {
+  float: right;
+  font-weight: normal;
+  font-size: 16px;
 }
+h4 a.action { font-size: 13px; }
+
+ul.experiences li {
+  margin: 0 0 15px;
+  list-style-type: none;
+}
+ul.experiences li .at, ul.experiences li .duration {
+  margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+}
+ul.experiences li .organization { font-weight: bold; }
+ul.experiences li .at span { white-space: nowrap; }
+ul.experiences li .duration { color: #555; }
+ul.experiences li .description { margin: 2px 0; }
 
 ul.contacts {
   list-style: none;
@@ -238,12 +259,6 @@ ul.contacts dl { margin: 4px 0; }
 .prefix {
   margin-right: 4px;
   color: #666;
-}
-
-h2 a.action, h3 a.action, h4 a.action {
-  float: right;
-  font-weight: normal;
-  font-size: 16px;
 }
 
 /* }}} Content */

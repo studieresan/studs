@@ -30,5 +30,18 @@
   - Experience::KINDS.each do |kind|
     - next unless experiences.include?(kind)
     .section{ :class => kind }
-      %h3= t "values.kind.#{kind}"
+      %h3= t_experience_kind(kind)
+      %ul.experiences
+        - experiences[kind].each do |exp|
+          %li
+            %h4.title<
+              = exp.title
+              - if can? :edit, exp
+                = link_to t('actions.edit'), [:edit, @resume, exp], :class => :action
+            %p.at<
+              %span.organization= exp.organization
+              - if exp.location.present?
+                %span.location (#{exp.location})
+            %p.duration= exp.duration
+            %p.description= exp.description
 
