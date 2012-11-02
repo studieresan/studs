@@ -11,11 +11,16 @@ class ExperiencesController < ApplicationController
   end
 
   def create
+    @experience.save
+    respond_with @resume, @experience, location: @resume
   end
 
   def edit
   end
 
   def update
+    @experience.update_attributes(params[:experience])
+    @experience.save
+    respond_with @resume, @experience, location: @resume
   end
 end
