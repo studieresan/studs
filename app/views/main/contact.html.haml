@@ -1,29 +1,30 @@
 - active_menu :contact
-%h2= t '.title'
+.full
+  %h2= t '.title'
 
-%ul.contacts
-  %li
-    %h2.role= t 'roles.project_leader'
-    %h3.name Charlie Lindviken
-    %dl
-      %dt= t_attribute :phone
-      %dd +46 (0)70 211 34 57
-      %dt= t_attribute :email
-      %dd= mail_to 'lindvi@kth.se'
-  %li
-    %h2.role= t 'roles.sales_manager'
-    %h3.name Simon Ström
-    %dl
-      %dt= t_attribute :phone
-      %dd +46 (0)739 59 09 87
-      %dt= t_attribute :email
-      %dd= mail_to 'simstr@kth.se'
+  %ul.contacts
+    %li
+      %h2.role= t 'roles.project_leader'
+      %h3.name Charlie Lindviken
+      %dl
+        %dt= t_attribute :phone
+        %dd +46 (0)70 211 34 57
+        %dt= t_attribute :email
+        %dd= mail_to 'lindvi@kth.se'
+    %li
+      %h2.role= t 'roles.sales_manager'
+      %h3.name Simon Ström
+      %dl
+        %dt= t_attribute :phone
+        %dd +46 (0)739 59 09 87
+        %dt= t_attribute :email
+        %dd= mail_to 'simstr@kth.se'
 
-  %li
-    %h2.role= t 'roles.event_manager'
-    %h3.name Tim Malmström
-    %dl
-      %dt= t_attribute :phone
-      %dd +46 (0)73 322 74 69
-      %dt= t_attribute :email
-      %dd= mail_to 'tjma@kth.se'
+    %li
+      %h2.role= t 'roles.event_manager'
+      %h3.name Tim Malmström
+      %dl
+        %dt= t_attribute :phone
+        %dd +46 (0)73 322 74 69
+        %dt= t_attribute :email
+        %dd= mail_to 'tjma@kth.se'
