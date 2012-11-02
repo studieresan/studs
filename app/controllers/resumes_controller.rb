@@ -54,6 +54,8 @@ class ResumesController < ApplicationController
   end
 
   def destroy
+    @resume.destroy
+    respond_with @resume, location: resumes_path
   end
 
   private

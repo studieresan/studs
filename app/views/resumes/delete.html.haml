@@ -1,3 +1,8 @@
 - active_menu :resumes
-%h1 Cvs#delete
-%p Find me in app/views/resumes/delete.html.haml
+
+.dialog.delete
+  %h2= t_model_action()
+  %p= t('actions.delete_prompt_html', type: t('models.the.resume'), name: @resume.to_s)
+  .actions
+    = action_link :cancel, @resume
+    = button_to t('actions.delete'), @resume, method: :delete , :class => :destroy
