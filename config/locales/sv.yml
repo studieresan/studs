@@ -98,7 +98,7 @@ sv:
       kind: Vilket typ av  erfarenhet detta är
       organization: Företag, organisation eller läroverk (ex. KTH)
       title: Den roll du hade, program/inriktning om utbildning
-      location: Stad/område, följt av land om annat än Sverige
+      location: Stad om relevant, följt av land om annat än Sverige
       start_date: Månad under vilken erfarenheten inleddes
       end_date: Datum då erfarenheten avslutades
       description: En kort beskrivning av vad du gjorde, inkludera gärna relevanta nyckelord
