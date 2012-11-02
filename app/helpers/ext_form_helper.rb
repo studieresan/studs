@@ -34,6 +34,20 @@ module ExtFormHelper
           classes << 'disabled' if opts.include?(:disabled) && opts[:disabled]
         end
 
+        # Include suggestions data if specified
+        # Can either be a symbol for a class method which can be called,
+        # a JSON compatible string or true, in which case the suggestions will
+        # be retrieved from the corresponding column in the database.
+        if opts.include?(:suggest)
+          data = opts.delete(:suggest)
+          if data == true
+            data = suggestion_data_for(field) 
+          elsif data.is_a?(Symbol)
+            data = @object.class.send(data)
+          end
+          opts['data-suggestions'] = data.is_a?(String) ? data : data.to_json
+        end
+
         # Check errors
         object = @template.instance_variable_get("@#{@object_name.to_s.sub(/\[.+/, '')}")
         classes << 'error' if !object.nil? && 
@@ -113,6 +127,10 @@ module ExtFormHelper
     def i18n_text(type, field)
       I18n.t("#{type}.#{@object_name}.#{field}",
         default: :"#{type}.defaults.#{field}")
+    end
+
+    def suggestion_data_for(attribute)
+      @object.class.uniq.pluck(attribute).to_a.reject(&:blank?)
     end
 
     def object

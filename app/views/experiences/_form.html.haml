@@ -3,9 +3,9 @@
     = f.select_row :kind, Experience::KINDS.map { |k| [t_experience_kind(k), k] }, include_blank: false, hint: true
 
   %fieldset.general
-    = f.text_field_row :organization, hint: true
-    = f.text_field_row :title, hint: true
-    = f.text_field_row :location, hint: true
+    = f.text_field_row :organization, hint: true, suggest: true
+    = f.text_field_row :title, hint: true, suggest: true
+    = f.text_field_row :location, hint: true, suggest: true
 
   %fieldset.duration
     = f.date_select_row :start_date, start_year: 1990, end_year: Time.now.year, discard_day: true, hint: true
