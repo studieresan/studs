@@ -1,0 +1,6 @@
+.dialog.delete
+  %h2= t_model_action()
+  %p= t('actions.delete_prompt_html', type: t('models.the.experience'), name: @experience.to_s)
+  .actions
+    = action_link :cancel, @resume
+    = button_to t('actions.delete'), [@resume, @experience], method: :delete , :class => :destroy

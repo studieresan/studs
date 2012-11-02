@@ -152,7 +152,7 @@ sv:
     close: Stäng
     filter: Filtrera
     reset: Nollställ
-    delete_prompt_html: "Är du säker på att du vill ta bort <em>%{name}</em>?"
+    delete_prompt_html: "Är du säker på att du vill ta bort %{type} <em>%{name}</em>?"
   flash:
     actions:
       create:

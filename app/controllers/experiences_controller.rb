@@ -26,4 +26,9 @@ class ExperiencesController < ApplicationController
 
   def delete
   end
+
+  def destroy
+    @experience.destroy
+    respond_with @resume, @experience, location: @resume
+  end
 end
