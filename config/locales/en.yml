@@ -79,15 +79,17 @@ en:
     'false': No
   models:
     a: &a_model
-      resume: Resume
-      user: User
+      resume: resume
+      experience: experience
+      user: user
     the: &the_model
-      resume: Resume
-      user: User
-    plural: &the_models
-      resume: Resumes
-      user: Users
+      resume: resume
+      experience: experience
+      user: user
   actions:
+    show: Show
+    add: Add
+    new: New
     create: Create
     save: Save
     edit: Edit
@@ -95,10 +97,8 @@ en:
     cancel: Cancel
     close: Close
     filter: Filter
-    new_type: "Create %{type}"
-    edit_type: "Edit %{type}"
-    delete_type: "Delete %{type}"
-    delete_prompt_html: "Are you sure that you wish to delete <em>%{name}</em>?"
+    reset: Reset
+    delete_prompt_html: "Are you sure that you wish to delete the %{type} <em>%{name}</em>?"
   flash:
     actions:
       create:
@@ -110,3 +110,11 @@ en:
       destroy:
         notice: "Deleted %{resource_name}."
         alert: "Could not delete %{resource_name}."
+
+  # Default i18n
+  date:
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%e %B %Y'
+      short: ! '%e %b'
+      duration: ! '%B %Y'
