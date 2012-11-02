@@ -19,26 +19,6 @@ en:
     travel_manager: Travel manager
     it_manager: IT manager
     company: Company
-  masters:
-    com:  Communication Systems
-    bsb:  Computational and Systems Biology
-    csc:  Computer Science
-    dtn:  Computer Simulation for Science and Engineering
-    dis:  Distributed Computing
-    hci:  Human-Computer Interaction
-    ine:  Industrial Management
-    int:  International Profile
-    stek: Language Technology
-    mai2: Machine Learning
-    mth:  Mathematics
-    meg:  Medical Engineering
-    nss:  Network Services and Systems
-    scc:  Scientific Computing
-    sed:  Software Engineering of Districuted Systems
-    skk:  System-on-Chip Design
-    syb:  Systems Biology
-    scr:  Systems, Control and Robotics
-    tls:  Wireless Systems
 
   session:
     login: Log in
@@ -78,6 +58,33 @@ en:
   values:
     'true': Yes
     'false': No
+    masters:
+      com:  Communication Systems
+      bsb:  Computational and Systems Biology
+      csc:  Computer Science
+      dtn:  Computer Simulation for Science and Engineering
+      dis:  Distributed Computing
+      hci:  Human-Computer Interaction
+      ine:  Industrial Management
+      int:  International Profile
+      stek: Language Technology
+      mai2: Machine Learning
+      mth:  Mathematics
+      meg:  Medical Engineering
+      nss:  Network Services and Systems
+      scc:  Scientific Computing
+      sed:  Software Engineering of Districuted Systems
+      skk:  System-on-Chip Design
+      syb:  Systems Biology
+      scr:  Systems, Control and Robotics
+      tls:  Wireless Systems
+    experience_kind:
+      education: Education
+      work: Work experience
+      extracurricular: Other activities
+    duration:
+      ongoing_html: '%{start} &ndash; Present'
+      ended_html: '%{start} &ndash; %{end} (%{months} months)'
   models:
     a: &a_model
       resume: resume
@@ -112,10 +119,10 @@ en:
         notice: "Deleted %{resource_name}."
         alert: "Could not delete %{resource_name}."
 
-  # Default i18n
   date:
     formats:
       default: ! '%Y-%m-%d'
       long: ! '%e %B %Y'
       short: ! '%e %b'
       duration: ! '%B %Y'
+
