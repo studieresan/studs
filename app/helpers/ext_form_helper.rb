@@ -96,11 +96,18 @@ module ExtFormHelper
         # Append hint if specified (replaced with error if present)
         if opts[:hint]
           hint = opts.delete(:hint)
-          text = error ? error : hint.is_a?(String) ? hint : i18n_text(:hints, field)
-          output += (' ' + @template.content_tag(:span, text, :class => error ? :error : :hint)).html_safe
+          output += hint(hint == true ? field : hint, error)
         end
 
         @template.content_tag(:div, output, :class => classes.join(' '))
+      end
+    end
+
+    # Returns a check box / radio button contained within a label.
+    %w(check_box radio_button).each do |name|
+      define_method("#{name}_label") do |field, *args|
+        content = "#{send(name.to_sym, field, *args)} #{i18n_text(:attributes, field)}"
+        label(field, content.html_safe, :class => "inline #{name}")
       end
     end
 
@@ -108,6 +115,16 @@ module ExtFormHelper
     def label(field, text = nil, options = {}, &block)
       text ||= i18n_text(:attributes, field)
       @template.label(@object_name, field, text, objectify_options(options), &block)
+    end
+
+    # Return hint text, optionally replaced by error_override if present.
+    def hint(field, error_override = nil)
+      if error_override.present?
+        @template.content_tag(:span, error_override, :class => :error)
+      else
+        field = i18n_text(:hints, field) unless field.is_a?(String)
+        @template.content_tag(:span, field, :class => :hint)
+      end
     end
 
     # Submit tag which also classifies the input by the input name.
