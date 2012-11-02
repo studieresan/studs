@@ -17,11 +17,7 @@ module NullableDateTime
       setter = "#{getter}=".to_sym
 
       send(:define_method, getter) do
-        if disables
-          send(attribute).blank?
-        else
-          send(attribute).present?
-        end
+        disables ^ send(attribute).present?
       end
 
       send(:define_method, setter) do |bool|
