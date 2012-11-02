@@ -128,6 +128,9 @@ sv:
       education: Utbildning
       work: Arbetserfarenheter
       extracurricular: Övriga aktiviteter
+    duration:
+      ongoing_html: '%{start} &ndash; Pågående'
+      ended_html: '%{start} &ndash; %{end} (%{months} månader)'
   models:
     a: &a_model
       resume: CV
@@ -164,6 +167,11 @@ sv:
 
   # Default i18n
   date:
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%e %B %Y'
+      short: ! '%e %b'
+      duration: ! '%B %Y'
     abbr_month_names:
     - 
     - jan
@@ -208,10 +216,6 @@ sv:
     - torsdag
     - fredag
     - lördag
-    formats:
-      default: ! '%Y-%m-%d'
-      long: ! '%e %B %Y'
-      short: ! '%e %b'
     order:
     - :day
     - :month
