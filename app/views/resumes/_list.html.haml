@@ -1,4 +1,4 @@
-- max_skills_shown = 6
+- max_skills_shown = 7
 - resumes ||= @resumes
 - filtered_skills ||= @skills || []
 %table.resumes
@@ -6,7 +6,7 @@
   %thead
     %tr
       - cols.each do |col|
-        %th{ :class => col }= t_attribute(col)
+        %th{ :class => col }= t_attribute(:resume, col)
       %th.actions &nbsp;
   %tbody
     - if resumes.empty?
@@ -24,5 +24,3 @@
             %span.more &hellip;
         %td.actions
           = link_to t('actions.show'), res
-          - if can? :manage, Resume
-            = link_to t('actions.edit'), [:edit, res]
