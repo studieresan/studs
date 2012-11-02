@@ -84,6 +84,7 @@ sv:
       location: Plats
       start_date: Startdatum
       end_date: Slutdatum
+      no_end_date: Pågående
       description: Beskrivning
   hints:
     resume:
@@ -101,7 +102,7 @@ sv:
       title: Den roll du hade, program/inriktning om utbildning
       location: Stad om relevant, följt av land om annat än Sverige
       start_date: Månad under vilken erfarenheten inleddes
-      end_date: Datum då erfarenheten avslutades
+      end_date: Datum då erfarenheten avslutades om aktuellt, bocka annars i Pågående
       description: En kort beskrivning av vad du gjorde, inkludera gärna relevanta nyckelord
   values:
     'true': Ja

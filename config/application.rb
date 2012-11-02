@@ -13,7 +13,7 @@ module Studs
     config.filter_parameters += [:password, :password_confirmation]
     config.active_record.whitelist_attributes = false
 
-    #config.autoload_paths << "#{config.root}/app/libs"
+    config.autoload_paths << "#{config.root}/app/libs"
 
     config.assets.enabled = true
     config.assets.version = '1.0'
