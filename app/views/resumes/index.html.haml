@@ -1,6 +1,9 @@
 - active_menu :resumes
 .full
-  %h2= t '.title'
+  %h2<
+    = t '.title'
+    - if can? :manage, Resume
+      = action_link :new, [:new, :resume]
 
   = form_tag resumes_path, method: :get, :class => 'resume-search' do
     %fieldset.inline

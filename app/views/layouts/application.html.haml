@@ -27,7 +27,7 @@
         - if logged_in?
           %ul#userbar
             - if student?
-              %li.resume= link_to t('models.a.resume'), mine_resumes_path
+              %li.resume= link_to t('common.my_resume'), mine_resumes_path
             %li.user= link_to current_user.login, index_path
             %li.logout= link_to t('session.logout'), logout_path
 
