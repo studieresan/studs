@@ -61,6 +61,10 @@ class ResumesController < ApplicationController
   private
 
   def review_authorization
-    render 'logged_out' and return unless logged_in?
+    unless logged_in?
+      save_return_url
+      render 'logged_out'
+      return 
+    end
   end
 end
