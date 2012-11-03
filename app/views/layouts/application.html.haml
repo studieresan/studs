@@ -29,6 +29,8 @@
             - if student?
               %li.resume= link_to t('common.my_resume'), mine_resumes_path
             %li.user= link_to current_user.login, index_path
+            - if can? :manage, :user
+              %li.admin= link_to t('admin_menu'), users_path
             %li.logout= link_to t('session.logout'), logout_path
 
     #main

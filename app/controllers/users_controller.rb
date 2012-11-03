@@ -1,19 +1,31 @@
 class UsersController < ApplicationController
-  respond_to :html, :xml
+  respond_to :html
   responders :flash, :collection
+
+  load_and_authorize_resource
 
   before_filter :review_authorization
 
   def index
-    @users = User.scoped
+  end
+
+  def show
   end
 
   def new
-    @user = User.new
   end
 
   def create
     @user = User.new(params[:user])
+    @user.save
+    respond_with @user
+  end
+
+  def edit
+  end
+
+  def update
+    @user.update_attributes(params[:user])
     @user.save
     respond_with @user
   end

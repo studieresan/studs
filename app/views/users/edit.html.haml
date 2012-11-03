@@ -1,0 +1,8 @@
+- active_menu :resumes
+.full
+  %h2<
+    = t_model_action
+    - if can? :read, User
+      = action_link :cancel, @user
+
+  = render partial: 'form'
