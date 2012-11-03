@@ -9,6 +9,8 @@ Studs::Application.routes.draw do
       end
     end
 
+    resources :files, only: [:index, :show, :create, :destroy]
+
     # Authentication
     get  'login'  => 'session#new',     as: :login
     post 'login'  => 'session#create',  as: :login_do

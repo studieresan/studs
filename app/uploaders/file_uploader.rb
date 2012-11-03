@@ -1,8 +1,10 @@
 class FileUploader < CarrierWave::Uploader::Base
+  DIRECTORY = "uploads".freeze
+
   storage :file
 
   def store_dir
-    "uploads/#{model.id}"
+    DIRECTORY
   end
 
   def extension_black_list
