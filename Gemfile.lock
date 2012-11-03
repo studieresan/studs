@@ -57,6 +57,14 @@ GEM
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     coderay (1.0.8)
+    columnize (0.3.6)
+    debugger (1.2.1)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.1.1)
+      debugger-ruby_core_source (~> 1.1.4)
+    debugger-linecache (1.1.2)
+      debugger-ruby_core_source (>= 1.1.1)
+    debugger-ruby_core_source (1.1.4)
     erubis (2.7.0)
     factory_girl (4.1.0)
       activesupport (>= 3.0.0)
@@ -85,6 +93,8 @@ GEM
     journey (1.0.4)
     json (1.7.5)
     kgio (2.7.4)
+    launchy (2.1.2)
+      addressable (~> 2.3)
     libwebsocket (0.1.5)
       addressable
     listen (0.5.3)
@@ -206,10 +216,12 @@ DEPENDENCIES
   capistrano
   capistrano-shared_file
   capistrano_colors
+  debugger
   factory_girl
   guard-bundler
   guard-minitest
   haml-rails
+  launchy
   minitest-rails
   minitest-rails-capybara
   minitest-rails-shoulda (~> 0.3.0)

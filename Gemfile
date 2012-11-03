@@ -21,9 +21,12 @@ group :development do
 end
 
 group :test do
+  gem 'debugger'
+
   gem 'minitest-rails'
   gem 'minitest-rails-shoulda', '~> 0.3.0'
   gem 'minitest-rails-capybara'
+  gem 'launchy'
 
   gem 'factory_girl'
 
