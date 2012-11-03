@@ -5,7 +5,7 @@ en:
     delimeter_html: ' - '
     my_resume: My resume
     resume_note: >
-      The resume should be written in English as only the limited options are
+      The resume should be written in English, only the limited options are
       automatically translated.
     languages:
       en: English
