@@ -16,7 +16,7 @@ describe "Add A Student Acceptance Test" do
 
   it "adds the student" do
     visit users_path
-    click_link "Lägg till användare"
+    click_link "Skapa"
     fill_in "Namn", with: "Svenne Banan"
     fill_in "Användarnamn", with: "svenneb"
     fill_in "Epostaddress", with: "svenneb@example.com"

@@ -19,10 +19,8 @@ describe UsersController do
   context "no logged in user" do
     describe "#index" do
       before { get :index }
-
-      it { must respond_with(:success) }
-      it { wont assign_to(:users) }
-      it { must render_template('resumes/logged_out') }
+      it { must respond_with(:redirect) }
+      it { must assign_to(:users).with([]) }
     end
   end
 end
