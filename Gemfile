@@ -20,6 +20,16 @@ group :development do
   gem 'capistrano_colors', :require => nil
 end
 
+group :test do
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
+
+  gem 'guard-bundler'
+  gem 'guard-minitest'
+
+  gem 'rb-inotify'
+end
+
 group :production do
   gem 'mysql2'
   gem 'unicorn'
