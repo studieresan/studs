@@ -14,6 +14,30 @@ describe UsersController do
       it { must assign_to(:users) }
       it { must render_template('index') }
     end
+
+    describe "#show" do
+      before { get :show, id: @user.id }
+
+      it { must respond_with(:success) }
+      it { must assign_to(:user).with(@user) }
+      it { must render_template('show') }
+    end
+
+    describe "#new" do
+      before { get :new }
+
+      it { must respond_with(:success) }
+      it { must assign_to(:user) }
+      it { must render_template('new') }
+    end
+
+    describe "#edit" do
+      before { get :edit, id: @user.id }
+
+      it { must respond_with(:success) }
+      it { must assign_to(:user).with(@user) }
+      it { must render_template('edit') }
+    end
   end
 
   context "no logged in user" do
