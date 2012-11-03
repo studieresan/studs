@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
-gem 'sqlite3'
-gem 'mysql2'
-
 gem 'acts-as-taggable-on'
 
 gem 'bcrypt-ruby'
@@ -16,12 +13,15 @@ gem 'responders'
 gem 'haml-rails'
 
 group :development do
+  gem 'sqlite3'
+
   gem 'capistrano', :require => nil
   gem 'capistrano-shared_file', :require => nil
   gem 'capistrano_colors', :require => nil
 end
 
 group :production do
+  gem 'mysql2'
   gem 'unicorn'
   gem 'yui-compressor'
 end
