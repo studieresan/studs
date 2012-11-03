@@ -47,7 +47,8 @@ en:
     none: Found no resumes matching your criterias
   files:
     index:
-      title: Files
+      title: Uploaded files
+      upload: Upload
     none: No files have been uploaded
 
   attributes:

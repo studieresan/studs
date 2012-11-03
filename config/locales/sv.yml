@@ -61,7 +61,8 @@ sv:
     none: Det finns inga CV:n som matchade dina kriterier
   files:
     index:
-      title: Filer
+      title: Uppladdade filer
+      upload: Ladda upp
     none: Inga filer har laddats upp
 
   attributes:
