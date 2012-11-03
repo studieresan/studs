@@ -22,7 +22,10 @@ end
 
 group :test do
   gem 'minitest-rails'
+  gem 'minitest-rails-shoulda', '~> 0.3.0'
   gem 'minitest-rails-capybara'
+
+  gem 'factory_girl'
 
   gem 'guard-bundler'
   gem 'guard-minitest'
