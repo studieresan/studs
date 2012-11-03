@@ -13,6 +13,7 @@ sv:
     index: Start
     resumes: CV-databas
     contact: Kontakt
+    files: Filer
   roles:
     project_leader: Projektledare
     sales_manager: Säljansvarig
@@ -57,6 +58,11 @@ sv:
         företag vi samarbetar med.
     show:
       birthdate: "%{date} (%{age} år)"
+    none: Det finns inga CV:n som matchade dina kriterier
+  files:
+    index:
+      title: Filer
+    none: Inga filer har laddats upp
 
   attributes:
     defaults:
@@ -85,6 +91,11 @@ sv:
       end_date: Slutdatum
       no_end_date: Pågående
       description: Beskrivning
+    file:
+      name: Filnamn
+      size: Storlek
+      mtime: Modifierad
+      file: Fil
   hints:
     resume:
       user_id: Användare som administrerar detta CV
@@ -153,6 +164,7 @@ sv:
     close: Stäng
     filter: Filtrera
     reset: Nollställ
+    upload: Ladda upp
     delete_prompt_html: "Är du säker på att du vill ta bort %{type} <em>%{name}</em>?"
   flash:
     actions:
@@ -229,6 +241,7 @@ sv:
       date: ! '%e %b'
       full_date: ! '%e %B %Y'
       time: ! '%H:%M'
+      ymd: ! '%Y-%m-%d'
     am: ''
     pm: ''
   datetime:

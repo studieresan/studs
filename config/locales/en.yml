@@ -44,6 +44,11 @@ en:
       title: CV Database
       body_html: >
         Body
+    none: Found no resumes matching your criterias
+  files:
+    index:
+      title: Files
+    none: No files have been uploaded
 
   attributes:
     defaults:
@@ -72,6 +77,11 @@ en:
       end_date: End date
       no_end_date: Present
       description: Description
+    file:
+      name: Filename
+      size: Size
+      mtime: Modified
+      file: File
   hints:
     resume:
       user_id: The owner of this resume
@@ -141,6 +151,7 @@ en:
     close: Close
     filter: Filter
     reset: Reset
+    upload: Upload
     delete_prompt_html: "Are you sure that you wish to delete the %{type} <em>%{name}</em>?"
   flash:
     actions:
@@ -209,6 +220,14 @@ en:
     - :year
     - :month
     - :day
+  time:
+    formats:
+      default: ! '%Y-%m-%d %H:%M:%S'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+      ymd: ! '%Y-%m-%d'
+    am: am
+    pm: pm
   datetime:
     distance_in_words:
       about_x_hours:
@@ -346,13 +365,6 @@ en:
       last_word_connector: ! ', and '
       two_words_connector: ! ' and '
       words_connector: ! ', '
-  time:
-    formats:
-      default: ! '%a, %d %b %Y %H:%M:%S %z'
-      long: ! '%B %d, %Y %H:%M'
-      short: ! '%d %b %H:%M'
-    am: am
-    pm: pm
 
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
