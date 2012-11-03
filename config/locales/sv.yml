@@ -58,20 +58,26 @@ sv:
     show:
       birthdate: "%{date} (%{age} år)"
 
+  users:
+    index:
+      add_user: Lägg till användare
+
   attributes:
     defaults:
       created_at: Skapad
       updated_at: Uppdaterad
       login: Användarnamn
       password: Lösenord
+      password_confirmation: Lösenordsbekräftelse
       remember_me: Kom ihåg mig
       title: Titel
       name: Namn
-      email: Epostadress
+      email: Epostaddress
       presentation: Presentation
       phone: Telefonnummer
       masters: Masterprogram
       birthdate: Födelsedatum
+      role: Roll
     resume:
       skills: Kunskaper
       skill_list: Kunskaper
