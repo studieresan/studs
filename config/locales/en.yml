@@ -4,6 +4,7 @@ en:
     year: 2013
     delimeter_html: ' - '
     my_resume: My resume
+    users: Users
     resume_note: >
       The resume should be written in English, only the limited options are
       automatically translated.
@@ -44,6 +45,11 @@ en:
       title: CV Database
       body_html: >
         Body
+    show:
+      birthdate: "%{date} (%{age} years old)"
+  users:
+    index:
+      title: Users
 
   attributes:
     defaults:
@@ -59,6 +65,7 @@ en:
       phone: Phone number
       masters: Masters
       birthdate: Birthdate
+      role: Role
     resume:
       skills: Skills
       skill_list: Skills
@@ -90,6 +97,9 @@ en:
       start_date: Month during which the experience began
       end_date: End date of experience unless it is still ongoing (Present in that case)
       description: A short description of what you did, including relevant keywords
+    user:
+      name: First and last name
+      email: Preferably your @kth.se address
   values:
     'true': Yes
     'false': No

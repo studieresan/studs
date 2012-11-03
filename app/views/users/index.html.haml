@@ -4,7 +4,7 @@
   %h2
     = t'.title'
     -if can? :manage, User
-      = action_link :new, [:new, :user] 
+      = action_link :new, [:new, :user]
 
 %ul
 - @users.each do |user|

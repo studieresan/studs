@@ -2,11 +2,12 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.nil? # anonymous
-    else # all users can view resumes and update their credentials
-      can :read, Resume
-      can :update, User, id: user.id
-    end
+    return unless user # anonymous
+
+    # all users can view resumes and update their credentials
+    can :read, Resume
+    can :read, User, id: user.id
+    can :update, User, id: user.id
 
     if user.student? # students can control their own resume
       can :create, Resume

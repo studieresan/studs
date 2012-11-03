@@ -1,15 +1,11 @@
 = ext_form_for @user, :class => :resume do |f|
-  %fieldset.author
-    = f.hidden_field :id
-
   %fieldset.credentials
     = f.text_field_row :name, hint: true
+    = f.text_field_row :login, hint: true
     = f.text_field_row :email, hint: true
-    = f.text_field_row :login
-    = f.text_field_row :password
+    = f.text_field_row :password, hint: true
     = f.text_field_row :password_confirmation
-    - if can? :manage, User
-      = f.select_row :role, User::ROLES, include_blank: false
+    = f.select_row :role, User::ROLES, include_blank: false, hint: true
 
   %fieldset.actions.align
     = f.submit

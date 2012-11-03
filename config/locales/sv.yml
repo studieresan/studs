@@ -4,6 +4,7 @@ sv:
     year: 2013
     delimeter_html: ' - '
     my_resume: Mitt CV
+    users: Användare
     resume_note: >
       Skriv CV:t på engelska, enbart de fält med begränsade val översätts automatiskt.
     languages:
@@ -57,6 +58,9 @@ sv:
         företag vi samarbetar med.
     show:
       birthdate: "%{date} (%{age} år)"
+  users:
+    index:
+      title: Användare
 
   attributes:
     defaults:
@@ -64,14 +68,16 @@ sv:
       updated_at: Uppdaterad
       login: Användarnamn
       password: Lösenord
+      password_confirmation: Lösenordsbekräftelse
       remember_me: Kom ihåg mig
       title: Titel
       name: Namn
-      email: Epostadress
+      email: Epostaddress
       presentation: Presentation
       phone: Telefonnummer
       masters: Masterprogram
       birthdate: Födelsedatum
+      role: Roll
     resume:
       skills: Kunskaper
       skill_list: Kunskaper
@@ -103,6 +109,9 @@ sv:
       start_date: Månad under vilken erfarenheten inleddes
       end_date: Datum då erfarenheten avslutades såvida den inte ännu pågår
       description: En kort beskrivning av vad du gjorde, inkludera gärna relevanta nyckelord
+    user:
+      name: För- och efternamn
+      email: Förslagsvis din @kth.se-adress
   values:
     'true': Ja
     'false': Nej
