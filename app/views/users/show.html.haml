@@ -1,6 +1,6 @@
 .full
   %h2
-    = t '.title'
+    = @user.name
 
     -if can? :manage, @user
       = action_link :edit, [:edit, @user]

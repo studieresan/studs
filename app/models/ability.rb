@@ -6,6 +6,7 @@ class Ability
 
     # all users can view resumes and update their credentials
     can :read, Resume
+    can :read, User, id: user.id
     can :update, User, id: user.id
 
     if user.student? # students can control their own resume

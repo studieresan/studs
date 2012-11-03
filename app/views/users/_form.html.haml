@@ -6,7 +6,10 @@
     = f.text_field_row :name, hint: true
     = f.text_field_row :email, hint: true
     = f.text_field_row :login
-    = f.text_field_row :role
+    = f.text_field_row :password
+    = f.text_field_row :password_confirmation
+    - if can? :manage, User
+      = f.select_row :role, User::ROLES, include_blank: false
 
   %fieldset.actions.align
     = f.submit
