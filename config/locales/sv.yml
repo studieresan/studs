@@ -36,15 +36,12 @@ sv:
 
   main:
     index:
-      title: Bli bästis med 30 färska civilingenjörer!
+      title: Bli bästis med 27 färska civilingenjörer!
       body_html: >
         StuDs, eller Datasektionens Studieresa, är en unik möjlighet att träffa
         ett helt gäng med Datateknik-studenter som är på gränsen att bli
         fullfjädrade Civilingenjörer. StuDs erbjuder helt nya, mer fokuserade
-        sätt att mötas och knyta kontakt med blivande medarbetare.<br /><br />
-
-        Låt oss skippa de stora arbetsmarknadsmässorna och istället ordna roliga
-        event som ni och vi får ut mer av! 
+        sätt att mötas och knyta kontakt med blivande medarbetare.
     contact:
       title: Konktakta oss
   resumes:

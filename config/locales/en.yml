@@ -27,9 +27,11 @@ en:
 
   main:
     index:
-      title: Get to know 30 civil engineers!
+      title: Get to know 27 new civil engineers!
       body_html: >
-        Studs 2013
+        StuDs, or Datasektionens study tour, is a unique opportunity to meet a
+        bunch of computer science students on the verge to become Master
+        graduates. This offers a great way to meet possible future employees.
     contact:
       title: Contact Us
   resumes:
@@ -348,6 +350,7 @@ en:
       short: ! '%d %b %H:%M'
     am: am
     pm: pm
+
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
