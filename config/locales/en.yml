@@ -44,17 +44,47 @@ en:
     defaults:
       created_at: Created
       updated_at: Updated
-      title: Title
-      body: Body
-      image: Image
       login: Username
       password: Password
+      remember_me: Remember me
+      title: Title
       name: Name
       email: Email
-      pid: Social security number
-      remember_me: Remember me
+      presentation: Presentation
+      phone: Phone number
+      masters: Masters
+      birthdate: Birthdate
+    resume:
       skills: Skills
-      user: Användare
+      skill_list: Skills
+      user_id: Author
+    experience:
+      kind: Category
+      organization: Organization
+      title: Title
+      location: Location
+      start_date: Start date
+      end_date: End date
+      no_end_date: Present
+      description: Description
+  hints:
+    resume:
+      user_id: The owner of this resume
+      name: First and last name
+      masters: The masters you are studying towards
+      birthdate: Your birthdate
+      email: Preferably your @kth.se address
+      phone: A cell phone number are preferred
+      skill_list: A list of your skills and expertise
+      presentation: A short presentation of yourself (optional)
+    experience:
+      kind: What kind of experience this is
+      organization: Company, organization or school
+      title: The title you had, or programme/discipline if education
+      location: City if relevant, followed by country if not Sweden
+      start_date: Month during which the experience began
+      end_date: End date of experience unless it is still ongoing (Present in that case)
+      description: A short description of what you did, including relevant keywords
   values:
     'true': Yes
     'false': No
@@ -119,10 +149,209 @@ en:
         notice: "Deleted %{resource_name}."
         alert: "Could not delete %{resource_name}."
 
+  # Default i18n
   date:
     formats:
       default: ! '%Y-%m-%d'
-      long: ! '%e %B %Y'
-      short: ! '%e %b'
+      long: ! '%B %d, %Y'
+      short: ! '%b %d'
       duration: ! '%B %Y'
-
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    month_names:
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: ! '%{count} days'
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      x_months:
+        one: 1 month
+        other: ! '%{count} months'
+      x_seconds:
+        one: 1 second
+        other: ! '%{count} seconds'
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors: &errors
+    format: ! '%{message}'
+    messages:
+      accepted: Must be accepted
+      blank: Can't be blank
+      confirmation: Doesn't match confirmation
+      empty: Can't be empty
+      equal_to: Must be equal to %{count}
+      even: Must be even
+      exclusion: Is reserved
+      greater_than: Must be greater than %{count}
+      greater_than_or_equal_to: Must be greater than or equal to %{count}
+      inclusion: Is not included in the list
+      invalid: Is invalid
+      less_than: Must be less than %{count}
+      less_than_or_equal_to: Must be less than or equal to %{count}
+      not_a_number: Is not a number
+      not_an_integer: Must be an integer
+      odd: Must be odd
+      taken: Has already been taken
+      record_invalid: ! 'Validation failed: %{errors}'
+      too_long:
+        one: Is too long (maximum is 1 character)
+        other: Is too long (maximum is %{count} characters)
+      too_short:
+        one: Is too short (minimum is 1 character)
+        other: Is too short (minimum is %{count} characters)
+      wrong_length:
+        one: Is the wrong length (should be 1 character)
+        other: Is the wrong length (should be %{count} characters)
+    template:
+      body: ! 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: ! '%{count} errors prohibited this %{model} from being saved'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create
+      submit: Save
+      update: Update
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u%n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', and '
+      two_words_connector: ! ' and '
+      words_connector: ! ', '
+  time:
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    am: am
+    pm: pm
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
