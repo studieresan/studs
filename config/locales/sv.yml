@@ -58,10 +58,6 @@ sv:
     show:
       birthdate: "%{date} (%{age} år)"
 
-  users:
-    index:
-      add_user: Lägg till användare
-
   attributes:
     defaults:
       created_at: Skapad
