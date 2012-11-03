@@ -12,6 +12,8 @@ gem 'responders'
 
 gem 'haml-rails'
 
+gem 'carrierwave'
+
 group :development do
   gem 'sqlite3'
 
