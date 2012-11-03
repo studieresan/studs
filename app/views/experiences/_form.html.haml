@@ -1,3 +1,5 @@
+%p.note= t 'common.resume_note'
+
 = ext_form_for [@resume, @experience], :class => :experience do |f|
   %fieldset.kind
     = f.select_row :kind, Experience::KINDS.map { |k| [t_experience_kind(k), k] }, include_blank: false, hint: true
