@@ -1,0 +1,12 @@
+= ext_form_for @user, :class => :resume do |f|
+  %fieldset.author
+    = f.hidden_field :id
+
+  %fieldset.credentials
+    = f.text_field_row :name, hint: true
+    = f.text_field_row :email, hint: true
+    = f.text_field_row :login
+    = f.text_field_row :role
+
+  %fieldset.actions.align
+    = f.submit
