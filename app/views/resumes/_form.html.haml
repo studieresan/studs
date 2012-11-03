@@ -1,3 +1,5 @@
+%p.note= t 'common.resume_note'
+
 = ext_form_for @resume, :class => :resume do |f|
   %fieldset.author
     - if can? :manage, User

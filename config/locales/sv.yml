@@ -4,6 +4,8 @@ sv:
     year: 2013
     delimeter_html: ' - '
     my_resume: Mitt CV
+    resume_note: >
+      Skriv CV:t på engelska, enbart de fält med begränsade val översätts automatiskt.
     languages:
       en: English
       sv: Swedish
@@ -99,7 +101,7 @@ sv:
       title: Den roll du hade, program/inriktning om utbildning
       location: Stad om relevant, följt av land om annat än Sverige
       start_date: Månad under vilken erfarenheten inleddes
-      end_date: Datum då erfarenheten avslutades om aktuellt, bocka annars i Pågående
+      end_date: Datum då erfarenheten avslutades såvida den inte ännu pågår
       description: En kort beskrivning av vad du gjorde, inkludera gärna relevanta nyckelord
   values:
     'true': Ja
@@ -126,7 +128,7 @@ sv:
     experience_kind:
       education: Utbildning
       work: Arbetserfarenheter
-      extracurricular: Övriga aktiviteter
+      extracurricular: Övriga erfarenheter
     duration:
       ongoing_html: '%{start} &ndash; Pågående'
       ended_html: '%{start} &ndash; %{end} (%{months} månader)'
