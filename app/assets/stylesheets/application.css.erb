@@ -239,14 +239,21 @@ a.action {
 a.action.add, a.action.new, a.action.show { background-position: 0 -110px; }
 a.action.delete { background-position: 0 -222px; }
 a.action.cancel, a.action.reset { background-position: 0 -250px; }
+a.action.download { background-position: 0 -279px; }
 a.action.small {
   width: 15px;
   padding-left: 0;
-  text-indent: -3333px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  float: left;
 }
 a.action + a.action { margin-right: 5px; }
+table a.action.small { float: left; }
+table a.action + a.action { margin-left: 5px; margin-right: 0; }
 
-h2 a.action, h3 a.action, h4 a.action {
+h2 a.action, h3 a.action, h4 a.action,
+h2 a.action.small, h3 a.action.small, h4 a.action.small {
   float: right;
   margin-top: 8px;
 }
@@ -505,6 +512,8 @@ td { border-bottom: 1px solid #ccc; }
 
 tbody tr:last-child td { border-bottom: 0; }
 
+td.actions { white-space: nowrap; }
+
 /* }}} Tables */
 /* {{{ Specific elements */
 
@@ -516,12 +525,15 @@ tbody tr:last-child td { border-bottom: 0; }
 
 /* Resumes table */
 td.name, td.email, td.skills { white-space: nowrap; }
-td.actions { text-align: right; }
 
 /* Experience form */
 .input.date.end_date .select { clear: left; padding-top: 2px; }
 
 /* Delete dialog */
 .dialog.delete .actions .action { float: left; margin-top: 3px; }
+
+/* Files table */
+table.files .size { width: 100px; }
+table.files .mtime { width: 75px; }
 
 /* }}} Specific elements */
