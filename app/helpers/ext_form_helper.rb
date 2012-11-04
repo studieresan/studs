@@ -19,7 +19,7 @@ module ExtFormHelper
 
     helpers.each do |name|
       # Normal tag generators (without labels)
-      define_method(name) do |field, *args|
+      define_method(name) do |field, *args| #{{{
         opts = args.last.is_a?(Hash) ? args.pop : {}
         classes = [] # css classes for field
 
@@ -53,14 +53,17 @@ module ExtFormHelper
         classes << 'error' if !object.nil? && 
             object.kind_of?(ActiveRecord::Base) && !object.errors[field.to_sym].empty?
 
-        # Call the parent field generator
+        # CSS class string
         opts[:class] = classes.uniq.join(' ')
+        opts.delete(:class) if opts[:class].blank?
+
+        # Call the parent field generator
         args << opts
         super(field, *args)
-      end
+      end #}}}
 
       # Field row wrapper with label, container and error message included
-      define_method(name + '_row') do |field, *args|
+      define_method(name + '_row') do |field, *args| #{{{
         opts = args.last.is_a?(Hash) ? args.last : {}
         classes = %w(input) # css classes for container element
         classes << opts.delete(:row_class) if opts.include?(:row_class)
@@ -100,16 +103,16 @@ module ExtFormHelper
         end
 
         @template.content_tag(:div, output, :class => classes.join(' '))
-      end
+      end #}}}
     end
 
     # Returns a check box / radio button contained within a label.
-    %w(check_box radio_button).each do |name|
+    %w(check_box radio_button).each do |name| #{{{
       define_method("#{name}_label") do |field, *args|
         content = "#{send(name.to_sym, field, *args)} #{i18n_text(:attributes, field)}"
         label(field, content.html_safe, :class => "inline #{name}")
       end
-    end
+    end #}}}
 
     # Override label generation with custom i18n lookup.
     def label(field, text = nil, options = {}, &block)
