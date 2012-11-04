@@ -149,10 +149,12 @@ sv:
       resume: CV
       experience: erfarenhet
       user: användare
+      file: fil
     the: &the_model
       resume: CV:t
       experience: erfarenheten
       user: användaren
+      file: filen
   actions:
     show: Visa
     add: Lägg till

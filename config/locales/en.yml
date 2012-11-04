@@ -136,10 +136,12 @@ en:
       resume: resume
       experience: experience
       user: user
+      file: file
     the: &the_model
       resume: resume
       experience: experience
       user: user
+      file: file
   actions:
     show: Show
     add: Add
