@@ -56,6 +56,17 @@ en:
   users:
     index:
       title: Users
+    credentials_mail:
+      subject: Login credentials for StuDs' website
+      body: |
+        An account has been created for you at studieresan.se.
+        You can now log in at http://studieresan.se/login with the following credentials.
+        After logging in you'll have the ability to update your information and/or password
+        by clicking on your username in the field on the top right.
+
+        Username: %{login}
+        Password: %{password} (automatically generated)
+        Email: %{email}
   files:
     index:
       title: Uploaded files
