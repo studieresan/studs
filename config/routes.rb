@@ -9,7 +9,10 @@ Studs::Application.routes.draw do
       end
     end
 
-    resources :users
+    resources :users, except: [:show] do
+      get 'me', on: :collection
+      get 'delete', on: :member
+    end
 
     resources :files, only: [:index, :create, :destroy], id: /[^\/]+/ do
       get 'delete', on: :member

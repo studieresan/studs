@@ -29,7 +29,7 @@
           %ul#userbar
             - if student?
               %li.resume= link_to t('common.my_resume'), mine_resumes_path
-            %li.user= link_to current_user.login, current_user
+            %li.user= link_to current_user.login, me_users_path
             %li.logout= link_to t('session.logout'), logout_path
 
     #main

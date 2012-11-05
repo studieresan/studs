@@ -4,12 +4,12 @@ class UsersController < ApplicationController
 
   load_and_authorize_resource
 
-  before_filter :review_authorization
-
   def index
   end
 
-  def show
+  def me
+    @user = current_user
+    render 'edit'
   end
 
   def new
@@ -30,13 +30,11 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
-  private
+  def delete
+  end
 
-  def review_authorization
-    unless logged_in?
-      save_return_url
-      render 'resumes/logged_out'
-      return 
-    end
+  def destroy
+    @user.destroy
+    respond_with @user, location: users_path
   end
 end
