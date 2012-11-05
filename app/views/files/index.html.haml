@@ -1,3 +1,5 @@
+- active_menu :files
+
 .column.wide
   %h2= t '.title'
 
@@ -17,12 +19,12 @@
           %td.size= number_to_human_size file.size, precision: 2, significant: false
           %td.mtime{ title: l(file.mtime) }= l(file.mtime, format: :ymd)
           %td.actions
-            - if can? :edit, :files
+            - if can? :update, :files
               = action_link :edit, files_path(name: file.name), :small
             - if can? :destroy, :files
               = action_link :delete, delete_file_path(file), :small
 
-- if can? :upload, :files
+- if can? :create, :files
   .column.small
     %h2= t '.upload'
 

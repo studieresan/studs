@@ -45,6 +45,7 @@ class DownloadableFile
 
   def initialize(name, is_path = false)
     name = self.class.path_for(name) unless is_path
+    raise ActiveRecord::RecordNotFound unless File.file?(name)
     stat = File.stat(name)
     parts = File.split(name)
     @url = name.sub(/\A\/?public/, '')

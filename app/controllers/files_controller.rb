@@ -9,7 +9,7 @@ class FilesController < ApplicationController
     if DownloadableFile.store(params[:file])
       flash[:notice] = t('files.flash.success')
     else 
-      flash[:error] = t('files.flash.error')
+      flash[:alert] = t('files.flash.error')
     end
     redirect_to action: 'index'
   end
@@ -27,6 +27,6 @@ class FilesController < ApplicationController
   private
 
   def authorize
-    authorize!(params[:action], :files)
+    authorize!(params[:action].to_sym, :files)
   end
 end
