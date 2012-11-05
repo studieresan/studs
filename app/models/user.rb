@@ -12,12 +12,12 @@ class User < ActiveRecord::Base
   attr_protected :login, :role, as: [:default, :student, :organization]
 
   validates :login, presence: true, uniqueness: true, length: { minimum: 3 }
-  validates :email, presence: true
+  validates :email, presence: true, format: { with: /[\w.%+-]+@[\w.-]+\.[a-z]{2,4}/i }
   validates_inclusion_of :role, in: ROLES
 
-  validates :password, presence: true, length: { minimum: 3 }, if: :password
-  validates_confirmation_of :password, if: :password
-  validates_presence_of :password_confirmation, if: :password
+  validates :password, presence: true, length: { minimum: 3 }, if: :password_required?
+  validates_confirmation_of :password, if: :password_required?
+  validates_presence_of :password_confirmation, if: :password_required?
 
   # Scopes and inclusion testing for each user role.
   (ROLES - %w(student)).each do |role|
@@ -42,6 +42,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def password_required?
+    new_record? || password.present? || password_confirmation.present?
+  end
 
   def send_credentials_mail_if_specified
     UserMailer.credentials_mail(self).deliver
