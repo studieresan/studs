@@ -97,7 +97,9 @@ module ExtFormHelper
         end
 
         # Append hint if specified (replaced with error if present)
-        if opts[:hint]
+        if error && !opts.delete(:hide_error)
+          output += error_message(error)
+        elsif opts[:hint]
           hint = opts.delete(:hint)
           output += hint(hint == true ? field : hint, error)
         end
@@ -120,14 +122,17 @@ module ExtFormHelper
       @template.label(@object_name, field, text, objectify_options(options), &block)
     end
 
-    # Return hint text, optionally replaced by error_override if present.
-    def hint(field, error_override = nil)
-      if error_override.present?
-        @template.content_tag(:span, error_override, :class => :error)
-      else
-        field = i18n_text(:hints, field) unless field.is_a?(String)
-        @template.content_tag(:span, field, :class => :hint)
-      end
+    # Returns a field hint text. The hint text is localized if passed a field
+    # name symbol, otherwise the text is output as is.
+    def hint(field)
+      field = i18n_text(:hints, field) unless field.is_a?(String)
+      @template.content_tag(:span, field, :class => :hint)
+    end
+
+    # Returns error text for a field, if present.
+    def error_message(field)
+      field = error_on(field) if field.is_a?(Symbol)
+      @template.content_tag(:span, field, :class => :error)
     end
 
     # Submit tag which also classifies the input by the input name.
