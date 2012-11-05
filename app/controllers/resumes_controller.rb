@@ -34,7 +34,7 @@ class ResumesController < ApplicationController
   end
 
   def create
-    @resume = Resume.new(params[:resume], as: current_user.role.to_sym)
+    @resume = Resume.new(params[:resume], as: current_role)
     @resume.user = current_user unless current_user.admin?
     authorize! :create, @resume
     @resume.save

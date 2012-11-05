@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params[:user], as: current_role)
     @user.save
     respond_with @user
   end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def update
     @user.update_attributes(params[:user])
     @user.save
-    respond_with @user
+    respond_with @user, location: return_url
   end
 
   def delete
@@ -36,5 +36,11 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_with @user, location: users_path
+  end
+
+  private
+
+  def return_url
+    current_role == :admin ? users_path : me_users_path
   end
 end

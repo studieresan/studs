@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def current_role
+    logged_in? ? current_user.role.to_sym : nil
+  end
+
   def not_authenticated
     redirect_to login_path
   end
