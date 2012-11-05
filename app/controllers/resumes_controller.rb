@@ -1,5 +1,5 @@
 class ResumesController < ApplicationController
-  respond_to :html, :xml
+  respond_to :html
   responders :flash, :collection
 
   before_filter :show_info_for_unauthorized, only: :index

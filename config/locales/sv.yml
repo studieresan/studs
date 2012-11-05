@@ -80,7 +80,7 @@ sv:
       updated_at: Uppdaterad
       login: Användarnamn
       password: Lösenord
-      password_confirmation: Lösenordsbekräftelse
+      password_confirmation: Lösenord igen
       remember_me: Kom ihåg mig
       title: Titel
       name: Namn
