@@ -7,6 +7,7 @@ class Resume < ActiveRecord::Base
   attr_protected :user, as: :admin
 
   validates_presence_of :name, :email
+  validates :email, format: { with: /[\w.%+-]+@[\w.-]+\.[a-z]{2,4}/i }
 
   acts_as_ordered_taggable_on :skills
 
