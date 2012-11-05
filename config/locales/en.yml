@@ -46,7 +46,9 @@ en:
     logged_out:
       title: CV Database
       body_html: >
-        Body
+        The CV database contains qualifications and contact information for all
+        students participating in the project, and is available to the companies
+        we work with.
     none: Found no resumes matching your criterias
     show:
       birthdate: "%{date} (%{age} years old)"
