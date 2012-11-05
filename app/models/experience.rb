@@ -8,7 +8,7 @@ class Experience < ActiveRecord::Base
 
   validates_presence_of :organization, :title, :start_date
 
-  default_scope order('end_date DESC')
+  default_scope lambda { order('coalesce(end_date, ?)', Date.today.to_formatted_s(:db)) }
 
   def duration
     start = I18n.l(start_date, format: :duration)
