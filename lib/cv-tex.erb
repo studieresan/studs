@@ -1,0 +1,63 @@
+<%= IO.read 'cv_header.tex'  %>
+
+\def\name {<%= cv.name %>}
+\makeatletter
+\date {<%=Time.now.strftime '%F' %> } \let\thedate\@date
+\makeatother
+\title {stuDs, CV <%=cv.name%>}
+\author {\name}
+
+\begin {document}
+
+%{{{ Header
+
+% Name
+\hspace{\titleleft}\parbox{\titlefwidth}{
+{\theheader}\vspace{-2mm}\par
+\rule{\titlefwidth}{1pt}\vspace{2mm} % ruler
+}
+
+% Contact information
+\begin{tabular*}{\textwidth}{@{}l l @{\extracolsep{\fill}} r @{}}
+\iconl{\bf \Large \textborn} {\bf Date of birth:} & <%=cv.date_of_birth%> \\
+\iconl{\Telefon} {\bf Phone number:} & <%= cv.phone %> \\
+\iconl{\Letter} {\bf Email address:} & \href{mailto:<%= cv.email %>}{\tt <%= cv.email %>} &
+\end{tabular*}
+
+%}}}
+
+\section* {Keywords}
+
+<%= cv.tags.sort.join ', ' %>
+
+\section* {Education}
+<% cv.education.each do |edu| %>
+  \theplace [, <%= edu.location %>]{{}{<%= edu.where %>}}
+  <% edu.what.each do |job| %>
+    \thework{<%= job.short %>}{\mbox{<%= job.when %>}}
+    <%= job.description %>
+  <% end %>
+<% end %>
+
+\section* {Experience}
+
+<% cv.experience.each do |edu| %>
+  \theplace [, <%= edu.location %>]{{}{<%= edu.where %>}}
+  <% edu.what.each do |job| %>
+    \thework{<%= job.short %>}{\mbox{<%= job.when %>}}
+    <%= job.description %>
+  <% end %>
+<% end %>
+
+\section* {Extra-Curricular Activities}
+
+<% cv.other.each do |edu| %>
+  \theplace [, <%= edu.location %>]{{}{<%= edu.where %>}}
+  <% edu.what.each do |job| %>
+    \thework{<%= job.short %>}{\mbox{<%= job.when %>}}
+    <%= job.description %>
+  <% end %>
+<% end %>
+
+<%= IO.read 'cv_footer.tex'  %>
+
