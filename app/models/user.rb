@@ -6,10 +6,11 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
 
-  attr_protected :role, as: :admin
+  attr_protected :login, :role, as: :admin
 
+  validates :login, presence: true, uniqueness: true, length: { minimum: 3 }
+  validates :password, presence: true, length: { minimum: 3 }, on: :create
   validates_confirmation_of :password
-  validates_presence_of :password, on: :create
   validates :email, presence: true
   validates_inclusion_of :role, in: ROLES
 
