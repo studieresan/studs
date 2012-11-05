@@ -4,5 +4,7 @@
   %h2= t '.title'
   %p= t '.body_html'
 
+  %p.download= link_to t('.download'), "/uploads/studs_product_sheet_#{I18n.locale}.pdf", :class => 'action download'
+
 .column
   %img(src="/uploads/splash.jpg" alt="")/
