@@ -74,7 +74,7 @@ sv:
         att klicka på ditt användarnamn i fältet uppe till höger på sidan.
 
         Användarnamn: %{login}
-        Lösenord: %{password} (automatiskt genererat)
+        Lösenord: %{password}
         Epost: %{email}
       cant_sent_without_password: >
         Det går inte att skicka epost med inloggningsuppgifter utan att ange
