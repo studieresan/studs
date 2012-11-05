@@ -2,8 +2,7 @@ class ResumesController < ApplicationController
   respond_to :html, :xml
   responders :flash, :collection
 
-  before_filter :review_authorization
-
+  before_filter :show_info_for_unauthorized, only: :index
   load_and_authorize_resource except: [:mine, :create]
 
   def index
@@ -14,6 +13,7 @@ class ResumesController < ApplicationController
   def mine
     @resume = current_user.resume
     if @resume
+      authorize! :read, @resume
       render 'show'
     else
       redirect_to action: :new
@@ -60,11 +60,9 @@ class ResumesController < ApplicationController
 
   private
 
-  def review_authorization
-    unless logged_in?
-      save_return_url
-      render 'logged_out'
-      return 
-    end
+  def show_info_for_unauthorized
+    return if can? :index, Resume
+    save_return_url
+    render 'logged_out'
   end
 end
