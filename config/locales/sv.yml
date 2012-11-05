@@ -76,6 +76,10 @@ sv:
         Användarnamn: %{login}
         Lösenord: %{password} (automatiskt genererat)
         Epost: %{email}
+      cant_sent_without_password: >
+        Det går inte att skicka epost med inloggningsuppgifter utan att ange
+        ett nytt lösenord
+      sending_failed: Eposten med nya inloggningsuppgifter kunde inte skickas
     change_password: Byte av lösenord
   files:
     index:
@@ -103,7 +107,7 @@ sv:
       masters: Masterprogram
       birthdate: Födelsedatum
       role: Roll
-      send_credentials_mail: Skicka epost med inloggningsuppgifter 
+      send_credentials_mail: Skicka epost med nya inloggningsuppgifter 
     resume:
       skills: Kunskaper
       skill_list: Kunskaper

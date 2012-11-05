@@ -67,6 +67,9 @@ en:
         Username: %{login}
         Password: %{password} (automatically generated)
         Email: %{email}
+      cant_sent_without_password: >
+        Can't send credentials email without specifying a new password
+      sending_failed: Failed to send email with new login credentials
     change_password: Change password
   files:
     index:
@@ -94,7 +97,7 @@ en:
       masters: Masters
       birthdate: Birthdate
       role: Role
-      send_credentials_mail: Send email with login credentials
+      send_credentials_mail: Send email with new login credentials
     resume:
       skills: Skills
       skill_list: Skills

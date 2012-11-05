@@ -13,9 +13,7 @@
       %h3= t('users.change_password')
     = f.password_field_row :password
     = f.password_field_row :password_confirmation
-
-  - if can? :create, User
-    %fieldset.mailing
+    - if can? :create, User
       = f.check_box_row :send_credentials_mail
 
   %fieldset.actions.align

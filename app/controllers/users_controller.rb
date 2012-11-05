@@ -26,9 +26,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.assign_attributes(params[:user], as: current_role)
-    @user.save
-    respond_with @user, location: return_url
+    begin
+      @user.assign_attributes(params[:user], as: current_role)
+      @user.save
+      respond_with @user, location: return_url
+    rescue RuntimeError
+      flash[:alert] = I18n.t('users.credentials_mail.' +
+        (params[:user][:password].blank? ? 'cant_sent_without_password' : 'sending_failed'))
+      render 'edit'
+    end
   end
 
   def delete
