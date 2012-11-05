@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   respond_to :html
   responders :flash, :collection
 
-  load_and_authorize_resource
+  load_and_authorize_resource except: [:create]
 
   def index
   end
@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user], as: current_role)
+    authorize! :create, @user
     @user.save
     respond_with @user
   end
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update_attributes(params[:user])
+    @user.assign_attributes(params[:user], as: current_role)
     @user.save
     respond_with @user, location: return_url
   end

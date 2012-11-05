@@ -7,8 +7,7 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   # Only admins should be able to change username and role
-  attr_protected :login, :role
-  attr_accessible :login, :role, as: :admin
+  attr_protected :login, :role, as: [:default, :student, :organization]
 
   validates :login, presence: true, uniqueness: true, length: { minimum: 3 }
   validates :email, presence: true
