@@ -9,8 +9,8 @@ class Ability
 
     # All users can view resumes and update their credentials
     can :read, Resume
-    can :read, User, id: user.id
     can :update, User, id: user.id
+    can :me, User
 
     if user.student?
       # Students can create and manage their own resumes
