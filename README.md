@@ -12,10 +12,10 @@ Install all gem dependencies through bundle (optionally skipping gems required i
 bundle install --without production
 ```
 
-Create a admin user for yourself in the rails console (started with `rails c`):
+Create a admin user for yourself in the rails console (started with `rails c`), or by running `rake db:seed`:
 
 ```ruby
-User.new(login: 'admin', email: 'admin@test.se', password: '4v8dfk', role: 'admin').save
+User.create(login: 'admin', email: 'admin@test.se', password: '4v8dfk', role: 'admin')
 ```
 
 You should now be good to go! Next step is to start the web server (unless running on Passenger or equivalent):
