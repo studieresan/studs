@@ -74,6 +74,11 @@ namespace :deploy do
     migrate
     restart
   end
+
+  desc "Seed the database"
+  task :seed do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} #{bundle_cmd} exec rake db:seed"
+  end
 end
 
 # Shorten remote output prefixes
