@@ -1,4 +1,4 @@
-= ext_form_for @user, :class => :resume do |f|
+= ext_form_for @user, :class => :user do |f|
   - if can? :manage, User
     %fieldset.admin
       = f.text_field_row :login
