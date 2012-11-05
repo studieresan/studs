@@ -262,7 +262,6 @@ a.action.small {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
-  float: left;
 }
 a.action + a.action { margin-right: 5px; }
 table a.action.small { float: left; }
@@ -528,7 +527,9 @@ td { border-bottom: 1px solid #ccc; }
 
 tbody tr:last-child td { border-bottom: 0; }
 
-td.actions { white-space: nowrap; }
+td.actions { text-align: right; white-space: nowrap; }
+td.actions .right { float: right; }
+td.actions .right a.action { float: left; }
 
 /* }}} Tables */
 /* {{{ Specific elements */

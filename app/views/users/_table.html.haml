@@ -1,0 +1,25 @@
+- users ||= @users
+%table.users
+  - cols = %w(login role name email updated_at)
+  %thead
+    %tr
+      - cols.each do |col|
+        %th{ :class => col }= t_attribute(:user, col)
+      %th.actions &nbsp;
+  %tbody
+    - if users.empty?
+      %tr
+        %td.empty{ colspan: cols.size}>= t('users.none')
+    - users.each do |user|
+      %tr
+        %td.login= user.login
+        %td.role= user.role
+        %td.name= user.name
+        %td.email= mail_to user.email
+        %td.updated_at= l user.updated_at
+        %td.actions
+          .right
+            - if can? :edit, user
+              = action_link :edit, [:edit, user], :small
+            - if can? :destroy, user
+              = action_link :delete, [:delete, user], :small
