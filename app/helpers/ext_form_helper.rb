@@ -101,7 +101,7 @@ module ExtFormHelper
           output += error_message(error)
         elsif opts[:hint]
           hint = opts.delete(:hint)
-          output += hint(hint == true ? field : hint, error)
+          output += hint(hint == true ? field : hint)
         end
 
         @template.content_tag(:div, output, :class => classes.join(' '))

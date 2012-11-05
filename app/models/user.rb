@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
 
+  # Credentials email hooks
   before_save :temporarily_store_password_for_mail
   after_save :send_credentials_mail_if_specified
 
@@ -25,6 +26,8 @@ class User < ActiveRecord::Base
     scope "#{role}s".to_sym, lambda { where(role: role) }
     define_method "#{role}?".to_sym, lambda { self.role == role }
   end
+
+  default_scope order('login ASC')
 
   # The student role is special since it includes admins as well.
   scope :students, lambda { where(role: STUDENT_ROLES) }
