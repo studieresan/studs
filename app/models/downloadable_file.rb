@@ -2,6 +2,8 @@ class DownloadableFile
   extend ActiveModel::Naming
   include ActiveModel::Conversion
 
+  DIRECTORY = 'uploads'.freeze
+
   attr_reader :url, :name, :dir, :size, :mtime
 
   def self.all
@@ -11,17 +13,34 @@ class DownloadableFile
   end
 
   def self.uploads_path
-    File.join('public', FileUploader::DIRECTORY)
+    File.join('public', DIRECTORY)
   end
 
   def self.path_for(name)
+    name = File.basename(name)
+    raise "Invalid file name: #{name}" if %w(. ..).include?(name)
     File.join(uploads_path, name)
   end
 
   def self.find_by_param(name)
     path = path_for(name)
-    raise ActiveRecord::RecordNotFound unless File.exists?(path)
+    raise ActiveRecord::RecordNotFound unless File.file?(path)
     new(name)
+  end
+
+  def self.store(upload)
+    file = upload['file']
+    return false if file.nil?
+    name = upload['name'].present? ? upload['name'] : file.original_filename
+    path = path_for(name)
+    File.open(path, 'wb') { |f| f.write(file.read) }
+    path
+  end
+
+  def self.delete(name)
+    path = path_for(name)
+    return false unless File.file?(path)
+    File.delete(path)
   end
 
   def initialize(name, is_path = false)

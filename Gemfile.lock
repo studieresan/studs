@@ -46,9 +46,6 @@ GEM
       net-ssh-gateway (>= 1.1.0)
     capistrano-shared_file (0.1.1)
     capistrano_colors (0.5.5)
-    carrierwave (0.6.2)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
     erubis (2.7.0)
     faraday (0.8.0)
       multipart-post (~> 1.1)
@@ -146,7 +143,6 @@ DEPENDENCIES
   capistrano
   capistrano-shared_file
   capistrano_colors
-  carrierwave
   haml-rails
   mysql2
   rails (= 3.2.3)

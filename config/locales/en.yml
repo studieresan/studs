@@ -50,6 +50,10 @@ en:
       title: Uploaded files
       upload: Upload
     none: No files have been uploaded
+    flash:
+      success: File uploaded
+      error: Could not upload file
+      deleted: File deleted
 
   attributes:
     defaults:

@@ -64,6 +64,10 @@ sv:
       title: Uppladdade filer
       upload: Ladda upp
     none: Inga filer har laddats upp
+    flash:
+      success: Laddade upp filen
+      error: Kunde inte ladda upp filen
+      deleted: Tog bort filen
 
   attributes:
     defaults:

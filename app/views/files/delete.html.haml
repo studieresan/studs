@@ -5,4 +5,4 @@
   %p= t('actions.delete_prompt_html', type: t('models.the.file'), name: @file.to_s)
   .actions
     = action_link :cancel, files_path
-    = button_to t('actions.delete'), files_path(@file), method: :delete , :class => :destroy
+    = button_to t('actions.delete'), file_path(@file), method: :delete , :class => :destroy

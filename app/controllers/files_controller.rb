@@ -6,6 +6,12 @@ class FilesController < ApplicationController
   end
 
   def create
+    if DownloadableFile.store(params[:file])
+      flash[:notice] = t('files.flash.success')
+    else 
+      flash[:error] = t('files.flash.error')
+    end
+    redirect_to action: 'index'
   end
 
   def delete
@@ -13,6 +19,9 @@ class FilesController < ApplicationController
   end
 
   def destroy
+    DownloadableFile.delete(params[:id])
+    flash[:notice] = t('files.flash.deleted')
+    redirect_to action: 'index'
   end
 
   private
