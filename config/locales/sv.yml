@@ -76,6 +76,7 @@ sv:
         Användarnamn: %{login}
         Lösenord: %{password} (automatiskt genererat)
         Epost: %{email}
+    change_password: Byte av lösenord
   files:
     index:
       title: Uppladdade filer
@@ -102,6 +103,7 @@ sv:
       masters: Masterprogram
       birthdate: Födelsedatum
       role: Roll
+      send_credentials_mail: Skicka epost med inloggningsuppgifter 
     resume:
       skills: Kunskaper
       skill_list: Kunskaper

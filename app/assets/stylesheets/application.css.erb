@@ -392,7 +392,7 @@ label, input[type=submit], input[type=button], input[type=checkbox], input[type=
   font-style: italic;
 }
 .input label.error { color: #900; }
-.input label.inline {
+.input label.inline, .input.check label {
   clear: none;
   margin-right: 15px;
   padding: 0;
@@ -412,6 +412,9 @@ label, input[type=submit], input[type=button], input[type=checkbox], input[type=
   box-sizing: border-box;
   width: 100%;
 }
+
+.input.check { margin-left: 130px; }
+.input.check .wrap { margin-right: 4px; width: auto; }
 
 .input span.hint, .input span.error {
   float: left;

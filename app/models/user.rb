@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
 
+  after_save :send_credentials_mail_if_specified
+
   # Only admins should be able to change username and role
   attr_protected :login, :role, as: [:default, :student, :organization]
 
@@ -31,5 +33,17 @@ class User < ActiveRecord::Base
 
   def to_s
     login
+  end
+
+  # Virtual attribute which controls credentials mail sending after save.
+  attr_writer :send_credentials_mail
+  def send_credentials_mail
+    %w(true 1 on).include?(@send_credentials_mail.try(:to_s)) || false
+  end
+
+  private
+
+  def send_credentials_mail_if_specified
+    UserMailer.credentials_mail(self).deliver
   end
 end

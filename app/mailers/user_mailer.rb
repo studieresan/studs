@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "studs-ledning@d.kth.se"
+  default from: "StuDs ledning <studs-ledning@d.kth.se>"
 
   def credentials_mail(user)
     raise "Can't send credentials mail for an unsaved user!" if user.new_record?

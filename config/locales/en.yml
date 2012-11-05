@@ -67,6 +67,7 @@ en:
         Username: %{login}
         Password: %{password} (automatically generated)
         Email: %{email}
+    change_password: Change password
   files:
     index:
       title: Uploaded files
@@ -83,6 +84,7 @@ en:
       updated_at: Updated
       login: Username
       password: Password
+      password_confirmation: Password again
       remember_me: Remember me
       title: Title
       name: Name
@@ -92,6 +94,7 @@ en:
       masters: Masters
       birthdate: Birthdate
       role: Role
+      send_credentials_mail: Send email with login credentials
     resume:
       skills: Skills
       skill_list: Skills
