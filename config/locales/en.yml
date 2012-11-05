@@ -15,6 +15,8 @@ en:
     index: Start
     resumes: CV Database
     contact: Contact
+    files: Files
+    users: Users
   roles:
     project_leader: Project leader
     sales_manager: Sales manager
@@ -171,6 +173,10 @@ en:
     upload: Upload
     delete_prompt_html: "Are you sure that you wish to delete the %{type} <em>%{name}</em>?"
   flash:
+    unauthorized_html: >
+      You are not authorized to view this page.
+      Contact the <a href="mailto:studs-it@d.kth.se">IT manager</a>
+      if you should have access to it.
     actions:
       create:
         notice: "Created %{resource_name}."

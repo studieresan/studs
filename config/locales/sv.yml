@@ -15,6 +15,7 @@ sv:
     resumes: CV-databas
     contact: Kontakt
     files: Filer
+    users: Användare
   roles:
     project_leader: Projektledare
     sales_manager: Säljansvarig
@@ -183,6 +184,10 @@ sv:
     upload: Ladda upp
     delete_prompt_html: "Är du säker på att du vill ta bort %{type} <em>%{name}</em>?"
   flash:
+    unauthorized_html: >
+      Du har inte rättighet att visa denna sida.
+      Kontakta <a href="mailto:studs-it@d.kth.se">IT-ansvarig</a>
+      om du borde ha det.
     actions:
       create:
         notice: "Skapade %{resource_name}."

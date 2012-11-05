@@ -32,5 +32,3 @@
         = f.text_field_row :name, value: params[:name], suggest: @files.map(&:name).sort
       %fieldset
         = f.submit t('actions.upload')
-
-    = render partial: '/flash', locals: { flash: flash }

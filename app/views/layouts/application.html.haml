@@ -14,9 +14,10 @@
         %h1= link_to t('common.title'), index_path, id: :logo
 
         %ul#nav.nav
-          - %w(index resumes contact).each do |target|
-            - path = send("#{target}_path".to_sym)
-            %li= link_to t("titles.#{target}"), path, :class => (target.to_sym == active_menu ? :active : nil)
+          - %w(index resumes contact files users).each do |target|
+            - if can? :view, target.to_sym
+              - path = send("#{target}_path".to_sym)
+              %li= link_to t("titles.#{target}"), path, :class => (target.to_sym == active_menu ? :active : nil)
 
         %ul#languages.nav
           - [%w(sv Svenska), %w(en English)].each do |lang, name|
@@ -28,12 +29,11 @@
           %ul#userbar
             - if student?
               %li.resume= link_to t('common.my_resume'), mine_resumes_path
-            %li.user= link_to current_user.login, user_path(current_user)
-            - if can? :manage, :user
-              %li.admin= link_to t('common.users'), users_path
+            %li.user= link_to current_user.login, current_user
             %li.logout= link_to t('session.logout'), logout_path
 
     #main
+      = render partial: '/flash', locals: { flash: flash }
       #content.cf
         = content_for?(:content) ? yield(:content) : yield
 

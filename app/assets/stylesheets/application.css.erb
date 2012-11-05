@@ -104,23 +104,12 @@ html {
   margin-bottom: 80px;
 }
 
-#content {
-  margin: 0 -40px;
-}
+#content { margin: 0 -40px; }
 
-#content .column, #content .full {
-  margin: 0 40px 40px 40px;
-}
-#content .column {
-  float: left;
-  width: 360px;
-}
-#content .column.wide {
-  width: 480px;
-}
-#content .column.small {
-  width: 240px;
-}
+#content .column, #content .full { margin: 0 40px; }
+#content .column { float: left; width: 360px; }
+#content .column.wide { width: 480px; }
+#content .column.small { width: 240px; }
 #content .full { clear: both; }
 
 #content .dialog {
@@ -129,9 +118,7 @@ html {
   width: 360px;
 }
 
-#content .section {
-  margin-bottom: 20px;
-}
+#content .section { margin-bottom: 20px; }
 
 /* }}} Layout */
 /* {{{ Header */
@@ -227,6 +214,34 @@ ul.nav a.active {
 }
 
 /* }}} Header */
+/* {{{ Notifications */
+
+#main > .flash {
+  margin-top: -20px;
+  margin-bottom: 15px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.flash {
+  padding: 8px;
+  font-size: 13px;
+  line-height: 18px;
+}
+.flash.error, .flash.alert {
+  color: #700;
+  background: #fcc;
+}
+.flash.notice, .flash.success {
+  color: #070;
+  background: #cfc;
+}
+.flash a { color: #000; }
+
+/* }}} Notifications */
 /* {{{ Content */
 
 a.action {
