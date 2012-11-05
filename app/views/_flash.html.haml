@@ -1,3 +1,3 @@
-- [:alert, :warning, :notice].each do |key|
+- [:error, :warning, :notice].each do |key|
   - if flash[key]
-    %p.flash.dialog{ :class => key }= flash[key]
+    %p.flash{ :class => key }= flash[key]

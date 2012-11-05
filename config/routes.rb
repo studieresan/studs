@@ -11,6 +11,10 @@ Studs::Application.routes.draw do
 
     resources :users
 
+    resources :files, only: [:index, :create, :destroy], id: /[^\/]+/ do
+      get 'delete', on: :member
+    end
+
     # Authentication
     get  'login'  => 'session#new',     as: :login
     post 'login'  => 'session#create',  as: :login_do

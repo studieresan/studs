@@ -9,9 +9,10 @@ class Ability
     can :read, User, id: user.id
     can :update, User, id: user.id
 
-    if user.student? # students can control their own resume
+    if user.student?
       can :create, Resume
       can :manage, Resume, user_id: user.id
+      can :create, :files
     end
 
     if user.admin?

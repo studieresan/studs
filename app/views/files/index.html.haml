@@ -1,0 +1,36 @@
+.column.wide
+  %h2= t '.title'
+
+  %table.files
+    - cols = %w(name size mtime).map(&:to_sym)
+    %thead
+      - cols.each do |col|
+        %th{ :class => col }= t_attribute(:file, col)
+      %th.actions &nbsp;
+    %body
+      - if @files.empty?
+        %tr
+          %td.empty{ colspan: cols.size}>= t('files.none')
+      - @files.each do |file|
+        %tr
+          %td.name= link_to file.name, file.url, :class => 'action download'
+          %td.size= number_to_human_size file.size, precision: 2, significant: false
+          %td.mtime{ title: l(file.mtime) }= l(file.mtime, format: :ymd)
+          %td.actions
+            - if can? :edit, :files
+              = action_link :edit, files_path(name: file.name), :small
+            - if can? :destroy, :files
+              = action_link :delete, delete_file_path(file), :small
+
+- if can? :upload, :files
+  .column.small
+    %h2= t '.upload'
+
+    = ext_form_for :file, url: files_path, method: :post, multipart: true do |f|
+      %fieldset.inline
+        = f.file_field_row :file
+        = f.text_field_row :name, value: params[:name], suggest: @files.map(&:name).sort
+      %fieldset
+        = f.submit t('actions.upload')
+
+    = render partial: '/flash', locals: { flash: flash }
