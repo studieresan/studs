@@ -2,6 +2,8 @@ class ResumeFilter
   extend ActiveModel::Naming
   include ActiveModel::Conversion
 
+  MAX_SKILLS_FILTERED = 10.freeze
+
   attr_accessor :name, :skill_list
   alias :n :name
   alias :n= :name=
@@ -16,7 +18,7 @@ class ResumeFilter
 
   def skills
     return [] unless skill_list.present?
-    ActsAsTaggableOn::TagList.from(skill_list).to_a
+    ActsAsTaggableOn::TagList.from(skill_list).to_a[0..MAX_SKILLS_FILTERED]
   end
 
   def resumes

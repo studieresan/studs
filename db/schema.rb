@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101181617) do
+ActiveRecord::Schema.define(:version => 20121106010011) do
 
   create_table "experiences", :force => true do |t|
     t.integer  "resume_id"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20121101181617) do
   end
 
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["taggable_id", "taggable_type", "tag_id", "context"], :name => "index_taggings_on_keys"
 
   create_table "tags", :force => true do |t|
     t.string "name"
