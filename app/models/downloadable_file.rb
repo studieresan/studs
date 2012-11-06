@@ -4,12 +4,12 @@ class DownloadableFile
 
   DIRECTORY = 'uploads'.freeze
 
-  attr_reader :url, :name, :dir, :size, :mtime
+  attr_reader :url, :name, :path, :size, :mtime
 
   def self.all
-    Dir[File.join(uploads_path, '*')].map do |f|
-      DownloadableFile.new(f, true)
-    end
+    Dir[File.join(uploads_path, '*')].map { |f|
+      DownloadableFile.new(File.basename(f))
+    }.sort_by(&:name)
   end
 
   def self.uploads_path
@@ -23,36 +23,50 @@ class DownloadableFile
   end
 
   def self.find_by_param(name)
-    path = path_for(name)
-    raise ActiveRecord::RecordNotFound unless File.file?(path)
-    new(name)
+    obj = new(name)
+    raise ActiveRecord::RecordNotFound unless obj.exists?
+    obj
   end
 
-  def self.store(upload)
-    file = upload['file']
-    return false if file.nil?
-    name = upload['name'].present? ? upload['name'] : file.original_filename
-    path = path_for(name)
-    File.open(path, 'wb') { |f| f.write(file.read) }
-    path
+  def initialize(name)
+    if name.kind_of?(Hash) # form paramaters submitted?
+      @name, @upload = name[:name], name[:file]
+      if @upload.is_a?(ActionDispatch::Http::UploadedFile)
+        @name = @upload.original_filename unless @name.present?
+      end
+    else # file name provided
+      @name = name
+    end
+
+    @path = self.class.path_for(@name)
+    @url = @path.sub(/\A\/?public/, '')
+    self.stat if exists?
+    #raise ActiveRecord::RecordNotFound unless self.class.exists?(name, true)
   end
 
-  def self.delete(name)
-    path = path_for(name)
-    return false unless File.file?(path)
-    File.delete(path)
+  def complete_upload
+    return false unless @upload
+    File.open(@path, 'wb') { |f| f.write(@upload.read) }
+    @upload = nil
+    true
   end
 
-  def initialize(name, is_path = false)
-    name = self.class.path_for(name) unless is_path
-    raise ActiveRecord::RecordNotFound unless File.file?(name)
-    stat = File.stat(name)
-    parts = File.split(name)
-    @url = name.sub(/\A\/?public/, '')
-    @dir = parts[0]
-    @name = parts[1]
-    @size = stat.size
-    @mtime = stat.mtime
+  def delete
+    return false unless exists?
+    File.delete(@path)
+    true
+  end
+
+  def exists?
+    File.file?(@path)
+  end
+
+  def stat
+    return @stat if @stat
+    @stat = File.stat(@path)
+    @size = @stat.size
+    @mtime = @stat.mtime
+    @stat
   end
 
   def to_s

@@ -90,6 +90,9 @@ sv:
       success: Laddade upp filen
       error: Kunde inte ladda upp filen
       deleted: Tog bort filen
+      cannot_replace: >
+        Det finns redan en fil med samma namn, och du har inte rättighet att
+        ersätta den. Ange ett unikt filnamn för att ladda upp filen.
 
   attributes:
     defaults:
@@ -200,6 +203,7 @@ sv:
     filter: Filtrera
     reset: Nollställ
     upload: Ladda upp
+    replace: Ersätt
     delete_prompt_html: "Är du säker på att du vill ta bort %{type} <em>%{name}</em>?"
   flash:
     unauthorized_html: >

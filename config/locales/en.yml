@@ -80,6 +80,10 @@ en:
       success: File uploaded
       error: Could not upload file
       deleted: File deleted
+      cannot_replace: >
+        There already exists a file with the same name, and you do not have
+        permission to replace files. Enter a unique filename if you wish to
+        upload the file.
 
   attributes:
     defaults:
@@ -191,6 +195,7 @@ en:
     filter: Filter
     reset: Reset
     upload: Upload
+    replace: Replace
     delete_prompt_html: "Are you sure that you wish to delete the %{type} <em>%{name}</em>?"
   flash:
     unauthorized_html: >

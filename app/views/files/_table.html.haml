@@ -17,7 +17,7 @@
         %td.actions
           .right
             - if can? :update, :files
-              = action_link :edit, files_path(name: file.name), :small
+              = action_link :replace, files_path(name: file.name), :small
             - if can? :destroy, :files
               = action_link :delete, delete_file_path(file), :small
 

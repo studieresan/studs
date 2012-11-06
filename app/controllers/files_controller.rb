@@ -6,7 +6,10 @@ class FilesController < ApplicationController
   end
 
   def create
-    if DownloadableFile.store(params[:file])
+    file = DownloadableFile.new(params[:file])
+    if file.exists? && current_ability.cannot?(:update, :files)
+      flash[:alert] = t('files.flash.cannot_replace')
+    elsif file.complete_upload
       flash[:notice] = t('files.flash.success')
     else 
       flash[:alert] = t('files.flash.error')
@@ -16,10 +19,11 @@ class FilesController < ApplicationController
 
   def delete
     @file = DownloadableFile.new(params[:id])
+    raise ActiveRecord::RecordNotFound unless @file.exists?
   end
 
   def destroy
-    DownloadableFile.delete(params[:id])
+    DownloadableFile.new(params[:id]).delete
     flash[:notice] = t('files.flash.deleted')
     redirect_to action: 'index'
   end
