@@ -21,8 +21,8 @@ module MarkupHelper
       action = I18n.t("actions.#{action}")
     end
 
-    # Include link title for 'small' actions (with only the icon visible)
-    args[:title] ||= action if classes.include?(:small)
+    # Include link title for actions where only the icon is visible 
+    args[:title] ||= action if classes.include?(:icon)
 
     args[:class] = (%w(action) + classes).join(' ')
     content_tag(:a, action, args)

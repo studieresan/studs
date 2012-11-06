@@ -4,9 +4,9 @@
   %h2.section.title<
     = @resume.name
     - if can? :destroy, @resume
-      = action_link :delete, [:delete, @resume], :small
+      = action_link :delete, [:delete, @resume], :icon
     - if can? :edit, @resume
-      = action_link :edit, [:edit, @resume], :small
+      = action_link :edit, [:edit, @resume], :icon
 
   %dl.section.credentials
     = attribute_definition :masters, t_masters(@resume.masters)

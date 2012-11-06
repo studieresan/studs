@@ -20,6 +20,6 @@
         %td.actions
           .right
             - if can? :edit, user
-              = action_link :edit, [:edit, user], :small
+              = action_link :edit, [:edit, user], :icon
             - if can? :destroy, user
-              = action_link :delete, [:delete, user], :small
+              = action_link :delete, [:delete, user], :icon
