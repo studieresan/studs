@@ -42,7 +42,7 @@ en:
 
   main:
     index:
-      title: Get to know 27 new Masters of Science in engineering!
+      title: Get to know 27 new engineers!
       body_html: >
         StuDs, or Datasektionen's study tour, is a unique opportunity to meet a
         bunch of Computer-Science students from on the verge to become Master
@@ -107,7 +107,7 @@ en:
       email: Email
       presentation: Presentation
       phone: Phone number
-      masters: Master programme
+      masters: Master
       birthdate: Birthdate
       role: Role
       send_credentials_mail: Send email with new login credentials
@@ -133,7 +133,7 @@ en:
     resume:
       user_id: Owner of this resume
       name: First and last name
-      masters: The Master programme you are studying towards
+      masters: The master programme you are studying towards
       birthdate: Your birthdate
       email: Preferably your @kth.se address
       phone: A cell phone number is preferred
