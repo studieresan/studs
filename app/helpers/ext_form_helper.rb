@@ -126,7 +126,8 @@ module ExtFormHelper
     # name symbol, otherwise the text is output as is.
     def hint(field)
       field = i18n_text(:hints, field) unless field.is_a?(String)
-      @template.content_tag(:span, field, :class => :hint)
+      field.gsub!(/(\r\n|\r|\n)/, '<br />')
+      @template.content_tag(:span, field.html_safe, :class => :hint)
     end
 
     # Returns error text for a field, if present.

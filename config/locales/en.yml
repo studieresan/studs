@@ -3,7 +3,7 @@ en:
     title: StuDs 2013
     year: 2013
     delimeter_html: ' - '
-    my_resume: My Resume
+    my_resume: My resume
     users: Users
     resume_note: >
       The resume should be written in English, only the limited options are
@@ -42,7 +42,7 @@ en:
 
   main:
     index:
-      title: Get to Know 27 New Masters of Science in Engineering!
+      title: Get to know 27 new Masters of Science in engineering!
       body_html: >
         StuDs, or Datasektionen's study tour, is a unique opportunity to meet a
         bunch of Computer-Science students from on the verge to become Master
@@ -100,14 +100,14 @@ en:
       updated_at: Updated
       login: Username
       password: Password
-      password_confirmation: Password Again
-      remember_me: Remember Me
+      password_confirmation: Password again
+      remember_me: Remember me
       title: Title
       name: Name
       email: Email
       presentation: Presentation
-      phone: Phone Number
-      masters: Master Programme
+      phone: Phone number
+      masters: Master programme
       birthdate: Birthdate
       role: Role
       send_credentials_mail: Send email with new login credentials
@@ -131,29 +131,34 @@ en:
       file: File
   hints:
     resume:
-      user_id: Owner of This Resume
-      name: First and Last Name
-      masters: The Master Programme You Are Studying Towards
-      birthdate: Your Birthdate
-      email: Preferably Your @kth.se Address
-      phone: A Cell Phone Number is Preferred
-      skill_list: A List of Your Skills and Expertise
-      presentation: A Short Presentation of Yourself (optional)
+      user_id: Owner of this resume
+      name: First and last name
+      masters: The Master programme you are studying towards
+      birthdate: Your birthdate
+      email: Preferably your @kth.se address
+      phone: A cell phone number is preferred
+      skill_list:
+      presentation: A short presentation of yourself (optional) - don't list experiences here
+      skill_list: |
+        A list of your skills and expertise.
+        List the skills you know best or want to emphasize first.
+        You can drag the tags around, and remove them by clicking on them.
     experience:
-      kind: What kind of Experience is This?
-      organization: Company, Organization or School
+      kind: What kind of experience this is
+      organization: Company, organization or school
       title: The title you had, or programme/discipline for education
       location: City if relevant, followed by country unless in Sweden
       start_date: Month during which the experience began
       end_date: End date of experience unless it is still ongoing (Present in that case)
       description: A short description of what you did, including relevant keywords
     user:
-      name: First and Last name
+      name: First and last name
       email: Preferably your @kth.se address
   values:
     'true': Yes
     'false': No
     masters:
+      civ_ing: Civil engineer (no Master)
       com:  Communication Systems
       bsb:  Computational and Systems Biology
       csc:  Computer Science

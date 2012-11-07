@@ -138,8 +138,11 @@ sv:
       birthdate: Ditt födelsedatum
       email: Förslagsvis din @kth.se-adress
       phone: Mobiltelefonnummer är att föredra
-      skill_list: Ange kunskaper och teknisk kompetens som du innehar
-      presentation: En kort presentation av dig (valfri)
+      presentation: En kort presentation av dig (valfri) - lista inte erfarenheter här
+      skill_list: |
+        Ange kunskaper och teknisk kompetens som du innehar.
+        Lista det du kan bäst och/eller vill framhäva först.
+        Taggarna går att flytta med musen, och tas bort genom att klicka på dem.
     experience:
       kind: Vilket typ av  erfarenhet detta är
       organization: Företag, organisation eller läroverk (ex. KTH)
@@ -155,6 +158,7 @@ sv:
     'true': Ja
     'false': Nej
     masters:
+      civ_ing: Civilingenjör (ej Master)
       bsb:  Beräknings- och systembiologi
       csc:  Datalogi
       dtn:  Datorsimulering inom teknik och naturvetenskap

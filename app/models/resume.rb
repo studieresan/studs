@@ -1,5 +1,5 @@
 class Resume < ActiveRecord::Base
-  MASTERS = %w(bsb csc dtn dis ine int com hci mai2 mth meg nss sed stek syb skk scr tls).freeze
+  MASTERS = %w(bsb csc dtn dis ine int com hci mai2 mth meg nss sed stek syb skk scr tls civ_ing).freeze
 
   belongs_to :user
   has_many :experiences, inverse_of: :resume, dependent: :destroy
