@@ -6,7 +6,8 @@ sv:
     my_resume: Mitt CV
     users: Användare
     resume_note: >
-      Skriv CV:t på engelska, enbart de fält med begränsade val översätts automatiskt.
+      Skriv CV:t på engelska, enbart de fält med begränsade val översätts
+      automatiskt.
     languages:
       en: English
       sv: Swedish
@@ -61,7 +62,7 @@ sv:
         företag vi samarbetar med.
     show:
       birthdate: "%{date} (%{age} år)"
-    none: Det finns inga CV:n som matchade dina kriterier
+    none: Hittade inga CV:n som matchade dina kriterier.
   users:
     index:
       title: Användare

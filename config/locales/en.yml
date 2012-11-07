@@ -3,7 +3,7 @@ en:
     title: StuDs 2013
     year: 2013
     delimeter_html: ' - '
-    my_resume: My resume
+    my_resume: My Resume
     users: Users
     resume_note: >
       The resume should be written in English, only the limited options are
@@ -13,7 +13,7 @@ en:
       sv: Swedish
   titles:
     index: Start
-    resumes: CV Database
+    resumes: Resume Database
     contact: Contact
     files: Files
     users: Users
@@ -30,34 +30,43 @@ en:
     login: Log in
     logout: Log out
     invalid_credentials: Invalid credentials
+  not_found:
+    title: Page Not Found
+    body_html: Unfortunately, we couldn't find what you were looking for.
+  error_occurred:
+    title: An Error Occured
+    body_html: >
+      Unfortunately an error occured on the server.<br />
+      Please contact those <a href="mailto:studs-it@d.kth.se">responsible</a>
+      if the problem remains.
 
   main:
     index:
-      title: Get to know 27 new civil engineers!
+      title: Get to Know 27 New Masters of Science in Engineering!
       body_html: >
-        StuDs, or Datasektionens study tour, is a unique opportunity to meet a
-        bunch of computer science students on the verge to become Master
-        graduates. This offers a great way to meet possible future employees.
-      download: Download our product sheet
+        StuDs, or Datasektionen's study tour, is a unique opportunity to meet a
+        bunch of Computer-Science students from on the verge to become Master
+        graduates. StuDs offers a great way to meet possible future employees.
+      download: Download our product sheet!
     contact:
       title: Contact Us
   resumes:
     index:
-      title: CV Database
+      title: Resume Database
     logged_out:
-      title: CV Database
+      title: Resume Database
       body_html: >
-        The CV database contains qualifications and contact information for all
-        students participating in the project, and is available to the companies
-        we work with.
-    none: Found no resumes matching your criterias
+        The resume database contains qualifications and contact information for
+        all students participating in the project. It is available to all the
+        companies we work with.
+    none: Found no resumes matching your criteria.
     show:
       birthdate: "%{date} (%{age} years old)"
   users:
     index:
       title: Users
     credentials_mail:
-      subject: Login credentials for StuDs' website
+      subject: Login credentials for StuDs' homepage
       body: |
         An account has been created for you at studieresan.se.
         You can now log in at http://studieresan.se/login with the following credentials.
@@ -68,12 +77,12 @@ en:
         Password: %{password}
         Email: %{email}
       cant_sent_without_password: >
-        Can't send credentials email without specifying a new password
+        Unable to send credentials email without specifying a new password.
       sending_failed: Failed to send email with new login credentials
     change_password: Change password
   files:
     index:
-      title: Uploaded files
+      title: Uploaded Files
       upload: Upload
     none: No files have been uploaded
     flash:
@@ -82,7 +91,7 @@ en:
       deleted: File deleted
       cannot_replace: >
         There already exists a file with the same name, and you do not have
-        permission to replace files. Enter a unique filename if you wish to
+        permission to replace files. Enter a new unique filename if you wish to
         upload the file.
 
   attributes:
@@ -91,14 +100,14 @@ en:
       updated_at: Updated
       login: Username
       password: Password
-      password_confirmation: Password again
-      remember_me: Remember me
+      password_confirmation: Password Again
+      remember_me: Remember Me
       title: Title
       name: Name
       email: Email
       presentation: Presentation
-      phone: Phone number
-      masters: Masters
+      phone: Phone Number
+      masters: Master Programme
       birthdate: Birthdate
       role: Role
       send_credentials_mail: Send email with new login credentials
@@ -122,24 +131,24 @@ en:
       file: File
   hints:
     resume:
-      user_id: The owner of this resume
-      name: First and last name
-      masters: The masters you are studying towards
-      birthdate: Your birthdate
-      email: Preferably your @kth.se address
-      phone: A cell phone number are preferred
-      skill_list: A list of your skills and expertise
-      presentation: A short presentation of yourself (optional)
+      user_id: Owner of This Resume
+      name: First and Last Name
+      masters: The Master Programme You Are Studying Towards
+      birthdate: Your Birthdate
+      email: Preferably Your @kth.se Address
+      phone: A Cell Phone Number is Preferred
+      skill_list: A List of Your Skills and Expertise
+      presentation: A Short Presentation of Yourself (optional)
     experience:
-      kind: What kind of experience this is
-      organization: Company, organization or school
-      title: The title you had, or programme/discipline if education
-      location: City if relevant, followed by country if not Sweden
+      kind: What kind of Experience is This?
+      organization: Company, Organization or School
+      title: The title you had, or programme/discipline for education
+      location: City if relevant, followed by country unless in Sweden
       start_date: Month during which the experience began
       end_date: End date of experience unless it is still ongoing (Present in that case)
       description: A short description of what you did, including relevant keywords
     user:
-      name: First and last name
+      name: First and Last name
       email: Preferably your @kth.se address
   values:
     'true': Yes
@@ -166,8 +175,8 @@ en:
       tls:  Wireless Systems
     experience_kind:
       education: Education
-      work: Work experience
-      extracurricular: Extracurricular activities
+      work: Work Experience
+      extracurricular: Extracurricular Activities
     duration:
       ongoing_html: '%{start} &ndash; Present'
       ended_html: '%{start} &ndash; %{end} (%{months} months)'
