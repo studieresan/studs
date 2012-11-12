@@ -30,4 +30,6 @@ Studs::Application.routes.draw do
   end
 
   root to: 'main#index'
+
+  match '*not_found', to: 'application#not_found'
 end

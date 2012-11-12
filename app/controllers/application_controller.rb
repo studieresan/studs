@@ -10,6 +10,22 @@ class ApplicationController < ActionController::Base
     redirect_to index_url, :alert => t('flash.unauthorized_html')
   end
 
+  unless Rails.application.config.consider_all_requests_local
+    rescue_from ActionController::RoutingError, with: :not_found
+    rescue_from ActionController::UnknownController, with: :not_found
+    rescue_from ::AbstractController::ActionNotFound, with: :not_found
+    rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  end
+
+  def not_found(exception = nil)
+    @exception = exception
+
+    respond_to do |f|
+      f.html { render 'errors/not_found', status: 404, layout: 'application' }
+      f.all { head 404 }
+    end
+  end
+  
   protected
 
   def current_role
@@ -31,7 +47,7 @@ class ApplicationController < ActionController::Base
     response.headers['X-Messages'] = flash_json
     flash.discard
   end
-  
+
   def custom_log_error(err)
     if err.kind_of? Exception
       Rails.logger.error "ERROR(#{err.class}): #{err.message}\nSOURCE: #{err.backtrace.first}"
