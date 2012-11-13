@@ -16,7 +16,7 @@ class Ability
       # Students can create and manage their own resumes
       can :create, Resume
       can :manage, Resume, user_id: user.id
-      can :manage, Experience
+      can :manage, Experience, resume: { user_id: user.id }
 
       can [:view, :index, :create], :files
     end
