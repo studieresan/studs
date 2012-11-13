@@ -6,8 +6,11 @@ class Resume < ActiveRecord::Base
 
   attr_protected :user, as: :admin
 
-  validates_presence_of :name, :email
-  validates :email, format: { with: /[\w.%+-]+@[\w.-]+\.[a-z]{2,4}/i }
+  validates :name, presence: true, length: { minimum: 4 }
+  validates :email, presence: true, format: { with: /[\w.%+-]+@[\w.-]+\.[a-z]{2,4}/i }
+
+  #validates :slug, presence: true, uniqueness: true
+  acts_as_url :name, url_attribute: :slug, sync_url: true
 
   acts_as_ordered_taggable_on :skills
 
@@ -36,5 +39,9 @@ class Resume < ActiveRecord::Base
 
   def to_s
     name
+  end
+
+  def to_param
+    slug
   end
 end

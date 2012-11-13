@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106010011) do
+ActiveRecord::Schema.define(:version => 20121113210724) do
 
   create_table "experiences", :force => true do |t|
     t.integer  "resume_id"
@@ -36,7 +36,10 @@ ActiveRecord::Schema.define(:version => 20121106010011) do
     t.datetime "updated_at",   :null => false
     t.string   "masters"
     t.text     "presentation"
+    t.string   "slug"
   end
+
+  add_index "resumes", ["slug"], :name => "index_resumes_on_slug", :unique => true
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

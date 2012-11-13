@@ -2,7 +2,7 @@ class ExperiencesController < ApplicationController
   respond_to :html
   responders :flash, :collection
 
-  load_and_authorize_resource :resume
+  load_and_authorize_resource :resume, find_by: :slug
   load_and_authorize_resource :experience, through: :resume
 
   before_filter :authorize_resume_editing

@@ -2,10 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
-gem 'acts-as-taggable-on'
-
 gem 'bcrypt-ruby'
 gem 'sorcery'
+
+gem 'acts-as-taggable-on'
+gem 'stringex'
 gem 'cancan'
 
 gem 'responders'

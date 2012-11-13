@@ -3,7 +3,7 @@ class ResumesController < ApplicationController
   responders :flash, :collection
 
   before_filter :show_info_for_unauthorized, only: :index
-  load_and_authorize_resource except: [:mine, :create]
+  load_and_authorize_resource except: [:mine, :create], find_by: :slug
 
   def index
     @filter = ResumeFilter.new(params.to_hash.slice(*%w(n name s skill_list)))
@@ -38,7 +38,7 @@ class ResumesController < ApplicationController
     @resume.user = current_user unless current_user.admin?
     authorize! :create, @resume
     @resume.save
-    respond_with @resume
+    respond_with @resume, location: @resume
   end
 
   def edit
@@ -47,7 +47,7 @@ class ResumesController < ApplicationController
   def update
     @resume.update_attributes(params[:resume])
     @resume.save
-    respond_with @resume
+    respond_with @resume, location: @resume
   end
 
   def delete
