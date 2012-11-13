@@ -157,6 +157,7 @@ sv:
   values:
     'true': Ja
     'false': Nej
+    any: Alla
     masters:
       civ_ing: Civilingenjör (ej Master)
       bsb:  Beräknings- och systembiologi

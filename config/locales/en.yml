@@ -157,6 +157,7 @@ en:
   values:
     'true': Yes
     'false': No
+    any: Any
     masters:
       civ_ing: Civil engineer (no Master)
       com:  Communication Systems

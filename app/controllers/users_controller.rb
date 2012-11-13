@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   load_and_authorize_resource except: [:create], find_by: :login
 
   def index
+    @users = @users.where('name LIKE ?', "%#{params[:name]}%") if params[:name].present?
+    @users = @users.where(role: params[:role]) if params[:role].present?
   end
 
   def me
