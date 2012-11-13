@@ -3,11 +3,12 @@ class ResumesController < ApplicationController
   responders :flash, :collection
 
   before_filter :show_info_for_unauthorized, only: :index
-  load_and_authorize_resource except: [:mine, :create], find_by: :slug
+  load_and_authorize_resource except: [:index, :mine, :create], find_by: :slug
 
   def index
     @filter = ResumeFilter.new(params.to_hash.slice(*%w(n name s skill_list)))
     @resumes = @filter.resumes
+    authorize! :read, Resume
   end
 
   def mine
