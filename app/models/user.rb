@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    login
+    name.present? ? name : login
   end
 
   def to_param
