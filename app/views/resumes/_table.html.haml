@@ -11,7 +11,7 @@
   %tbody
     - if resumes.empty?
       %tr
-        %td.empty{ colspan: cols.size}>= t('resumes.none')
+        %td.empty{ colspan: cols.size}>= t('resumes.no_results')
     - resumes.each do |res|
       %tr
         %td.name= link_to res.name, res

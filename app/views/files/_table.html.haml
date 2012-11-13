@@ -8,7 +8,7 @@
   %body
     - if files.empty?
       %tr
-        %td.empty{ colspan: cols.size}>= t('files.none')
+        %td.empty{ colspan: cols.size}>= t('files.no_results')
     - files.each do |file|
       %tr
         %td.name= link_to file.name, file.url, :class => 'action download'

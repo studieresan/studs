@@ -59,7 +59,7 @@ en:
         The resume database contains qualifications and contact information for
         all students participating in the project. It is available to all the
         companies we work with.
-    none: Found no resumes matching your criteria.
+    no_results: Found no resumes matching your criteria.
     show:
       birthdate: "%{date} (%{age} years old)"
   users:
@@ -80,11 +80,12 @@ en:
         Unable to send credentials email without specifying a new password.
       sending_failed: Failed to send email with new login credentials
     change_password: Change password
+    no_results: Found no users matching your criteria.
   files:
     index:
       title: Uploaded Files
       upload: Upload
-    none: No files have been uploaded
+    no_results: No files have been uploaded.
     flash:
       success: File uploaded
       error: Could not upload file

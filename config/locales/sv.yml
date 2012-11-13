@@ -62,7 +62,7 @@ sv:
         företag vi samarbetar med.
     show:
       birthdate: "%{date} (%{age} år)"
-    none: Hittade inga CV:n som matchade dina kriterier.
+    no_results: Det finns inga CV:n som matchar dina kriterier.
   users:
     index:
       title: Användare
@@ -82,11 +82,12 @@ sv:
         ett nytt lösenord
       sending_failed: Eposten med nya inloggningsuppgifter kunde inte skickas
     change_password: Byte av lösenord
+    no_results: Det finns inga användare som matchar dina kriterier.
   files:
     index:
       title: Uppladdade filer
       upload: Ladda upp
-    none: Inga filer har laddats upp
+    no_results: Inga filer har laddats upp.
     flash:
       success: Laddade upp filen
       error: Kunde inte ladda upp filen
