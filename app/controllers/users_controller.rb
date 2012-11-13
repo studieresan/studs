@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   respond_to :html
   responders :flash, :collection
 
-  load_and_authorize_resource except: [:create]
+  load_and_authorize_resource except: [:create], find_by: :login
 
   def index
   end

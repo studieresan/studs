@@ -39,6 +39,10 @@ class User < ActiveRecord::Base
     login
   end
 
+  def to_param
+    login
+  end
+
   # Virtual attribute which controls credentials mail sending after save.
   attr_writer :send_credentials_mail
   def send_credentials_mail
