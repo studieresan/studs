@@ -5,6 +5,8 @@ class ExperiencesController < ApplicationController
   load_and_authorize_resource :resume
   load_and_authorize_resource :experience, through: :resume
 
+  before_filter :authorize_resume_editing
+
   def new
   end
 
@@ -28,5 +30,11 @@ class ExperiencesController < ApplicationController
   def destroy
     @experience.destroy
     respond_with @resume, @experience, location: @resume
+  end
+
+  private
+
+  def authorize_resume_editing
+    raise CanCan::AccessDenied if current_role != :admin && @resume.user_id != current_user.id
   end
 end
