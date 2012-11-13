@@ -1,7 +1,8 @@
 - active_menu :resumes
+- experiences = @resume.experiences_by_kind
 
 .column.general
-  %h2.section.title<
+  %h2.title<
     = @resume.name
     - if can? :destroy, @resume
       = action_link :delete, [:delete, @resume], :icon
@@ -25,10 +26,11 @@
       - @resume.skills.each do |s|
         %li= link_to s, resumes_path(s: s.name), :class => :tag
 
+  = render partial: 'experience_for_kind', locals: { kind: 'education',  experiences: experiences['education'], resume: @resume}
+
+
 .column.experiences
   - if can?(:edit, @resume)
     %h2= action_link t_model_action(:experience, :add), [:new, @resume, :experience], :add
-  - experiences = @resume.experiences_by_kind
-  - Experience::KINDS.each do |kind|
-    - next unless experiences.include?(kind)
+  - (Experience::KINDS - %w(education)).each do |kind|
     = render partial: 'experience_for_kind', locals: { kind: kind,  experiences: experiences[kind], resume: @resume}
