@@ -1,13 +1,13 @@
 require 'erb'
 
 module CVConverter
-  def CVConverter.escape_latex(text)
+  def self.escape_latex(text)
     text.gsub!(/\&/, '\\\\&')
     text.gsub!(/%/, '\\\\%')
     text.gsub!(/\$/, '\\\\$')
   end
 
-  def CVConverter.to_tex(cv)
+  def self.to_tex(cv)
     [cv.education, cv.experience, cv.other].each do |group|
       group.each do |thing|
         escape_latex thing.where
