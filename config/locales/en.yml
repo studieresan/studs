@@ -139,7 +139,9 @@ en:
       email: Preferably your @kth.se address
       phone: A cell phone number is preferred
       skill_list:
-      presentation: A short presentation of yourself (optional) - don't list experiences here
+      presentation: |
+        A short presentation of yourself (optional) - don't list experiences here.
+        This text is formatted through Markdown, enabling limited text styling.
       skill_list: |
         A list of your skills and expertise.
         List the skills you know best or want to emphasize first.

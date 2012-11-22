@@ -139,7 +139,9 @@ sv:
       birthdate: Ditt födelsedatum
       email: Förslagsvis din @kth.se-adress
       phone: Mobiltelefonnummer är att föredra
-      presentation: En kort presentation av dig (valfri) - lista inte erfarenheter här
+      presentation: |
+        En kort presentation av dig (valfri) - lista inte erfarenheter här.
+        Denna text formatteras via Markdown, vilket möjliggör viss textformattering.
       skill_list: |
         Ange kunskaper och teknisk kompetens som du innehar.
         Lista det du kan bäst och/eller vill framhäva först.

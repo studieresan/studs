@@ -7,12 +7,13 @@ gem 'sorcery'
 gem 'cancan'
 
 gem 'acts-as-taggable-on'
-gem 'stringex'
 gem 'auto_strip_attributes'
 
 gem 'responders'
 
 gem 'haml-rails'
+gem 'stringex'
+gem 'redcarpet'
 
 group :development do
   gem 'sqlite3'

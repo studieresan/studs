@@ -18,7 +18,7 @@
   - if @resume.presentation.present?
     .section.presentation
       %h3= t_attribute :resume, :presentation
-      .body= paragraphize @resume.presentation
+      .body= markdown @resume.presentation
 
   .section.skills
     %h3= t_attribute :resume, :skills
