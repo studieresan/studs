@@ -3,6 +3,7 @@ class ResumesController < ApplicationController
   responders :flash, :collection
 
   before_filter :show_info_for_unauthorized, only: :index
+  before_filter :require_login, only: :mine
   load_and_authorize_resource except: [:index, :mine, :create], find_by: :slug
 
   def index
