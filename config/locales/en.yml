@@ -106,6 +106,7 @@ en:
       title: Title
       name: Name
       email: Email
+      linkedin_url: LinkedIn profile
       presentation: Presentation
       phone: Phone number
       masters: Master
@@ -137,6 +138,7 @@ en:
       masters: The master programme you are studying towards
       birthdate: Your birthdate
       email: Preferably your @kth.se address
+      linkedin_url: URL to your LinkedIn profile if you have one
       phone: A cell phone number is preferred
       skill_list:
       presentation: |

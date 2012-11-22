@@ -107,6 +107,7 @@ sv:
       title: Titel
       name: Namn
       email: Epostadress
+      linkedin_url: LinkedIn-profil
       presentation: Presentation
       phone: Telefonnummer
       masters: Masterprogram
@@ -138,6 +139,7 @@ sv:
       masters: Masterprogramet du läser på KTH
       birthdate: Ditt födelsedatum
       email: Förslagsvis din @kth.se-adress
+      linkedin_url: URL till din LinkedIn-profil om du har en
       phone: Mobiltelefonnummer är att föredra
       presentation: |
         En kort presentation av dig (valfri) - lista inte erfarenheter här.
