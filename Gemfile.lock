@@ -36,6 +36,8 @@ GEM
       rails (~> 3.0)
     addressable (2.3.2)
     arel (3.0.2)
+    auto_strip_attributes (2.0.2)
+      activerecord (>= 3.0)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
     cancan (1.6.8)
@@ -212,6 +214,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  auto_strip_attributes
   bcrypt-ruby
   cancan
   capistrano

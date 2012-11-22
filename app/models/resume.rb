@@ -9,6 +9,8 @@ class Resume < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 4 }
   validates :email, presence: true, format: { with: /[\w.%+-]+@[\w.-]+\.[a-z]{2,4}/i }
 
+  auto_strip_attributes :name, :email, :phone, :presentation, squish: false
+
   #validates :slug, presence: true, uniqueness: true
   acts_as_url :name, url_attribute: :slug, sync_url: true
 

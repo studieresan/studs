@@ -4,10 +4,11 @@ gem 'rails', '3.2.3'
 
 gem 'bcrypt-ruby'
 gem 'sorcery'
+gem 'cancan'
 
 gem 'acts-as-taggable-on'
 gem 'stringex'
-gem 'cancan'
+gem 'auto_strip_attributes'
 
 gem 'responders'
 

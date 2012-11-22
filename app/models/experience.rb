@@ -8,6 +8,8 @@ class Experience < ActiveRecord::Base
 
   validates_presence_of :organization, :title, :start_date
 
+  auto_strip_attributes :organization, :location, :title, :description, squish: false
+
   default_scope lambda { order("COALESCE(end_date, '#{Date.tomorrow.to_formatted_s(:db)}') DESC") }
 
   def duration

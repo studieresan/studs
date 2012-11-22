@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, if: :password_required?
   validates_presence_of :password_confirmation, if: :password_required?
 
+  auto_strip_attributes :login, :email, :name, squish: true
+
   # Scopes and inclusion testing for each user role.
   (ROLES - %w(student)).each do |role|
     scope "#{role}s".to_sym, lambda { where(role: role) }
