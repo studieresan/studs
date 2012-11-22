@@ -1,4 +1,4 @@
-- max_skills_shown = 7
+- max_skills_shown = 6
 - resumes ||= @resumes
 - filtered_skills ||= @filter.skills || []
 %table.resumes
@@ -14,7 +14,7 @@
         %td.empty{ colspan: cols.size}>= t('resumes.no_results')
     - resumes.each do |res|
       %tr
-        %td.name= link_to res.name, res
+        %td.name= link_to res.name, res, class: 'action show'
         %td.email= mail_to res.email
         %td.skills<
           - skills = res.skills_except(filtered_skills)
