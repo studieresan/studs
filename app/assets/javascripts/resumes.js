@@ -1,11 +1,11 @@
 $(function() {
-  var $table = $('table.resumes');
-  if (!$table.length) return;
-
   // Resume form tag input
   $('#resume_skill_list').tagger();
 
   // Resume search form & listing
+  var $table = $('table.resumes');
+  if (!$table.length) return;
+
   var $searchForm = $('form.resume-search');
   if ($searchForm.length) {
     var $tagger = $searchForm.find('input#s').tagger({
