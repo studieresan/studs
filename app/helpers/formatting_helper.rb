@@ -28,7 +28,7 @@ module FormattingHelper
   def linkedin_link(url)
     text = url # link text
     # User id provided, generate correct URL
-    if url =~ /\A[a-z\-]+\Z/i 
+    if url =~ /\A[a-z0-9\-]+\Z/i
       url = "http://www.linkedin.com/in/#{text}"
     # URL provided, determine user id
     elsif url =~ %r{linkedin\.com/(?:pub|in)/([^/?#\s]+)}
