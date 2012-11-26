@@ -4,5 +4,5 @@
 # Create admin user
 name = 'admin'
 password = '4v8dfk'
-User.create(login: name, email: 'admin@root.com', password: password, role: 'admin')
+User.create({ login: name, email: 'admin@root.com', password: password, role: 'admin'}, as: :admin)
 STDOUT.puts "Created admin user with login '#{name}' and password '#{password}'"
