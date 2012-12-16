@@ -164,7 +164,7 @@ sv:
     'false': Nej
     any: Alla
     masters:
-      civ_ing: Civilingenjör (ej Master)
+      civ_ing: Civilingenjör
       bsb:  Beräknings- och systembiologi
       csc:  Datalogi
       dtn:  Datorsimulering inom teknik och naturvetenskap

@@ -164,7 +164,7 @@ en:
     'false': No
     any: Any
     masters:
-      civ_ing: Civil engineer (no Master)
+      civ_ing: Civil engineer
       com:  Communication Systems
       bsb:  Computational and Systems Biology
       csc:  Computer Science

@@ -1,4 +1,5 @@
 module FormattingHelper
+  # Returns a string split into HTML paragraph tags.
   def paragraphize(string)
     # Trim whitespace
     string = string.gsub(/\A\s+|\s+\Z/, '').gsub(/\r\n?/, "\n")
