@@ -14,12 +14,12 @@ describe "Add a student acceptance test" do
   it "can add a student user" do
     visit users_path
     click_link "Skapa"
-    fill_in "Namn", with: "Svenne Banan"
     fill_in "Användarnamn", with: "svenneb"
-    fill_in "Epostaddress", with: "svenneb@example.com"
-    fill_in "Lösenord", with: "bananer"
-    fill_in "Lösenordsbekräftelse", with: "bananer"
     select "student", from: "Roll"
+    fill_in "Namn", with: "Svenne Banan"
+    fill_in "Epostadress", with: "svenneb@example.com"
+    fill_in "user_password", with: "bananer"
+    fill_in "user_password_confirmation", with: "bananer"
     click_button "Skapa"
 
     user = User.last
