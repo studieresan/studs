@@ -103,3 +103,59 @@
 %\def\office{\href{http://office.microsoft.com/}{Mirosoft Office}}
 %\def\latex{\href{http://en.wikipedia.org/wiki/LaTeX}{LaTeX}}
 %}}}
+
+\def\name {<%= cv.name %>}
+\makeatletter
+\date {<%=Time.now.strftime '%F' %> } \let\thedate\@date
+\makeatother
+\title {stuDs, CV <%=cv.name%>}
+\author {\name}
+
+\begin {document}
+
+%{{{ Header
+
+% Name
+\hspace{\titleleft}\parbox{\titlefwidth}{
+{\theheader}\vspace{-2mm}\par
+\rule{\titlefwidth}{1pt}\vspace{2mm} % ruler
+}
+
+% Contact information
+\begin{tabular*}{\textwidth}{@{}l l @{\extracolsep{\fill}} r @{}}
+\iconl{\bf \Large \textborn} {\bf Date of birth:} & <%=cv.birthdate %> \\
+\iconl{\Telefon} {\bf Phone number:} & <%= cv.phone %> \\
+\iconl{\Letter} {\bf Email address:} & \href{mailto:<%= cv.email %>}{\tt <%= cv.email %>} &
+\end{tabular*}
+
+%}}}
+
+\section* {Keywords}
+
+<%= cv.skills.join ', ' %>
+
+\section* {Education}
+<% cv.education.each do |edu| %>
+  \theplace [, <%= edu.location %>]{{}{<%= edu.organization %>}}
+  \thework{<%= edu.title %>}{\mbox{<%= edu.when %>}}
+  <%= edu.description %>
+<% end %>
+
+\section* {Work Experience}
+
+<% cv.work.each do |work| %>
+  \theplace [, <%= work.location %>]{{}{<%= work.organization %>}}
+  \thework{<%= work.title %>}{\mbox{<%= work.when %>}}
+  <%= work.description %>
+<% end %>
+
+\section* {Extra-Curricular Activities}
+
+<% cv.extracurricular.each do |extra| %>
+  \theplace [, <%= extra.location %>]{{}{<%= extra.organization %>}}
+  \thework{<%= extra.title %>}{\mbox{<%= extra.when %>}}
+  <%= extra.description %>
+<% end %>
+
+\end{document}
+
