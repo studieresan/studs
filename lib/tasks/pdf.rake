@@ -3,9 +3,9 @@ namespace :pdf do
   directory 'public/cv'
 
   task tex: :environment do
-    Resume.all.each do |resume|
+    Resume.includes(:experiences).all.each do |resume|
       File.open("tmp/cv/#{resume.slug}.tex", 'w') do |file|
-        file.write CVConverter::to_tex(resume)
+        file.write resume.to_tex
       end
     end
   end
