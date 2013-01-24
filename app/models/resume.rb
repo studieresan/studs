@@ -46,4 +46,37 @@ class Resume < ActiveRecord::Base
   def to_param
     slug
   end
+
+  def to_tex
+    [education, work, extracurricular].each do |group|
+      group.each do |thing|
+        self.class.escape_latex thing.organization
+        self.class.escape_latex thing.location
+        self.class.escape_latex thing.title
+        self.class.escape_latex thing.description
+      end
+    end
+
+    ERB.new(IO.read(File.join(Rails.root, 'app', 'views', 'resumes', '_resume.tex.erb'))).result(binding)
+  end
+
+  def education
+    experiences.where(kind: 'education')
+  end
+
+  def work
+    experiences.where(kind: 'work')
+  end
+
+  def extracurricular
+    experiences.where(kind: 'extracurricular')
+  end
+
+private
+
+  def self.escape_latex(text)
+    text.gsub!(/\&/, '\\\\&')
+    text.gsub!(/%/, '\\\\%')
+    text.gsub!(/\$/, '\\\\$')
+  end
 end
