@@ -8,6 +8,8 @@
       = action_link :delete, [:delete, @resume], :icon
     - if can? :edit, @resume
       = action_link :edit, [:edit, @resume], :icon
+    - if File.exists? File.join(Rails.root, 'public', 'cv', "#{@resume.slug}.pdf")
+      = link_to t('actions.download'), File.join('/cv', "#{@resume.slug}.pdf"), class: [:action, :icon, :download], title: t('actions.download')
 
   %dl.section.credentials
     = attribute_definition :masters, t_masters(@resume.masters)

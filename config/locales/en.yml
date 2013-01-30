@@ -215,6 +215,7 @@ en:
     filter: Filter
     reset: Reset
     upload: Upload
+    download: Download
     replace: Replace
     delete_prompt_html: "Are you sure that you wish to delete the %{type} <em>%{name}</em>?"
   flash:

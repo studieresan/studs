@@ -214,6 +214,7 @@ sv:
     filter: Filtrera
     reset: Nollställ
     upload: Ladda upp
+    download: Ladda ner
     replace: Ersätt
     delete_prompt_html: "Är du säker på att du vill ta bort %{type} <em>%{name}</em>?"
   flash:
