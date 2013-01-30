@@ -11,11 +11,13 @@ namespace :pdf do
   end
 
   task build: 'tmp/cv' do
-    # TODO
+    FileList['tmp/cv/*.tex'].each do |file|
+      sh "cd tmp/cv && pdflatex #{File.basename(file)}"
+    end
   end
 
-  task publish: :build do
-    cp 'tmp/cv/*.pdf', 'public/cv' unless FileList['tmp/cv/*.pdf'].empty?
+  task publish: 'public/cv' do
+    cp FileList['tmp/cv/*.pdf'], 'public/cv' unless FileList['tmp/cv/*.pdf'].empty?
   end
 
   task :clean do
@@ -27,4 +29,4 @@ namespace :pdf do
   end
 end
 
-task pdf: 'pdf:publish'
+task pdf: ['pdf:tex', 'pdf:build']
