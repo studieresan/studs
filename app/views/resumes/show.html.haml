@@ -8,7 +8,7 @@
       = action_link :delete, [:delete, @resume], :icon
     - if can? :edit, @resume
       = action_link :edit, [:edit, @resume], :icon
-    = link_to t('actions.download'), resume_path(@resume, format: :pdf), class: [:action, :icon, :download], title: t('actions.download')
+    = link_to 'PDF', resume_path(@resume, format: :pdf), class: [:action, :download], title: t('actions.download')
 
   %dl.section.credentials
     = attribute_definition :masters, t_masters(@resume.masters)
