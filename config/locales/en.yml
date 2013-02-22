@@ -247,7 +247,7 @@ en:
       education: Education
       work: Work Experience
       extracurricular: Extracurricular Activities
-    present: Present
+    present: present
     duration:
       ongoing_html: '%{start} &ndash; Present'
       ended_html: '%{start} &ndash; %{end} (%{months} months)'

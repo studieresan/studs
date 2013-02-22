@@ -125,7 +125,7 @@
     \section*{<%=htex t_experience_kind(kind) %>}
     <% experiences[kind].each do |exp| %>
       \theplace [, <%=htex exp.location %>]{{}{<%=htex exp.organization %>}}
-      \thework{<%=htex exp.title %>}{\mbox{<%=htex "#{exp.start_date.strftime('%Y.%m')} - #{exp.end_date ? exp.end_date.strftime('%Y.%m') : t('values.present')}" %>}}
+      \thework{<%=htex exp.title %>}{\mbox{<%=htex "#{exp.start_date.strftime('%Y.%m')}-#{exp.end_date ? exp.end_date.strftime('%Y.%m') : t('values.present')}" %>}}
       <%= exp.description.present? ? htex(exp.description) : '\\vspace{3mm}' %>
     <% end %>
   <% end %>

@@ -242,7 +242,7 @@ sv:
       education: Utbildning
       work: Arbetserfarenheter
       extracurricular: Övriga erfarenheter
-    present: Pågående
+    present: pågående
     duration:
       ongoing_html: '%{start} &ndash; Pågående'
       ended_html: '%{start} &ndash; %{end} (%{months} månader)'

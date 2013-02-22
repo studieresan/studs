@@ -53,6 +53,7 @@ namespace :deploy do
   task :default do
     update
     restart
+    clear_cache
   end
 
   desc "Restart server (kill the unicorns)"
@@ -73,6 +74,11 @@ namespace :deploy do
     end
     migrate
     restart
+  end
+
+  desc "Clear cached objects"
+  task :clear_cache do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} #{bundle_cmd} exec rake resumes:distclean"
   end
 
   desc "Seed the database"
