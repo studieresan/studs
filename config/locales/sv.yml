@@ -62,6 +62,13 @@ sv:
         företag vi samarbetar med.
     show:
       birthdate: "%{date} (%{age} år)"
+    pdf:
+      dob: Födelsedatum
+      phone: Telefonnummer
+      email: Epostadress
+      linkedin: LinkedIn
+      generated: "@"
+      babel_language: english
     no_results: Det finns inga CV:n som matchar dina kriterier.
   users:
     index:
@@ -187,6 +194,7 @@ sv:
       education: Utbildning
       work: Arbetserfarenheter
       extracurricular: Övriga erfarenheter
+    present: Pågående
     duration:
       ongoing_html: '%{start} &ndash; Pågående'
       ended_html: '%{start} &ndash; %{end} (%{months} månader)'

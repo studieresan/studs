@@ -3,6 +3,7 @@ StuDs 2013
 
 This is the website for StuDs, or Datasektionens studieresa (study tour).
 
+
 Getting started
 ---------------
 
@@ -23,6 +24,16 @@ You should now be good to go! Next step is to start the web server (unless runni
 ```bash
 rails server
 ```
+
+Generating PDF resumes
+----------------------
+
+PDF Resumes are generated through the `pdflatex` command line tool.
+The LaTeX template depends on multiple packages which will probably require you to install
+additional stuff for the `pdflatex` compatible tools you use.
+
+* Ubuntu: `sudo apt-get install texlive-latex-extra texlive-lang-swedish`.
+
 
 Authors
 -------

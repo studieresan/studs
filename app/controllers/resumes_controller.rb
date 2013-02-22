@@ -23,6 +23,20 @@ class ResumesController < ApplicationController
   end
 
   def show
+    @url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+    respond_to do |format|
+      format.html
+      format.pdf {
+        tex = TexResume.new(@resume, @url, I18n.locale)
+        path = tex.save params.include?(:force)
+        if path[0]
+          send_file path[0], filename: "#{tex.base_name}.pdf",
+            type: 'application/pdf', disposition: 'inline'
+        else
+          render text: path[1], status: 403, layout: false, content_type: Mime::TEXT
+        end
+      }
+    end
   end
 
   def new

@@ -59,9 +59,16 @@ en:
         The resume database contains qualifications and contact information for
         all students participating in the project. It is available to all the
         companies we work with.
-    no_results: Found no resumes matching your criteria.
     show:
       birthdate: "%{date} (%{age} years old)"
+    pdf:
+      dob: Date of birth
+      phone: Phone number
+      email: Email address
+      linkedin: LinkedIn
+      generated: "@"
+      babel_language: swedish
+    no_results: Found no resumes matching your criteria.
   users:
     index:
       title: Users
@@ -188,6 +195,7 @@ en:
       education: Education
       work: Work Experience
       extracurricular: Extracurricular Activities
+    present: Present
     duration:
       ongoing_html: '%{start} &ndash; Present'
       ended_html: '%{start} &ndash; %{end} (%{months} months)'

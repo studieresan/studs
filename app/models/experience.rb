@@ -29,8 +29,4 @@ class Experience < ActiveRecord::Base
   def to_s
     title
   end
-
-  def when
-    "#{start_date} - #{end_date ? end_date : 'Present'}"
-  end
 end

@@ -2,17 +2,17 @@ namespace :resumes do
   directory 'tmp/resumes'
   directory 'public/resumes'
 
-  task tex: :environment do
-    Resume.includes(:experiences).all.each do |resume|
-      File.open("tmp/resumes/#{resume.slug}.tex", 'w') do |file|
-        file.write resume.to_tex
-      end
-    end
-  end
-
-  task build: 'tmp/resumes' do
-    FileList['tmp/resumes/*.tex'].each do |file|
-      sh "cd tmp/resumes && pdflatex #{File.basename(file)}"
+  task build: :environment do
+    Resume.all.each do |resume|
+        tex = TexResume.new(resume, @url, 'en')
+        path = tex.save true
+        if path[0]
+          puts "> #{tex.base_name}.pdf"
+        else
+          puts "! #{tex.base_name}.pdf\n" + ("=" * 60)
+          puts path[1]
+          puts "=" * 60
+        end
     end
   end
 
@@ -21,7 +21,7 @@ namespace :resumes do
   end
 
   task :clean do
-    rm_rf 'tmp/resumes'
+    rm_rf 'tmp/resumes/*'
   end
 
   task distclean: :clean do
@@ -29,4 +29,4 @@ namespace :resumes do
   end
 end
 
-task pdf: ['resumes:tex', 'resumes:build']
+task resumes: 'resumes:build'

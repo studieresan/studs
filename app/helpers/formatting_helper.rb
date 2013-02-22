@@ -25,8 +25,7 @@ module FormattingHelper
     @markdown_renderer.render(string).html_safe
   end
 
-  # Returns a html link to a linkedin URL or profile id.
-  def linkedin_link(url)
+  def linkedin_id(url)
     text = url # link text
     # User id provided, generate correct URL
     if url =~ /\A[a-z0-9\-]+\Z/i
@@ -37,6 +36,12 @@ module FormattingHelper
     else
       text = "linkedin.com"
     end
+    return url, text
+  end
+
+  # Returns a html link to a linkedin URL or profile id.
+  def linkedin_link(url)
+    url, text = linkedin_id(url)
     content_tag :a, text, href: url, class: 'linkedin', rel: 'external'
   end
 end
