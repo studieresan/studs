@@ -21,11 +21,11 @@ namespace :resumes do
   end
 
   task :clean do
-    rm_rf 'tmp/resumes/*'
+    rm_rf 'tmp/resumes/*' unless FileList['tmp/resumes/*'].empty?
   end
 
   task distclean: :clean do
-    rm_rf 'public/resumes/*.pdf'
+    rm_rf 'public/resumes/*.pdf' unless FileList['resumes/resumes/*.pdf'].empty?
   end
 end
 
