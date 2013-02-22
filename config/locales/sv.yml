@@ -13,6 +13,7 @@ sv:
       sv: Swedish
   titles:
     index: Start
+    earlier: 2012
     resumes: CV-databas
     contact: Kontakt
     files: Filer
@@ -44,13 +45,60 @@ sv:
     index:
       title: Bli bästis med 27 färska civilingenjörer!
       body_html: >
-        StuDs, eller Datasektionens Studieresa, är en unik möjlighet att träffa
-        ett helt gäng med Datateknik-studenter som är på gränsen att bli
-        fullfjädrade Civilingenjörer. StuDs erbjuder helt nya, mer fokuserade
-        sätt att mötas och knyta kontakt med blivande medarbetare.
+        StuDs, eller Datasektionens Studieresa, är en unik möjlighet att
+        träffa ett helt gäng med Datateknik-studenter som är på gränsen att
+        bli fullfjädrade Civilingenjörer. StuDs erbjuder helt nya, mer
+        fokuserade sätt att mötas och knyta kontakt med blivande
+        medarbetare.
+      title2: Vilka är vi?
+      body2_html: >
+        StuDs 2013 är ett gäng bestående av 27 studenter på
+        civilingenjörsprogrammet Datateknik på Kungliga Tekniska högskolan.
+        Alla är inne på sitt fjärde eller femte år på utbildningen och vi
+        vill därför få kontakt med samt snart komma ut i arbetslivet.
+        Tillsammans är vi en grupp med stor bredd av kunskaper, drömmar och
+        intressen men gemensamt för oss alla är att vi genom StuDs 2013
+        hoppas att få träffa massor av spännande företag för att finna
+        exjobb eller anställning.
+      interested_html: >
+        Är ni intresserade av hur våra kompetenser passar in hos just ert
+        företag? Tveka inte att <a href="%{contact}">kontakta vår
+        säljgrupp</a> för att få tillgång till vår CV-databas!
       download: Ladda ner vårt produktblad
     contact:
       title: Konktakta oss
+    earlier:
+      title: StuDs 2012
+      body_html: >
+        Förra året fick dåvarande årets projektgrupp besöka och lära känna
+        mer än 20 olika IT-företag. Projektet avslutades med en fantastisk
+        resa till San Francisco där spännande företag som Google, Facebook
+        och GitHub besöktes under en period på två veckor.
+      meet_us_title: Vi vill träffa er!
+      meet_us_body_html: >
+        Är ni intresserade av att lära känna 27 snart utexaminerade
+        civilingenjörer som i framtiden skulle kunna vara anställda eller
+        exjobba hos er? Tveka inte att <a href="%{contact}">kontakta
+        sälj</a> för att få förslag på hur vi kan utforma ett event som
+        passar just er!
+      quote1: >
+        The prosperous IT climate in Stockholm seems to me to be another
+        verification that our position, timing and choice of education all
+        “align”. During the last year we've visited big broad consulting
+        firms as well as small front edge product companies, some refined
+        IT businesses but also others where IT is an important complement
+        to their core activity. It feels very exciting to become part of an
+        industry with such broad possibilities no matter what your personal
+        interests or orientations are.
+      cite1: Gustav Johansson, projektledare av StuDs 2012
+      quote2: >
+        The first stop was at Stanford University, one of the world's
+        leading research and teaching institutions, and today, over 8,000
+        students are performing graduate studies there. We started the tour
+        with a walk around the campus grounds. Some of the things we saw
+        were the Stanford Memorial Church and the newly laid class plaque
+        for the class of 2012.
+      cite2: Från StuDs 2012 slutgiltiga rapport
   resumes:
     index:
       title: CV-databas
@@ -120,7 +168,7 @@ sv:
       masters: Masterprogram
       birthdate: Födelsedatum
       role: Roll
-      send_credentials_mail: Skicka epost med nya inloggningsuppgifter 
+      send_credentials_mail: Skicka epost med nya inloggningsuppgifter
     resume:
       skills: Kunskaper
       skill_list: Kunskaper
@@ -148,10 +196,10 @@ sv:
       email: Förslagsvis din @kth.se-adress
       linkedin_url: URL till din LinkedIn-profil om du har en
       phone: Mobiltelefonnummer är att föredra
-      presentation: |
+      presentation: >
         En kort presentation av dig (valfri) - lista inte erfarenheter här.
         Denna text formatteras via Markdown, vilket möjliggör viss textformattering.
-      skill_list: |
+      skill_list: >
         Ange kunskaper och teknisk kompetens som du innehar.
         Lista det du kan bäst och/eller vill framhäva först.
         Taggarna går att flytta med musen, och tas bort genom att klicka på dem.
@@ -249,7 +297,7 @@ sv:
       short: ! '%e %b'
       duration: ! '%B %Y'
     abbr_month_names:
-    - 
+    -
     - jan
     - feb
     - mar
@@ -263,7 +311,7 @@ sv:
     - nov
     - dec
     month_names:
-    - 
+    -
     - januari
     - februari
     - mars
@@ -397,7 +445,7 @@ sv:
         strip_insignificant_zeros: false
         unit: kr
     format:
-      delimiter:  
+      delimiter:
       precision: 2
       separator: ! ','
       significant: false

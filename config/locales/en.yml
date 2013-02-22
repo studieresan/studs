@@ -13,7 +13,8 @@ en:
       sv: Swedish
   titles:
     index: Start
-    resumes: Resume Database
+    earlier: 2012
+    resumes: Resumes
     contact: Contact
     files: Files
     users: Users
@@ -44,12 +45,63 @@ en:
     index:
       title: Get to know 27 new engineers!
       body_html: >
-        StuDs, or Datasektionen's study tour, is a unique opportunity to meet a
-        bunch of Computer-Science students from on the verge to become Master
-        graduates. StuDs offers a great way to meet possible future employees.
+        StuDs, or Datasektionen's study tour, is a unique opportunity to
+        meet a bunch of Computer-Science students from on the verge to
+        become Master graduates. StuDs offers a great way to meet possible
+        future employees.
+      title2: Who are we?
+      body2_html: >
+        StuDs 2013 is a group consisting of 27 students at the Master of
+        Science in Computer Engineering programme at the Royal Institute
+        of Technology (KTH). We are all studying our fourth or fifth year
+        of the program, hence we would like to get in contact with IT
+        companies and soon start our future careers. Together, we are a
+        group with a large set of knowledge/skills, dreams and interests,
+        however, what we have in common is that through StuDs 2013 we hope
+        to meet a lot of exciting companies to find either employment or a
+        place for the final degree project.
+      interested_html: >
+        Are you interested in how our qualifications suits your company?
+        Do not hesitate to <a href="%{contact}">contact our sales
+        group</a> to gain access to our CV database!
       download: Download our product sheet
     contact:
       title: Contact Us
+    earlier:
+      title: StuDs 2012
+      body_html: >
+        Last year the 2012 year's StuDs project group got to know and
+        visited more than 20 different IT companies and the project ended
+        with a fantastic trip to San Francisco where interesting companies
+        such as Google, Facebook and GitHub were visited during a two
+        weeks period.
+      meet_us_title: We want to meet you!
+      meet_us_body_html: >
+        Are you are interested in getting to know 27 students soon to be
+        graduated, with a Master of Science in Computer Engineering, who
+        in the future could be employees or doing their final degree
+        projects at your firm? Do not hesitate to <a
+        href="%{contact}">contact our sales group</a> in order to receive
+        suggestions of how we could work out an event which suits you
+        perfectly!
+      quote1: >
+        The prosperous IT climate in Stockholm seems to me to be another
+        verification that our position, timing and choice of education all
+        “align”. During the last year we've visited big broad consulting
+        firms as well as small front edge product companies, some refined
+        IT businesses but also others where IT is an important complement
+        to their core activity. It feels very exciting to become part of an
+        industry with such broad possibilities no matter what your personal
+        interests or orientations are.
+      cite1: Gustav Johansson, project manager of StuDs 2012
+      quote2: >
+        The first stop was at Stanford University, one of the world's
+        leading research and teaching institutions, and today, over 8,000
+        students are performing graduate studies there. We started the tour
+        with a walk around the campus grounds. Some of the things we saw
+        were the Stanford Memorial Church and the newly laid class plaque
+        for the class of 2012.
+      cite2: From the StuDs 2012 final report
   resumes:
     index:
       title: Resume Database
@@ -148,10 +200,10 @@ en:
       linkedin_url: URL to your LinkedIn profile if you have one
       phone: A cell phone number is preferred
       skill_list:
-      presentation: |
+      presentation: >
         A short presentation of yourself (optional) - don't list experiences here.
         This text is formatted through Markdown, enabling limited text styling.
-      skill_list: |
+      skill_list: >
         A list of your skills and expertise.
         List the skills you know best or want to emphasize first.
         You can drag the tags around, and remove them by clicking on them.

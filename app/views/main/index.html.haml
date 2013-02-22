@@ -6,5 +6,10 @@
 
   %p.download= link_to t('.download'), "/uploads/studs_product_sheet_#{I18n.locale}.pdf", :class => 'action download'
 
+  %h2= t '.title2'
+  %p= t '.body2_html'
+
+  %p= t '.interested_html', contact: contact_path
+
 .column
   %img(src="/uploads/splash.jpg" alt="")/

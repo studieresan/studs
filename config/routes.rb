@@ -1,7 +1,7 @@
 Studs::Application.routes.draw do
   scope '/(:locale)', locale: /en|sv/ do
     resources :resumes do
-      get 'mine', on: :collection
+      get 'mine'  , on: :collection
       get 'delete', on: :member
 
       resources :experiences, except: [:index, :show] do
@@ -10,7 +10,7 @@ Studs::Application.routes.draw do
     end
 
     resources :users, except: [:show] do
-      get 'me', on: :collection
+      get 'me'    , on: :collection
       get 'delete', on: :member
     end
 
@@ -24,9 +24,10 @@ Studs::Application.routes.draw do
     get  'logout' => 'session#destroy', as: :logout
 
     # Static pages
+    get '2012'    => 'main#earlier', as: :earlier
     get 'contact' => 'main#contact', as: :contact
 
-    get '/' => 'main#index', as: :index
+    get '/'       => 'main#index', as: :index
   end
 
   root to: 'main#index'

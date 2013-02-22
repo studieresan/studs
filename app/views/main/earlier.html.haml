@@ -1,0 +1,14 @@
+- active_menu :earlier
+
+.column
+  %h2= t '.title'
+  %p= t '.body_html'
+
+  %h2= t '.meet_us_title'
+  %p= t '.meet_us_body_html', contact: contact_path
+
+.column
+  - %w(1 2).each do |q| 
+    %blockquote{ id: "quote#{q}"}
+      %p= t ".quote#{q}"
+    %cite= t ".cite#{q}"
