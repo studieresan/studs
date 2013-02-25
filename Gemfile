@@ -15,6 +15,9 @@ gem 'haml-rails'
 gem 'stringex'
 gem 'redcarpet'
 
+gem 'mini_magick'
+gem 'carrierwave'
+
 group :development do
   gem 'sqlite3'
 

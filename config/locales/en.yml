@@ -176,6 +176,8 @@ en:
       skills: Skills
       skill_list: Skills
       user_id: Author
+      image: Profile image
+      image_cache: Keep current profile image
     experience:
       kind: Category
       organization: Organization
@@ -200,6 +202,7 @@ en:
       linkedin_url: URL to your LinkedIn profile if you have one
       phone: A cell phone number is preferred
       skill_list:
+      image: (Profile) image which will be visible on your resume
       presentation: >
         A short presentation of yourself (optional) - don't list experiences here.
         This text is formatted through Markdown, enabling limited text styling.
@@ -430,6 +433,9 @@ en:
       wrong_length:
         one: Is the wrong length (should be 1 character)
         other: Is the wrong length (should be %{count} characters)
+      carrierwave_processing_error: Cannot resize image
+      carrierwave_integrity_error: Not an image
+      carrierwave_download_error: Couldn't download image
     template:
       body: ! 'There were problems with the following fields:'
       header:

@@ -173,6 +173,8 @@ sv:
       skills: Kunskaper
       skill_list: Kunskaper
       user_id: Författare
+      image: Profilbild
+      image_cache: Behåll nuvarande profilbild
     experience:
       kind: Kategori
       organization: Organisation
@@ -196,6 +198,7 @@ sv:
       email: Förslagsvis din @kth.se-adress
       linkedin_url: URL till din LinkedIn-profil om du har en
       phone: Mobiltelefonnummer är att föredra
+      image: (Porträtt-)bild som kommer synas på ditt CV
       presentation: >
         En kort presentation av dig (valfri) - lista inte erfarenheter här.
         Denna text formatteras via Markdown, vilket möjliggör viss textformattering.
@@ -422,6 +425,9 @@ sv:
       too_long: Är för lång (maximum är %{count} tecken)
       too_short: Är för kort (minimum är %{count} tecken)
       wrong_length: Har fel längd (ska vara %{count} tecken)
+      carrierwave_processing_error: Bilden kunde inte bearbetas
+      carrierwave_integrity_error: Filen är inte en bild
+      carrierwave_download_error: Filen kunde inte hämtas
     template:
       body: ! 'Det var problem med följande fält:'
       header:

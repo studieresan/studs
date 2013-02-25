@@ -10,6 +10,11 @@
       = action_link :edit, [:edit, @resume], :icon
     = link_to 'PDF', resume_path(@resume, format: :pdf), class: [:action, :download], title: t('actions.download')
 
+  - if @resume.image?
+    .profile.image
+      %img{ src: @resume.image.small.url, alt: '' }/
+
+
   %dl.section.credentials
     = attribute_definition :masters, t_masters(@resume.masters)
     = attribute_definition :birthdate, t('.birthdate', date: l(@resume.birthdate), age: @resume.person_age)
@@ -30,7 +35,6 @@
         %li= link_to s, resumes_path(s: s.name), :class => :tag
 
   = render partial: 'experience_for_kind', locals: { kind: 'education',  experiences: experiences['education'], resume: @resume}
-
 
 .column.experiences
   - if can?(:edit, @resume)
