@@ -78,7 +78,7 @@ namespace :deploy do
 
   desc "Clear cached objects"
   task :clear_cache do
-    run "cd #{current_path} && RAILS_ENV=#{rails_env} #{bundle_cmd} exec rake resumes:distclean"
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} #{bundle_cmd} exec rake resumes:clean"
   end
 
   desc "Seed the database"
