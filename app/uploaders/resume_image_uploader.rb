@@ -11,7 +11,7 @@ class ResumeImageUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    "#{model.slug}.#{file.extension}" || original_filename
+    ("#{model.slug}.#{file.extension}" || original_filename) if original_filename
   end
 
   process resize_to_limit: [400, 500]
