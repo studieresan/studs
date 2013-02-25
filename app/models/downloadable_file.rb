@@ -7,7 +7,7 @@ class DownloadableFile
   attr_reader :url, :name, :path, :size, :mtime
 
   def self.all
-    Dir[File.join(uploads_path, '*')].map { |f|
+    Dir[File.join(uploads_path, '*.*')].map { |f|
       DownloadableFile.new(File.basename(f))
     }.sort_by(&:name)
   end
