@@ -198,7 +198,7 @@ sv:
       email: Förslagsvis din @kth.se-adress
       linkedin_url: URL till din LinkedIn-profil om du har en
       phone: Mobiltelefonnummer är att föredra
-      image: (Porträtt-)bild som kommer synas på ditt CV
+      image: (Porträtt-)bild som kommer synas på ditt CV (400x500 px)
       presentation: >
         En kort presentation av dig (valfri) - lista inte erfarenheter här.
         Denna text formatteras via Markdown, vilket möjliggör viss textformattering.
