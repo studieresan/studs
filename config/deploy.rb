@@ -60,6 +60,8 @@ namespace :deploy do
   task :restart, :except => { :no_release => true } do
     pid = "#{shared_path}/pids/unicorn.pid"
     run "test -e #{pid} && kill -HUP `cat #{pid}` || /bin/true"
+    pid = "#{shared_path}/pids/unicorn.6050.pid"
+    run "test -e #{pid} && kill -HUP `cat #{pid}` || /bin/true"
   end
 
   desc "Run database migrations"
