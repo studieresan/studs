@@ -24,6 +24,7 @@ Studs::Application.routes.draw do
     get  'logout' => 'session#destroy', as: :logout
 
     # Static pages
+    get 'blog'    => redirect('http://studs13.tumblr.com/'), as: :blog
     get '2012'    => 'main#earlier', as: :earlier
     get 'contact' => 'main#contact', as: :contact
 

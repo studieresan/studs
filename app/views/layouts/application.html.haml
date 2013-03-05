@@ -15,7 +15,7 @@
         %h1= link_to t('common.title'), index_path, id: :logo
 
         %ul#nav.nav
-          - %w(index earlier resumes contact files users).each do |target|
+          - %w(index blog earlier resumes contact files).each do |target|
             - if can? :view, target.to_sym
               - path = send("#{target}_path".to_sym)
               %li= link_to t("titles.#{target}"), path, :class => (target.to_sym == active_menu ? :active : nil)
@@ -28,6 +28,8 @@
 
         - if logged_in?
           %ul#userbar
+            - if can? :view, :users
+              %li.admin= link_to t('titles.users'), users_path
             - if student?
               %li.resume= link_to t('common.my_resume'), mine_resumes_path
             %li.user= link_to current_user.login, me_users_path
