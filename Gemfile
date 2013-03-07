@@ -28,22 +28,6 @@ group :development do
   gem 'capistrano_colors', :require => nil
 end
 
-group :test do
-  gem 'debugger'
-
-  gem 'minitest-rails'
-  gem 'minitest-rails-shoulda', '~> 0.3.0'
-  gem 'minitest-rails-capybara'
-  gem 'launchy'
-
-  gem 'factory_girl'
-
-  gem 'guard-bundler'
-  gem 'guard-minitest'
-
-  gem 'rb-inotify'
-end
-
 group :production do
   gem 'mysql2'
   gem 'unicorn'
