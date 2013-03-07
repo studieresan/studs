@@ -12,7 +12,17 @@
   %p= t '.interested_html', contact: contact_path
 
 .column
+  - entries = ExternalPost.limit(6)
+  - if entries.count > 0
+    %h2= t '.latest_updates'
+    %ul.feed
+      - entries.each do |entry|
+        %li{ class: entry.provider }
+          - if entry.provider == 'twitter'
+            != tweet_to_html(entry.title)
+          - else
+            = link_to entry.title, entry.url
+
+  %h2= t '.recent_images'
   %p
     %img(src="/uploads/splash.jpg" alt="")/
-  %p
-    %img(src="/uploads/splash2.jpg" alt="")/

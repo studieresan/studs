@@ -18,6 +18,8 @@ gem 'redcarpet'
 gem 'mini_magick'
 gem 'carrierwave'
 
+gem 'feedzirra'
+
 group :development do
   gem 'sqlite3'
 
