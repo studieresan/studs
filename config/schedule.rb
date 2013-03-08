@@ -13,7 +13,6 @@ end
 
 job_type :rake, "cd :path && RAILS_ENV=:environment #{bundle_cmd} exec rake :task --silent :output"
 
-every 1.minutes do
-  command 'echo $USER'
+every 5.minutes do
   rake 'feeds'
 end
