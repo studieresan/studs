@@ -52,15 +52,14 @@ en:
         future employees.
       title2: Who are we?
       body2_html: >
-        StuDs 2013 is a group consisting of 27 students at the Master of
-        Science in Computer Engineering programme at the Royal Institute
-        of Technology (KTH). We are all studying our fourth or fifth year
-        of the program, hence we would like to get in contact with IT
-        companies and soon start our future careers. Together, we are a
-        group with a large set of knowledge/skills, dreams and interests,
-        however, what we have in common is that through StuDs 2013 we hope
-        to meet a lot of exciting companies to find either employment or a
-        place for the final degree project.
+        StuDs 2013 consists of 27 students at the Master of Science in Computer
+        Engineering programme at the Royal Institute of Technology (KTH). We
+        are all studying our fourth or fifth year of the program, hence we
+        would like to get in contact with IT companies and soon start our
+        future careers. Together, we are a group with a large set of
+        knowledge/skills, dreams and interests, however, what we have in common
+        is that through StuDs 2013 we hope to meet a lot of exciting companies
+        to find either employment or a place for the final degree project.
       interested_html: >
         Are you interested in how our qualifications suits your company?
         Do not hesitate to <a href="%{contact}">contact our sales
@@ -71,6 +70,7 @@ en:
       latest_from_twitter: "Twitter - #studs2013"
       recent_images: Latest photo
       blog_post: Blog
+      our_skills: Out skills
     contact:
       title: Contact Us
     earlier:

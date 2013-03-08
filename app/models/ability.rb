@@ -18,7 +18,7 @@ class Ability
       can :manage, Resume, user_id: user.id
       can :manage, Experience, resume: { user_id: user.id }
 
-      can [:view, :index, :create], :files
+      can [:view, :index, :create, :update], :files
     end
 
     if user.admin?

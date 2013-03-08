@@ -53,14 +53,13 @@ sv:
         medarbetare.
       title2: Vilka är vi?
       body2_html: >
-        StuDs 2013 är ett gäng bestående av 27 studenter på
-        civilingenjörsprogrammet Datateknik på Kungliga Tekniska högskolan.
-        Alla är inne på sitt fjärde eller femte år på utbildningen och vi
-        vill därför få kontakt med samt snart komma ut i arbetslivet.
-        Tillsammans är vi en grupp med stor bredd av kunskaper, drömmar och
-        intressen men gemensamt för oss alla är att vi genom StuDs 2013
-        hoppas att få träffa massor av spännande företag för att finna
-        exjobb eller anställning.
+        StuDs 2013 utgörs av 27 studenter på civilingenjörs-programmet
+        Datateknik på Kungliga Tekniska högskolan. Alla är inne på sitt fjärde
+        eller femte år på utbildningen och vi vill därför få kontakt med samt
+        snart komma ut i arbetslivet. Tillsammans är vi en grupp med stor bredd
+        av kunskaper, drömmar och intressen men gemensamt för oss alla är att
+        vi genom StuDs 2013 hoppas att få träffa massor av spännande företag
+        för att finna exjobb eller anställning.
       interested_html: >
         Är ni intresserade av hur våra kompetenser passar in hos just ert
         företag? Tveka inte att <a href="%{contact}">kontakta vår
@@ -71,6 +70,7 @@ sv:
       latest_from_twitter: "Twitter - #studs2013"
       recent_images: Senaste bilden
       blog_post: Bloggen
+      our_skills: Våra kompetenser
     contact:
       title: Konktakta oss
     earlier:
