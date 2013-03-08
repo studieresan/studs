@@ -42,6 +42,12 @@ default_environment['RAILS_ENV'] = 'production'
 set :bundle_cmd, '/usr/local/bin/1.9.2_bundle'
 require 'bundler/capistrano'
 
+# Whenever gem CRON jobs
+set :whenever_command, "#{bundle_cmd} exec whenever"
+set :whenever_environment, defer { stage }
+set :whenever_identifier, defer { "#{application}_#{stage}" }
+require 'whenever/capistrano'
+
 # Additional shared paths
 set :shared_children, shared_children + %w(public/uploads)
 set :shared_files, %w(config/database.yml config/email.yml config/unicorn.rb)

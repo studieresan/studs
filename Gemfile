@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
+# Authentication and authorization
 gem 'bcrypt-ruby'
 gem 'sorcery'
 gem 'cancan'
@@ -11,14 +12,20 @@ gem 'auto_strip_attributes'
 
 gem 'responders'
 
+# Markup and string tools
 gem 'haml-rails'
 gem 'stringex'
 gem 'redcarpet'
 
+# File uploads
 gem 'mini_magick'
 gem 'carrierwave'
 
+# RSS feed parsing
 gem 'feedzirra'
+
+# Cron jobs
+gem 'whenever', :require => false
 
 group :development do
   gem 'sqlite3'

@@ -51,6 +51,7 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    chronic (0.9.1)
     curb (0.8.3)
     erubis (2.7.0)
     faraday (0.8.5)
@@ -162,6 +163,9 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    whenever (0.8.2)
+      activesupport (>= 2.3.4)
+      chronic (>= 0.6.3)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
 
@@ -189,4 +193,5 @@ DEPENDENCIES
   stringex
   turbo-sprockets-rails3
   unicorn
+  whenever
   yui-compressor
