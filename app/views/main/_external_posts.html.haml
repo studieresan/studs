@@ -1,0 +1,15 @@
+-# Locals: provider (:tumblr, :twitter), limit (int), optional scope (ExternalPost...)
+- scope ||= ExternalPost.from(provider).limit(limit)
+- if scope.count > 0
+  %h2= t "main.index.latest_from_#{provider}"
+  %ul.feed{ class: provider }
+    - scope.each do |entry|
+      %li{ class: entry.provider }<
+        %i.icon
+        - if entry.provider == 'twitter'
+          != tweet_to_html(entry.title)
+        - else
+          = link_to entry.title, entry.url
+        %span.date{ title: l(entry.pubdate) }= l entry.pubdate, format: :date
+        - if can? :manage, ExternalPost
+          = link_to '', delete_external_post_path(entry), class: 'action delete'

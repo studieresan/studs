@@ -12,21 +12,8 @@
   %p= t '.interested_html', contact: contact_path
 
 .column
-  - entries = ExternalPost.limit(6)
-  - if entries.count > 0
-    %h2= t '.latest_updates'
-    %ul.feed
-      - entries.each do |entry|
-        %li{ class: entry.provider }<
-          %i.icon
-          - if entry.provider == 'twitter'
-            != tweet_to_html(entry.title)
-          - else
-            = link_to(t('.blog_post'), blog_url, class: 'author') + ':'
-            = link_to entry.title, entry.url
-          %span.date{ title: l(entry.pubdate) }= l entry.pubdate, format: :date
-          - if can? :manage, ExternalPost
-            = link_to '', delete_external_post_path(entry), class: 'action delete'
+  = render partial: 'external_posts', locals: { provider: :tumblr, limit: 3 }
+  = render partial: 'external_posts', locals: { provider: :twitter, limit: 3 }
 
   %h2= t '.recent_images'
   %p
