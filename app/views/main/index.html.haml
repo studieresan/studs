@@ -17,8 +17,8 @@
       %li{ class: css_class }= tag.name
 
 .column
-  = render partial: 'external_posts', locals: { provider: :tumblr, limit: 3 }
-  = render partial: 'external_posts', locals: { provider: :twitter, limit: 3 }
+  = render partial: 'external_posts', locals: { provider: :tumblr, limit: 5 }
+  = render partial: 'external_posts', locals: { provider: :twitter, limit: 5 }
 
   %h2= t '.recent_images'
   %p
