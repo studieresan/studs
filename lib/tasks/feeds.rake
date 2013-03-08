@@ -1,6 +1,6 @@
 require 'feedzirra'
 
-TWITTER_QUERY = "studieresan"
+TWITTER_QUERY = "#studs2013"
 TWITTER_RSS_FEED = "http://search.twitter.com/search.rss?q=%s&include_entities=false&show_user=true&result_type=recent"
 TUMBLR_RSS_FEED = "http://studs13.tumblr.com/rss"
 
