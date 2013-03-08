@@ -66,6 +66,9 @@ sv:
         företag? Tveka inte att <a href="%{contact}">kontakta vår
         säljgrupp</a> för att få tillgång till vår CV-databas!
       download: Ladda ner vårt produktblad
+      latest_updates: Senaste uppdateringarna
+      recent_images: Senaste bilden
+      blog_post: Bloggen
     contact:
       title: Konktakta oss
     earlier:
@@ -256,11 +259,13 @@ sv:
       experience: erfarenhet
       user: användare
       file: fil
+      external_post: externt inlägg
     the: &the_model
       resume: CV:t
       experience: erfarenheten
       user: användaren
       file: filen
+      external_post: externa inlägget
   actions:
     show: Visa
     add: Lägg till

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307211005) do
+ActiveRecord::Schema.define(:version => 20130307223407) do
 
   create_table "experiences", :force => true do |t|
     t.integer  "resume_id"
@@ -27,16 +27,19 @@ ActiveRecord::Schema.define(:version => 20130307211005) do
   end
 
   create_table "external_posts", :force => true do |t|
-    t.string   "provider",   :null => false
-    t.string   "guid",       :null => false
-    t.string   "url",        :null => false
-    t.text     "title",      :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "provider",                      :null => false
+    t.string   "guid",                          :null => false
+    t.string   "url",                           :null => false
+    t.text     "title",                         :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.datetime "pubdate"
+    t.boolean  "deleted",    :default => false, :null => false
   end
 
   add_index "external_posts", ["guid"], :name => "index_external_posts_on_guid", :unique => true
   add_index "external_posts", ["provider"], :name => "index_external_posts_on_provider"
+  add_index "external_posts", ["pubdate"], :name => "index_external_posts_on_pubdate"
 
   create_table "resumes", :force => true do |t|
     t.integer  "user_id"

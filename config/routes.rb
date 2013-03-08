@@ -1,4 +1,6 @@
 Studs::Application.routes.draw do
+  get "external_posts/delete"
+
   scope '/(:locale)', locale: /en|sv/ do
     resources :resumes do
       get 'mine'  , on: :collection
@@ -15,6 +17,10 @@ Studs::Application.routes.draw do
     end
 
     resources :files, only: [:index, :create, :destroy], id: /[^\/]+/ do
+      get 'delete', on: :member
+    end
+
+    resources :external_posts, only: [:destroy] do
       get 'delete', on: :member
     end
 

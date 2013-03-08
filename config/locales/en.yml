@@ -66,6 +66,9 @@ en:
         Do not hesitate to <a href="%{contact}">contact our sales
         group</a> to gain access to our CV database!
       download: Download our product sheet
+      latest_updates: Recent updates
+      recent_images: Latest photo
+      blog_post: Blog
     contact:
       title: Contact Us
     earlier:
@@ -261,11 +264,13 @@ en:
       experience: experience
       user: user
       file: file
+      external_post: external post
     the: &the_model
       resume: resume
       experience: experience
       user: user
       file: file
+      external_post: external post
   actions:
     show: Show
     add: Add
@@ -358,6 +363,7 @@ en:
       default: ! '%Y-%m-%d %H:%M:%S'
       long: ! '%B %d, %Y %H:%M'
       short: ! '%d %b %H:%M'
+      date: ! '%b %e'
       ymd: ! '%Y-%m-%d'
     am: am
     pm: pm
