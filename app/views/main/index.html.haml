@@ -13,7 +13,7 @@
 
   %h2= t '.our_skills'
   %ul.skills.tag_cloud
-    - tag_cloud(Resume.tag_counts_on(:skills), %w(s1 s2 s3 s4)) do |tag, css_class|
+    - tag_cloud(Resume.tag_counts_on(:skills), %w(s1 s2 s3 s4 s5)) do |tag, css_class|
       - if can? :read, Resume
         %li{ class: css_class }= link_to tag.name, resumes_path(s: tag.name)
       - else
