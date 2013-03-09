@@ -12,4 +12,4 @@
           = link_to entry.title, entry.url
         %span.date{ title: l(entry.pubdate) }= l entry.pubdate, format: :date
         - if can? :manage, ExternalPost
-          = link_to '', delete_external_post_path(entry), class: 'action delete'
+          = link_to 'x', delete_external_post_path(entry), class: 'action delete'
