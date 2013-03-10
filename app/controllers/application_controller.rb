@@ -7,8 +7,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   rescue_from CanCan::AccessDenied do |exception|
-    save_return_url
-    redirect_to login_url, :alert => t('flash.unauthorized_html')
+    if logged_in?
+      save_return_url
+      redirect_to login_url, :alert => t('flash.unauthorized_html')
+    else
+      redirect_to root_url, :alert => t('flash.unauthorized_html')
+    end
   end
 
   unless Rails.application.config.consider_all_requests_local
