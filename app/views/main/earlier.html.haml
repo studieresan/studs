@@ -3,6 +3,9 @@
 .column
   %h2= t '.title'
   %p= t '.body_html'
+  %p= t '.final_report'
+  %p.download<
+    = link_to t('.download_final_report'), '/uploads/StuDs2012-final.pdf', class: 'action download'
 
   %h2= t '.meet_us_title'
   %p= t '.meet_us_body_html', contact: contact_path

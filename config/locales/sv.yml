@@ -64,7 +64,7 @@ sv:
         Är ni intresserade av hur våra kompetenser passar in hos just ert
         företag? Tveka inte att <a href="%{contact}">kontakta vår
         säljgrupp</a> för att få tillgång till vår CV-databas!
-      download: Ladda ner vårt produktblad
+      download: Produktblad för StuDs 2013
       latest_updates: Senaste uppdateringarna
       latest_from_tumblr_html: >
         Senast från <a href="http://studs13.tumblr.com/">bloggen</a>
@@ -82,6 +82,10 @@ sv:
         mer än 20 olika IT-företag. Projektet avslutades med en fantastisk
         resa till San Francisco där spännande företag som Google, Facebook
         och GitHub besöktes under en period på två veckor.
+      final_report: >
+        Rapporten och resedagboken från StuDs 2012 finns tillgänglig online via
+        länken nedan.
+      download_final_report: Rapport och resedagbok för StuDs 2012
       meet_us_title: Vi vill träffa er!
       meet_us_body_html: >
         Är ni intresserade av att lära känna 27 snart utexaminerade

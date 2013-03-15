@@ -64,7 +64,7 @@ en:
         Are you interested in how our qualifications suits your company?
         Do not hesitate to <a href="%{contact}">contact our sales
         group</a> to gain access to our CV database!
-      download: Download our product sheet
+      download: Product sheet for StuDs 2013
       latest_updates: Recent updates
       latest_from_tumblr_html: >
         Recent posts from the <a href="http://studs13.tumblr.com/">blog</a>
@@ -83,6 +83,10 @@ en:
         with a fantastic trip to San Francisco where interesting companies
         such as Google, Facebook and GitHub were visited during a two
         weeks period.
+      final_report: >
+        The final report and travel log for StuDs 2012 is available online and
+        can be downloaded below.
+      download_final_report: Final report and travel log for StuDs 2012
       meet_us_title: We want to meet you!
       meet_us_body_html: >
         Are you are interested in getting to know 27 students soon to be
