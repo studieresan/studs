@@ -1,7 +1,7 @@
 -# Locals: provider (:tumblr, :twitter), limit (int), optional scope (ExternalPost...)
 - scope ||= ExternalPost.from(provider).limit(limit)
 - if scope.count > 0
-  %h2= t "main.index.latest_from_#{provider}"
+  %h2= t "main.index.latest_from_#{provider}_html"
   %ul.feed{ class: provider }
     - scope.each do |entry|
       %li{ class: entry.provider }<
