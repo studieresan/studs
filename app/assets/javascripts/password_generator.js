@@ -12,9 +12,9 @@ $(function() {
       .appendTo($container)
       .click(function() {
         // Generate random string
-        var alphabet = 'abcdefghijklmnopqrstuvwxyz23456789';
+        var alphabet = 'abcdefghjkmnpqrstuvwxyz0123456789';
         var pwd = '';
-        for (var i = 0; i < 12; i++)
+        for (var i = 0; i < 10; i++)
           pwd += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
         // Update password & confirmation inputs, unmasking password input
         $input.val(pwd).prop('type', 'text');
