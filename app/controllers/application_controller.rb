@@ -8,10 +8,10 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     if logged_in?
+      redirect_to index_url, :alert => t('flash.unauthorized_html')
+    else
       save_return_url
       redirect_to login_url, :alert => t('flash.unauthorized_html')
-    else
-      redirect_to root_url, :alert => t('flash.unauthorized_html')
     end
   end
 
