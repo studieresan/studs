@@ -5,7 +5,7 @@
   %p= t '.body_html'
 
 .column
-  - countdown = Time.new(2013, 3, 22, 22, 15)
+  - countdown = Time.new(2013, 5, 3, 17, 0)
   %ul.countdown{ :'data-current' => Time.now.to_i, :'data-to' => countdown.to_i }
     - left = countdown - Time.now
     - %w(day hour minute second).map(&:to_sym).each do |t|

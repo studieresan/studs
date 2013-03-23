@@ -17,12 +17,12 @@ module Studs
 
     config.assets.enabled = true
     config.assets.version = '1.0'
-    config.assets.precompile += %w(application.js application.css)
+    config.assets.precompile += %w(application.js application.css global.js)
 
     config.generators do |g|
       g.template_engine :haml
       g.helper          false
-      g.test_framework  :mini_test, spec: true, fixture: false
+      g.test_framework  :mini_test, spec: false, fixture: false
       g.view_specs      false
       g.helper_specs    false
       g.assets          false

@@ -154,6 +154,7 @@ en:
         Unable to send credentials email without specifying a new password.
       sending_failed: Failed to send email with new login credentials
     change_password: Change password
+    generate_password: Generate password
     no_results: Found no users matching your criteria.
   files:
     index:

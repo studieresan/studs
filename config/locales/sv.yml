@@ -152,6 +152,7 @@ sv:
         ett nytt lösenord
       sending_failed: Eposten med nya inloggningsuppgifter kunde inte skickas
     change_password: Byte av lösenord
+    generate_password: Generera lösenord
     no_results: Det finns inga användare som matchar dina kriterier.
   files:
     index:
