@@ -1,8 +1,9 @@
 = ext_form_for @user, :class => :user do |f|
-  - if can? :manage, User
+  - if can? :create, User # create AND edit
     %fieldset.admin
       = f.text_field_row :login
-      = f.select_row :role, User::ROLES, include_blank: false
+      - if can? :manage, User
+        = f.select_row :role, roles, include_blank: false
 
   %fieldset.credentials
     = f.text_field_row :name
@@ -18,4 +19,3 @@
 
   %fieldset.actions.align
     = f.submit
- 

@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user], as: current_role)
+    @user.role = 'organization' if current_role == 'pr'
     authorize! :create, @user
     @user.save
     respond_with @user

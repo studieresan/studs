@@ -2,7 +2,7 @@
 .full
   %h2
     = t'.title'
-    - if can? :manage, User
+    - if can? :create, User
       = action_link :new, [:new, :user]
 
   = form_tag users_path, method: :get, class: 'user-search' do

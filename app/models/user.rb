@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  ROLES = %w(organization student admin).freeze
+  ROLES = %w(organization student pr admin).freeze
   STUDENT_ROLES = (ROLES - %w(organization)).freeze
 
   has_one :resume

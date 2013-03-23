@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     # Static pages available to all visitors
-    can :view, [:index, :pub, :earlier, :resumes, :contact]
+    can :index, [:index, :pub, :earlier, :resumes, :contact]
 
     return unless user # anonymous
 
@@ -18,7 +18,12 @@ class Ability
       can :manage, Resume, user_id: user.id
       can :manage, Experience, resume: { user_id: user.id }
 
-      can [:view, :index, :create, :update], :files
+      can [:index, :create, :update], :files
+    end
+
+    if user.pr?
+      can [:index, :create], User
+      can [:update, :delete, :destroy], User, role: 'organization'
     end
 
     if user.admin?
