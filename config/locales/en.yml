@@ -219,10 +219,10 @@ en:
       phone: A cell phone number is preferred
       skill_list:
       image: (Profile) image which will be shown in your resume (400x500 px)
-      presentation: >
+      presentation: |
         A short presentation of yourself (optional) - don't list experiences here.
         This text is formatted through Markdown, enabling limited text styling.
-      skill_list: >
+      skill_list: |
         A list of your skills and expertise.
         List the skills you know best or want to emphasize first.
         You can drag the tags around, and remove them by clicking on them.

@@ -215,10 +215,10 @@ sv:
       linkedin_url: URL till din LinkedIn-profil om du har en
       phone: Mobiltelefonnummer är att föredra
       image: (Porträtt-)bild som kommer synas på ditt CV (400x500 px)
-      presentation: >
+      presentation: |
         En kort presentation av dig (valfri) - lista inte erfarenheter här.
         Denna text formatteras via Markdown, vilket möjliggör viss textformattering.
-      skill_list: >
+      skill_list: |
         Ange kunskaper och teknisk kompetens som du innehar.
         Lista det du kan bäst och/eller vill framhäva först.
         Taggarna går att flytta med musen, och tas bort genom att klicka på dem.
