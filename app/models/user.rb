@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
     define_method "#{role}?".to_sym, lambda { self.role == role }
   end
 
-  default_scope order('login ASC')
+  default_scope order('name ASC')
 
   # The student role is special since it includes admins as well.
   scope :students, lambda { where(role: STUDENT_ROLES) }
