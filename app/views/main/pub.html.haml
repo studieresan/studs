@@ -1,0 +1,19 @@
+- active_menu :pub
+
+.column
+  %h2= t '.title'
+  %p= t '.body_html'
+
+.column
+  - countdown = Time.new(2013, 3, 22, 22, 15)
+  %ul.countdown{ :'data-current' => Time.now.to_i, :'data-to' => countdown.to_i }
+    - left = countdown - Time.now
+    - %w(day hour minute second).map(&:to_sym).each do |t|
+      %li{ class: "#{t}s" }
+        - if left >= 0
+          - left -= (sub = (left / 1.send(t)).floor) * 1.send(t)
+          %strong= sub
+        - else
+          %strong 0
+        %span= t "countdown.#{t}"
+

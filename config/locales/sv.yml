@@ -13,6 +13,7 @@ sv:
       sv: Swedish
   titles:
     index: Start
+    pub: Startuppub
     blog: Blogg
     earlier: 2012
     resumes: CV-databas
@@ -111,6 +112,8 @@ sv:
         were the Stanford Memorial Church and the newly laid class plaque
         for the class of 2012.
       cite2: Från StuDs 2012 slutgiltiga rapport
+    pub:
+      title: Startuppub
   resumes:
     index:
       title: CV-databas
@@ -305,6 +308,12 @@ sv:
       destroy:
         notice: "Tog bort %{resource_name}."
         alert: "Kunde inte ta bort %{resource_name}."
+
+  countdown:
+    day: dagar
+    hour: timmar
+    minute: minuter
+    second: sekunder
 
   # Default i18n
   date:

@@ -15,7 +15,7 @@
         %h1= link_to t('common.title'), index_path, id: :logo
 
         %ul#nav.nav
-          - %w(index earlier resumes contact files).each do |target|
+          - %w(index pub earlier resumes contact files).each do |target|
             - if can? :view, target.to_sym
               - path = send("#{target}_path".to_sym)
               %li= link_to t("titles.#{target}"), path, :class => (target.to_sym == active_menu ? :active : nil)

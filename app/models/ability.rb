@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     # Static pages available to all visitors
-    can :view, [:index, :blog, :earlier, :resumes, :contact]
+    can :view, [:index, :pub, :earlier, :resumes, :contact]
 
     return unless user # anonymous
 

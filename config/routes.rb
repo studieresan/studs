@@ -31,6 +31,7 @@ Studs::Application.routes.draw do
 
     # Static pages
     get 'blog'    => redirect('http://studs13.tumblr.com/'), as: :blog
+    get 'pub'     => 'main#pub', as: :pub
     get '2012'    => 'main#earlier', as: :earlier
     get 'contact' => 'main#contact', as: :contact
 

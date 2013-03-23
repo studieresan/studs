@@ -13,6 +13,7 @@ en:
       sv: Swedish
   titles:
     index: Start
+    pub: Startup Pub
     blog: Blog
     earlier: 2012
     resumes: Resumes
@@ -114,6 +115,8 @@ en:
         were the Stanford Memorial Church and the newly laid class plaque
         for the class of 2012.
       cite2: From the StuDs 2012 final report
+    pub:
+      title: Startup Pub
   resumes:
     index:
       title: Resume Database
@@ -310,6 +313,12 @@ en:
       destroy:
         notice: "Deleted %{resource_name}."
         alert: "Could not delete %{resource_name}."
+
+  countdown:
+    day: days
+    hour: hours
+    minute: minutes
+    second: seconds
 
   # Default i18n
   date:
