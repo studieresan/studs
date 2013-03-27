@@ -1,12 +1,16 @@
 - active_menu :pub
-- pub_date = Time.new(2013, 5, 3, 17, 0)
+- pub_time = Time.new(2013, 5, 3, 17, 0)
+- trip_time = Time.new(2013, 6, 11, 6, 25)
 
 .column
   %h2= t '.title'
   %p= t '.body_html'
+  %p= t '.support_html', link: link_to(t('.support_link_text'), 'http://google.com')
+  %p= t '.contact_html', link: link_to(t('.contact_link_text'), contact_path)
+
   %dl.short
     %dt.date= t '.time'
-    %dd.date= l pub_date, format: :long
+    %dd.date= l pub_time, format: :long
     %dt.place= t '.place'
     %dd.place= t '.place_text'
 
@@ -15,10 +19,10 @@
 
 .column
   %h3= t '.pub_countdown'
-  = render partial: '/countdown', locals: { time: pub_date }
+  = render partial: '/countdown', locals: { time: pub_time }
 
   %h3= t '.trip_countdown'
-  = render partial: '/countdown', locals: { time: Time.new(2013, 6, 11, 12, 0) }
+  = render partial: '/countdown', locals: { time: trip_time }
 
   #video
     %h3= t '.video_title'

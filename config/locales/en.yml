@@ -117,6 +117,28 @@ en:
       cite2: From the StuDs 2012 final report
     pub:
       title: Startup Pub
+      body_html: |
+        StuDs invites all startups to an evening in the CompSci student union
+        pub on the third of may. If you are a startup and would like to network
+        with us and other startups this is the event for you! Below you'll find
+        a signup form where you can sign up for more information and a possible
+        invite to the event. The available spots are limited, we will contact
+        you prior to the event for additional details.
+      support_html:
+        Attending the startup pub is free of charge, but we appreciate
+        donations to our crowdfunding campaign which will go public soon.
+      # finns på %{link}
+      support_link_text: FoundedByMe
+      contact_html: |
+        If you have any questions or want to know more you are welcome to %{link}.
+      contact_link_text: contact us
+      time: Time
+      place: Place
+      place_text: Meta, Osquars Backe 21, Stockholm.
+      pub_countdown: Time left until the startup pub
+      trip_countdown: Time left until the trip
+      video_title: Video
+      signup: Sign up
   resumes:
     index:
       title: Resume Database

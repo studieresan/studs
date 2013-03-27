@@ -115,7 +115,21 @@ sv:
     pub:
       title: Startup-pub med StuDs
       body_html: |
-        StuDs bjuder in blabla till en startup-pub.
+        StuDs bjuder in alla nystartade företag till en mingelkväll i
+        Datasektionens sektionslokal (Meta) den tredje maj. Är ni ett startup
+        och vill få möjlighet att nätverka med StuDs-medlemmar och andra
+        startups är detta eventet för er! Nedan finner ni ett
+        anmälningsformulär där ni kan anmäla ert intresse för en inbjudan till
+        puben. Platserna är begränsade, vi kommer kontakta alla intresserade
+        för vidare dialog.
+      support_html:
+        Det kostar inget att delta på puben, men stöd gärna StuDs genom vår
+        crowdfunding-kampanj som dyker upp inom kort.
+      # finns på %{link}
+      support_link_text: FoundedByMe
+      contact_html: |
+        Om ni har frågor eller vill veta mer är ni varmt välkomna att %{link}.
+      contact_link_text: kontakta oss
       time: Tid
       place: Plats
       place_text: Meta, Osquars Backe 21, Stockholm.
