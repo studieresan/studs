@@ -13,7 +13,7 @@ sv:
       sv: Swedish
   titles:
     index: Start
-    pub: Startuppub
+    pub: Startup-pub
     blog: Blogg
     earlier: 2012
     resumes: CV-databas
@@ -113,7 +113,16 @@ sv:
         for the class of 2012.
       cite2: Från StuDs 2012 slutgiltiga rapport
     pub:
-      title: Startuppub
+      title: Startup-pub med StuDs
+      body_html: |
+        StuDs bjuder in blabla till en startup-pub.
+      time: Tid
+      place: Plats
+      place_text: Meta, Osquars Backe 21, Stockholm.
+      pub_countdown: Tid kvar till startup-puben
+      trip_countdown: Tid kvar till resan
+      video_title: Video
+      signup: Anmälan
   resumes:
     index:
       title: CV-databas

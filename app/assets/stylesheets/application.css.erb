@@ -84,6 +84,12 @@ dl dt {
   font-style: italic;
 }
 
+dl.short dt {
+  width: 80px;
+  font-weight: bold;
+  font-style: normal;
+}
+
 p.alert, em.alert, strong.alert,
 p.error, em.error, strong.error { color: #942; }
 p.notice, em.notice, strong.notice { color: #492; }
@@ -293,6 +299,33 @@ h2 a.action.icon, h3 a.action.icon, h4 a.action.icon {
 }
 h3 a.action { margin-top: 4px; }
 h4 a.action { margin-top: 0; }
+
+.cta {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+  color: #fff;
+  background: #444;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+.cta:hover {
+  background: #333;
+  text-decoration: none;
+}
+.cta:active {
+  position: relative;
+  top: 1px;
+}
+
+.cta-container {
+  text-align: center;
+}
 
 ul.experiences li {
   margin: 0 0 15px;

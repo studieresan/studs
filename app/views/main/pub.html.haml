@@ -1,19 +1,30 @@
 - active_menu :pub
+- pub_date = Time.new(2013, 5, 3, 17, 0)
 
 .column
   %h2= t '.title'
   %p= t '.body_html'
+  %dl.short
+    %dt.date= t '.time'
+    %dd.date= l pub_date
+    %dt.place= t '.place'
+    %dd.place= t '.place_text'
+
+  .cta-container
+    = link_to t('.signup'), pub_signup_path, class: 'cta'
 
 .column
-  - countdown = Time.new(2013, 5, 3, 17, 0)
-  %ul.countdown{ :'data-current' => Time.now.to_i, :'data-to' => countdown.to_i }
-    - left = countdown - Time.now
-    - %w(day hour minute second).map(&:to_sym).each do |t|
-      %li{ class: "#{t}s" }
-        - if left >= 0
-          - left -= (sub = (left / 1.send(t)).floor) * 1.send(t)
-          %strong= sub
-        - else
-          %strong 0
-        %span= t "countdown.#{t}"
+  %h3= t '.pub_countdown'
+  = render partial: '/countdown', locals: { time: pub_date }
+
+  %h3= t '.trip_countdown'
+  = render partial: '/countdown', locals: { time: Time.new(2013, 6, 11, 12, 0) }
+
+  #video
+    %h3= t '.video_title'
+    %iframe{ src: "http://player.vimeo.com/video/60392932?color=ffffff", width: 360, height: 202 }/
+    %p.desc<
+      %a{ href: "http://vimeo.com/60392932" }= t '.video_title'
+      = t '.video_on'
+      %a{ href: "http://vimeo.com" } Vimeo
 

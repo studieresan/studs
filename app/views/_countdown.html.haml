@@ -1,0 +1,11 @@
+-# Local vars: time [Time]
+%ul.countdown{ :'data-current' => Time.now.to_i, :'data-to' => time.to_i }
+  - left = time - Time.now
+  - %w(day hour minute second).map(&:to_sym).each do |t|
+    %li{ class: "#{t}s" }
+      - if left >= 0
+        - left -= (sub = (left / 1.send(t)).floor) * 1.send(t)
+        %strong= sub
+      - else
+        %strong 0
+      %span= t "countdown.#{t}"
