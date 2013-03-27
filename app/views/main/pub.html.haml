@@ -13,6 +13,8 @@
     %dd.date= l pub_time, format: :long
     %dt.place= t '.place'
     %dd.place= t '.place_text'
+    %dt.fb Facebook
+    %dd.fb= link_to 'Startup-pub med StuDs', 'https://www.facebook.com/events/312535262208295/'
 
   .cta-container
     = link_to t('.signup'), pub_signup_path, class: 'cta'
