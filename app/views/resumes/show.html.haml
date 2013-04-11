@@ -11,7 +11,7 @@
     = link_to 'PDF', resume_path(@resume, format: :pdf), class: [:action, :download], title: t('actions.download')
 
   - if @resume.image?
-    .profile.image
+    = link_to @resume.image.url, class: 'profile image' do
       %img{ src: @resume.image.small.url, alt: '' }/
 
 
