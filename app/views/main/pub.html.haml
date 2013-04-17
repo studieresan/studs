@@ -12,7 +12,7 @@
     %dt.date= t '.time'
     %dd.date= l pub_time, format: :long
     %dt.place= t '.place'
-    %dd.place= t '.place_text'
+    %dd.place= link_to t('.place_text'), 'http://goo.gl/maps/YCQAt'
     %dt.fb Facebook
     %dd.fb= link_to 'Startup-pub med StuDs', 'https://www.facebook.com/events/312535262208295/'
 
@@ -22,9 +22,6 @@
 .column
   %h3= t '.pub_countdown'
   = render partial: '/countdown', locals: { time: pub_time }
-
-  %h3= t '.trip_countdown'
-  = render partial: '/countdown', locals: { time: trip_time }
 
   #video
     %h3= t '.video_title'
