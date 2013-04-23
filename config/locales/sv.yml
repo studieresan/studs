@@ -125,7 +125,7 @@ sv:
       support_html: |
         Det kostar inget att delta på puben, men stöd gärna StuDs genom vår
         crowdfunding-kampanj på %{link}!
-      support_link_text: FoundedByMe
+      support_link_text: FundedByMe
       contact_html: |
         Om ni har frågor eller vill veta mer är ni varmt välkomna att %{link}.
       contact_link_text: kontakta oss
