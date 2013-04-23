@@ -126,8 +126,7 @@ en:
         you prior to the event for additional details.
       support_html:
         Attending the startup pub is free of charge, but we appreciate
-        donations to our crowdfunding campaign which will go public soon.
-      # finns på %{link}
+        donations to our crowdfunding campaign on %{link}!
       support_link_text: FoundedByMe
       contact_html: |
         If you have any questions or want to know more you are welcome to %{link}.

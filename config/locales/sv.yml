@@ -122,10 +122,9 @@ sv:
         anmälningsformulär där ni kan anmäla ert intresse för en inbjudan till
         puben. Platserna är begränsade, vi kommer kontakta alla intresserade
         för vidare dialog.
-      support_html:
+      support_html: |
         Det kostar inget att delta på puben, men stöd gärna StuDs genom vår
-        crowdfunding-kampanj som dyker upp inom kort.
-      # finns på %{link}
+        crowdfunding-kampanj på %{link}!
       support_link_text: FoundedByMe
       contact_html: |
         Om ni har frågor eller vill veta mer är ni varmt välkomna att %{link}.
