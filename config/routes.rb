@@ -28,7 +28,7 @@ Studs::Application.routes.draw do
     get  'logout' => 'session#destroy', as: :logout
 
     # Static pages
-    get 'pub'     => 'main#pub',     as: :pub
+    # get 'pub'     => 'main#pub',     as: :pub
     get '2012'    => 'main#earlier', as: :earlier
     get 'contact' => 'main#contact', as: :contact
 
