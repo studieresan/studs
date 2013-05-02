@@ -69,9 +69,8 @@ en:
       latest_updates: Recent updates
       latest_from_tumblr_html: >
         Recent posts from the <a href="http://studs13.tumblr.com/">blog</a>
-      latest_from_twitter_html: >
-        Twitter - #studs2013
-      recent_images: Latest photo
+      latest_from_twitter_html: "Twitter - #studs2013"
+      recent_images: "Instagram - #studs2013"
       blog_post: Blog
       our_skills: Our skills
     contact:

@@ -69,9 +69,8 @@ sv:
       latest_updates: Senaste uppdateringarna
       latest_from_tumblr_html: >
         Senast från <a href="http://studs13.tumblr.com/">bloggen</a>
-      latest_from_twitter_html: >
-        Twitter - #studs2013
-      recent_images: Senaste bilden
+      latest_from_twitter_html: "Twitter - #studs2013"
+      recent_images: "Instagram - #studs2013"
       blog_post: Bloggen
       our_skills: Våra kompetenser
     contact:

@@ -24,5 +24,6 @@
   = render partial: 'external_posts', locals: { provider: :twitter, limit: 5 }
 
   %h2= t '.recent_images'
-  %p
-    %img(src="/uploads/splash.jpg" alt="")/
+  .instagram-feed#instagram-feed
+  -# %p
+    -# %img(src="/uploads/splash.jpg" alt="")/
