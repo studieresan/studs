@@ -13,7 +13,7 @@ def fetch_and_save_feed_items(provider, feed_url)
   #puts feed_url
   feed = Feedzirra::Feed.fetch_and_parse(feed_url)
   
-  if feed.nil? || feed.entries.blank?
+  if feed.nil? || !feed.respond_to?(:entries) || feed.entries.blank?
     puts_with_time "No results from feed"
     return
   end
