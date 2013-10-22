@@ -3,7 +3,7 @@ require 'capistrano_colors'
 set :application, 'studs'
 
 # Source repository
-set :repository, 'git@mogel.nu:studs.git'
+set :repository, 'git@github.com:mogelbrod/studs.git'
 set :scm, :git
 
 # Specify branch to deploy with:
