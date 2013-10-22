@@ -23,8 +23,8 @@ bundle exec rake db:setup
 rails server
 ```
 
-Open up `http://0.0.0.0:3000/` in your favorite browser and verify that it works.
-You can then log in to the admin account by visiting `http://0.0.0.0:3000/login`
+Open up [localhost:3000](http://0.0.0.0:3000/) in your favorite browser and verify that it works.
+You can then log in to the admin account by visiting [localhost:3000/login](http://0.0.0.0:3000/login)
 and entering the credentials output by the `rake db:setup` command earlier.
 
 
