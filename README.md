@@ -7,23 +7,26 @@ This is the website for StuDs, or Datasektionens studieresa (study tour).
 Getting started
 ---------------
 
-Install all gem dependencies through bundle (optionally skipping gems required in production):
-
 ```bash
+
+# Install all gem dependencies through bundle (optionally skipping gems required in production)
 bundle install --without production
-```
 
-Create a admin user for yourself in the rails console (started with `rails c`), or by running `rake db:seed`:
+# Create a database configuration (uses a SQLite3 database by default in dev environments)
+cp config/database.yml.dist config/database.yml
 
-```ruby
-User.create(login: 'admin', email: 'admin@test.se', password: '4v8dfk', role: 'admin')
-```
+# Initialize the database (create tables and stuff)
+bundle exec rake db:setup
+# Write down the admin password output by this command
 
-You should now be good to go! Next step is to start the web server (unless running on Passenger or equivalent):
-
-```bash
+# Start the server
 rails server
 ```
+
+Open up `http://0.0.0.0:3000/` in your favorite browser and verify that it works.
+You can then log in to the admin account by visiting `http://0.0.0.0:3000/login`
+and entering the credentials output by the `rake db:setup` command earlier.
+
 
 Generating PDF resumes
 ----------------------
