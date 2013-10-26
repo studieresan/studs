@@ -1,29 +1,91 @@
-- active_menu :index
+#top.header
+  .image-overlay
+    .container
+      .row
+        #header-box.col-md-10.col-md-offset-1.text-center
+          %h1
+            Bli bästis med 31 civilingenjörer
+          %p.lead
+            Vi är 31  studenter i slutet av utbildningen som vill träffa företag inför stundande exjobb och jobb.
+            Genom studs får ni möta, och lära känna oss, men även berätta om ert företag och vad ni erbjuder.
+          %a{ :href => "#" }
+            %button.btn.btn-cerise.read-more
+              Läs mer
 
-.column
-  %h2= t '.title'
-  %p= t '.body_html'
 
-  %p.download= link_to t('.download'), "/uploads/studs_product_sheet_#{I18n.locale}.pdf", :class => 'action download'
+#intro.intro
+  .container
+    .row
+      .col-md-8.col-md-offset-2.text-center
+        %h2
+          Vad är studs?
+        %p.lead
+          Studs är ett projekt som anordnas varje år av en grupp datateknikstudenter från KTH. Vi är alla i slutet av utbildningen och syftet med projektet är att lära känna företag och knyta kontakter. Ett annat syfte med studs är också att uppleva kulturer, därför åker vi i slutet av projektet utomlands för att besöka företag och universitet. I år är vi 31 studenter som arbetar med studs.
 
-  %h2= t '.title2'
-  %p= t '.body2_html'
+.the-team
 
-  %p= t '.interested_html', contact: contact_path
+%a{ :name => "contact" }
+.contact
+  .container
+    .row
+      .col-md-6.col-md-offset-3.heading.text-center
+        %h2
+          Kontakt
+        %p.lead
+          För mer information, kontakta projektledare Jesper Bratt, 
+          säljansvarig Gustav Engström, eller skicka oss ett meddelande
+          via kontaktformuläret så hör vi av oss!
 
-  %h2= t '.our_skills'
-  %ul.skills.tag_cloud
-    - tag_cloud(Resume.tag_counts_on(:skills), %w(s1 s2 s3 s4 s5)) do |tag, css_class|
-      - if can? :read, Resume
-        %li{ class: css_class }= link_to tag.name, resumes_path(s: tag.name)
-      - else
-        %li{ class: css_class }= tag.name
+  .container
+    .row
+      .col-md-6.col-xs-col-12
+        .contact-card
+          .contact-photo
+            %img.img-responsive.img-circle{ :src => image_path("bratt.png")}
+          .contact-details
+            %h4
+              Jesper Bratt
+            %p
+              Projektledare
+            %p
+              07300887497
+            %p
+              jbratt@kth.se
+        .contact-card
+          .contact-photo
+            %img.img-responsive.img-circle{ :src => image_path("engstrom.jpg")}
+          .contact-details
+            %h4
+              Gustav Engstrom
+            %p
+              Säljansvarig
+            %p
+              0704949447
+            %p
+              guseng@kth.se
 
-.column
-  = render partial: 'external_posts', locals: { provider: :tumblr, limit: 5 }
-  = render partial: 'external_posts', locals: { provider: :twitter, limit: 5 }
-
-  %h2= t '.recent_images'
-  .instagram-feed#instagram-feed
-  -# %p
-    -# %img(src="/uploads/splash.jpg" alt="")/
+      .contact-form.col-md-6
+        %form.form-horizontal{ :role => "form" }
+          .form-group
+            %label.col-sm-3.col-xs-12.control-label{ :for => "inputName" }
+              Name
+            .col-sm-9.col-xs-12
+              %input#inputName.form-control{ :type => "text" } 
+          .form-group
+            %label.col-sm-3.col-xs-12.control-label{ :for => "inputCompany" }
+              Company
+            .col-sm-9.col-xs-12
+              %input#inputCompany.form-control{ :type => "text" }
+          .form-group
+            %label.col-sm-3.col-xs-12.control-label{ :for => "inputEmail" }
+              Email
+            .col-sm-9.col-xs-12
+              %input#inputEmail.form-control{ :type => "email" } 
+          .form-group
+            %label.col-sm-3.col-xs-12.control-label{ :for => "inputMessage" }
+              Message
+            .col-sm-9.col-xs-12
+              %textarea#inputMessage.form-control{ :type => "text", :rows => "5" }
+          .col-sm-9.col-sm-offset-3
+            %button.btn.btn-cerise.btn-submit
+              Skicka
