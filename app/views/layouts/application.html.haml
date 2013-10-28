@@ -12,40 +12,26 @@
     = stylesheet_link_tag 'font-awesome.min.css'
     = render partial: '/google_analytics'
   %body
+    %a{ :name => "home" }
     %nav#navigation-bar.navbar.navbar-fixed-top{ :role => "navigation" }
       .col-md-10.col-md-offset-1
         .navbar-header
-          %button.navbar-toggle{ :type => "button", :data => { :toggle => "collapse", :target => "navbar-full-collapse" }}
+          %button.navbar-toggle{ :type => "button", :data => { :toggle => "collapse", :target => ".navbar-full-collapse" }}
             %span.sr-only Toggle navigation
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a{ :href => "#" }
+          %a{ :href => "#home" }
             %img.logo{ :src => image_path("studs_2014.png") }
 
         .collapse.navbar-collapse.navbar-full-collapse
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a{ :href => "#" }
-                the team
+              %a{ :href => "#about-studs" }
+                om studs
             %li
-              %a{ :href => "#" }
-                blog
-            %li
-              %a{ :href => "#" }
-                contact
-            %li.dropdown
-              %a.dropdown-toggle{ :href => "#", :data => { :toggle => "dropdown"}}
-                Jonas Sköld
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{ :href => "#" }
-                    My CV
-                  %a{ :href => "#" }
-                    Profile
-                  %a{ :href => "#" }
-                    Log out
+              %a{ :href => "#contact" }
+                kontakt
 
 
     = content_for?(:content) ? yield(:content) : yield
