@@ -1,7 +1,7 @@
 sv:
   common:
-    title: StuDs 2013
-    year: 2013
+    title: studs 2014
+    year: 2014
     delimeter_html: ' - '
     my_resume: Mitt CV
     users: Användare
@@ -11,6 +11,10 @@ sv:
     languages:
       en: English
       sv: Swedish
+  navigation:
+    toggle: Toggle navigation
+    about: om studs
+    contact: kontakt
   titles:
     index: Start
     pub: Startup-pub
@@ -45,34 +49,21 @@ sv:
 
   main:
     index:
-      title: Bli bästis med 27 färska civilingenjörer!
-      body_html: >
-        StuDs, eller Datasektionens Studieresa, är en unik möjlighet att
-        träffa ett helt gäng med Datateknik-studenter som är på gränsen att
-        bli fullfjädrade Civilingenjörer. StuDs erbjuder helt nya, mer
-        fokuserade sätt att mötas och knyta kontakt med blivande
-        medarbetare.
-      title2: Vilka är vi?
-      body2_html: >
-        StuDs 2013 utgörs av 27 studenter på civilingenjörs-programmet
-        Datateknik på Kungliga Tekniska högskolan. Alla är inne på sitt fjärde
-        eller femte år på utbildningen och vi vill därför få kontakt med samt
-        snart komma ut i arbetslivet. Tillsammans är vi en grupp med stor bredd
-        av kunskaper, drömmar och intressen men gemensamt för oss alla är att
-        vi genom StuDs 2013 hoppas att få träffa massor av spännande företag
-        för att finna exjobb eller anställning.
-      interested_html: >
-        Är ni intresserade av hur våra kompetenser passar in hos just ert
-        företag? Tveka inte att <a href="%{contact}">kontakta vår
-        säljgrupp</a> för att få tillgång till vår CV-databas!
-      download: Produktblad för StuDs 2013
-      latest_updates: Senaste uppdateringarna
-      latest_from_tumblr_html: >
-        Senast från <a href="http://studs13.tumblr.com/">bloggen</a>
-      latest_from_twitter_html: "Twitter - #studs2013"
-      recent_images: "Instagram - #studs2013"
-      blog_post: Bloggen
-      our_skills: Våra kompetenser
+      splash_title: Bli bästis med 31 civilingenjörer
+      splash_lead: >
+        Vi är 31  studenter i slutet av utbildningen som vill träffa företag inför stundande exjobb och jobb. Genom studs får ni möta, och lära känna oss, men även berätta om ert företag och vad ni erbjuder.
+      splash_readmore: Läs mer
+      about_title: Vad är studs?
+      about_lead: >
+        Studs är ett projekt som anordnas varje år av en grupp datateknikstudenter från KTH. Vi är alla i slutet av utbildningen och syftet med projektet är att lära känna företag och knyta kontakter. Ett annat syfte med studs är också att uppleva kulturer, därför åker vi i slutet av projektet utomlands för att besöka företag och universitet. I år är vi 31 studenter som arbetar med studs.
+      contact: Kontakt
+      contact_lead: >
+        För mer information, kontakta projektledare Jesper Bratt, säljansvarig Gustav Engström, eller skicka oss ett meddelande via kontaktformuläret så hör vi av oss!
+      contact_name: Namn
+      contact_company: Företag
+      contact_mail: Epost
+      contact_message: Meddelande
+      contact_send: Skicka
     contact:
       title: Konktakta oss
     earlier:

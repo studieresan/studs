@@ -3,24 +3,18 @@
     .container
       .row
         #header-box.col-md-10.col-md-offset-1.text-center
-          %h1
-            Bli bästis med 31 civilingenjörer
-          %p.lead
-            Vi är 31  studenter i slutet av utbildningen som vill träffa företag inför stundande exjobb och jobb.
-            Genom studs får ni möta, och lära känna oss, men även berätta om ert företag och vad ni erbjuder.
+          %h1= t '.splash_title'
+          %p.lead= t '.splash_lead'
           %a{ :href => "#about-studs" }
-            %button.btn.btn-cerise.read-more
-              Läs mer
+            %button.btn.btn-cerise.read-more= t '.splash_readmore'
 
 %a{ :name => "about-studs" }
 #intro.intro
   .container
     .row
       .col-md-8.col-md-offset-2.text-center
-        %h2
-          Vad är studs?
-        %p.lead
-          Studs är ett projekt som anordnas varje år av en grupp datateknikstudenter från KTH. Vi är alla i slutet av utbildningen och syftet med projektet är att lära känna företag och knyta kontakter. Ett annat syfte med studs är också att uppleva kulturer, därför åker vi i slutet av projektet utomlands för att besöka företag och universitet. I år är vi 31 studenter som arbetar med studs.
+        %h2= t '.about_title'
+        %p.lead= t '.about_lead'
 
 .the-team
 
@@ -29,12 +23,8 @@
   .container
     .row
       .col-md-6.col-md-offset-3.heading.text-center
-        %h2
-          Kontakt
-        %p.lead
-          För mer information, kontakta projektledare Jesper Bratt, 
-          säljansvarig Gustav Engström, eller skicka oss ett meddelande
-          via kontaktformuläret så hör vi av oss!
+        %h2= t '.contact'
+        %p.lead= t '.contact_lead'
 
   .container
     .row
@@ -67,25 +57,20 @@
       .contact-form.col-md-6
         %form.form-horizontal{ :role => "form" }
           .form-group
-            %label.col-sm-3.col-xs-12.control-label{ :for => "inputName" }
-              Namn
+            %label.col-sm-3.col-xs-12.control-label{ :for => "inputName" }= t '.contact_name'
             .col-sm-9.col-xs-12
               %input#inputName.form-control{ :type => "text" } 
           .form-group
-            %label.col-sm-3.col-xs-12.control-label{ :for => "inputCompany" }
-              Företag
+            %label.col-sm-3.col-xs-12.control-label{ :for => "inputCompany" }= t '.contact_company'
             .col-sm-9.col-xs-12
               %input#inputCompany.form-control{ :type => "text" }
           .form-group
-            %label.col-sm-3.col-xs-12.control-label{ :for => "inputEmail" }
-              Epost
+            %label.col-sm-3.col-xs-12.control-label{ :for => "inputEmail" }= t '.contact_mail'
             .col-sm-9.col-xs-12
               %input#inputEmail.form-control{ :type => "email" } 
           .form-group
-            %label.col-sm-3.col-xs-12.control-label{ :for => "inputMessage" }
-              Meddelande
+            %label.col-sm-3.col-xs-12.control-label{ :for => "inputMessage" }= t '.contact_message'
             .col-sm-9.col-xs-12
               %textarea#inputMessage.form-control{ :type => "text", :rows => "5" }
           .col-sm-9.col-sm-offset-3
-            %button.btn.btn-cerise.btn-submit
-              Skicka
+            %button.btn.btn-cerise.btn-submit= t '.contact_send'

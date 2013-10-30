@@ -17,7 +17,7 @@
       .col-md-10.col-md-offset-1
         .navbar-header
           %button.navbar-toggle{ :type => "button", :data => { :toggle => "collapse", :target => ".navbar-full-collapse" }}
-            %span.sr-only Toggle navigation
+            %span.sr-only= = t 'navigation.toggle'
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
@@ -27,11 +27,9 @@
         .collapse.navbar-collapse.navbar-full-collapse
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a{ :href => "#about-studs" }
-                om studs
+              %a{ :href => "#about-studs" }= t 'navigation.about'
             %li
-              %a{ :href => "#contact" }
-                kontakt
+              %a{ :href => "#contact" }= t 'navigation.contact'
 
 
     = content_for?(:content) ? yield(:content) : yield
