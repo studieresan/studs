@@ -31,8 +31,8 @@
             %li
               %a{ :href => "#contact" }= t 'navigation.contact'
 
-
-    = content_for?(:content) ? yield(:content) : yield
+    .content
+      = content_for?(:content) ? yield(:content) : yield
 
     = javascript_include_tag 'jquery'
     = javascript_include_tag 'bootstrap'
