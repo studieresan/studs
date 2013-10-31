@@ -148,8 +148,7 @@ background-color: #ffffff;
   display: table;
   height: 100%;
   width: 100%;
-  position: relative;
-  background: url(<%= asset_path 'd1.jpg' %>) no-repeat center center fixed;
+  background: url(<%= asset_path 'd1.jpg' %>) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -161,7 +160,6 @@ background-color: #ffffff;
   padding: 50px 0;
   color: #FFFFFF;
   margin: 0 auto;
-  table-layout: fixed;
   display: table-cell;
   vertical-align: middle;
 }
@@ -203,6 +201,11 @@ background-color: #ffffff;
 
 .intro {
   padding: 50px 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background: #ffffff;
+  z-index: 2;
 }
 
 /* Services */
@@ -235,10 +238,9 @@ i.service-icon:hover {
 
 .the-team {
   color: #ffffff;
-  display: table;
   height: 80%;
   width: 100%;
-  background: url(<%= asset_path 'bibblan.jpg' %>) no-repeat center center fixed;
+  background: url(<%= asset_path 'bibblan.jpg' %>) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -336,6 +338,11 @@ i.service-icon:hover {
 
 .contact {
   padding: 50px 0;
+  position: absolute;
+  top: 200%;
+  width: 100%;
+  z-index: 2;
+  background: #ffffff;
 }
 
 .contact .heading {
