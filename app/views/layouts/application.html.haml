@@ -26,9 +26,15 @@
         .collapse.navbar-collapse.navbar-full-collapse
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a{ :href => "#about-studs" }= t 'navigation.about'
+              %a{ :href => "/#about-studs" }= t 'navigation.about'
             %li
-              %a{ :href => "#contact" }= t 'navigation.contact'
+              %a{ :href => "/#contact" }= t 'navigation.contact'
+
+            - [%w(sv Svenska), %w(en English)].each do |lang, name|
+              - next if I18n.locale.to_s == lang
+              - css_class = [lang, (:active if I18n.locale.to_s == lang)]
+              %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), title: name, :class => css_class
+
             - if not logged_in?
               %li
                 = link_to t('navigation.login'), login_path
