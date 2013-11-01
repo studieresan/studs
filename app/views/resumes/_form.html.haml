@@ -19,7 +19,7 @@
         .form-group
           = label_tag :birthdate, t_attribute(:birthdate), :class => ["col-sm-4", "col-xs-12", "control-label"]
           .input.text.col-sm-8.col-xs-12
-            = date_select :birtdate, '', :class => ["form-control"]
+            = date_select :birtdate, '', :class => ["form-control"], start_year: 35.years.ago.year, end_year: 18.years.ago.year
             %p.help-block= t "hints.resume.#{:birthdate}"
         .form-group
           = label_tag :email, t_attribute(:email), :class => ["col-sm-4", "col-xs-12", "control-label"]
