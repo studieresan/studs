@@ -12,9 +12,12 @@ sv:
       en: english
       sv: svenska
   navigation:
-    toggle: Toggle navigation
     about: om studs
     contact: kontakt
+    login: logga in
+    profile: profil
+    resume: CV
+    logout: logga ut
   titles:
     index: Start
     pub: Startup-pub
@@ -150,8 +153,6 @@ sv:
       title: Användare
     resume:
       title: Redigera CV
-      note: >
-        Skriv CV:t på engelska, enbart de fält med begränsade val översätts automatiskt.
       submit: Spara ändringar
     credentials_mail:
       subject: Inloggningsuppgifter till StuDs hemsida
