@@ -48,7 +48,7 @@ window.requestAnimFrame = (function(){
 
     if(!ticking) {
       ticking = true;
-      requestAnimFrame(updateElements);
+      window.requestAnimationFrame(updateElements);
       lastScrollY = win.scrollY;
     }
   }
@@ -57,9 +57,13 @@ window.requestAnimFrame = (function(){
 
     var relativeY = lastScrollY / 4000;
 
-    prefix(header.style, "Transform", "translate3d(0px," + pos(0, 400, relativeY, 0) + 'px, 0)');
+    // prefix(header.style, "Transform", "translate3d(0px," + pos(0, 400, relativeY, 0) + 'px, 0)');
 
-    prefix(team.style, "Transform", "translate3d(0px," + pos(0, 800, relativeY, 0) + 'px, 0)');
+    if (window.chrome && navigator.platform.indexOf("Linux") !== -1) {
+      team.style.backgroundPosition = '0px ' + pos(0, 800, relativeY, 0) + 'px';
+    } else {
+      prefix(team.style, "Transform", "translate3d(0px," + pos(0, 800, relativeY, 0) + 'px, 0)');
+    }
 
     ticking = false;
   }
