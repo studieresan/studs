@@ -1,29 +1,41 @@
-%p.note= t 'common.resume_note'
-
-= ext_form_for @resume, :class => :resume do |f|
-  %fieldset.author
-    - if can? :manage, User
-      = f.collection_select_row :user_id, User.students, :id, :to_s, include_blank: true, hint: true
-    - else
-      = f.hidden_field :user_id
-
-  %fieldset
-    = f.text_field_row :name, hint: true
-    = f.select_row :masters, Resume::MASTERS.map { |m| [t_masters(m), m] }, include_blank: false, hint: true
-    = f.date_select_row :birthdate, start_year: 1980, end_year: 1995, include_blank: false, hint: true, default: Date.new(1989, 1, 1)
-    = f.text_field_row :email, hint: true
-    = f.text_field_row :phone, hint: true
-    = f.text_field_row :linkedin_url, hint: true
-
-  %fieldset
-    = f.file_field_row :image, hint: true
-    = f.check_box_row :image_cache, checked: true
-
-  %fieldset
-    = f.text_area_row :presentation, rows: 4, row_class: :wide, hint: true
-
-  %fieldset
-    = f.text_field_row :skill_list, row_class: :wide, hint: true, suggest: :existing_skills
-
-  %fieldset.actions.align
-    = f.submit
+.container.session
+  .row
+    .col-sm-8
+      = form_tag login_do_path, :class => [:resume, "form-horizontal"], :role => "form" do
+        .row
+          .col-sm-8.col-sm-offset-4
+            %h2= t 'users.resume.title'
+            %p.note= t 'users.resume.note'
+        .form-group
+          = label_tag :name, t_attribute(:name), :class => ["col-sm-4", "col-xs-12", "control-label"]
+          .input.text.col-sm-8.col-xs-12
+            = text_field_tag :login, '', :class => ["form-control"]
+            %p.help-block= t "hints.resume.#{:name}"
+        .form-group
+          = label_tag :masters, t_attribute(:masters), :class => ["col-sm-4", "col-xs-12", "control-label"]
+          .input.col-sm-8.col-xs-12
+            = select_tag :masters, options_for_select(Resume::MASTERS.map { |m| [t_masters(m), m] }), :class => ["form-control"]
+            %p.help-block= t "hints.resume.#{:masters}"
+        .form-group
+          = label_tag :birthdate, t_attribute(:birthdate), :class => ["col-sm-4", "col-xs-12", "control-label"]
+          .input.text.col-sm-8.col-xs-12
+            = date_select :birtdate, '', :class => ["form-control"]
+            %p.help-block= t "hints.resume.#{:birthdate}"
+        .form-group
+          = label_tag :email, t_attribute(:email), :class => ["col-sm-4", "col-xs-12", "control-label"]
+          .input.text.col-sm-8.col-xs-12
+            = email_field_tag :email, '', :class => ["form-control"]
+            %p.help-block= t "hints.resume.#{:email}"
+        .form-group
+          = label_tag :phone, t_attribute(:phone), :class => ["col-sm-4", "col-xs-12", "control-label"]
+          .input.text.col-sm-8.col-xs-12
+            = phone_field_tag :phone, '', :class => ["form-control"]
+            %p.help-block= t "hints.resume.#{:phone}"
+        .form-group
+          = label_tag :skill_list, t_attribute(:skill_list), :class => ["col-sm-4", "col-xs-12", "control-label"]
+          .input.text.col-sm-8.col-xs-12
+            = phone_field_tag :skill_list, '', :class => ["form-control"]
+            %p.help-block= t "hints.resume.#{:skill_list}"
+        .row
+          .col-sm-8.col-sm-offset-4
+            = submit_tag t('users.resume.submit'), :class => [:commit, "button", "btn", "btn-cerise", "btn-submit"]

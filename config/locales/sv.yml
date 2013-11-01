@@ -148,6 +148,11 @@ sv:
   users:
     index:
       title: Användare
+    resume:
+      title: Redigera CV
+      note: >
+        Skriv CV:t på engelska, enbart de fält med begränsade val översätts automatiskt.
+      submit: Spara ändringar
     credentials_mail:
       subject: Inloggningsuppgifter till StuDs hemsida
       body: |

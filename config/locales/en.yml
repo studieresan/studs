@@ -1,7 +1,7 @@
 en:
   common:
-    title: StuDs 2013
-    year: 2013
+    title: studs 2014
+    year: 2014
     delimeter_html: ' - '
     my_resume: My resume
     users: Users
@@ -11,6 +11,10 @@ en:
     languages:
       en: English
       sv: Swedish
+  navigation:
+    toggle: Toggle navigation
+    about: about
+    contact: contact
   titles:
     index: Start
     pub: Startup Pub
@@ -35,7 +39,8 @@ en:
     invalid_credentials: Invalid credentials
   not_found:
     title: Page Not Found
-    body_html: Unfortunately, we couldn't find what you were looking for.
+    body_html: >
+      Unfortunately, we couldn't find what you were looking for.
   error_occurred:
     title: An Error Occured
     body_html: >
@@ -45,34 +50,22 @@ en:
 
   main:
     index:
-      title: Get to know 27 new engineers!
-      body_html: >
-        StuDs, or Datasektionen's study tour, is a unique opportunity to
-        meet a bunch of Computer-Science students from on the verge to
-        become Master graduates. StuDs offers a great way to meet possible
-        future employees.
-      title2: Who are we?
-      body2_html: >
-        StuDs 2013 consists of 27 students at the Master of Science in Computer
-        Engineering programme at the Royal Institute of Technology (KTH). We
-        are all studying our fourth or fifth year of the program, hence we
-        would like to get in contact with IT companies and soon start our
-        future careers. Together, we are a group with a large set of
-        knowledge/skills, dreams and interests, however, what we have in common
-        is that through StuDs 2013 we hope to meet a lot of exciting companies
-        to find either employment or a place for the final degree project.
-      interested_html: >
-        Are you interested in how our qualifications suits your company?
-        Do not hesitate to <a href="%{contact}">contact our sales
-        group</a> to gain access to our CV database!
-      download: Product sheet for StuDs 2013
-      latest_updates: Recent updates
-      latest_from_tumblr_html: >
-        Recent posts from the <a href="http://studs13.tumblr.com/">blog</a>
-      latest_from_twitter_html: "Twitter - #studs2013"
-      recent_images: "Instagram - #studs2013"
-      blog_post: Blog
-      our_skills: Our skills
+      index:
+      splash_title: Become best friends with 31 computer science students
+      splash_lead: >
+        We are 31 students that are close to the end of our education and are eager to meet companies in preparation of the coming master's thesis and finding a job. Through studs you get the chance to meet, and get to know, us but also to tell us about your company and what you can offer.
+      splash_readmore: Read more
+      about_title: What is studs?
+      about_lead: >
+        Studs is a project organized every year by a group computer science students from KTH. We are all close to the end of our education and the purpose of the project is to find companies and get to know people who work at them. Another purpose with studs is to experience other cultures, therefore at the end of the project we travel to another country to visit companies and univiersities. This year we are 31 students working with studs.
+      contact: Contact
+      contact_lead: >
+        For more information contact the project leader Jesper Bratt, sales manager Gustav Engström or send us an message via the contact form.
+      contact_name: Namn
+      contact_company: Företag
+      contact_mail: Epost
+      contact_message: Meddelande
+      contact_send: Skicka
     contact:
       title: Contact Us
     earlier:
