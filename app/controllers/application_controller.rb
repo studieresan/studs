@@ -69,8 +69,8 @@ class ApplicationController < ActionController::Base
   # URL options
   def default_url_options(options={})
     {
-      locale: I18n.locale,
-      trailing_slash: true,
+      locale: ((I18n.locale == I18n.default_locale) ? nil : I18n.locale),
+      trailing_slash: false,
     }.merge(options)
   end
 end
