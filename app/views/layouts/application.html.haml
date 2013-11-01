@@ -50,7 +50,7 @@
                       = link_to t('navigation.resume'), mine_resumes_path
                     = link_to t('navigation.logout'), logout_path
 
-    - if current_page?index_path
+    - if current_page?index_path or current_page?('/')
       = content_for?(:content) ? yield(:content) : yield
     - else
       .content
