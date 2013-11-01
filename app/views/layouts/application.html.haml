@@ -20,15 +20,15 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a{ :href => "/" }
+          %a{ :href => index_path }
             %img.logo{ :src => image_path("studs_2014.png") }
 
         .collapse.navbar-collapse.navbar-full-collapse
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a{ :href => "/#about-studs" }= t 'navigation.about'
+              = link_to t('navigation.about'), index_path(:anchor => 'about')
             %li
-              %a{ :href => "/#contact" }= t 'navigation.contact'
+              = link_to t('navigation.contact'), index_path(:anchor => 'contact')
 
             - [%w(sv Svenska), %w(en English)].each do |lang, name|
               - next if I18n.locale.to_s == lang
@@ -50,7 +50,7 @@
                       = link_to t('navigation.resume'), mine_resumes_path
                     = link_to t('navigation.logout'), logout_path
 
-    - if current_page?('/')
+    - if current_page?index_path
       = content_for?(:content) ? yield(:content) : yield
     - else
       .content
