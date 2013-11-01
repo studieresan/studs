@@ -9,8 +9,8 @@ en:
       The resume should be written in English, only the limited options are
       automatically translated.
     languages:
-      en: English
-      sv: Swedish
+      en: english
+      sv: svenska
   navigation:
     toggle: Toggle navigation
     about: about

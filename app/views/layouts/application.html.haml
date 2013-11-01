@@ -33,7 +33,7 @@
             - [%w(sv Svenska), %w(en English)].each do |lang, name|
               - next if I18n.locale.to_s == lang
               - css_class = [lang, (:active if I18n.locale.to_s == lang)]
-              %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), title: name, :class => css_class
+              %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
 
             - if not logged_in?
               %li

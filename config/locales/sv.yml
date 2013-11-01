@@ -9,8 +9,8 @@ sv:
       Skriv CV:t på engelska, enbart de fält med begränsade val översätts
       automatiskt.
     languages:
-      en: English
-      sv: Swedish
+      en: english
+      sv: svenska
   navigation:
     toggle: Toggle navigation
     about: om studs
