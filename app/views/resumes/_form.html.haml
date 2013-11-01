@@ -32,9 +32,9 @@
             = phone_field_tag :phone, '', :class => ["form-control"]
             %p.help-block= t "hints.resume.#{:phone}"
         .form-group
-          = label_tag :skill_list, t_attribute(:skill_list), :class => ["col-sm-4", "col-xs-12", "control-label"]
+          = label_tag :skill_list, t_attribute(:resume, :skill_list), :class => ["col-sm-4", "col-xs-12", "control-label"]
           .input.text.col-sm-8.col-xs-12
-            = phone_field_tag :skill_list, '', :class => ["form-control"]
+            = text_field_tag :skill_list, '', :class => ["form-control"]
             %p.help-block= t "hints.resume.#{:skill_list}"
         .row
           .col-sm-8.col-sm-offset-4
