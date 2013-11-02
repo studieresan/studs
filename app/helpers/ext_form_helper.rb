@@ -16,22 +16,40 @@ module ExtFormHelper
               %w(date_select datetime_select time_select) +
               %w(collection_select select country_select time_zone_select) -
               %w(hidden_field label fields_for) # Don't decorate these
+    html_options_tags = %w(collection_check_boxes collection_radio_buttons) + 
+              %w(collection_select date_select datetime_select) + 
+              %w(grouped_collection_select select time_select time_zone_select)
 
     helpers.each do |name|
       # Normal tag generators (without labels)
       define_method(name) do |field, *args| #{{{
         opts = args.last.is_a?(Hash) ? args.pop : {}
+        #Add html options if this tag type can have that
+        html_opts = {}
+        if html_options_tags.include?name and args.last.is_a?(Hash)
+          html_opts = opts
+          opts = args.pop
+        end
         classes = [] # css classes for field
 
         # Include explicitly specified css classes
         if opts.include?(:class)
           classes += opts[:class].is_a?(Array) ? opts[:class] : opts[:class].to_s.split(' ')
+        elsif html_opts.include?(:class)
+          classes += html_opts[:class].is_a?(Array) ? html_opts[:class] : html_opts[:class].to_s.split(' ')
         end
 
         # Add field name and type class
         unless opts.delete(:limit_classes)
           classes << css_class_for_name(name)
           classes << 'disabled' if opts.include?(:disabled) && opts[:disabled]
+        end
+
+        unless %w(check_box radio_button).include?name
+          classes << 'form-control'
+        end
+        if %w(date_select).include?name
+          classes << 'form-control-inline'
         end
 
         # Include suggestions data if specified
@@ -54,11 +72,20 @@ module ExtFormHelper
             object.kind_of?(ActiveRecord::Base) && !object.errors[field.to_sym].empty?
 
         # CSS class string
-        opts[:class] = classes.uniq.join(' ')
-        opts.delete(:class) if opts[:class].blank?
+        class_string = classes.uniq.join(' ')
+        if html_options_tags.include?name
+          html_opts[:class] = class_string
+          html_opts.delete(:class) if html_opts[:class].blank?
+        else
+          opts[:class] = class_string
+          opts.delete(:class) if opts[:class].blank?
+        end
 
         # Call the parent field generator
         args << opts
+        unless html_opts.blank?
+          args << html_opts
+        end
         super(field, *args)
       end #}}}
 
@@ -66,6 +93,7 @@ module ExtFormHelper
       define_method(name + '_row') do |field, *args| #{{{
         opts = args.last.is_a?(Hash) ? args.last : {}
         classes = %w(input) # css classes for container element
+        classes << 'form-group'
         classes << opts.delete(:row_class) if opts.include?(:row_class)
 
         # Include classes describing the actual field name and type
@@ -76,33 +104,34 @@ module ExtFormHelper
         opts[:limit_classes] = true
 
         label_opts = {}
+        label_opts[:class] = 'col-sm-4 col-xs-12 control-label'
 
         error = error_on(field)
 
         # Include error message
         if label_opts[:title] = error
-          label_opts[:class] = 'error'
+          label_opts[:class] += ' error'
           classes << 'error'
         end
 
-        field_html = @template.content_tag(:span, send(name.to_sym, field, *args), :class => :wrap)
 
-        # Place inputs for radio buttons and check boxes inside label
-        if %w(check_box radio_button).include?(name)
-          output = label(field, opts.delete(:label), label_opts) do
-            "#{field_html} #{i18n_text(:attributes, field)}".html_safe
-          end
-        else
-          output = label(field, opts.delete(:label), label_opts) + ' ' + field_html
-        end
+        # Make a label for the input row
+        label_tag = label(field, opts.delete(:label), label_opts) #Add classes ("col-sm-4", "col-xs-12", "control-label")
+
+        #Make the actual form element tag using the corresponding helper method
+        input_tag = send(name.to_sym, field, *args)
 
         # Append hint if specified (replaced with error if present)
         if error && !opts.delete(:hide_error)
-          output += error_message(error)
+          input_tag += error_message(error)
         elsif opts[:hint]
           hint = opts.delete(:hint)
-          output += hint(hint == true ? field : hint)
+          input_tag += hint(hint == true ? field : hint)
         end
+
+        field_html = @template.content_tag(:div, input_tag, :class => ["col-sm-8", "col-xs-12"])
+
+        output = label_tag + ' ' + field_html
 
         @template.content_tag(:div, output, :class => classes.join(' '))
       end #}}}
@@ -127,13 +156,13 @@ module ExtFormHelper
     def hint(field)
       field = i18n_text(:hints, field) unless field.is_a?(String)
       field.gsub!(/(\r\n|\r|\n)/, '<br />')
-      @template.content_tag(:span, field.html_safe, :class => :hint)
+      @template.content_tag(:p, field.html_safe, :class => :'help-block')
     end
 
     # Returns error text for a field, if present.
     def error_message(field)
       field = error_on(field) if field.is_a?(Symbol)
-      @template.content_tag(:span, field, :class => :error)
+      @template.content_tag(:p, field, :class => [:error, :'has-error', :'help-block'])
     end
 
     # Submit tag which also classifies the input by the input name.
@@ -145,7 +174,10 @@ module ExtFormHelper
       end
       opts[:name] ||= :commit
       opts[:class] = Array(opts[:class]) << opts[:name]
-      @template.submit_tag(value, opts)
+      opts[:class] << [:button, :btn, :'btn-cerise', :'btn-submit']
+      submit_tag = @template.submit_tag(value, opts)
+      submit_column = @template.content_tag(:div, submit_tag, :class => [:'col-sm-8', :'col-sm-offset-4'])
+      @template.content_tag(:div, submit_column, :class => :row)
     end
 
     private

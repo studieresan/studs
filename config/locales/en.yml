@@ -55,14 +55,25 @@ en:
     index:
       splash_title: Become best friends with 31 computer science students
       splash_lead: >
-        We are 31 students that are close to the end of our education and are eager to meet companies in preparation of the coming master's thesis and finding a job. Through studs you get the chance to meet, and get to know, us but also to tell us about your company and what you can offer.
+        We are 31 students who are close to the end of our education 
+        and are eager to meet companies in preparation of the coming 
+        master's thesis and finding a job. Through studs you get the 
+        chance to meet and get to know us, but also to tell us about 
+        your company and what you can offer.
       splash_readmore: More information
       about_title: What is studs?
       about_lead: >
-        Studs is a project organized every year by a group computer science students from KTH. We are all close to the end of our education and the purpose of the project is to find companies and get to know people who work at them. Another purpose with studs is to experience other cultures, therefore at the end of the project we travel to another country to visit companies and univiersities. This year we are 31 students working with studs.
+        Studs is a project organized every year by a group of computer 
+        science students from KTH. We are all close to the end of our 
+        education and the purpose of the project is to find companies 
+        and get to know people who work at them. Another purpose with 
+        studs is to experience other cultures. Therefore, we travel to 
+        another country at the end of the project to visit companies and 
+        universities. This year we are 31 students working with studs.
       contact: Contact
       contact_lead: >
-        For more information contact the project leader Jesper Bratt, sales manager Gustav Engström or send us an message via the contact form.
+        For more information, please contact the project leader Jesper Bratt, 
+        sales manager Gustav Engström, or send us a message via the contact form.
       contact_name: Name
       contact_company: Company
       contact_mail: Email

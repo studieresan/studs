@@ -1,5 +1,14 @@
-.content
-  = render partial: '/flash', locals: { flash: flash }
-  .dialog
-    = render partial: 'form'
-= stylesheet_link_tag 'session'
+- active_menu :resumes
+= render partial: '/flash', locals: { flash: flash }
+.container
+  .row
+    .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-1
+      .row
+        .col-sm-8.col-sm-offset-4.col-xs-12
+          %h2<
+            = t_model_action :resume, :new
+            - if can? :index, Resume
+              = action_link :cancel, resumes_path
+          %p.note= t 'users.resume.note'
+
+      = render partial: 'form'

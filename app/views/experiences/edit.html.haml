@@ -1,8 +1,13 @@
 - active_menu :resumes
-.full
-  %h2<
-    = t_model_action
-    - if can? :read, @resume
-      = action_link :cancel, @resume
+.container
+  .row
+    .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-1
+      .row
+        .col-sm-8.col-sm-offset-4.col-xs-12
+          %h2<
+            = t_model_action
+            - if can? :read, @resume
+              = action_link :cancel, @resume
+          %p.note= t 'common.resume_note'
 
-  = render partial: 'form'
+      = render partial: 'form'

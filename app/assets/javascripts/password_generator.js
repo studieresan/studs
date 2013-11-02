@@ -4,11 +4,11 @@ $(function() {
   if ($input.length) {
     // References to relevant DOM elements
     var $input_confirm = $('input#user_password_confirmation');
-    var $container = $input.closest('.input');
+    var $container = $input.closest('div');
     // I18n text for generate button
     var text = $input.data('generate');
     // Generate password generation button and insert after the password input
-    $('<input type="button" id="password_generatator" value="'+text+'" />')
+    $('<input type="button" id="password_generator" value="'+text+'" />')
       .appendTo($container)
       .click(function() {
         // Generate random string

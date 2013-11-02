@@ -1,6 +1,4 @@
-%p.note= t 'common.resume_note'
-
-= ext_form_for [@resume, @experience], :class => :experience do |f|
+= ext_form_for [@resume, @experience], :html => {:class => [:experience, 'form-horizontal']} do |f|
   %fieldset.kind
     = f.select_row :kind, Experience::KINDS.map { |k| [t_experience_kind(k), k] }, include_blank: false, hint: true
 
@@ -11,13 +9,13 @@
 
   %fieldset.duration
     = f.date_select_row :start_date, start_year: 1990, end_year: Time.now.year, discard_day: true, hint: true
-    .input.date.end_date
-      = f.label :end_date
-      .wrap
+    .input.date.end_date.form-group
+      = f.label :end_date, :class => ['col-sm-4', 'col-xs-12', 'control-label']
+      .col-sm-8.col-xs-12
         = f.check_box_label :no_end_date
-        .select
+        .end_date
           = f.date_select :end_date, start_year: 1990, discard_day: true
-      = f.hint :end_date
+        = f.hint :end_date
   %fieldset.description
     = f.text_area_row :description, rows: 4, row_class: :wide, hint: true
 
