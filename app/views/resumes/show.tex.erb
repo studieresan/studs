@@ -1,6 +1,5 @@
 <%
   experiences = @r.experiences_by_kind
-  linkedin = @r.linkedin_url? ? linkedin_id(@r.linkedin_url) : nil
 %>
 % Resume for <%=htex @r.name %>
 \nonstopmode
@@ -105,9 +104,6 @@
 \iconl{\bf \Large \textborn} {\bf <%=htex t('resumes.pdf.dob') %>:} & <%= @r.birthdate %> \\
 \iconl{\Telefon} {\bf <%=htex t('resumes.pdf.phone') %>:}  & <%=htex @r.phone %> \\
 \iconl{\Letter} {\bf <%=htex t('resumes.pdf.email') %>:} & \href{mailto:<%=htex @r.email %>}{\tt <%=htex @r.email %>} \\
-<% if linkedin %>
-  \iconl{\bf \Large \textborn} {\bf <%=htex t('resumes.pdf.linkedin') %>:} & \href{<%=htex linkedin[0] %>}{\tt <%=htex linkedin[1] %>} \\
-<% end %>
 \end{tabular*}
 
 % Profile image
