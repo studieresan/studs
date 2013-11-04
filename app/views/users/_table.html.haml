@@ -19,6 +19,10 @@
         %td.actions
           .right
             - if can? :edit, user
-              = action_link :edit, [:edit, user], :icon, :"btn btn-default pull-right"
+              %a.btn.btn-default.pull-right{ :href => url_for([:edit, user]) }
+                %i.fa.fa-edit.fa-lg
+                Edit
             - if can? :destroy, user
-              = action_link :delete, [:delete, user], :icon, :"btn btn-default pull-right margin-right"
+              %a.btn.btn-default.pull-right.margin-right{ :href => url_for([:delete, user]) }
+                %i.fa.fa-trash-o.fa-lg
+                Delete
