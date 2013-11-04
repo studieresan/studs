@@ -1,8 +1,8 @@
 - experiences ||= @experiences
 - resume ||= @resume
-- if experiences
-  .section{ :class => kind }
-    %h3= t_experience_kind(kind)
+.section{ :class => kind }
+  %h3= t_experience_kind(kind)
+  - if experiences
     %ul.experiences
       - experiences.each do |exp|
         %li
