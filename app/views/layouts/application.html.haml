@@ -59,3 +59,6 @@
     = javascript_include_tag 'bootstrap'
     = javascript_include_tag 'script'
     = javascript_include_tag 'global'
+
+    - if current_page?index_path or current_page?('/')
+      = javascript_include_tag 'parallax'
