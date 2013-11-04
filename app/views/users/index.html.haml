@@ -18,8 +18,8 @@
                 .wrap= text_field_tag :name, params[:name], :'data-suggestions' => User.uniq.pluck(:name).to_json, :class => "form-control"
             .input.actions.form-group
               = submit_tag t('actions.filter'), name: nil, :class => :"commit btn btn-default pull-left"
-              = action_link :reset, users_path, :"btn btn-danger pull-left margin-left"
+              = action_link :reset, users_path, :"btn btn-default pull-left margin-left"
               - if can? :create, User
-                = action_link :new, [:new, :user], :"btn btn-default btn-success margin-left"
+                = action_link :new, [:new, :user], :"btn btn-primary margin-left"
 
         = render partial: 'table'

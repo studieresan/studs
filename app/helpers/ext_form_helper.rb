@@ -175,7 +175,7 @@ module ExtFormHelper
       end
       opts[:name] ||= :commit
       opts[:class] = Array(opts[:class]) << opts[:name]
-      opts[:class] << [:btn, :'btn-default']
+      opts[:class] << [:btn, :'btn-default btn-primary']
       @template.submit_tag(value, opts)
     end
 
