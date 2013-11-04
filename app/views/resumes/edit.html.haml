@@ -9,6 +9,5 @@
             = t_model_action :resume, :edit
             - if can? :read, Resume
               = action_link :cancel, @resume
-          %p.note= t 'users.resume.note'
 
       = render partial: 'form'

@@ -9,6 +9,5 @@
             = t_model_action :resume, :new
             - if can? :index, Resume
               = action_link :cancel, resumes_path
-          %p.note= t 'users.resume.note'
 
       = render partial: 'form'
