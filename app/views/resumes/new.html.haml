@@ -8,6 +8,6 @@
           %h2<
             = t_model_action :resume, :new
             - if can? :index, Resume
-              = action_link :cancel, resumes_path
+              = action_link :cancel, resumes_path, :"btn btn-default pull-right"
 
       = render partial: 'form'

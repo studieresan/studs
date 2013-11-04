@@ -7,7 +7,7 @@
           %h2<
             = t_model_action
             - if can? :read, @resume
-              = action_link :cancel, @resume
+              = action_link :cancel, @resume, :"btn btn-default pull-right"
           %p.note= t 'common.resume_note'
 
       = render partial: 'form'
