@@ -416,6 +416,9 @@ footer {
   padding-left: 4px;
   cursor: text;
 }
+.tag-container.form-control {
+  height: auto;
+}
 .tag-container a.tag, a.itag {
   color: #444444;
   background: #eeeeee;
@@ -423,9 +426,11 @@ footer {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  padding: 2px 4px;
-  margin-right: 4px;
+  padding: 1px 4px;
+  margin: 2px;
+  font-size: 12px;
   vertical-align: baseline;
+  display: inline-block;
 }
 .tag-container a.tag:hover, a.itag:hover {
   text-decoration: none;
@@ -443,6 +448,7 @@ footer {
   border: 0;
   outline: none !important;
   vertical-align: baseline;
+  display: inline-block;
 }
 ul.suggestions {
   margin: 0;

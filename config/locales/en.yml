@@ -274,7 +274,7 @@ en:
         A list of your skills and expertise.
         List the skills you know best or want to emphasize first.
         You can drag the tags around, and remove them by clicking on them.
-        Add a new tag by finishing with a comma, or tab/enter/mouse click to choose from the list.
+        Add a new tag with tab/enter or choose from the list.
       street: Street name and number
       city: The city where you live
       postcode: Without spaces
