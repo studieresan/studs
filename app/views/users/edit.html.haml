@@ -7,6 +7,6 @@
           %h2<
             = t_model_action :user, :edit
             - if can? :index, User
-              = action_link :cancel, users_path
+              = action_link :cancel, users_path, :"btn btn btn-default pull-right"
 
       = render partial: 'form'
