@@ -1,7 +1,11 @@
 - active_menu :resumes
-.column
-  %h2= t '.title'
-  %p= t '.body_html'
-
-.column
-  = render partial: 'session/form'
+.container
+  .row
+    .col-md-offset-1
+      .col-md-4
+        %h2
+          = t '.title'
+        %p
+          = t '.body_html'
+      .col-md-6
+        = render partial: 'session/form'

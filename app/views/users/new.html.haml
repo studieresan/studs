@@ -1,8 +1,10 @@
 - active_menu :users
-.full
-  %h2<
-    = t_model_action
-    - if can? :index, User
-      = action_link :cancel, users_path
+.container
+  .row
+    .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-1
+      .row
+        .col-sm-8.col-sm-offset-4.col-xs-12
+          %h2
+            = t_model_action :user, :new
 
-  = render partial: 'form'
+      = render partial: 'form'

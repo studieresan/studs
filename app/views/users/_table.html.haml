@@ -1,6 +1,6 @@
 - users ||= @users
-%table.users
-  - cols = %w(login role name email updated_at)
+%table.users.table
+  - cols = %w(login role name email)
   %thead
     %tr
       - cols.each do |col|
@@ -16,10 +16,13 @@
         %td.role= user.role
         %td.name= user.name
         %td.email= mail_to user.email
-        %td.updated_at= l user.updated_at
         %td.actions
           .right
             - if can? :edit, user
-              = action_link :edit, [:edit, user], :icon
+              %a.btn.btn-default.pull-right{ :href => url_for([:edit, user]) }
+                %i.fa.fa-edit
+                Edit
             - if can? :destroy, user
-              = action_link :delete, [:delete, user], :icon
+              %a.btn.btn-default.pull-right.margin-right{ :href => url_for([:delete, user]) }
+                %i.fa.fa-trash-o
+                Delete

@@ -1,29 +1,14 @@
-%p.note= t 'common.resume_note'
-
-= ext_form_for @resume, :class => :resume do |f|
-  %fieldset.author
-    - if can? :manage, User
-      = f.collection_select_row :user_id, User.students, :id, :to_s, include_blank: true, hint: true
-    - else
-      = f.hidden_field :user_id
-
-  %fieldset
-    = f.text_field_row :name, hint: true
-    = f.select_row :masters, Resume::MASTERS.map { |m| [t_masters(m), m] }, include_blank: false, hint: true
-    = f.date_select_row :birthdate, start_year: 1980, end_year: 1995, include_blank: false, hint: true, default: Date.new(1989, 1, 1)
-    = f.text_field_row :email, hint: true
-    = f.text_field_row :phone, hint: true
-    = f.text_field_row :linkedin_url, hint: true
-
-  %fieldset
-    = f.file_field_row :image, hint: true
-    = f.check_box_row :image_cache, checked: true
-
-  %fieldset
-    = f.text_area_row :presentation, rows: 4, row_class: :wide, hint: true
-
-  %fieldset
-    = f.text_field_row :skill_list, row_class: :wide, hint: true, suggest: :existing_skills
-
-  %fieldset.actions.align
-    = f.submit
+= ext_form_for @resume, :html => {:class => [:resume, 'form-horizontal'], :role => 'form'} do |f|
+  = f.text_field_row :name, hint: true
+  = f.email_field_row :email, hint: true
+  = f.date_select_row :birthdate, start_year: 35.years.ago.year, end_year: 18.years.ago.year, hint: true, default: Date.new(1990,1,1)
+  = f.phone_field_row :phone, hint: true
+  = f.text_field_row :street, hint: true
+  = f.text_field_row :postcode, hint: true, maxlength: "5"
+  = f.text_field_row :city, hint: true
+  = f.text_field_row :skill_list, hint: true, suggest: :existing_skills
+  .row
+    .col-sm-8.col-sm-offset-4.col-xs-12
+      = f.submit
+      - if can? :read, Resume
+        = action_link :cancel, @resume, :"btn btn-default"

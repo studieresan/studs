@@ -2,8 +2,8 @@ module MarkupHelper
   include ActsAsTaggableOn::TagsHelper
 
   # Definition list term/value generator.
-  def attribute_definition(term, value)
-    content_tag(:dt, t_attribute(term) + ':', :class => term) +
+  def attribute_definition(term, value, *scope)
+    content_tag(:dt, t_attribute(scope, term) + ':', :class => term) +
       content_tag(:dd, value)
   end
 

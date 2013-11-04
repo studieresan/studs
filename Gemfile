@@ -27,6 +27,9 @@ gem 'feedzirra'
 # Cron jobs
 gem 'whenever', :require => false
 
+# Mail form
+gem 'mail_form'
+
 group :development do
   gem 'sqlite3'
 

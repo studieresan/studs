@@ -41,4 +41,7 @@ additional stuff for the `pdflatex` compatible tools you use.
 Authors
 -------
 
+* Martin Barksten <<barksten@kth.se>>
+* Per Claesson <<pclasson@kth.se>>
 * Victor Hallberg <<victorha@kth.se>>
+* Jonas Sköld <<jonassko@kth.se>>

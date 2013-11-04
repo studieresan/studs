@@ -1,7 +1,7 @@
 en:
   common:
-    title: StuDs 2013
-    year: 2013
+    title: studs 2014
+    year: 2014
     delimeter_html: ' - '
     my_resume: My resume
     users: Users
@@ -9,8 +9,17 @@ en:
       The resume should be written in English, only the limited options are
       automatically translated.
     languages:
-      en: English
-      sv: Swedish
+      en: english
+      sv: svenska
+  navigation:
+    about: about
+    contact: contact
+    login: login
+    resumes: resumes
+    users: users
+    profile: profile
+    resume: resume
+    logout: logout
   titles:
     index: Start
     pub: Startup Pub
@@ -35,7 +44,8 @@ en:
     invalid_credentials: Invalid credentials
   not_found:
     title: Page Not Found
-    body_html: Unfortunately, we couldn't find what you were looking for.
+    body_html: >
+      Unfortunately, we couldn't find what you were looking for.
   error_occurred:
     title: An Error Occured
     body_html: >
@@ -45,34 +55,32 @@ en:
 
   main:
     index:
-      title: Get to know 27 new engineers!
-      body_html: >
-        StuDs, or Datasektionen's study tour, is a unique opportunity to
-        meet a bunch of Computer-Science students from on the verge to
-        become Master graduates. StuDs offers a great way to meet possible
-        future employees.
-      title2: Who are we?
-      body2_html: >
-        StuDs 2013 consists of 27 students at the Master of Science in Computer
-        Engineering programme at the Royal Institute of Technology (KTH). We
-        are all studying our fourth or fifth year of the program, hence we
-        would like to get in contact with IT companies and soon start our
-        future careers. Together, we are a group with a large set of
-        knowledge/skills, dreams and interests, however, what we have in common
-        is that through StuDs 2013 we hope to meet a lot of exciting companies
-        to find either employment or a place for the final degree project.
-      interested_html: >
-        Are you interested in how our qualifications suits your company?
-        Do not hesitate to <a href="%{contact}">contact our sales
-        group</a> to gain access to our CV database!
-      download: Product sheet for StuDs 2013
-      latest_updates: Recent updates
-      latest_from_tumblr_html: >
-        Recent posts from the <a href="http://studs13.tumblr.com/">blog</a>
-      latest_from_twitter_html: "Twitter - #studs2013"
-      recent_images: "Instagram - #studs2013"
-      blog_post: Blog
-      our_skills: Our skills
+      splash_title: Get to know 31 computer science students
+      splash_lead: >
+        We are 31 students who are close to exam and we are eager to
+        to meet business for upcoming master theses and jobs.
+        Through this project, you will meet and get to know us, but
+        you will also be able to tell us about your business and what
+        you  have to offer.
+      splash_readmore: More information
+      about_title: What is studs?
+      about_lead: >
+        Studs is a project organized every year by a group of computer
+        science students from KTH. We are all at the end of our education
+        and the purpose of the project is to get to know the business
+        and make contacts. Another purpose with studs is to experience
+        other cultures, because we will travel abroad at the end of the
+        project to visit companies and universities. This year we are
+        31 students working with studs.
+      contact: Contact
+      contact_lead: >
+        For more information, please contact the project leader Jesper Bratt, 
+        sales manager Gustav Engström, or send us a message via the contact form.
+      contact_name: Name
+      contact_company: Company
+      contact_mail: Email
+      contact_message: Message
+      contact_send: Send
     contact:
       title: Contact Us
     earlier:
@@ -143,9 +151,8 @@ en:
     logged_out:
       title: Resume Database
       body_html: >
-        The resume database contains qualifications and contact information for
-        all students participating in the project. It is available to all the
-        companies we work with.
+        The resume database contain all participants resumes and contact information.
+        The database is available to all companies we work with.
     show:
       birthdate: "%{date} (%{age} years old)"
     pdf:
@@ -159,8 +166,11 @@ en:
   users:
     index:
       title: Users
+    resume:
+      title: Edit CV
+      submit: Save changes
     credentials_mail:
-      subject: Login credentials for StuDs' homepage
+      subject: Login credentials for studs' homepage
       body: |
         An account has been created for you at studieresan.se.
         You can now log in at http://studieresan.se/login with the following credentials.
@@ -189,6 +199,16 @@ en:
         There already exists a file with the same name, and you do not have
         permission to replace files. Enter a new unique filename if you wish to
         upload the file.
+  contact_form:
+    create:
+      success: Your email was sent
+      error: Oops, something went wrong
+      thanks: >
+        Thank you for showing interest in studs 2014!
+        We will contact you shortly.
+      error_message: >
+        Your message was not sent. Please retry again!
+      back: Go back
 
   attributes:
     defaults:
@@ -214,6 +234,9 @@ en:
       user_id: Author
       image: Profile image
       image_cache: Keep current profile image
+      street: Street
+      postcode: Postcode
+      city: City
     experience:
       kind: Category
       organization: Organization
@@ -228,6 +251,12 @@ en:
       size: Size
       mtime: Modified
       file: File
+    contact_form:
+      name: Name
+      company: Company
+      email: Email Address
+      message: Message
+      send: Send
   hints:
     resume:
       user_id: Owner of this resume
@@ -237,7 +266,6 @@ en:
       email: Preferably your @kth.se address
       linkedin_url: URL to your LinkedIn profile if you have one
       phone: A cell phone number is preferred
-      skill_list:
       image: (Profile) image which will be shown in your resume (400x500 px)
       presentation: |
         A short presentation of yourself (optional) - don't list experiences here.
@@ -246,6 +274,10 @@ en:
         A list of your skills and expertise.
         List the skills you know best or want to emphasize first.
         You can drag the tags around, and remove them by clicking on them.
+        Add a new tag with tab/enter or choose from the list.
+      street: Street name and number
+      city: The city where you live
+      postcode: Without spaces
     experience:
       kind: What kind of experience this is
       organization: Company, organization or school
@@ -493,6 +525,7 @@ en:
       create: Create
       submit: Save
       update: Update
+      send: Send
   number:
     currency:
       format:

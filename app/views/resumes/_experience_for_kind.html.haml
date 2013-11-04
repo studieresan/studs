@@ -1,20 +1,19 @@
 - experiences ||= @experiences
 - resume ||= @resume
-- if experiences
-  .section{ :class => kind }
-    %h3= t_experience_kind(kind)
+.section{ :class => kind }
+  %h3= t_experience_kind(kind)
+  - if experiences
     %ul.experiences
       - experiences.each do |exp|
         %li
           %h4.title<
             = exp.title
-            - if can? :edit, exp
-              = action_link :delete, [:delete, resume, exp], :icon
-              = action_link :edit, [:edit, resume, exp], :icon
           %p.at<
             %span.organization= exp.organization
             - if exp.location.present?
               %span.location (#{exp.location})
           %p.duration= exp.duration
           %p.description= exp.description
-
+          - if can? :edit, exp
+            = action_link :delete, [:delete, resume, exp], :icon, :"btn btn-default"
+            = action_link :edit, [:edit, resume, exp], :icon, :"btn btn-default"

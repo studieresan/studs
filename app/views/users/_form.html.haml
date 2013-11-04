@@ -1,4 +1,4 @@
-= ext_form_for @user, :class => :user do |f|
+= ext_form_for @user, :html => {:class => [:user, 'form-horizontal'], :role => 'form'} do |f|
   - if can? :create, User # create AND edit
     %fieldset.admin
       = f.text_field_row :login
@@ -11,11 +11,17 @@
 
   %fieldset.password
     - unless @user.new_record?
-      %h3= t('users.change_password')
+      .row
+        .col-sm-8.col-sm-offset-4.col-xs-12
+          %h4= t('users.change_password')
     = f.password_field_row :password, :'data-generate' => t('users.generate_password')
     = f.password_field_row :password_confirmation
     - if can? :create, User
       = f.check_box_row :send_credentials_mail
 
   %fieldset.actions.align
-    = f.submit
+    .row
+      .col-sm-8.col-sm-offset-4.col-xs-12
+        = f.submit
+        - if can? :index, User
+          = action_link :cancel, users_path, :"btn btn btn-default"

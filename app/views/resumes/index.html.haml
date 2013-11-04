@@ -1,20 +1,28 @@
 - active_menu :resumes
-.full
-  %h2<
-    = t '.title'
-    - if can? :manage, Resume
-      = action_link :new, [:new, :resume]
+.container
+  .row
+    .col-sm-8.col-sm-offset-2.col-xs-12
+      .full
+        %h2<
+          = t '.title'
 
-  = form_tag resumes_path, method: :get, :class => 'resume-search' do
-    %fieldset.inline
-      .input.text.name
-        = label_tag :n, t_attribute(:resume, :name)
-        .wrap= text_field_tag :n, @filter.n, :'data-suggestions' => Resume.uniq.pluck(:name).to_json
-      .input.text.skills
-        = label_tag :s, t_attribute(:resume, :skills)
-        .wrap= text_field_tag :s, @filter.s, :'data-suggestions' => Resume.existing_skills.to_json
-      .input.actions
-        = submit_tag t('actions.filter'), name: nil, :class => :commit
-        = action_link :reset, resumes_path 
+        = form_tag resumes_path, method: :get, :class => 'resume-search form' do
+          %fieldset.inline
+            .input.text.name.form-group.row
+              .col-md-6.col-xs-12
+                = label_tag :n, t_attribute(:resume, :name)
+                .wrap= text_field_tag :n, @filter.n, :'data-suggestions' => Resume.uniq.pluck(:name).to_json, :class => "form-control"
+            .input.text.name.form-group.row
+              .col-md-6.col-xs-12
+                = label_tag :s, t_attribute(:resume, :skills)
+                .wrap= text_field_tag :s, @filter.s, :'data-suggestions' => Resume.existing_skills.to_json
+            .input.actions.btn-group
+              = submit_tag t('actions.filter'), name: nil, :class => :"btn btn-default commit"
+              = action_link :reset, resumes_path, :"btn btn-default"
+              - if can? :manage, Resume
+                %a.btn.btn-primary.pull-right.margin-right{ :href => url_for([:new, :resume]) }
+                  %i.fa.fa-file-o
+                    = t('actions.new')
 
-  = render partial: 'table'
+
+        = render partial: 'table'

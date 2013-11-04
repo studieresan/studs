@@ -1,8 +1,13 @@
 - active_menu :resumes
 
-.dialog.delete
-  %h2= t_model_action()
-  %p= t('actions.delete_prompt_html', type: t('models.the.experience'), name: @experience.to_s)
-  .actions
-    = action_link :cancel, @resume
-    = button_to t('actions.delete'), [@resume, @experience], method: :delete , :class => :destroy
+.container
+  .row
+    .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-1
+      .row
+        .col-sm-8.col-sm-offset-4.col-xs-12
+          .dialog.delete
+            %h2= t_model_action()
+            %p= t('actions.delete_prompt_html', type: t('models.the.experience'), name: @experience.to_s)
+            .actions
+              = button_to t('actions.delete'), [@resume, @experience], method: :delete , :class => :"destroy btn btn-danger pull-left margin-right"
+              = action_link :cancel, @resume, :"btn btn-default"
