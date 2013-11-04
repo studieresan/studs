@@ -58,6 +58,7 @@ module ExtFormHelper
         # be retrieved from the corresponding column in the database.
         if opts.include?(:suggest)
           data = opts.delete(:suggest)
+          classes.delete 'form-control'
           if data == true
             data = suggestion_data_for(field) 
           elsif data.is_a?(Symbol)

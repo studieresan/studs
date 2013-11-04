@@ -33,7 +33,7 @@
       var self = this;
 
       this.input.addClass(this.o.tagClass)
-        .wrap($('<div />').addClass(this.o.containerClass));
+        .wrap($('<div />').addClass(this.o.containerClass).addClass('form-control'));
       this.container = this.input.parent();
       this.container.click(function() { self.input.focus(); });
 
