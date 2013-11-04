@@ -190,7 +190,12 @@ sv:
       thanks: >
         Tack för att du visat intresse för studs 2014!
         Vi kommer att kontakta dig inom kort!
-
+        contact_form:
+      success: Ditt mail är skickat
+      error: Något gick fel
+      error_message: >
+        Ditt meddelande skickades inte. Försök gärna igen.
+      back: Gå tillbaka
   attributes:
     defaults:
       created_at: Skapad

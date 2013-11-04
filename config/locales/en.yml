@@ -201,9 +201,14 @@ en:
         upload the file.
   contact_form:
     create:
+      success: Your email was sent
+      error: Oops, something went wrong
       thanks: >
         Thank you for showing interest in studs 2014!
-        We will contact you shortly!
+        We will contact you shortly.
+      error_message: >
+        Your message was not sent. Please retry again!
+      back: Go back
 
   attributes:
     defaults:

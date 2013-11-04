@@ -3,13 +3,15 @@ class ContactFormController < ApplicationController
   	begin
         contact_form = ContactForm.new(params[:contact_form])
         contact_form.request = request
-        f contact_form.deliver
-          flash.now[:notice] = t '.thanks'
+        if contact_form.deliver
+          flash.now[:notice] = t 'contact_form.create.thanks'
         else
-          flash.now[:error] = t '.error'
+          flash.now[:error] = t 'contact_form.create.error'
         end
-      rescue ScriptError
-        flash[:error] = 'Sorry, this message appears to be spam and was not delivered.'
+        render 'create'
+    rescue ScriptError
+        flash[:error] = t 'contact_form.create.error'
+        render 'create'
       end
   end
 end
