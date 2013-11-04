@@ -34,6 +34,9 @@ GEM
       multi_json (~> 1.0)
     acts-as-taggable-on (2.4.0)
       rails (~> 3.0)
+    airbrake (3.1.14)
+      builder
+      json
     arel (3.0.2)
     auto_strip_attributes (2.0.2)
       activerecord (>= 3.0)
@@ -181,6 +184,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  airbrake
   auto_strip_attributes
   bcrypt-ruby
   cancan

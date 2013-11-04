@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
+gem 'airbrake'
+
 # Authentication and authorization
 gem 'bcrypt-ruby'
 gem 'sorcery'
