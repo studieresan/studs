@@ -70,6 +70,11 @@ namespace :deploy do
     run "test -e #{pid} && kill -HUP `cat #{pid}` || /bin/true"
   end
 
+  desc "Reset database"
+  task :reset do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} #{bundle_cmd} exec rake db:reset"
+  end
+
   desc "Run database migrations"
   task :migrate, :except => {:no_release => true} do
     run "cd #{current_path} && RAILS_ENV=#{rails_env} #{bundle_cmd} exec rake db:migrate"
