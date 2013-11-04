@@ -8,13 +8,12 @@
         %li
           %h4.title<
             = exp.title
-            - if can? :edit, exp
-              = action_link :delete, [:delete, resume, exp], :icon, :"btn btn-danger"
-              = action_link :edit, [:edit, resume, exp], :icon, :"btn btn-default"
           %p.at<
             %span.organization= exp.organization
             - if exp.location.present?
               %span.location (#{exp.location})
           %p.duration= exp.duration
           %p.description= exp.description
-
+          - if can? :edit, exp
+            = action_link :delete, [:delete, resume, exp], :icon, :"btn btn-default"
+            = action_link :edit, [:edit, resume, exp], :icon, :"btn btn-default"

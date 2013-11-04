@@ -9,5 +9,5 @@
             %h2= t_model_action()
             %p= t('actions.delete_prompt_html', type: t('models.the.user'), name: @user.to_s)
             .actions
-              = action_link :cancel, users_path, :"btn btn-default pull-left cancel"
-              = button_to t('actions.delete'), @user, method: :delete, :class => :"destroy btn btn-danger"
+              = button_to t('actions.delete'), @user, method: :delete, :class => :"destroy btn btn-danger pull-left margin-right"
+              = action_link :cancel, users_path, :"btn btn-default"

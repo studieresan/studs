@@ -8,7 +8,7 @@
         %h2.title
           = @resume.name
         - if can? :destroy, @resume
-          = action_link :delete, [:delete, @resume], :icon, :"btn btn-default btn-danger"
+          = action_link :delete, [:delete, @resume], :icon, :"btn btn-default"
         - if can? :edit, @resume
           = action_link :edit, [:edit, @resume], :icon, :"btn btn-default"
         = link_to 'PDF', resume_path(@resume, format: :pdf), class: [:action, :download, :btn, :"btn-default"], title: t('actions.download')
