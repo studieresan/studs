@@ -199,6 +199,11 @@ en:
         There already exists a file with the same name, and you do not have
         permission to replace files. Enter a new unique filename if you wish to
         upload the file.
+  contact_form:
+    create:
+      thanks: >
+        Thank you for showing interest in studs 2014!
+        We will contact you shortly!
 
   attributes:
     defaults:

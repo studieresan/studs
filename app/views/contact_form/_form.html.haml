@@ -1,0 +1,6 @@
+= ext_form_for :contact_form, :url => {controller: :contact_form, action: :create}, method: :post do |f|
+  = f.text_field_row :name
+  = f.text_field_row :company
+  = f.email_field_row :email
+  = f.text_area_row :message
+  = f.submit

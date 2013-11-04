@@ -185,6 +185,11 @@ sv:
       cannot_replace: >
         Det finns redan en fil med samma namn, och du har inte rättighet att
         ersätta den. Ange ett unikt filnamn för att ladda upp filen.
+  contact_form:
+    create:
+      thanks: >
+        Tack för att du visat intresse för studs 2014!
+        Vi kommer att kontakta dig inom kort!
 
   attributes:
     defaults:
