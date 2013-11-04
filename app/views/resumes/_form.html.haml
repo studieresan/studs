@@ -5,4 +5,8 @@
   = f.email_field_row :email, hint: true
   = f.phone_field_row :phone, hint: true
   = f.text_field_row :skill_list, hint: true, suggest: :existing_skills
-  = f.submit
+  .row
+    .col-sm-8.col-sm-offset-4.col-xs-12
+      - if can? :read, Resume
+        = action_link :cancel, @resume, :"btn btn-default btn-danger"
+      = f.submit

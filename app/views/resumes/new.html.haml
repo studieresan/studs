@@ -7,7 +7,5 @@
         .col-sm-8.col-sm-offset-4.col-xs-12
           %h2<
             = t_model_action :resume, :new
-            - if can? :index, Resume
-              = action_link :cancel, resumes_path, :"btn btn-default pull-right"
 
       = render partial: 'form'

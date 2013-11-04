@@ -9,8 +9,8 @@
           %h4.title<
             = exp.title
             - if can? :edit, exp
-              = action_link :delete, [:delete, resume, exp], :icon
-              = action_link :edit, [:edit, resume, exp], :icon
+              = action_link :delete, [:delete, resume, exp], :icon, :"btn btn-danger"
+              = action_link :edit, [:edit, resume, exp], :icon, :"btn btn-default"
           %p.at<
             %span.organization= exp.organization
             - if exp.location.present?

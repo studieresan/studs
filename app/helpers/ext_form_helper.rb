@@ -174,10 +174,8 @@ module ExtFormHelper
       end
       opts[:name] ||= :commit
       opts[:class] = Array(opts[:class]) << opts[:name]
-      opts[:class] << [:button, :btn, :'btn-cerise', :'btn-submit']
-      submit_tag = @template.submit_tag(value, opts)
-      submit_column = @template.content_tag(:div, submit_tag, :class => [:'col-sm-8', :'col-sm-offset-4'])
-      @template.content_tag(:div, submit_column, :class => :row)
+      opts[:class] << [:btn, :'btn-default']
+      @template.submit_tag(value, opts)
     end
 
     private

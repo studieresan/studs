@@ -1,43 +1,46 @@
 - active_menu :resumes
 - experiences = @resume.experiences_by_kind
 
-.column.general
-  %h2.title<
-    = @resume.name
-    - if can? :destroy, @resume
-      = action_link :delete, [:delete, @resume], :icon
-    - if can? :edit, @resume
-      = action_link :edit, [:edit, @resume], :icon
-    = link_to 'PDF', resume_path(@resume, format: :pdf), class: [:action, :download], title: t('actions.download')
+.container
+  .row
+    .col-sm-8.col-sm-offset-2.col-xs-12
+      .column.general
+        %h2.title
+          = @resume.name
+        - if can? :destroy, @resume
+          = action_link :delete, [:delete, @resume], :icon, :"btn btn-default btn-danger"
+        - if can? :edit, @resume
+          = action_link :edit, [:edit, @resume], :icon, :"btn btn-default"
+        = link_to 'PDF', resume_path(@resume, format: :pdf), class: [:action, :download, :btn, :"btn-default"], title: t('actions.download')
 
-  - if @resume.image?
-    = link_to @resume.image.url, class: 'profile image' do
-      %img{ src: @resume.image.small.url, alt: '' }/
+        - if @resume.image?
+          = link_to @resume.image.url, class: 'profile image' do
+            %img{ src: @resume.image.small.url, alt: '' }/
 
 
-  %dl.section.credentials
-    = attribute_definition :masters, t_masters(@resume.masters)
-    = attribute_definition :birthdate, t('.birthdate', date: l(@resume.birthdate), age: @resume.person_age)
-    = attribute_definition :email, mail_to(@resume.email)
-    = attribute_definition :phone, @resume.phone
-    - if @resume.linkedin_url.present?
-      = attribute_definition :linkedin_url, linkedin_link(@resume.linkedin_url)
+        %dl.section.credentials
+          = attribute_definition :masters, t_masters(@resume.masters)
+          = attribute_definition :birthdate, t('.birthdate', date: l(@resume.birthdate), age: @resume.person_age)
+          = attribute_definition :email, mail_to(@resume.email)
+          = attribute_definition :phone, @resume.phone
+          - if @resume.linkedin_url.present?
+            = attribute_definition :linkedin_url, linkedin_link(@resume.linkedin_url)
 
-  - if @resume.presentation.present?
-    .section.presentation
-      %h3= t_attribute :resume, :presentation
-      .body= markdown @resume.presentation
+        - if @resume.presentation.present?
+          .section.presentation
+            %h3= t_attribute :resume, :presentation
+            .body= markdown @resume.presentation
 
-  .section.skills
-    %h3= t_attribute :resume, :skills
-    %ul.tags
-      - @resume.skills.each do |s|
-        %li= link_to s, resumes_path(s: s.name), :class => :tag
+        .section.skills
+          %h3= t_attribute :resume, :skills
+          %ul.tags
+            - @resume.skills.each do |s|
+              %li= link_to s, resumes_path(s: s.name), :class => :tag
 
-  = render partial: 'experience_for_kind', locals: { kind: 'education',  experiences: experiences['education'], resume: @resume}
+        = render partial: 'experience_for_kind', locals: { kind: 'education',  experiences: experiences['education'], resume: @resume}
 
-.column.experiences
-  - if can?(:edit, @resume)
-    %h2= action_link t_model_action(:experience, :add), [:new, @resume, :experience], :add
-  - (Experience::KINDS - %w(education)).each do |kind|
-    = render partial: 'experience_for_kind', locals: { kind: kind,  experiences: experiences[kind], resume: @resume}
+      .column.experiences
+        - if can?(:edit, @resume)
+          %h2= action_link t_model_action(:experience, :add), [:new, @resume, :experience], :"add btn btn-default"
+        - (Experience::KINDS - %w(education)).each do |kind|
+          = render partial: 'experience_for_kind', locals: { kind: kind,  experiences: experiences[kind], resume: @resume}
