@@ -18,6 +18,10 @@ window.requestAnimFrame = (function(){
     var intro = $('.intro');
     var team = $('.the-team');
 
+    if (header == undefined ||intro == undefined || team == undefined) {
+        return;
+    }
+
     var ticking = false;
     var lastScrollY = 0;
 
