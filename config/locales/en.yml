@@ -246,6 +246,11 @@ en:
       size: Size
       mtime: Modified
       file: File
+    contact_form:
+      name: Name
+      company: Company
+      email: Email Address
+      message: Message
   hints:
     resume:
       user_id: Owner of this resume
@@ -514,6 +519,7 @@ en:
       create: Create
       submit: Save
       update: Update
+      send: Send
   number:
     currency:
       format:

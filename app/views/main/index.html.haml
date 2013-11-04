@@ -55,25 +55,4 @@
               guseng@kth.se
 
       .contact-form.col-md-6
-        %form.form-horizontal{ :role => "form" }
-          .form-group
-            %label.col-sm-3.col-xs-12.control-label{ :for => "inputName" }= t '.contact_name'
-            .col-sm-9.col-xs-12
-              %input#inputName.form-control{ :type => "text" } 
-          .form-group
-            %label.col-sm-3.col-xs-12.control-label{ :for => "inputCompany" }= t '.contact_company'
-            .col-sm-9.col-xs-12
-              %input#inputCompany.form-control{ :type => "text" }
-          .form-group
-            %label.col-sm-3.col-xs-12.control-label{ :for => "inputEmail" }= t '.contact_mail'
-            .col-sm-9.col-xs-12
-              %input#inputEmail.form-control{ :type => "email" } 
-          .form-group
-            %label.col-sm-3.col-xs-12.control-label{ :for => "inputMessage" }= t '.contact_message'
-            .col-sm-9.col-xs-12
-              %textarea#inputMessage.form-control{ :type => "text", :rows => "5" }
-          .form-group
-            .col-sm-9.col-sm-offset-3
-              %button.btn-3d.btn-cerise.btn-submit= t '.contact_send'
-
-  = render :partial => 'contact_form/form'
+        = render :partial => 'contact_form/form'

@@ -232,6 +232,11 @@ sv:
       size: Storlek
       mtime: Modifierad
       file: Fil
+    contact_form:
+      name: Namn
+      company: Företag
+      email: Epostadress
+      message: Meddelande
   hints:
     resume:
       user_id: Användare som administrerar detta CV
@@ -493,6 +498,7 @@ sv:
       create: Skapa
       submit: Spara
       update: Uppdatera
+      send: Skicka
   number:
     currency:
       format:
