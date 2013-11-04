@@ -8,7 +8,7 @@ $(function() {
     // I18n text for generate button
     var text = $input.data('generate');
     // Generate password generation button and insert after the password input
-    $('<input type="button" id="password_generator" value="'+text+'" />')
+    $('<input type="button" id="password_generator" value="'+text+'" class="btn btn-default" />')
       .appendTo($container)
       .click(function() {
         // Generate random string
