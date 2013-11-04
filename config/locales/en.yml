@@ -256,6 +256,7 @@ en:
       company: Company
       email: Email Address
       message: Message
+      send: Send
   hints:
     resume:
       user_id: Owner of this resume

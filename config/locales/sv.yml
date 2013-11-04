@@ -242,6 +242,7 @@ sv:
       company: Företag
       email: Epostadress
       message: Meddelande
+      send: Skicka
   hints:
     resume:
       user_id: Användare som administrerar detta CV
