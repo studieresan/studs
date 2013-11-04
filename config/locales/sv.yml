@@ -211,7 +211,7 @@ sv:
       image_cache: Behåll nuvarande profilbild
       street: Adress
       postcode: Postnummer
-      city: Land
+      city: Stad
     experience:
       kind: Kategori
       organization: Organisation
