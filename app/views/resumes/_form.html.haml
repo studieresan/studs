@@ -1,6 +1,7 @@
 = ext_form_for @resume, :html => {:class => [:resume, 'form-horizontal'], :role => 'form'} do |f|
   = f.text_field_row :name, hint: true
   = f.email_field_row :email, hint: true
+  = f.date_select_row :birthdate, hint: true
   = f.phone_field_row :phone, hint: true
   = f.text_field_row :street, hint: true
   = f.text_field_row :postcode, hint: true, maxlength: "6"
