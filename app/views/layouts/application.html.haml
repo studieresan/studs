@@ -44,6 +44,8 @@
                   %b.caret
                 %ul.dropdown-menu
                   %li
+                    -if admin?
+                      = link_to t('navigation.users'), users_path
                     = link_to t('navigation.profile'), me_users_path
                     - if student?
                       = link_to t('navigation.resume'), mine_resumes_path

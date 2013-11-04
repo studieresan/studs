@@ -15,6 +15,7 @@ en:
     about: about
     contact: contact
     login: login
+    users: users
     profile: profile
     resume: resume
     logout: logout

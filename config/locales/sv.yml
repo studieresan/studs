@@ -15,8 +15,9 @@ sv:
     about: om studs
     contact: kontakt
     login: logga in
+    users: användare
     profile: profil
-    resume: CV
+    resume: cv
     logout: logga ut
   titles:
     index: Start
