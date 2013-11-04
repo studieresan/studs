@@ -20,6 +20,8 @@
               = submit_tag t('actions.filter'), name: nil, :class => :"commit btn btn-default pull-left"
               = action_link :reset, users_path, :"btn btn-default pull-left margin-left"
               - if can? :create, User
-                = action_link :new, [:new, :user], :"btn btn-primary margin-left"
+                %a.btn.btn-primary{ :href => url_for([:new, :user]) }
+                  %i.fa.fa-file-o
+                  = t('actions.create')
 
         = render partial: 'table'
