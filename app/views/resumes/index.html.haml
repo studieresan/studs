@@ -16,7 +16,7 @@
               .col-md-6.col-xs-12
                 = label_tag :s, t_attribute(:resume, :skills)
                 .wrap= text_field_tag :s, @filter.s, :'data-suggestions' => Resume.existing_skills.to_json
-            .input.actions
+            .input.actions.btn-group
               = submit_tag t('actions.filter'), name: nil, :class => :"btn btn-default commit"
               = action_link :reset, resumes_path, :"btn btn-default"
               - if can? :manage, Resume
