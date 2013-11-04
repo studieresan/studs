@@ -261,7 +261,7 @@ sv:
         Lägg in ny tagg med kommatecken, eller tab/enter/musklick för att välja ut listan.
       street: Gatnamn och nummer
       city: Där du bor
-      postcode: På formatet 123 45
+      postcode: Utan mellanslag
     experience:
       kind: Vilket typ av  erfarenhet detta är
       organization: Företag, organisation eller läroverk (ex. KTH)

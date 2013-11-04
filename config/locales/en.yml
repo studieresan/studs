@@ -277,7 +277,7 @@ en:
         Add a new tag by finishing with a comma, or tab/enter/mouse click to choose from the list.
       street: Street name and number
       city: The city where you live
-      postcode: With the format 123 45
+      postcode: Without spaces
     experience:
       kind: What kind of experience this is
       organization: Company, organization or school
