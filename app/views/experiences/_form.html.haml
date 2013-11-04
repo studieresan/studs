@@ -20,4 +20,9 @@
     = f.text_area_row :description, rows: 4, row_class: :wide, hint: true
 
   %fieldset.actions.align
-    = f.submit
+    .row
+      .col-sm-8.col-sm-offset-4.col-xs-12
+        - if can? :read, @resume
+          = action_link :cancel, @resume, :"btn btn-default btn-danger"
+        = f.submit
+

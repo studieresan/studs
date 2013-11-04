@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(:version => 20130307223407) do
     t.string   "slug"
     t.string   "street"
     t.integer  "postcode"
-    t.string   "country"
+    t.string   "city"
     t.string   "image"
   end
 

@@ -5,8 +5,6 @@
       .full
         %h2<
           = t '.title'
-          - if can? :manage, Resume
-            = action_link :new, [:new, :resume], :"btn btn-default pull-right"
 
         = form_tag resumes_path, method: :get, :class => 'resume-search form' do
           %fieldset.inline
@@ -21,5 +19,7 @@
             .input.actions
               = submit_tag t('actions.filter'), name: nil, :class => :"btn btn-default commit"
               = action_link :reset, resumes_path, :"btn btn-danger"
+              - if can? :manage, Resume
+                = action_link :new, [:new, :resume], :"btn btn-default btn-success"
 
         = render partial: 'table'

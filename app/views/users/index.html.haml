@@ -5,8 +5,6 @@
       .full
         %h2
           = t'.title'
-          - if can? :create, User
-            = action_link :new, [:new, :user], :"btn btn-default pull-right"
 
         = form_tag users_path, method: :get, class: 'user-search form' do
           %fieldset
@@ -21,5 +19,7 @@
             .input.actions.form-group
               = submit_tag t('actions.filter'), name: nil, :class => :"commit btn btn-default pull-left"
               = action_link :reset, users_path, :"btn btn-danger pull-left margin-left"
+              - if can? :create, User
+                = action_link :new, [:new, :user], :"btn btn-default btn-success margin-left"
 
         = render partial: 'table'

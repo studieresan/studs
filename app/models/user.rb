@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
 
   auto_strip_attributes :login, :email, :name, squish: true
 
+
+
   # Scopes and inclusion testing for each user role.
   (ROLES - %w(student)).each do |role|
     scope "#{role}s".to_sym, lambda { where(role: role) }

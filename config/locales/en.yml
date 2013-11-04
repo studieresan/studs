@@ -225,7 +225,7 @@ en:
       image_cache: Keep current profile image
       street: Street
       postcode: Postcode
-      country: Country
+      city: City
     experience:
       kind: Category
       organization: Organization
@@ -249,7 +249,6 @@ en:
       email: Preferably your @kth.se address
       linkedin_url: URL to your LinkedIn profile if you have one
       phone: A cell phone number is preferred
-      skill_list:
       image: (Profile) image which will be shown in your resume (400x500 px)
       presentation: |
         A short presentation of yourself (optional) - don't list experiences here.
@@ -259,7 +258,7 @@ en:
         List the skills you know best or want to emphasize first.
         You can drag the tags around, and remove them by clicking on them.
       street: Street name and number
-      country: Probably Sweden
+      city: The city where you live
       postcode: With the format 123 45
     experience:
       kind: What kind of experience this is

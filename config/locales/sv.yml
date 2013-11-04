@@ -211,7 +211,7 @@ sv:
       image_cache: Behåll nuvarande profilbild
       street: Adress
       postcode: Postnummer
-      country: Land
+      city: Land
     experience:
       kind: Kategori
       organization: Organisation
@@ -242,7 +242,7 @@ sv:
         Lista det du kan bäst och/eller vill framhäva först.
         Taggarna går att flytta med musen, och tas bort genom att klicka på dem.
       street: Gatnamn och nummer
-      country: Troligen Sverige
+      city: Där du bor
       postcode: På formatet 123 45
     experience:
       kind: Vilket typ av  erfarenhet detta är
