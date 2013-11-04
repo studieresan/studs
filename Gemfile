@@ -41,6 +41,7 @@ group :development do
 end
 
 group :production do
+  gem 'therubyracer'
   gem 'mysql2'
   gem 'unicorn'
   gem 'yui-compressor'
