@@ -1,20 +1,25 @@
 - active_menu :users
-.full
-  %h2
-    = t'.title'
-    - if can? :create, User
-      = action_link :new, [:new, :user]
+.container
+  .row
+    .col-sm-8.col-sm-offset-2.col-xs-12
+      .full
+        %h2
+          = t'.title'
+          - if can? :create, User
+            = action_link :new, [:new, :user], :"btn btn-default pull-right"
 
-  = form_tag users_path, method: :get, class: 'user-search' do
-    %fieldset.inline
-      .input.select.role
-        = label_tag :role, t_attribute(:user, :role)
-        .wrap= select_tag :role, options_for_select(User::ROLES, params[:role]), prompt: t('values.any')
-      .input.text.name
-        = label_tag :name, t_attribute(:user, :name)
-        .wrap= text_field_tag :name, params[:name], :'data-suggestions' => User.uniq.pluck(:name).to_json
-      .input.actions
-        = submit_tag t('actions.filter'), name: nil, :class => :commit
-        = action_link :reset, users_path
+        = form_tag users_path, method: :get, class: 'user-search form' do
+          %fieldset
+            .input.select.role.form-group.row
+              .col-md-6.col-xs-12
+                = label_tag :role, t_attribute(:user, :role)
+                .wrap= select_tag :role, options_for_select(User::ROLES, params[:role]), prompt: t('values.any'), :class => "form-control"
+            .input.text.name.form-group.row
+              .col-md-6.col-xs-12
+                = label_tag :name, t_attribute(:user, :name)
+                .wrap= text_field_tag :name, params[:name], :'data-suggestions' => User.uniq.pluck(:name).to_json, :class => "form-control"
+            .input.actions.form-group
+              = submit_tag t('actions.filter'), name: nil, :class => :"commit btn btn-default pull-left"
+              = action_link :reset, users_path, :"btn btn-danger pull-left margin-left"
 
-  = render partial: 'table'
+        = render partial: 'table'
