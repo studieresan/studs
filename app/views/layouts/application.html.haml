@@ -28,14 +28,14 @@
               = link_to t('navigation.about'), index_path(:anchor => 'about')
             %li
               = link_to t('navigation.contact'), index_path(:anchor => 'contact')
+            %li
+              = link_to t('navigation.resumes'), resumes_path
 
             - [%w(sv Svenska), %w(en English)].each do |lang, name|
               - next if I18n.locale.to_s == lang
               - css_class = [lang, (:active if I18n.locale.to_s == lang)]
               %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
 
-            %li
-              = link_to t('navigation.resumes'), resumes_path
             - if not logged_in?
               %li
                 = link_to t('navigation.login'), login_path

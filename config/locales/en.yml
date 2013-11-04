@@ -151,9 +151,8 @@ en:
     logged_out:
       title: Resume Database
       body_html: >
-        The resume database contains qualifications and contact information for
-        all students participating in the project. It is available to all the
-        companies we work with.
+        The resume database contain all participants resumes and contact information.
+        The database is available to all companies we work with.
     show:
       birthdate: "%{date} (%{age} years old)"
     pdf:
@@ -171,7 +170,7 @@ en:
       title: Edit CV
       submit: Save changes
     credentials_mail:
-      subject: Login credentials for StuDs' homepage
+      subject: Login credentials for studs' homepage
       body: |
         An account has been created for you at studieresan.se.
         You can now log in at http://studieresan.se/login with the following credentials.

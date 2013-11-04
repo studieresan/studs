@@ -156,7 +156,7 @@ sv:
       title: Redigera CV
       submit: Spara ändringar
     credentials_mail:
-      subject: Inloggningsuppgifter till StuDs hemsida
+      subject: Inloggningsuppgifter till studs hemsida
       body: |
         Ett konto har skapats åt dig på studieresan.se.
         Du kan nu logga in via http://studieresan.se/login med nedanstående uppgifter.
