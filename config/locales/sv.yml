@@ -137,9 +137,8 @@ sv:
     logged_out:
       title: CV-databas
       body_html: >
-        CV-databasen innehåller meriter och kontaktuppgifter till alla
-        studenter som deltar i StuDs-projektet och är tillgänglig för de
-        företag vi samarbetar med.
+        CV-databasen innehåller alla deltagares CV:n och kontaktuppgifter, och är tillgänglig
+        för alla företag vi samarbetar med.
     show:
       birthdate: "%{date} (%{age} år)"
     pdf:
