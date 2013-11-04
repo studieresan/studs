@@ -49,10 +49,10 @@ ActiveRecord::Schema.define(:version => 20130307223407) do
     t.string   "phone"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.string   "masters"
-    t.text     "presentation"
     t.string   "slug"
-    t.string   "linkedin_url"
+    t.string   "street"
+    t.integer  "postcode"
+    t.string   "country"
     t.string   "image"
   end
 

@@ -8,11 +8,6 @@ module I18nHelper
     I18n.t("attributes.#{scope}.#{attribute}", default: default)
   end
 
-  # Returns a localized version of the provided masters code.
-  def t_masters(name)
-    I18n.t("values.masters.#{name}", default: name.upcase)
-  end
-
   # Returns a localized version of the provided experience kind.
   def t_experience_kind(experience)
     I18n.t("values.experience_kind.#{experience}", default: experience.capitalize)

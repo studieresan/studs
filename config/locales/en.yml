@@ -223,6 +223,9 @@ en:
       user_id: Author
       image: Profile image
       image_cache: Keep current profile image
+      street: Street
+      postcode: Postcode
+      country: Country
     experience:
       kind: Category
       organization: Organization
@@ -255,6 +258,9 @@ en:
         A list of your skills and expertise.
         List the skills you know best or want to emphasize first.
         You can drag the tags around, and remove them by clicking on them.
+      street: Street name and number
+      country: Probably Sweden
+      postcode: With the format 123 45
     experience:
       kind: What kind of experience this is
       organization: Company, organization or school

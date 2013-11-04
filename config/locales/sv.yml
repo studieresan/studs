@@ -209,6 +209,9 @@ sv:
       user_id: Författare
       image: Profilbild
       image_cache: Behåll nuvarande profilbild
+      street: Adress
+      postcode: Postnummer
+      country: Land
     experience:
       kind: Kategori
       organization: Organisation
@@ -227,10 +230,8 @@ sv:
     resume:
       user_id: Användare som administrerar detta CV
       name: För- och efternamn
-      masters: Masterprogramet du läser på KTH
       birthdate: Ditt födelsedatum
       email: Förslagsvis din @kth.se-adress
-      linkedin_url: URL till din LinkedIn-profil om du har en
       phone: Mobiltelefonnummer är att föredra
       image: (Porträtt-)bild som kommer synas på ditt CV (400x500 px)
       presentation: |
@@ -240,6 +241,9 @@ sv:
         Ange kunskaper och teknisk kompetens som du innehar.
         Lista det du kan bäst och/eller vill framhäva först.
         Taggarna går att flytta med musen, och tas bort genom att klicka på dem.
+      street: Gatnamn och nummer
+      country: Troligen Sverige
+      postcode: På formatet 123 45
     experience:
       kind: Vilket typ av  erfarenhet detta är
       organization: Företag, organisation eller läroverk (ex. KTH)
