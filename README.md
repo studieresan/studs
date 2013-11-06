@@ -1,7 +1,7 @@
-StuDs 2013
+studs 2014
 ==========
 
-This is the website for StuDs, or Datasektionens studieresa (study tour).
+This is the website for studs, which can be found at [here](http://studs.datasektionen.se).
 
 
 Getting started
@@ -37,6 +37,12 @@ additional stuff for the `pdflatex` compatible tools you use.
 
 * Ubuntu: `sudo apt-get install texlive-latex-extra texlive-lang-swedish`.
 
+Deploying
+---------
+
+```bash
+bundle exec cap production deploy
+```
 
 Authors
 -------
