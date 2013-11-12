@@ -48,6 +48,6 @@ Authors
 -------
 
 * Martin Barksten <<barksten@kth.se>>
-* Per Claesson <<pclasson@kth.se>>
+* Per Classon <<pclasson@kth.se>>
 * Victor Hallberg <<victorha@kth.se>>
 * Jonas Sköld <<jonassko@kth.se>>
