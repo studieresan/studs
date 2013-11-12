@@ -1,15 +1,26 @@
 /* Font Face */
+
 @font-face {
-    font-family: "Avenir";
-    src: url(<%= asset_path 'AvenirLTStd-Roman.otf' %>);
+    font-family: 'Avenir';
+    src: url(<%= asset_path 'avenirltstd-roman-webfont.eot' %>);
+    src: url(<%= asset_path 'avenirltstd-roman-webfont.eot?#iefix' %>) format('embedded-opentype'),
+    url(<%= asset_path 'avenirltstd-roman-webfont.woff' %>) format('woff'),
+    url(<%= asset_path 'avenirltstd-roman-webfont.ttf' %>) format('truetype'),
+    url(<%= asset_path 'avenirltstd-roman-webfont.svg#avenir_lt_std55_roman' %>) format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: "Avenir";
-    src: url(<%= asset_path 'AvenirLTStd-Heavy.otf' %>);
+    font-family: 'Avenir';
+    src: url(<%= asset_path 'avenirltstd-heavy-webfont.eot' %>);
+    src: url(<%= asset_path 'avenirltstd-heavy-webfont.eot?#iefix' %>) format('embedded-opentype'),
+    url(<%= asset_path 'avenirltstd-heavy-webfont.woff' %>) format('woff'),
+    url(<%= asset_path 'avenirltstd-heavy-webfont.ttf' %>) format('truetype'),
+    url(<%= asset_path 'avenirltstd-heavy-webfont.svg#avenir_lt_std85_heavy' %>) format('svg');
     font-weight: bold;
+    font-style: normal;
 }
-
 /* Global Styles */
 
 html,
