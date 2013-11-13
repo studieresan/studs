@@ -263,7 +263,8 @@ i.service-icon:hover {
   color: #ffffff;
   height: 100%;
   width: 100%;
-  background: url(<%= asset_path 'bibblan.jpg' %>) no-repeat center center fixed;
+  background: url(<%= asset_path 'bibblan.jpg' %>) no-repeat;
+  background-position-y: 300px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -272,16 +273,7 @@ i.service-icon:hover {
 }
 @media(max-width: 768px) {
     .the-team{
-        background-attachment: scroll;
         background-position: 30% 300px;
-    }
-}
-
-@media
-(-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-    .the-team{
-        background-attachment: scroll;
     }
 }
 
