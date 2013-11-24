@@ -1,138 +1,70 @@
 <%
   experiences = @r.experiences_by_kind
 %>
-% Resume for <%=htex @r.name %>
-\nonstopmode
-\documentclass[a4paper,11pt]{article}
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                           % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 
-\def\name{<%=htex @r.name %>}
-\makeatletter
-\date{<%=htex Time.now.strftime('%F') %>} \let\thedate\@date
-\makeatother
-\title{<%=htex @r.name %> - StuDs Resume}
-\author{\name}
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
-%{{{ Document setup
-\usepackage[<%= t('resumes.pdf.babel_language') %>]{babel}
-\usepackage{lmodern} % font
+% personal data
+\name{<%=htex @r.name %>}{}
+\address{<%=htex @r.street %>}{<%=htex @r.postcode %> <%=htex @r.city %>}{Sweden}\phone[mobile]{<%=htex @r.phone %>}
+\email{<%=htex @r.email %>}
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 
-% Additional symbols
-\usepackage{amssymb}
-% [http://www.tex.ac.uk/tex-archive/info/symbols/comprehensive/symbols-a4.pdf]
-\usepackage{marvosym}
-\usepackage{textcomp}
-
-% Images
-\usepackage{graphicx}
-\usepackage[absolute,overlay]{textpos}
-
-% Colors [http://ctan.uib.no/macros/latex/contrib/xcolor/xcolor.pdf]
-\usepackage[svgnames]{xcolor}
-
-% Paragraphs
-\parindent 0mm
-\parskip 0mm
-
-% Margins
-\usepackage[top=1.6cm, bottom=1.6cm, left=2.5cm, right=2cm]{geometry}
-\newlength{\titleleft}
-\newlength{\titlefwidth}
-\setlength{\titlefwidth}{\textwidth}
-\setlength{\titleleft}{-0.5cm}
-\addtolength{\titlefwidth}{0.5cm}
-
-% Header and text formatting
-\usepackage{titlesec}
-
-% CV sections
-\titleformat{\section}{\sf \bfseries \Large}{\thesection}{}{}[\vspace{-5mm}\rule{\titlefwidth}{1pt}]
-% Work places / bold leaders
-\titleformat{\subsection}[runin]{\normalsize}{\thesubsection}{}{}
-% Work titles
-\titleformat{\subsubsection}{\normalsize}{\thesubsubsection}{}{}
-
-% Spacing
-\titlespacing{\section}{\titleleft}{5mm}{1mm}
-\titlespacing{\subsection}{\titleleft}{3mm}{1mm}
-\titlespacing{\subsubsection}{1mm}{2mm}{1mm}
-
-% Hyperlinking
-\usepackage[pdftex]{hyperref}
-\hypersetup{%
-  colorlinks = true,%
-  linkcolor  = Black,%
-  urlcolor   = Navy%
-}
-
-% Footer
-\usepackage{lastpage}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\cfoot{\thepage\ / \pageref{LastPage}}
-
-%}}}
-%{{{ Custom formats and commands
-
-\newcommand{\icon}[1]{\textcolor{lightgray}{#1}}
-\newcommand{\iconl}[1]{\hspace{-0.5cm}\makebox[0.3cm][c]{\icon{#1}}\hspace{0.2cm}}
-
-% Headers
-\newcommand{\theheader}[0]{\sf \LARGE \bfseries \name}
-\newcommand{\worktitle}[1]{\textbf{#1}}
-\newcommand{\duration}[1]{\textsl{#1}}
-\newcommand{\theplace}[2][]{\subsection*{\textbf{#2}#1}}
-\newcommand{\thework}[2]{\subsubsection*{%
-  \iconl{$\blacksquare$}%
-  \worktitle{#1}%
-  \hfill\duration{#2}}\par%
-}
-\newcommand{\thebold}[1]{\subsection*{\textbf{#1}}\vspace{-1mm}}
-%}}}
-
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
 \begin{document}
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
 
-% Name
-\hspace{\titleleft}\parbox{\titlefwidth}{%
-{\theheader}\hfill{<%=htex t('resumes.pdf.generated') %> \thedate}\vspace{-2mm}\par%
-  \rule{\titlefwidth}{1pt}\vspace{2mm} % ruler
-}
-
-% Address information
-\begin{tabular*}{\textwidth}{@{}l l @{\extracolsep{\fill}} @{}}
-\iconl{\bf \Large \textborn} {\bf <%=htex t('resumes.pdf.dob') %>:} & <%= @r.birthdate %> \\
-\iconl{\Telefon} {\bf <%=htex t('resumes.pdf.phone') %>:}  & <%=htex @r.phone %> \\
-\iconl{\Letter} {\bf <%=htex t('resumes.pdf.email') %>:} & \href{mailto:<%=htex @r.email %>}{\tt <%=htex @r.email %>} \\
-\end{tabular*}
-
-% Profile image
-<% if @r.image? %>
-  \begin{textblock}{1.4}(9.3,1.3)
-  \includegraphics[width=\textwidth]{<%=htex @r.image.current_path %>}
-  \end{textblock}
-<% end %>
-
-% Logo
-<% if @logo_path %>
-  \begin{textblock}{3.3}(11.1,1.3)
-  \href{http://studieresan.se}{\includegraphics[width=\textwidth]{<%=htex @logo_path %>}}
-  \end{textblock}
-<% end %>
-
-<% Experience::KINDS.each do |kind| %>
-  <% if experiences[kind].is_a?(Array) && experiences[kind].count > 0 %>
-    \section*{<%=htex t_experience_kind(kind) %>}
-    <% experiences[kind].each do |exp| %>
-      \theplace [, <%=htex exp.location %>]{{}{<%=htex exp.organization %>}}
-      \thework{<%=htex exp.title %>}{\mbox{<%=htex "#{exp.start_date.strftime('%Y.%m')}-#{exp.end_date ? exp.end_date.strftime('%Y.%m') : t('values.present')}" %>}}
-      <%= exp.description.present? ? htex(exp.description) : '\\vspace{3mm}' %>
-    <% end %>
+<% if experiences["education"].is_a?(Array) && experiences["education"].count > 0 %>
+  \section{Education}
+  <% experiences["education"].each do |exp| %>
+    \cventry{<%=htex "#{exp.start_date.strftime('%Y')}--#{exp.end_date ? exp.end_date.strftime('%Y') : 'present'}"%>}{<%=htex exp.title%>}{<%=htex exp.organization %>}{<%=htex exp.location %>}{}{ <%= exp.description.present? ? htex(exp.description) : '' %>}
   <% end %>
 <% end %>
 
-\section*{<%=htex t_attribute(:resume, :skills)  %>}
+<% if experiences["work"].is_a?(Array) && experiences["work"].count > 0 %>
+  \section{Experience}
+  <% experiences["work"].each do |job| %>
+    \cventry{<%=htex "#{job.start_date.strftime('%Y')}--#{job.end_date ? job.end_date.strftime('%Y') : 'present'}"%>}{<%=htex job.title %>}{<%=htex job.organization %>}{<%=htex job.location %>}{}{ <%= job.description.present? ? htex(job.description) : '' %>}
+  <% end %>
+<% end %>
 
-<%=htex @r.skills.join ', ' %>
+<% if experiences["extracurricular"].is_a?(Array) && experiences["extracurricular"].count > 0 %>
+  \section{Extracurricular Activities}
+  <% experiences["extracurricular"].each do |job| %>
+    \cventry{<%=htex "#{job.start_date.strftime('%Y')}--#{job.end_date ? job.end_date.strftime('%Y') : 'present'}"%>}{<%=htex job.title %>}{<%=htex job.organization %>}{<%=htex job.location %>}{}{ <%= job.description.present? ? htex(job.description) : '' %>}
+  <% end %>
+<% end %>
+
+<% if @r.skills.count > 0 %>
+  \section{Skills}
+  <% @r.skills.each do |skill| %>
+  \cvlistitem{<%=htex skill.name %>}
+  <% end %>
+<% end %>
 
 \end{document}
