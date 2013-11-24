@@ -20,9 +20,10 @@
               = submit_tag t('actions.filter'), name: nil, :class => :"btn btn-default commit"
               = action_link :reset, resumes_path, :"btn btn-default"
               - if can? :manage, Resume
-                %a.btn.btn-primary.pull-right.margin-right{ :href => url_for([:new, :resume]) }
-                  %i.fa.fa-file-o
-                    = t('actions.new')
+                - if current_user.resume == nil
+                  %a.btn.btn-primary.pull-right.margin-right{ :href => url_for([:new, :resume]) }
+                    %i.fa.fa-file-o
+                      = t('actions.new')
 
 
         = render partial: 'table'
