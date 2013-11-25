@@ -1,58 +1,51 @@
 #top.header
-  .image-overlay
-    .container
-      .row
-        #header-box.col-md-10.col-md-offset-1.text-center
-          %h1= t '.splash_title'
-          %p.lead= t '.splash_lead'
-          %a{ :href => "#about" }
-            %button.btn-3d.btn-cerise.read-more= t '.splash_readmore'
+  .container
+    #header-box.col-md-10.col-md-offset-1.text-center
+      %h1= t '.splash_title'
+      %p.lead= t '.splash_lead'
+      %a{ :href => "#about" }
+      %button.btn-3d.btn-cerise.read-more= t '.splash_readmore'
 
 %a{ :name => "about" }
-#intro.intro
-  .container
-    .row
-      .col-md-8.col-md-offset-2.text-center
-        %h2= t '.about_title'
-        %p.lead= t '.about_lead'
+.container.intro
+  .row
+    .col-md-8.col-md-offset-2
+      %h2= t '.about_title'
+      %p.lead= t '.about_lead'
 
 .the-team
 
 %a{ :name => "contact" }
-.contact
-  .container
-    .row
-      .col-md-6.col-md-offset-3.heading.text-center
-        %h2= t '.contact'
-        %p.lead= t '.contact_lead'
-
-  .container
-    .row
-      .col-md-6.col-xs-col-12
-        .contact-card
-          .contact-photo
-            %img.img-responsive.img-circle{ :src => image_path("bratt.jpg")}
-          .contact-details
-            %h4
-              Jesper Bratt
-            %p
-              =t 'roles.project_leader'
-            %p
-              0730887497
-            %p
-              jbratt@kth.se
-        .contact-card
-          .contact-photo
-            %img.img-responsive.img-circle{ :src => image_path("engstrom.jpg")}
-          .contact-details
-            %h4
-              Gustav Engström
-            %p
-              = t 'roles.sales_manager'
-            %p
-              0704949447
-            %p
-              guseng@kth.se
-
-      .contact-form.col-md-6
-        = render :partial => 'contact_form/form'
+.container.contact
+  .row
+    .col-md-8.col-md-offset-2.heading
+      %h2= t '.contact'
+      %p.lead= t '.contact_lead'
+  .row
+    .col-md-3.col-xs-col-12.col-md-offset-2
+      .contact-card
+        .contact-photo
+          %img.img-responsive.img-circle{ :src => image_path("bratt.jpg")}
+        .contact-details
+          %h4
+            Jesper Bratt
+          %p
+            =t 'roles.project_leader'
+          %p
+            0730887497
+          %p
+            jbratt@kth.se
+      .contact-card
+        .contact-photo
+          %img.img-responsive.img-circle{ :src => image_path("engstrom.jpg")}
+        .contact-details
+          %h4
+            Gustav Engström
+          %p
+            = t 'roles.sales_manager'
+          %p
+            0704949447
+          %p
+            guseng@kth.se
+    .contact-form.col-md-5
+      = render :partial => 'contact_form/form'
