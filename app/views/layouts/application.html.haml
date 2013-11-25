@@ -10,46 +10,48 @@
     = stylesheet_link_tag 'application'
     = render partial: '/google_analytics'
   %body
-    %nav#navigation-bar.navbar.navbar-fixed-top{ :role => "navigation" }
-      .col-md-10.col-md-offset-1
-        .navbar-header
-          %button.navbar-toggle{ :type => "button", :data => { :toggle => "collapse", :target => ".navbar-full-collapse" }}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a{ :href => index_path }
-            %img.logo{ :src => image_path("studs_2014.png") }
+    .navbar-main#navigation-bar
+      .navbar.navbar-fixed-top.navbar-default{ :role => "navigation" }
+        .container
+          .col-md-offset-2.col-md-8
+            .navbar-header
+              %button.navbar-toggle{ :type => "button", :data => { :toggle => "collapse", :target => ".navbar-collapse" }}
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              %a{ :href => index_path }
+                %img.logo{ :src => image_path("studs_2014_small.png") }
 
-        .collapse.navbar-collapse.navbar-full-collapse
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to t('navigation.about'), index_path(:anchor => 'about')
-            %li
-              = link_to t('navigation.contact'), index_path(:anchor => 'contact')
-            %li
-              = link_to t('navigation.resumes'), resumes_path
+            .collapse.navbar-collapse
+              %ul.nav.navbar-nav.navbar-right
+                %li
+                  = link_to t('navigation.about'), index_path(:anchor => 'about')
+                %li
+                  = link_to t('navigation.contact'), index_path(:anchor => 'contact')
+                %li
+                  = link_to t('navigation.resumes'), resumes_path
 
-            - [%w(sv Svenska), %w(en English)].each do |lang, name|
-              - next if I18n.locale.to_s == lang
-              - css_class = [lang, (:active if I18n.locale.to_s == lang)]
-              %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
+                - [%w(sv Svenska), %w(en English)].each do |lang, name|
+                  - next if I18n.locale.to_s == lang
+                  - css_class = [lang, (:active if I18n.locale.to_s == lang)]
+                  %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
 
-            - if not logged_in?
-              %li
-                = link_to t('navigation.login'), login_path
-            - if logged_in?
-              %li.dropdown
-                %a.dropdown-toggle{ :href => "#", :data => { :toggle => "dropdown"}}
-                  = current_user.login
-                  %b.caret
-                %ul.dropdown-menu
+                - if not logged_in?
                   %li
-                    -if admin?
-                      = link_to t('navigation.users'), users_path
-                    = link_to t('navigation.profile'), me_users_path
-                    - if student?
-                      = link_to t('navigation.resume'), mine_resumes_path
-                    = link_to t('navigation.logout'), logout_path
+                    = link_to t('navigation.login'), login_path
+                - if logged_in?
+                  %li.dropdown
+                    %a.dropdown-toggle{ :href => "#", :data => { :toggle => "dropdown"}}
+                      = current_user.login
+                      %b.caret
+                    %ul.dropdown-menu
+                      %li
+                        -if admin?
+                          = link_to t('navigation.users'), users_path
+                        = link_to t('navigation.profile'), me_users_path
+                        - if student?
+                          = link_to t('navigation.resume'), mine_resumes_path
+                        = link_to t('navigation.logout'), logout_path
 
     - if current_page?index_path or current_page?('/')
       = content_for?(:content) ? yield(:content) : yield
