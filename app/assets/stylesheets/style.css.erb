@@ -172,6 +172,12 @@ form .check {
   }
 }
 
+@media(max-width: 400px) {
+    #header-box > h1 {
+        font-size: 2.5em;
+    }
+}
+
 #header-box > p {
     font-family: 'Avenir', sans-serif;
     text-align: center;
@@ -180,25 +186,26 @@ form .check {
     margin: 0 auto;
 }
 
-#header-box .read-more {
-    margin-top: 50px;
-    margin-bottom: 110px;
-    height: 60px;
-    padding: 0px 40px;
+.read-more {
+    margin-top: 100px;
+}
+
+.read-more .fa-circle {
+    color: rgba(0, 0, 0, 0.3);
 }
 
 @media(max-width: 768px) {
     .read-more {
+        margin-top: 60px;
         margin-bottom: 60px;
     }
 }
 
-/* Intro */
+/* About */
 
-.intro {
+.about {
     background: #ffffff;
     padding-top: 80px;
-    padding-bottom: 100px;
 }
 .features {
     margin-top: 30px;
@@ -207,13 +214,17 @@ form .check {
     margin-top: 20px;
 }
 @media(max-width: 768px) {
-    .intro {
+    .about {
         padding: 30px;
         padding-bottom: 40px;
     }
     .features {
         margin-top: 10px;
     }
+}
+.about .read-more {
+    margin-top: 40px;
+    margin-bottom: 60px;
 }
 
 .the-team {
@@ -334,6 +345,20 @@ form .check {
   display: inline-block;
   vertical-align: middle;
   text-align: left;
+}
+
+@media(max-width: 400px) {
+    .contact .contact-card {
+        width: 200px;
+        text-align: center;
+    }
+    .contact .contact-photo {
+        clear: both;
+        margin: 5px;
+    }
+    .contact .contact-details {
+        text-align: center;
+    }
 }
 /* Footer */
 

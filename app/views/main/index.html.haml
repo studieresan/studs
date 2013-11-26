@@ -4,14 +4,21 @@
       %h1= t '.splash_title'
       %p.lead= t '.splash_lead'
       %a{ :href => "#about" }
-        %button.btn-3d.btn-cerise.read-more= t '.splash_readmore'
+        %span.fa-stack.fa-lg.read-more.fa-2x
+          %i.fa.fa-circle.fa-stack-2x
+          %i.fa.fa-chevron-down.fa-stack-1x.fa-inverse
 
 %a{ :name => "about" }
-.container.intro
+.container.about
   .row
     .col-md-8.col-md-offset-2
       %h2= t '.about_title'
       %p.lead= t '.about_lead'
+      .text-center
+        %a{ :href => "#contact" }
+          %span.fa-stack.fa-lg.read-more.fa-2x
+            %i.fa.fa-circle.fa-stack-2x
+            %i.fa.fa-chevron-down.fa-stack-1x.fa-inverse
 
 .the-team
 
