@@ -2,7 +2,8 @@
   experiences = @r.experiences_by_kind
   username = nil
   if @r.user_id.present?
-    username = User.find(@r.user_id)
+    user = User.find(@r.user_id)
+    username = user.login
   end
 %>
 %% start of file `template.tex'.
