@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307223407) do
+ActiveRecord::Schema.define(:version => 20131201181648) do
 
   create_table "experiences", :force => true do |t|
     t.integer  "resume_id"
@@ -43,12 +43,12 @@ ActiveRecord::Schema.define(:version => 20130307223407) do
 
   create_table "resumes", :force => true do |t|
     t.integer  "user_id"
-    t.string   "name",         :null => false
+    t.string   "name",       :null => false
     t.date     "birthdate"
     t.string   "email"
     t.string   "phone"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "slug"
     t.string   "street"
     t.integer  "postcode"
@@ -89,6 +89,8 @@ ActiveRecord::Schema.define(:version => 20130307223407) do
     t.datetime "last_login_at"
     t.datetime "last_logout_at"
     t.datetime "last_activity_at"
+    t.string   "contact_name"
+    t.string   "contact_phone"
   end
 
   add_index "users", ["last_logout_at", "last_activity_at"], :name => "index_users_on_last_logout_at_and_last_activity_at"

@@ -19,6 +19,7 @@ en:
     users: users
     profile: profile
     resume: resume
+    introduction: introduction
     logout: logout
   titles:
     index: Start
@@ -29,6 +30,8 @@ en:
     contact: Contact
     files: Files
     users: Users
+    profile: Profile
+    event: Event
   roles:
     project_leader: Project leader
     sales_manager: Sales manager
@@ -173,6 +176,13 @@ en:
     resume:
       title: Edit CV
       submit: Save changes
+    intro:
+      title: Hello, %{name}!
+      about: This portal contains information about events, us in the organization and other additional information.
+      contact: For questions please do not hesitate to contact your contact person %{name} (%{phone}).
+      event: After your event, statistics will be published here.
+      resumes_html: In %{href} in the menu, you can download and read the resumes of studs.
+      profile_html: Your profile name and password can be edited under %{href}.
     credentials_mail:
       subject: Login credentials for studs' homepage
       body: |
@@ -232,6 +242,8 @@ en:
       birthdate: Birthdate
       role: Role
       send_credentials_mail: Send email with new login credentials
+      contact_name: Contact name
+      contact_phone: Contact phone
     resume:
       skills: Skills
       skill_list: Skills

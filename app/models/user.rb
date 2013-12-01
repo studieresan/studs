@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 3 }, if: :password_required?
   validates_confirmation_of :password, if: :password_required?
   validates_presence_of :password_confirmation, if: :password_required?
+  validates_presence_of :contact_name, if: :organization?
+  validates_presence_of :contact_phone, if: :organization?
 
   auto_strip_attributes :login, :email, :name, squish: true
 

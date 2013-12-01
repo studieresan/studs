@@ -9,6 +9,11 @@
     = f.text_field_row :name
     = f.text_field_row :email
 
+  - if @user.organization? and can? :create, User
+    %fieldset.contact
+      = f.text_field_row :contact_name
+      = f.text_field_row :contact_phone
+
   %fieldset.password
     - unless @user.new_record?
       .row

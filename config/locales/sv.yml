@@ -19,6 +19,7 @@ sv:
     users: användare
     profile: profil
     resume: cv
+    introduction: introduktion
     logout: logga ut
   titles:
     index: Start
@@ -29,6 +30,8 @@ sv:
     contact: Kontakt
     files: Filer
     users: Användare
+    profile: Profil
+    event: Event
   roles:
     project_leader: Projektledare
     sales_manager: Säljansvarig
@@ -159,6 +162,13 @@ sv:
     resume:
       title: Redigera CV
       submit: Spara ändringar
+    intro:
+      title: Hej, %{name}!
+      about: I denna portal finns information om både event, vi i studs och annan övrig information.
+      contact: Vid frågor tveka inte att kontakta er kontaktperson %{name} (%{phone}).
+      event: Efter ert event kommer statistik att publiceras här.
+      resumes_html: Under %{href} i menyn kan du ladda ner och läsa studs medlemmars CV:n.
+      profile_html: Ert profilnamn samt lösenord kan redigeras under %{href}.
     credentials_mail:
       subject: Inloggningsuppgifter till studs hemsida
       body: |
@@ -217,6 +227,8 @@ sv:
       birthdate: Födelsedatum
       role: Roll
       send_credentials_mail: Skicka epost med nya inloggningsuppgifter
+      contact_name: Kontaktperson
+      contact_phone: Kontaktnummer
     resume:
       skills: Kunskaper
       skill_list: Kunskaper

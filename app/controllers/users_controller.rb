@@ -9,6 +9,9 @@ class UsersController < ApplicationController
     @users = @users.where(role: params[:role]) if params[:role].present?
   end
 
+  def intro
+  end
+
   def me
     @user = current_user
     render 'edit'

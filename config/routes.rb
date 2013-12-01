@@ -13,7 +13,10 @@ Studs::Application.routes.draw do
     end
 
     resources :users, except: [:show] do
-      get 'me'    , on: :collection
+      collection do
+        get :me
+        get :intro
+      end
       get 'delete', on: :member
     end
 

@@ -47,6 +47,8 @@
                       %b.caret
                     %ul.dropdown-menu
                       %li
+                        - if organization?
+                          = link_to t('navigation.introduction'), intro_users_path
                         -if admin?
                           = link_to t('navigation.users'), users_path
                         = link_to t('navigation.profile'), me_users_path

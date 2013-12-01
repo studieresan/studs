@@ -1,0 +1,16 @@
+- active_menu :users
+.container
+  .row
+    .col-sm-8.col-sm-offset-2.col-xs-12
+      - if organization?
+        %h2 #{t('users.intro.title', :name => current_user.name)}
+        %p= t('users.intro.about')
+        - if current_user.contact_name? and current_user.contact_phone?
+          %p= t('users.intro.contact', :name => current_user.contact_name, :phone => current_user.contact_phone)
+
+        %h2= t('titles.event')
+        %p= t('users.intro.event')
+        %h2= t('titles.resumes')
+        %p= t('users.intro.resumes_html', :href => link_to(t('navigation.resumes'), resumes_path))
+        %h2= t('titles.profile')
+        %p= t('users.intro.profile_html', :href => link_to(t('navigation.profile'), me_users_path))

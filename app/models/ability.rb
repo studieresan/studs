@@ -26,6 +26,10 @@ class Ability
       can [:update, :delete, :destroy], User, role: 'organization'
     end
 
+    if user.organization?
+      can :intro, User
+    end
+
     if user.admin?
       can :manage, :all
     end

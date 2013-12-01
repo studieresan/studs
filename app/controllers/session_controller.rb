@@ -5,8 +5,10 @@ class SessionController < ApplicationController
 
   def create
     user = login(params[:login], params[:password], params[:remember])
-    if user
-      redirect_back_or_to index_url
+    if user and user.organization?
+      redirect_back_or_to intro_users_path
+    elsif user
+      redirect_back_or_to me_users_path
     else
       flash.now.alert = I18n.t('session.invalid_credentials')
       render :new
