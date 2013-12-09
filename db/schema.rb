@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131201181648) do
+ActiveRecord::Schema.define(:version => 20131209075147) do
 
   create_table "experiences", :force => true do |t|
     t.integer  "resume_id"
@@ -43,17 +43,18 @@ ActiveRecord::Schema.define(:version => 20131201181648) do
 
   create_table "resumes", :force => true do |t|
     t.integer  "user_id"
-    t.string   "name",       :null => false
+    t.string   "name",         :null => false
     t.date     "birthdate"
     t.string   "email"
     t.string   "phone"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "slug"
     t.string   "street"
     t.integer  "postcode"
     t.string   "city"
     t.string   "image"
+    t.string   "linkedin_url"
   end
 
   add_index "resumes", ["slug"], :name => "index_resumes_on_slug", :unique => true
