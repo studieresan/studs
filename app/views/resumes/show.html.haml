@@ -28,6 +28,10 @@
         = attribute_definition :city, @resume.city, :resume
         = attribute_definition :email, mail_to(@resume.email), :resume
         = attribute_definition :phone, @resume.phone, :resume
+        - if @resume.linkedin_url?
+          = attribute_definition :linkedin_url, link_to(@resume.linkedin_url, @resume.full_linkedin_url), :resume
+        - else
+          = attribute_definition :linkedin_url, t('attributes.resume.no_linkedin'), :resume
 
       %h3= t_attribute :resume, :skills
       %ul.tags

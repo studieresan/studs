@@ -36,6 +36,10 @@ class Resume < ActiveRecord::Base
     skills.map(&:name) - list
   end
 
+  def full_linkedin_url
+    'http://www.linkedin.com/in/' + self.linkedin_url
+  end
+
   def person_age
     (Time.now.to_s(:number).to_i - self.birthdate.to_time.to_s(:number).to_i) / 10e9.to_i
   end

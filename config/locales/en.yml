@@ -253,6 +253,7 @@ en:
       street: Street
       postcode: Postcode
       city: City
+      no_linkedin: No LinkedIn-profile
     experience:
       kind: Category
       organization: Organization
@@ -280,7 +281,7 @@ en:
       masters: The master programme you are studying towards
       birthdate: Your birthdate
       email: Preferably your @kth.se address
-      linkedin_url: Make sure you have a public LinkedIn profile. Write your LinkedIn-username above (to link www.linkedin.com/in/yourusername).
+      linkedin_url: Make sure you have a public LinkedIn profile. Write your LinkedIn-username above.
       phone: A cell phone number is preferred
       image: (Profile) image which will be shown in your resume (400x500 px)
       presentation: |

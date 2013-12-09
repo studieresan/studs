@@ -14,10 +14,7 @@
         %td.empty{ colspan: cols.size}>= t('resumes.no_results')
     - resumes.each do |res|
       %tr
-        - if res.linkedin_url?
-          %td.name= link_to res.name, 'http://www.linkedin.com/in/' + res.linkedin_url, class: 'action show'
-        - else
-          %td.name= res
+        %td.name= res
         %td.email= mail_to res.email
         %td.skills<
           - skills = res.skills_except(filtered_skills)
@@ -26,4 +23,13 @@
           - if skills.size > max_skills_shown
             %span.more &hellip;
         %td.actions
-          = link_to 'PDF', resume_path(res, format: :pdf), class: [:action, :download], title: t('actions.download')
+          .pull-right
+            = link_to resume_path(res, format: :pdf), {class: [:action, :download], title: t('actions.download')} do
+              %i.fa.fa-download.fa-2x
+          - if res.linkedin_url?
+            .pull-left
+              = link_to res.full_linkedin_url, {class: 'action show'} do
+                %i.fa.fa-linkedin-square.fa-2x
+
+
+
