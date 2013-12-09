@@ -281,7 +281,7 @@ en:
       masters: The master programme you are studying towards
       birthdate: Your birthdate
       email: Preferably your @kth.se address
-      linkedin_url: Make sure you have a public LinkedIn profile. Write your LinkedIn-username above.
+      linkedin_url: Make sure you have a public <a href="http://help.linkedin.com/app/answers/detail/a_id/87">LinkedIn profile</a>. Write your public LinkedIn-username above.
       phone: A cell phone number is preferred
       image: (Profile) image which will be shown in your resume (400x500 px)
       presentation: |

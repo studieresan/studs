@@ -265,7 +265,7 @@ sv:
       name: För- och efternamn
       birthdate: Ditt födelsedatum
       email: Förslagsvis din @kth.se-adress
-      linkedin_url: Se till att du har en publik LinkedIn-profil. Skriv in ditt LinkedIn-användarnamn ovan.
+      linkedin_url: Se till att du har en publik <a href="http://help.linkedin.com/app/answers/detail/a_id/87">LinkedIn-profil</a>. Skriv in ditt publika profilnamn ovan.
       phone: Mobiltelefonnummer är att föredra
       image: (Porträtt-)bild som kommer synas på ditt CV (400x500 px)
       presentation: |
