@@ -243,66 +243,27 @@ form .check {
         background-position: center center;
     }
 }
-/* Button styles */
 
-/* General button style (reset) */
-.btn-3d {
+/* Input styles */
+.btn {
     border: none;
-    font-family: 'Avenir';
+    font-family: inherit;
     font-size: inherit;
-    color: #ffffff;
+    color: #fff;
     background: none;
     cursor: pointer;
-    padding: 25px 80px;
     display: inline-block;
-    margin: 15px 30px;
-    text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
-    outline: none !important;
+    outline: none;
     position: relative;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
+    background: #333;
+    padding: 8px 15px;
 }
 
-.btn-3d:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
+.btn:hover {
+    color: #fff;
 }
-
-.btn-cerise {
-    background: #df288c;
-    color: #fff !important;
-    box-shadow: 0 6px #c70f74;
-    -webkit-transition: none;
-    -moz-transition: none;
-    transition: none;
-    border-radius: 0 0 5px 5px;
-    color: #ffffff;
-}
-
-.btn-cerise:hover {
-    box-shadow: 0 4px #c70f74;
-    top: 2px;
-    color: #ffffff;
-}
-
-.btn-cerise:active {
-    box-shadow: 0 0 #c70f74;
-    top: 6px;
-    color: #ffffff;
-}
-
-.btn-submit {
-  padding: 10px 25px;
-  margin: 10px 0px;
-}
-
 
 #password_generator {
   margin-top: 10px;
