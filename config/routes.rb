@@ -1,6 +1,11 @@
 Studs::Application.routes.draw do
 
+
+
   scope '/(:locale)', locale: /en|sv/ do
+    
+    resources :posts
+    
     resources :contact_form, only: :create
     
     resources :resumes do

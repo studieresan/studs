@@ -30,7 +30,7 @@ gem 'mail_form'
 group :development do
   gem 'sqlite3'
 
-  gem 'capistrano', :require => nil
+  gem 'capistrano', '< 3.0', :require => nil
   gem 'capistrano-shared_file', :require => nil
   gem 'capistrano_colors', :require => nil
 end
