@@ -1,15 +1,11 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @post.title
-%p
-  %b Content:
-  = @post.content
-%p
-  %b Published:
-  = @post.published
-
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
+.container
+  .row
+    .col-md-8.col-md-offset-2
+      .post
+        = render @post
+        - if can? :manage, Post
+          = link_to t('actions.edit'), edit_post_path(@post)
+          \|
+          = link_to 'Back', posts_path

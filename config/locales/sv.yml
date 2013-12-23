@@ -259,6 +259,10 @@ sv:
       email: Epostadress
       message: Meddelande
       send: Skicka
+    post:
+      title: Titel
+      content: Innehåll
+      published: Publicerad
   hints:
     resume:
       user_id: Användare som administrerar detta CV
@@ -290,6 +294,8 @@ sv:
     user:
       name: För- och efternamn
       email: Förslagsvis din @kth.se-adress
+    post:
+      content: Använd Markdown för att formatera texten
   values:
     'true': Ja
     'false': Nej
@@ -329,12 +335,14 @@ sv:
       user: användare
       file: fil
       external_post: externt inlägg
+      post: inlägg
     the: &the_model
       resume: CV:t
       experience: erfarenheten
       user: användaren
       file: filen
       external_post: externa inlägget
+      post: inlägget
   actions:
     show: Visa
     add: Lägg till

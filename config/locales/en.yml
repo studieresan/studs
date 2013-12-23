@@ -274,6 +274,10 @@ en:
       email: Email Address
       message: Message
       send: Send
+    post:
+      title: Title
+      content: Content
+      published: Published
   hints:
     resume:
       user_id: Owner of this resume
@@ -306,6 +310,8 @@ en:
     user:
       name: First and last name
       email: Preferably your @kth.se address
+    post:
+      content: Använd Markdown för att formatera texten
   values:
     'true': Yes
     'false': No
@@ -346,12 +352,14 @@ en:
       user: user
       file: file
       external_post: external post
+      post: post
     the: &the_model
       resume: resume
       experience: experience
       user: user
       file: file
       external_post: external post
+      post: post
   actions:
     show: Show
     add: Add

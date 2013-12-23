@@ -14,9 +14,9 @@
       %td= post.title
       %td= post.content
       %td= post.published
-      %td= link_to 'Show', post
-      %td= link_to 'Edit', edit_post_path(post)
-      %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to t('actions.show'), post
+      %td= link_to t('actions.edit'), edit_post_path(post)
+      %td= link_to t('actions.delete'), post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

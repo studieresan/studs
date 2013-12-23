@@ -1,0 +1,4 @@
+%h1= post.title
+%p.published= l(post.created_at, :format=>:ymd)
+.post-content
+  = markdown post.content
