@@ -12,6 +12,8 @@ Studs::Application.routes.draw do
       end
     end
 
+    resources :zip
+
     resources :users, except: [:show] do
       collection do
         get :me

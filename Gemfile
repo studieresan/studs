@@ -11,7 +11,9 @@ gem 'acts-as-taggable-on'
 gem 'auto_strip_attributes'
 
 gem 'responders'
-gem 'rubyzip'
+
+gem 'rubyzip', '>= 1.0.0' # will load new rubyzip version
+gem 'zip-zip' # will load compatibility for old rubyzip API.
 
 # Markup and string tools
 gem 'haml-rails'

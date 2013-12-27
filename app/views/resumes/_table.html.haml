@@ -8,6 +8,9 @@
       - cols.each do |col|
         %th{ :class => col }= t_attribute(:resume, col)
       %th.actions
+        .pull-right
+          = link_to 'zip', { class: [:action, :download], title: t('actions.download') } do
+            %i.fa.fa-download.fa-2x
   %tbody
     - if resumes.empty?
       %tr
