@@ -11,6 +11,7 @@ gem 'acts-as-taggable-on'
 gem 'auto_strip_attributes'
 
 gem 'responders'
+gem 'rubyzip'
 
 # Markup and string tools
 gem 'haml-rails'
