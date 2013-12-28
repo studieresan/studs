@@ -19,7 +19,6 @@ class ZipController < ApplicationController
 
           zipfile.add("#{tex.base_name}.pdf", path[0])
         end
-        zipfile.get_output_stream("myFile") { |os| os.write "myFile contains just this" }
       end
     end
     send_file zipfile_name, filename: "studs.zip", type: 'application/zip'
