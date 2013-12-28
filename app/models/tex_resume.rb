@@ -60,8 +60,7 @@ class TexResume
 
       File.unlink(pdf_path) if File.file?(pdf_path)
 
-      styles = Rails.root + "app/views/resumes"
-      cmd = "pdflatex --include-directory=#{styles} #{tex_path}"
+      cmd = "pdflatex #{tex_path}"
       
       # Compile tex source twice (to sync AUX file and stuff)
       out = `#{cmd} && #{cmd}`
