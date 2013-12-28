@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   STUDENT_ROLES = (ROLES - %w(organization)).freeze
 
   has_one :resume
+  has_and_belongs_to_many :events
 
   authenticates_with_sorcery!
 
