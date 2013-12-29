@@ -1,4 +1,7 @@
 class ResumesController < ApplicationController
+  require 'rubygems'
+  require 'zip'
+
   respond_to :html
   responders :flash, :collection
 
