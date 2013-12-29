@@ -349,6 +349,7 @@ sv:
     reset: Nollställ
     upload: Ladda upp
     download: Ladda ner
+    download_all: Ladda ner alla
     replace: Ersätt
     delete_prompt_html: "Är du säker på att du vill ta bort %{type} <em>%{name}</em>?"
   flash:

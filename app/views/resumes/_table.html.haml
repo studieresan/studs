@@ -9,7 +9,7 @@
         %th{ :class => col }= t_attribute(:resume, col)
       %th.actions
         .pull-right
-          = link_to resumes_path(format: :zip, :params => params), { class: [:action, :download], title: t('actions.download') } do
+          = link_to resumes_path(format: :zip, :params => params), { class: [:action, :download], title: t('actions.download_all') } do
             %i.fa.fa-download.fa-2x
   %tbody
     - if resumes.empty?
