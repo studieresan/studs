@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   respond_to :html
-  before_filter :set_event, only: [:show, :edit, :update, :destroy]
+  before_filter :set_event, only: [:show, :edit, :update, :destroy, :delete]
 
   def index
     @events = Event.all

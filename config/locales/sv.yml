@@ -213,6 +213,12 @@ sv:
     index:
       upcoming_events: Kommande event
       past_events: Tidigare event
+    table:
+      title: Event
+      organizations: Företag
+      location: Plats
+      start_date: Start
+      end_date: Slut
   attributes:
     defaults:
       created_at: Skapad
@@ -263,6 +269,13 @@ sv:
       email: Epostadress
       message: Meddelande
       send: Skicka
+    event:
+      title: Event
+      organizations: Företag
+      location: Plats
+      start_date: Starttid
+      end_date: Sluttid
+      description: Beskrivning
   hints:
     resume:
       user_id: Användare som administrerar detta CV
@@ -294,6 +307,8 @@ sv:
     user:
       name: För- och efternamn
       email: Förslagsvis din @kth.se-adress
+    event:
+      description: Formateras med markdown
   values:
     'true': Ja
     'false': Nej
@@ -333,12 +348,14 @@ sv:
       user: användare
       file: fil
       external_post: externt inlägg
+      event: event
     the: &the_model
       resume: CV:t
       experience: erfarenheten
       user: användaren
       file: filen
       external_post: externa inlägget
+      event: eventet
   actions:
     show: Visa
     add: Lägg till

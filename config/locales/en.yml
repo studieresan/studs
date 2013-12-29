@@ -227,6 +227,12 @@ en:
     index:
       upcoming_events: Upcoming events
       past_events: Past events
+    table:
+      title: Event
+      organizations: Company
+      location: Location
+      start_date: Start
+      end_date: End
   attributes:
     defaults:
       created_at: Created
@@ -277,6 +283,13 @@ en:
       email: Email Address
       message: Message
       send: Send
+    event:
+      title: Event
+      organizations: Companies
+      location: Location
+      start_date: Start time
+      end_date: End time
+      description: Description
   hints:
     resume:
       user_id: Owner of this resume
@@ -309,6 +322,8 @@ en:
     user:
       name: First and last name
       email: Preferably your @kth.se address
+    event:
+      description: Format with markdown
   values:
     'true': Yes
     'false': No
@@ -349,12 +364,14 @@ en:
       user: user
       file: file
       external_post: external post
+      event: event
     the: &the_model
       resume: resume
       experience: experience
       user: user
       file: file
       external_post: external post
+      event: event
   actions:
     show: Show
     add: Add

@@ -1,27 +1,22 @@
-= form_for @event do |f|
+= ext_form_for @event, :html => {:class => [:event, 'form-horizontal'], :role => 'form'} do |f|
   - if @event.errors.any?
     #error_explanation
       %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
       %ul
         - @event.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :location
-    = f.text_field :location
-  .field
-    = f.label :start_date
-    = f.datetime_select :start_date
-  .field
-    = f.label :end_date
-    = f.datetime_select :end_date
-  .field
-    = collection_select(:user, :user_id, User.where(role: "organization"), :id, :name, {selected: @event.users.map {|user| user.id}}, {multiple: true, size: 7})
-  .actions
-    = f.submit 'Save'
+  = f.text_field_row :title
+  .input.form-group.select.organization
+    %label.col-sm-4.col-xs-12.control-label
+      = t 'attributes.event.organizations'
+    .col-sm-8.col-xs-12
+      = collection_select(:user, :user_id, User.where(role: "organization"), :id, :name, {selected: @event.users.map {|user| user.id}}, {multiple: true, size: 7, class: ["form-control"]})
+  = f.text_field_row :location
+  = f.datetime_select_row :start_date
+  = f.datetime_select_row :end_date
+  = f.text_area_row :description, rows: 10, hint: true
+  .row
+    .col-sm-8.col-sm-offset-4.col-xs-12
+      = f.submit
+      - if can? :read, Event
+        = action_link :cancel, @event, :"btn btn-default"

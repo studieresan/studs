@@ -48,7 +48,7 @@ module ExtFormHelper
         unless %w(check_box radio_button).include?name
           classes << 'form-control'
         end
-        if %w(date_select).include?name
+        if %w(date_select datetime_select).include?name
           classes << 'form-control-inline'
         end
 

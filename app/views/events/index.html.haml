@@ -7,4 +7,6 @@
       = render partial: 'table', locals: {events: @past_events}
       %br
       - if can? :create, Event
-        = link_to 'New Event', new_event_path
+        %a.btn.btn-primary{ :href => url_for([:new, :event]) }
+          %i.fa.fa-file-o
+          = t('actions.create')

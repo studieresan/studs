@@ -17,10 +17,14 @@
       .event-description
         = markdown @event.description
 
-      - if can? :edit, @event
-        = link_to t('actions.edit'), edit_event_path(@event)
-        \|
-      - if can? :destroy, @event
-        = link_to t('actions.delete'), delete_event_path(@event)
-        \|
-      = link_to t('actions.back'), events_path
+      %p
+        .btn-group
+          - if can? :manage, @event
+            %a.btn.btn-primary{ :href => url_for([:edit, :event]) }
+              %i.fa.fa-edit
+              = t('actions.edit')
+            %a.btn.btn-primary{ :href => url_for([:delete, :event]) }
+              %i.fa.fa-trash-o
+              = t('actions.delete')
+          %a.btn.btn-primary{ :href => url_for([:events]) }
+            = t('actions.back')
