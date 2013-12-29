@@ -223,7 +223,10 @@ en:
       error_message: >
         Your message was not sent. Please retry again!
       back: Go back
-
+  events:
+    index:
+      upcoming_events: Upcoming events
+      past_events: Past events
   attributes:
     defaults:
       created_at: Created
@@ -367,6 +370,7 @@ en:
     upload: Upload
     download: Download
     replace: Replace
+    back: Back
     delete_prompt_html: "Are you sure that you wish to delete the %{type} <em>%{name}</em>?"
   flash:
     unauthorized_html: >

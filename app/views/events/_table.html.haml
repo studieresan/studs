@@ -1,0 +1,19 @@
+%table.events.table
+  %thead
+    %tr
+      %th= t '.title'
+      %th= t '.organizations'
+      %th= t '.location'
+      %th= t '.start_date'
+      %th= t '.end_date'
+  %tbody
+    - if events.empty?
+      %tr
+        %td.empty{ colspan: cols.size}>= t('events.no_results')
+    - events.each do |event|
+      %tr
+        %td= link_to event.title, event
+        %td= event.users.map {|user| user.to_s}.to_sentence
+        %td= event.location
+        %td= l event.start_date, format: :short
+        %td= l event.end_date, format: :short

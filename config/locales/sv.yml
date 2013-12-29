@@ -209,6 +209,10 @@ sv:
       error_message: >
         Ditt meddelande skickades inte. Försök gärna igen.
       back: Gå tillbaka
+  events:
+    index:
+      upcoming_events: Kommande event
+      past_events: Tidigare event
   attributes:
     defaults:
       created_at: Skapad
@@ -350,6 +354,7 @@ sv:
     upload: Ladda upp
     download: Ladda ner
     replace: Ersätt
+    back: Tillbaka
     delete_prompt_html: "Är du säker på att du vill ta bort %{type} <em>%{name}</em>?"
   flash:
     unauthorized_html: >

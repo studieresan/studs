@@ -1,21 +1,26 @@
-%p#notice= notice
+.container
+  .row
+    .col-sm-8.col-sm-offset-2.col-xs-12
+      %p#notice
+        = notice
 
-%p
-  %b Title:
-  = @event.title
-%p
-  %b Description:
-  = @event.description
-%p
-  %b Location:
-  = @event.location
-%p
-  %b Start date:
-  = @event.start_date
-%p
-  %b End date:
-  = @event.end_date
+      %h1.event-title
+        = @event.title
+      %p.event-organizations
+        = @event.users.map {|user| user.to_s}.to_sentence
+      %p.event-location
+        = @event.location
+      %p.event-date
+        = l(@event.start_date, format: :short) 
+        \-
+        = l(@event.end_date, format: :short)
+      .event-description
+        = markdown @event.description
 
-= link_to 'Edit', edit_event_path(@event)
-\|
-= link_to 'Back', events_path
+      - if can? :edit, @event
+        = link_to t('actions.edit'), edit_event_path(@event)
+        \|
+      - if can? :destroy, @event
+        = link_to t('actions.delete'), delete_event_path(@event)
+        \|
+      = link_to t('actions.back'), events_path

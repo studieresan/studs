@@ -4,6 +4,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @past_events = Event.where("end_date <= ?", Time.zone.now).order("start_date DESC")
+    @upcoming_events = Event.where("end_date > ?", Time.zone.now).order("start_date ASC")
     respond_with(@events)
   end
 
@@ -30,12 +32,19 @@ class EventsController < ApplicationController
 
   def update
     @event.update_attributes(params[:event])
+    user_ids = params[:user][:user_id] - [""]
+    users = User.find(user_ids)
+    @event.users = users
+    @event.save
     respond_with(@event)
+  end
+
+  def delete
   end
 
   def destroy
     @event.destroy
-    respond_with(@event)
+    respond_with @event, location: events_path
   end
 
   private
