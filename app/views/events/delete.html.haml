@@ -9,5 +9,5 @@
             %h2= t_model_action()
             %p= t('actions.delete_prompt_html', type: t('models.the.event'), name: @event.to_s)
             .actions
-              = button_to t('actions.delete'), @event, method: :destroy, :class => :"destroy btn btn-danger pull-left margin-right"
+              = button_to t('actions.delete'), @event, method: :delete, :class => :"destroy btn btn-danger pull-left margin-right"
               = action_link :cancel, events_path, :"btn btn-default"
