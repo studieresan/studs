@@ -1,7 +1,7 @@
 - active_menu :users
 .container
   .row
-    .col-sm-8.col-sm-offset-2.col-xs-12
+    .col-md-8.col-md-offset-2.col-xs-12
       - if organization?
         %h2 #{t('users.intro.title', :name => current_user.name)}
         %p= t('users.intro.about')
