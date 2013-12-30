@@ -14,9 +14,11 @@ sv:
   navigation:
     about: om studs
     contact: kontakt
+    newsfeed: nyheter
     resumes: cv-databas
     login: logga in
     users: användare
+    posts: nyhetsinlägg
     profile: profil
     resume: cv
     introduction: introduktion
@@ -209,6 +211,11 @@ sv:
       error_message: >
         Ditt meddelande skickades inte. Försök gärna igen.
       back: Gå tillbaka
+  posts:
+    index:
+      heading: Listar alla inlägg
+      title: Titel
+      published: Publicerad
   attributes:
     defaults:
       created_at: Skapad

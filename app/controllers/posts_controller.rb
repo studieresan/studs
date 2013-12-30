@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   respond_to :html
-  before_filter :set_post, only: [:show, :edit, :update, :destroy]
+  before_filter :set_post, only: [:show, :edit, :update, :delete, :destroy]
   load_and_authorize_resource except: :feed
 
   def feed
@@ -34,6 +34,9 @@ class PostsController < ApplicationController
   def update
     @post.update_attributes(params[:post])
     respond_with(@post)
+  end
+
+  def delete
   end
 
   def destroy

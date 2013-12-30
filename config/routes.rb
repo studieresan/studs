@@ -4,7 +4,9 @@ Studs::Application.routes.draw do
 
   scope '/(:locale)', locale: /en|sv/ do
     
-    resources :posts
+    resources :posts do
+      get 'delete', on: :member
+    end
     get 'newsfeed' => 'posts#feed'
     
     resources :contact_form, only: :create
