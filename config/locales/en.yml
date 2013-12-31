@@ -181,7 +181,7 @@ en:
       title: Hello, %{name}!
       about: This portal contains information about events, us in the organization and other additional information.
       contact: For questions please do not hesitate to contact your contact person %{name} (%{phone}).
-      event: After your event, statistics will be published here.
+      event_html: Information about your event can be found under %{href} in the menu.
       resumes_html: In %{href} in the menu, you can download and read the resumes of studs.
       profile_html: Your profile name and password can be edited under %{href}.
     credentials_mail:
@@ -228,6 +228,7 @@ en:
     index:
       upcoming_events: Upcoming events
       past_events: Past events
+      events_with: Events with %{name}
     table:
       no_events: No events
       title: Event

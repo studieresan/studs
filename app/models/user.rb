@@ -42,6 +42,10 @@ class User < ActiveRecord::Base
     STUDENT_ROLES.include?(role)
   end
 
+  def has_one_event?
+    organization? && events.size == 1
+  end
+
   def to_s
     name.present? ? name : login
   end

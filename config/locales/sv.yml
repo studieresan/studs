@@ -167,7 +167,7 @@ sv:
       title: Hej, %{name}!
       about: I denna portal finns information om både event, vi i studs och annan övrig information.
       contact: Vid frågor tveka inte att kontakta er kontaktperson %{name} (%{phone}).
-      event: Efter ert event kommer statistik att publiceras här.
+      event_html: Information om ert event finns under %{href} i menyn.
       resumes_html: Under %{href} i menyn kan du ladda ner och läsa studs medlemmars CV:n.
       profile_html: Ert profilnamn samt lösenord kan redigeras under %{href}.
     credentials_mail:
@@ -214,6 +214,7 @@ sv:
     index:
       upcoming_events: Kommande event
       past_events: Tidigare event
+      events_with: Event med %{name}
     table:
       no_events: Inga event
       title: Event

@@ -27,5 +27,6 @@
             %a.btn.btn-primary{ :href => url_for([:delete, :event]) }
               %i.fa.fa-trash-o
               = t('actions.delete')
-          %a.btn.btn-primary{ :href => url_for([:events]) }
-            = t('actions.back')
+          - unless current_user.has_one_event?
+            %a.btn.btn-primary{ :href => url_for([:events]) }
+              = t('actions.back')
