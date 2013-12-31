@@ -6,6 +6,7 @@ class FilesController < ApplicationController
   end
 
   def create
+    session[:return_to] ||= request.referer
     file = DownloadableFile.new(params[:file])
     if file.exists? && current_ability.cannot?(:update, :files)
       flash[:alert] = t('files.flash.cannot_replace')
@@ -14,7 +15,7 @@ class FilesController < ApplicationController
     else 
       flash[:alert] = t('files.flash.error')
     end
-    redirect_to action: 'index'
+    redirect_to session.delete(:return_to)
   end
 
   def delete
