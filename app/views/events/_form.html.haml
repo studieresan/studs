@@ -12,8 +12,8 @@
     .col-sm-8.col-xs-12
       = collection_select(:user, :user_id, User.where(role: "organization"), :id, :name, {selected: @event.users.map {|user| user.id}}, {multiple: true, size: 7, class: ["form-control"]})
   = f.text_field_row :location
-  = f.datetime_select_row :start_date, default: {hour: 18, minute: 00}
-  = f.datetime_select_row :end_date, default: {hour: 23, minute: 00}
+  = f.datetime_select_row :start_date, start_year: Time.now.year - 1, end_year: Time.now.year + 1, default: {hour: 18, minute: 00}
+  = f.datetime_select_row :end_date, start_year: Time.now.year - 1, end_year: Time.now.year + 1, default: {hour: 23, minute: 00}
   = f.text_area_row :description, rows: 10, hint: true
   .row
     .col-sm-8.col-sm-offset-4.col-xs-12

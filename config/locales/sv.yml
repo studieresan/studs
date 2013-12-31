@@ -15,6 +15,7 @@ sv:
     about: om studs
     contact: kontakt
     resumes: cv-databas
+    events: event
     login: logga in
     users: användare
     profile: profil
@@ -214,6 +215,7 @@ sv:
       upcoming_events: Kommande event
       past_events: Tidigare event
     table:
+      no_events: Inga event
       title: Event
       organizations: Företag
       location: Plats

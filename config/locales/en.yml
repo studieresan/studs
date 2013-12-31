@@ -16,6 +16,7 @@ en:
     contact: contact
     login: login
     resumes: resumes
+    events: events
     users: users
     profile: profile
     resume: resume
@@ -228,6 +229,7 @@ en:
       upcoming_events: Upcoming events
       past_events: Past events
     table:
+      no_events: No events
       title: Event
       organizations: Company
       location: Location
