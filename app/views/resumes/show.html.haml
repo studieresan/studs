@@ -15,7 +15,7 @@
             = t('actions.edit')
         %a.btn.btn-primary{ :href => url_for(resume_path(@resume, format: :pdf)) }
           %i.fa.fa-file-text-o
-            = t('actions.download')
+          = t('actions.download')
 
       - if @resume.image?
         = link_to @resume.image.url, class: 'profile image' do
@@ -42,7 +42,6 @@
       - (Experience::KINDS - %w(education)).each do |kind|
         = render partial: 'experience_for_kind', locals: { kind: kind,  experiences: experiences[kind], resume: @resume}
       - if can?(:edit, @resume)
-        %h2
-          %a.btn.btn-primary{ :href => url_for([:new, @resume, :experience])}
-            %i.fa.fa-plus
-              = t('actions.add')
+        %a.btn.btn-primary{ :href => url_for([:new, @resume, :experience])}
+          %i.fa.fa-plus
+            = t('actions.add')
