@@ -26,10 +26,6 @@
               .collapse.navbar-collapse
                 %ul.nav.navbar-nav.navbar-right
                   %li
-                    = link_to t('navigation.about'), index_path(:anchor => 'about')
-                  %li
-                    = link_to t('navigation.contact'), index_path(:anchor => 'contact')
-                  %li
                     = link_to t('navigation.newsfeed'), newsfeed_path, :class => (:newsfeed == active_menu ? :active : nil)
                   - if can? :read, Event
                     %li
