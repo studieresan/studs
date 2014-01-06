@@ -1,0 +1,17 @@
+- active_menu :events
+.container
+  .row
+    .col-sm-8.col-sm-offset-2.col-xs-12
+      - if student?
+        %h2= t '.upcoming_events'
+        = render partial: 'table', locals: {events: @upcoming_events}
+        %h2= t '.past_events'
+        = render partial: 'table', locals: {events: @past_events}
+      - if organization?
+        %h2= t '.events_with', name: current_user.name
+        = render partial: 'table', locals: {events: @my_events}
+      %br
+      - if can? :create, Event
+        %a.btn.btn-primary{ :href => url_for([:new, :event]) }
+          %i.fa.fa-file-o
+          = t('actions.create')

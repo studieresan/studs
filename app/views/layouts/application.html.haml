@@ -31,13 +31,15 @@
                     = link_to t('navigation.contact'), index_path(:anchor => 'contact')
                   %li
                     = link_to t('navigation.newsfeed'), newsfeed_path, :class => (:newsfeed == active_menu ? :active : nil)
+                  - if can? :read, Event
+                    %li
+                      = link_to t('navigation.events'), events_path, :class => (:events == active_menu ? :active : nil)
                   %li
                     = link_to t('navigation.resumes'), resumes_path
                   - [%w(sv Svenska), %w(en English)].each do |lang, name|
                     - next if I18n.locale.to_s == lang
                     - css_class = [lang, (:active if I18n.locale.to_s == lang)]
                     %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
-
                   - if not logged_in?
                     %li
                       = link_to t('navigation.login'), login_path
@@ -67,5 +69,3 @@
         = content_for?(:content) ? yield(:content) : yield
 
     = javascript_include_tag 'application'
-
-    

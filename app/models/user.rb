@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   STUDENT_ROLES = (ROLES - %w(organization)).freeze
 
   has_one :resume
+  has_and_belongs_to_many :events
 
   authenticates_with_sorcery!
 
@@ -39,6 +40,10 @@ class User < ActiveRecord::Base
   scope :students, lambda { where(role: STUDENT_ROLES) }
   def student? # admins are also students
     STUDENT_ROLES.include?(role)
+  end
+
+  def has_one_event?
+    organization? && events.size == 1
   end
 
   def to_s

@@ -19,16 +19,19 @@ class Ability
       can :manage, Experience, resume: { user_id: user.id }
 
       can [:index, :create, :update], :files
+      can :read, Event
     end
 
     if user.pr?
       can [:index, :create], User
       can [:update, :delete, :destroy], User, role: 'organization'
       can :manage, Post
+      can :manage, Event
     end
 
     if user.organization?
       can :intro, User
+      can :read, Event, users: { id: user.id }
     end
 
     if user.admin?

@@ -10,6 +10,10 @@ Studs::Application.routes.draw do
     get 'newsfeed' => 'posts#feed'
     
     resources :contact_form, only: :create
+  
+    resources :events do
+      get 'delete', on: :member
+    end
     
     resources :resumes do
       get 'mine'  , on: :collection

@@ -16,6 +16,7 @@ sv:
     contact: kontakt
     newsfeed: nyheter
     resumes: cv-databas
+    events: event
     login: logga in
     users: användare
     posts: nyhetsinlägg
@@ -168,7 +169,7 @@ sv:
       title: Hej, %{name}!
       about: I denna portal finns information om både event, vi i studs och annan övrig information.
       contact: Vid frågor tveka inte att kontakta er kontaktperson %{name} (%{phone}).
-      event: Efter ert event kommer statistik att publiceras här.
+      event_html: Information om ert event finns under %{href} i menyn.
       resumes_html: Under %{href} i menyn kan du ladda ner och läsa studs medlemmars CV:n.
       profile_html: Ert profilnamn samt lösenord kan redigeras under %{href}.
     credentials_mail:
@@ -216,6 +217,18 @@ sv:
       heading: Listar alla inlägg
       title: Titel
       published: Publicerad
+  events:
+    index:
+      upcoming_events: Kommande event
+      past_events: Tidigare event
+      events_with: Event med %{name}
+    table:
+      no_events: Inga event
+      title: Event
+      organizations: Företag
+      location: Plats
+      start_date: Start
+      end_date: Slut
   attributes:
     defaults:
       created_at: Skapad
@@ -270,6 +283,13 @@ sv:
       title: Titel
       content: Innehåll
       published: Publicerad
+    event:
+      title: Event
+      organizations: Företag
+      location: Plats
+      start_date: Starttid
+      end_date: Sluttid
+      description: Beskrivning
   hints:
     resume:
       user_id: Användare som administrerar detta CV
@@ -303,6 +323,8 @@ sv:
       email: Förslagsvis din @kth.se-adress
     post:
       content: Använd Markdown för att formatera texten
+    event:
+      description: Formateras med markdown
   values:
     'true': Ja
     'false': Nej
@@ -343,6 +365,7 @@ sv:
       file: fil
       external_post: externt inlägg
       post: inlägg
+      event: event
     the: &the_model
       resume: CV:t
       experience: erfarenheten
@@ -350,6 +373,7 @@ sv:
       file: filen
       external_post: externa inlägget
       post: inlägget
+      event: eventet
   actions:
     show: Visa
     add: Lägg till
@@ -366,6 +390,7 @@ sv:
     download: Ladda ner
     download_all: Ladda ner alla
     replace: Ersätt
+    back: Tillbaka
     delete_prompt_html: "Är du säker på att du vill ta bort %{type} <em>%{name}</em>?"
   flash:
     unauthorized_html: >

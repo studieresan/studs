@@ -17,6 +17,7 @@ en:
     newsfeed: news
     login: login
     resumes: resumes
+    events: events
     users: users
     posts: news posts
     profile: profile
@@ -182,7 +183,7 @@ en:
       title: Hello, %{name}!
       about: This portal contains information about events, us in the organization and other additional information.
       contact: For questions please do not hesitate to contact your contact person %{name} (%{phone}).
-      event: After your event, statistics will be published here.
+      event_html: Information about your event can be found under %{href} in the menu.
       resumes_html: In %{href} in the menu, you can download and read the resumes of studs.
       profile_html: Your profile name and password can be edited under %{href}.
     credentials_mail:
@@ -230,6 +231,18 @@ en:
       heading: Listing all posts
       title: Title
       published: Published
+  events:
+    index:
+      upcoming_events: Upcoming events
+      past_events: Past events
+      events_with: Events with %{name}
+    table:
+      no_events: No events
+      title: Event
+      organizations: Company
+      location: Location
+      start_date: Start
+      end_date: End
   attributes:
     defaults:
       created_at: Created
@@ -284,6 +297,13 @@ en:
       title: Title
       content: Content
       published: Published
+    event:
+      title: Event
+      organizations: Companies
+      location: Location
+      start_date: Start time
+      end_date: End time
+      description: Description
   hints:
     resume:
       user_id: Owner of this resume
@@ -318,6 +338,8 @@ en:
       email: Preferably your @kth.se address
     post:
       content: Use markdown to format the text
+    event:
+      description: Format with markdown
   values:
     'true': Yes
     'false': No
@@ -359,6 +381,7 @@ en:
       file: file
       external_post: external post
       post: post
+      event: event
     the: &the_model
       resume: resume
       experience: experience
@@ -366,6 +389,7 @@ en:
       file: file
       external_post: external post
       post: post
+      event: event
   actions:
     show: Show
     add: Add
@@ -382,6 +406,7 @@ en:
     download: Download
     download_all: Download all
     replace: Replace
+    back: Back
     delete_prompt_html: "Are you sure that you wish to delete the %{type} <em>%{name}</em>?"
   flash:
     unauthorized_html: >

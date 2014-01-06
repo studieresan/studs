@@ -1,4 +1,4 @@
-- active_menu :users
+- active_menu :intro
 .container
   .row
     .col-md-8.col-md-offset-2.col-xs-12
@@ -9,7 +9,7 @@
           %p= t('users.intro.contact', :name => current_user.contact_name, :phone => current_user.contact_phone)
 
         %h2= t('titles.event')
-        %p= t('users.intro.event')
+        %p= t('users.intro.event_html', :href => link_to(t('navigation.events'), events_path))
         %h2= t('titles.resumes')
         %p= t('users.intro.resumes_html', :href => link_to(t('navigation.resumes'), resumes_path))
         %h2= t('titles.profile')
