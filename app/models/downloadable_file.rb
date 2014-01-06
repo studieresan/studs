@@ -46,6 +46,7 @@ class DownloadableFile
 
   def complete_upload
     return false unless @upload
+    Dir.mkdir(DownloadableFile.uploads_path) unless File.directory?(DownloadableFile.uploads_path)
     File.open(@path, 'wb') { |f| f.write(@upload.read) }
     @upload = nil
     true
