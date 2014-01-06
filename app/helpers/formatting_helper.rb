@@ -12,7 +12,7 @@ module FormattingHelper
       Redcarpet::Render::XHTML.new(
         hard_wrap: true,
         safe_links_only: true,
-        no_images: true,
+        no_images: false,
         filter_html: true
       ),
       tables: false,

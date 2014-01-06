@@ -1,0 +1,18 @@
+- active_menu :posts
+.container
+  .row
+    .col-md-8.col-md-offset-2
+      %p#notice= notice
+      .post
+        = render @post
+        %p
+          .btn-group
+            - if can? :manage, @post
+              %a.btn.btn-primary{ :href => url_for([:edit, :post]) }
+                %i.fa.fa-edit
+                = t('actions.edit')
+              %a.btn.btn-primary{ :href => url_for([:delete, :post]) }
+                %i.fa.fa-trash-o
+                = t('actions.delete')
+            %a.btn.btn-primary{ :href => url_for([:posts]) }
+              = t('actions.back')

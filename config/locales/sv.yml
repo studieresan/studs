@@ -14,9 +14,11 @@ sv:
   navigation:
     about: om studs
     contact: kontakt
+    newsfeed: nyheter
     resumes: cv-databas
     login: logga in
     users: användare
+    posts: nyhetsinlägg
     profile: profil
     resume: cv
     introduction: introduktion
@@ -209,6 +211,11 @@ sv:
       error_message: >
         Ditt meddelande skickades inte. Försök gärna igen.
       back: Gå tillbaka
+  posts:
+    index:
+      heading: Listar alla inlägg
+      title: Titel
+      published: Publicerad
   attributes:
     defaults:
       created_at: Skapad
@@ -259,6 +266,10 @@ sv:
       email: Epostadress
       message: Meddelande
       send: Skicka
+    post:
+      title: Titel
+      content: Innehåll
+      published: Publicerad
   hints:
     resume:
       user_id: Användare som administrerar detta CV
@@ -290,6 +301,8 @@ sv:
     user:
       name: För- och efternamn
       email: Förslagsvis din @kth.se-adress
+    post:
+      content: Använd Markdown för att formatera texten
   values:
     'true': Ja
     'false': Nej
@@ -329,12 +342,14 @@ sv:
       user: användare
       file: fil
       external_post: externt inlägg
+      post: inlägg
     the: &the_model
       resume: CV:t
       experience: erfarenheten
       user: användaren
       file: filen
       external_post: externa inlägget
+      post: inlägget
   actions:
     show: Visa
     add: Lägg till

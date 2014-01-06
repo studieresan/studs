@@ -1,0 +1,13 @@
+- active_menu :posts
+
+.container
+  .row
+    .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-1
+      .row
+        .col-sm-8.col-sm-offset-4.col-xs-12
+          .dialog.delete
+            %h2= t_model_action()
+            %p= t('actions.delete_prompt_html', type: t('models.the.post'), name: @post.to_s)
+            .actions
+              = button_to t('actions.delete'), @post, method: :delete, :class => :"destroy btn btn-danger pull-left margin-right"
+              = action_link :cancel, posts_path, :"btn btn-default"

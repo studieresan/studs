@@ -24,6 +24,7 @@ class Ability
     if user.pr?
       can [:index, :create], User
       can [:update, :delete, :destroy], User, role: 'organization'
+      can :manage, Post
     end
 
     if user.organization?

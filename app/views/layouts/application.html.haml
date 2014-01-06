@@ -23,7 +23,6 @@
                   %span.icon-bar
                 %a{ :href => index_path }
                   %img.logo{ :src => image_path("studs_2014_small.png") }
-
               .collapse.navbar-collapse
                 %ul.nav.navbar-nav.navbar-right
                   %li
@@ -31,8 +30,9 @@
                   %li
                     = link_to t('navigation.contact'), index_path(:anchor => 'contact')
                   %li
-                    = link_to t('navigation.resumes'), resumes_path, :class => (:resumes == active_menu ? :active : nil)
-
+                    = link_to t('navigation.newsfeed'), newsfeed_path, :class => (:newsfeed == active_menu ? :active : nil)
+                  %li
+                    = link_to t('navigation.resumes'), resumes_path
                   - [%w(sv Svenska), %w(en English)].each do |lang, name|
                     - next if I18n.locale.to_s == lang
                     - css_class = [lang, (:active if I18n.locale.to_s == lang)]
@@ -50,12 +50,15 @@
                         %li
                           - if organization?
                             = link_to t('navigation.introduction'), intro_users_path
+                          - if can? :manage, Post
+                            = link_to t('navigation.posts'), posts_path, :class => (:posts == active_menu ? :active : nil)
                           -if admin?
                             = link_to t('navigation.users'), users_path
                           = link_to t('navigation.profile'), me_users_path
                           - if student?
                             = link_to t('navigation.resume'), mine_resumes_path
                           = link_to t('navigation.logout'), logout_path
+
 
     - if current_page?index_path or current_page?('/')
       = content_for?(:content) ? yield(:content) : yield

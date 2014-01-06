@@ -1,0 +1,14 @@
+- active_menu :newsfeed
+.container
+  .row
+    .col-md-8.col-md-offset-2
+      - @posts.each do |post|
+        .post
+          = render post
+          - if can? :manage, Post
+            .btn-group
+              %a.btn.btn-primary{ :href => url_for(post) }
+                = t('actions.show')
+              %a.btn.btn-primary{ :href => url_for([:edit, post]) }
+                %i.fa.fa-edit
+                = t('actions.edit')

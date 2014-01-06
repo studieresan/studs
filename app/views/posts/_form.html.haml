@@ -1,0 +1,24 @@
+= ext_form_for @post, :html => {:class => [:resume, 'form-horizontal'], :role => 'form'} do |f|
+  - if @post.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.text_field_row :title
+  = f.text_area_row :content, rows: 10, hint: true
+  .row
+    .col-sm-8.col-sm-offset-4.col-xs-12
+      = f.check_box_label :published
+  .row
+    .col-sm-8.col-sm-offset-4.col-xs-12
+      = f.submit
+      - if can? :read, Post
+        = action_link :cancel, @post, :"btn btn-default"
+
+= ext_form_for :file, url: files_path, method: :post, multipart: true, :html => { :class => [:file] } do |f|
+  = f.file_field_row :file
+  = f.text_field_row :name, value: params[:name]
+  .col-sm-8.col-sm-offset-4.col-xs-12
+    = f.submit t('actions.upload')

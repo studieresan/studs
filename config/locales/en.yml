@@ -14,9 +14,11 @@ en:
   navigation:
     about: about
     contact: contact
+    newsfeed: news
     login: login
     resumes: resumes
     users: users
+    posts: news posts
     profile: profile
     resume: resume
     introduction: introduction
@@ -138,7 +140,7 @@ en:
         a signup form where you can sign up for more information and a possible
         invite to the event. The available spots are limited, we will contact
         you prior to the event for additional details.
-      support_html:
+      support_html: |
         Attending the startup pub is free of charge, but we appreciate
         donations to our crowdfunding campaign on %{link}!
       support_link_text: FundedByMe
@@ -223,7 +225,11 @@ en:
       error_message: >
         Your message was not sent. Please retry again!
       back: Go back
-
+  posts:
+    index:
+      heading: Listing all posts
+      title: Title
+      published: Published
   attributes:
     defaults:
       created_at: Created
@@ -274,6 +280,10 @@ en:
       email: Email Address
       message: Message
       send: Send
+    post:
+      title: Title
+      content: Content
+      published: Published
   hints:
     resume:
       user_id: Owner of this resume
@@ -306,6 +316,8 @@ en:
     user:
       name: First and last name
       email: Preferably your @kth.se address
+    post:
+      content: Use markdown to format the text
   values:
     'true': Yes
     'false': No
@@ -346,12 +358,14 @@ en:
       user: user
       file: file
       external_post: external post
+      post: post
     the: &the_model
       resume: resume
       experience: experience
       user: user
       file: file
       external_post: external post
+      post: post
   actions:
     show: Show
     add: Add
