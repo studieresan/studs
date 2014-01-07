@@ -243,6 +243,8 @@ en:
       location: Location
       start_date: Start
       end_date: End
+    show: 
+      stats: Statistics from event survey
   attributes:
     defaults:
       created_at: Created

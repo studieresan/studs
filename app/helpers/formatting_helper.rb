@@ -13,7 +13,7 @@ module FormattingHelper
         hard_wrap: true,
         safe_links_only: true,
         no_images: false,
-        filter_html: true
+        filter_html: false
       ),
       tables: false,
       fenced_code_blocks: false,

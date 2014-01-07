@@ -229,6 +229,8 @@ sv:
       location: Plats
       start_date: Start
       end_date: Slut
+    show: 
+      stats: Statistik från eventenkät
   attributes:
     defaults:
       created_at: Skapad

@@ -1,7 +1,7 @@
 - active_menu :events
 .container
   .row
-    .col-sm-8.col-sm-offset-2.col-xs-12
+    .col-md-8.col-md-offset-2
       - if student?
         %h2= t '.upcoming_events'
         = render partial: 'table', locals: {events: @upcoming_events}
