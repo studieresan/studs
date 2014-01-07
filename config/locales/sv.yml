@@ -231,6 +231,8 @@ sv:
       end_date: Slut
     show: 
       stats: Statistik från eventenkät
+    form:
+      stats: Statistik från eventenkät
   attributes:
     defaults:
       created_at: Skapad
@@ -292,6 +294,8 @@ sv:
       start_date: Starttid
       end_date: Sluttid
       description: Beskrivning
+      charts: Diagram
+      quotes: Utvalda fritextsvar
   hints:
     resume:
       user_id: Användare som administrerar detta CV
@@ -327,6 +331,13 @@ sv:
       content: Använd Markdown för att formatera texten
     event:
       description: Formateras med markdown
+      charts: > 
+        Lägg in diagramdetaljer i en javascript-array med namn 'charts'.
+        URL och column krävs, ett objekt med Google charts options-alternativ
+        kan läggas till. T.ex. "var charts = [{url: 'url', column: 'B', options: {pieHole: 0}}]"
+      quotes: >
+        Skriv in de fritextsvar som ska visas i eventet. Texten formateras 
+        med markdown. Börja ett stycke med '>' för att formatera som citat.
   values:
     'true': Ja
     'false': Nej

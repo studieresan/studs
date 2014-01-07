@@ -19,7 +19,7 @@ function drawCharts() {
 	for (var i = 0; i < charts.length; i++) {
 		var chart = charts[i];
 		var chartDiv = $('<div></div>').prop('id','chart-'+i).addClass('chart col-md-6');
-		$('#stats').append(chartDiv);
+		$('#charts').append(chartDiv);
 		var queryString = null;
 		if (chart.column != undefined)
 			queryString = "SELECT " + chart.column + ", COUNT(A) GROUP BY " + chart.column;
@@ -56,12 +56,13 @@ function handleQueryResponse(response, id, options) {
 	var opts = $.extend(true, //deep extension
 		{
 			title: data.yf[0].label,
-			titleTextStyle: {fontSize: 14},
+			titleTextStyle: {fontSize: 15, fontName: 'Avenir', color: '#333333'},
 			pieHole: 0.6, 
 			height: 300, 
 			pieSliceText: 'none', 
-			legend: {position: 'right', alignment: 'center', textStyle: {fontSize: 13}},
-			chartArea: {width: '90%', height: '55%'}
+			legend: {position: 'right', alignment: 'center', textStyle: 
+						{fontSize: 14, fontName: 'Avenir', color: '#333333'}},
+			chartArea: {width: '100%', height: '55%'}
 		}, options);//Add user supplied options
 	visualization = new google.visualization.PieChart(document.getElementById(id));
 	visualization.draw(data, opts);
