@@ -7,7 +7,9 @@
 //= require experiences
 //= require files
 //= require password_generator
-//= require upload
+//= require markdown
+//= require to-markdown
+//= require bootstrap-markdown
 
 $(function() {
   // Enable suggestions for all inputs with a suggestions data attribute

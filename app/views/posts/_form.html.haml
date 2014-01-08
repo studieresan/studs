@@ -1,3 +1,7 @@
+
+.hidden
+  = ext_form_for :file, url: files_path, method: :post, multipart: true, :html => { :class => [:file] } do |f|
+    = f.file_field :file
 = ext_form_for @post, :html => {:class => [:resume, 'form-horizontal'], :role => 'form'} do |f|
   - if @post.errors.any?
     #error_explanation
@@ -6,18 +10,11 @@
         - @post.errors.full_messages.each do |msg|
           %li= msg
 
-  = f.text_field_row :title
-  = f.text_area_row :content, rows: 10, hint: true
-  .row
-    .col-sm-8.col-sm-offset-4.col-xs-12
-      = f.check_box_label :published
-  .row
-    .col-sm-8.col-sm-offset-4.col-xs-12
-      = f.submit
-      - if can? :read, Post
-        = action_link :cancel, @post, :"btn btn-default"
+  = f.text_field :title, :placeholder => t('posts.index.title')
+  = f.text_area :content, rows: 20, hint: true, :data => {:provide => "markdown"}
 
-= ext_form_for :file, url: files_path, method: :post, multipart: true, :html => { :class => [:file] } do |f|
-  = f.file_field_row :file
-  .col-sm-8.col-sm-offset-4.col-xs-12
-    = f.submit t('actions.upload')
+  = f.submit
+  - if can? :read, Post
+    = action_link :cancel, @post, :"btn btn-default"
+
+  = f.check_box_label :published
