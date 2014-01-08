@@ -3,7 +3,7 @@ class TexResume
     ActionView::Helpers::TranslationHelper
 
   TEMPLATE_PATH = File.join(Rails.root, 'app', 'views', 'resumes', 'show.tex.erb')
-  STYLE_DIR     = File.join(Rails.root, 'app', 'views', 'resumes', 'moderncv')
+  STYLE_PATH     = File.join(Rails.root, 'app', 'views', 'resumes', 'friggeri-cv.cls')
   OUTPUT_DIR    = File.join(Rails.root, 'tmp', 'resumes')
 
   attr_reader :r, :url, :lang
@@ -51,7 +51,7 @@ class TexResume
     end
 
     Dir.mkdir(OUTPUT_DIR) unless File.directory?(OUTPUT_DIR)
-    FileUtils.cp_r(STYLE_DIR, OUTPUT_DIR)
+    FileUtils.cp_r(STYLE_PATH, OUTPUT_DIR)
 
     Dir.chdir OUTPUT_DIR do
       File.open(tex_path, 'w') do |file|
@@ -60,7 +60,7 @@ class TexResume
 
       File.unlink(pdf_path) if File.file?(pdf_path)
 
-      cmd = "pdflatex #{tex_path}"
+      cmd = "xelatex #{tex_path}"
       
       # Compile tex source twice (to sync AUX file and stuff)
       out = `#{cmd} && #{cmd}`
