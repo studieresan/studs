@@ -1,7 +1,7 @@
 - active_menu :events
 .container
   .row
-    .col-sm-8.col-sm-offset-2.col-xs-12
+    .col-md-8.col-md-offset-2
       %p#notice
         = notice
 
@@ -17,6 +17,18 @@
         = l(@event.end_date, format: :short)
       .event-description
         = markdown @event.description
+      - unless @event.charts.blank? && @event.quotes.blank?
+        %script{'type' => 'text/javascript'}
+          = @event.charts
+        
+        %h3= t '.stats'
+        #charts.row
+
+        #quotes
+          = markdown @event.quotes
+
+      = javascript_include_tag 'http://www.google.com/jsapi'
+      = javascript_include_tag 'charts'
 
       %p
         .btn-group

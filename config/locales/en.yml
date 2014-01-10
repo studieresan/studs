@@ -243,6 +243,10 @@ en:
       location: Location
       start_date: Start
       end_date: End
+    show: 
+      stats: Statistics from event survey
+    form: 
+      stats: Statistics from event survey
   attributes:
     defaults:
       created_at: Created
@@ -304,6 +308,8 @@ en:
       start_date: Start time
       end_date: End time
       description: Description
+      charts: Charts
+      quotes: Selected free text answers
   hints:
     resume:
       user_id: Owner of this resume
@@ -340,6 +346,14 @@ en:
       content: Use markdown to format the text
     event:
       description: Format with markdown
+      charts: > 
+        Place chart details in a javascript array called 'charts'.
+        URL and Column id is required, an options object with Google charts options
+        is optional. E.g. "var charts = [{url: 'url', column: 'B', options: {pieHole: 0}}]"
+      quotes: >
+        Write the text answers that should be shown in the event.
+        The text is formatted with markdown. Start a paragraph with '>'
+        to format as a quote.
   values:
     'true': Yes
     'false': No
