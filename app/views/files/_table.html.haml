@@ -1,5 +1,5 @@
 - files ||= @files
-%table.files
+%table.files.table
   - cols = %w(name size mtime).map(&:to_sym)
   %thead
     - cols.each do |col|
@@ -17,7 +17,11 @@
         %td.actions
           .right
             - if can? :update, :files
-              = action_link :replace, files_path(name: file.name), :icon
+              %a.btn.btn-primary{ :href => files_path(name: file.name) }
+                %i.fa.fa-edit
+                = t('actions.replace')
             - if can? :destroy, :files
-              = action_link :delete, delete_file_path(file), :icon
+              %a.btn.btn-primary{ :href => delete_file_path(file) }
+                %i.fa.fa-edit
+                = t('actions.delete')
 

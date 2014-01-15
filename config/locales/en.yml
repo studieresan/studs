@@ -20,6 +20,7 @@ en:
     events: events
     users: users
     posts: news posts
+    files: files
     profile: profile
     resume: resume
     introduction: introduction
