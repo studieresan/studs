@@ -9,22 +9,21 @@
             %th= t '.title'
             %th= t '.published'
             %th
-            %th
         %tbody
           - @posts.each do |post|
             %tr
               %td= link_to post.title, post
               %td= post.published? ? t('values.true') : t('values.false')
               %td
-                - if can? :edit, post
-                  %a.btn.btn-primary{ :href => url_for([:edit, post]) }
-                    %i.fa.fa-edit
-                    = t('actions.edit')
-              %td
-                - if can? :delete, post
-                  %a.btn.btn-primary{ :href => url_for([:delete, post]) }
-                    %i.fa.fa-trash-o
-                    = t('actions.delete')
+                .pull-right
+                  - if can? :edit, post
+                    %a.btn.btn-primary{ :href => url_for([:edit, post]) }
+                      %i.fa.fa-edit
+                      = t('actions.edit')
+                  - if can? :delete, post
+                    %a.btn.btn-primary{ :href => url_for([:delete, post]) }
+                      %i.fa.fa-trash-o
+                      = t('actions.delete')
       %br
         - if can? :create, Post
           %a.btn.btn-primary{ :href => url_for([:new, :post]) }
