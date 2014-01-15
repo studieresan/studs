@@ -86,7 +86,7 @@
                 buttonHandler = ns+'-'+button.name,
                 btnText = button.btnText ? button.btnText : '',
                 btnClass = button.btnClass ? button.btnClass : 'btn',
-                tabIndex = button.tabIndex ? button.tabIndex : '-1'
+                tabIndex = button.tabIndex ? button.tabIndex : '-1';
 
             if (button.toggle == true) {
               buttonToggle = ' data-toggle="button"'
@@ -95,7 +95,8 @@
             // Attach the button object
             btnGroupContainer.append('<button class="'
                                     +btnClass
-                                    +' btn-default btn-sm" title="'
+                                    +' btn-default btn-sm" type="'
+                                    +'" title="'
                                     +button.title
                                     +'" tabindex="'
                                     +tabIndex
@@ -678,7 +679,7 @@
         data: [{
           name: 'cmdBold',
           title: 'Bold',
-          icon: 'glyphicon glyphicon-bold',
+          icon: 'fa fa-bold',
           callback: function(e){
             // Give/remove ** surround the selection
             var chunk, cursor, selected = e.getSelection(), content = e.getContent()
@@ -707,7 +708,7 @@
         },{
           name: 'cmdItalic',
           title: 'Italic',
-          icon: 'glyphicon glyphicon-italic',
+          icon: 'fa fa-italic',
           callback: function(e){
             // Give/remove * surround the selection
             var chunk, cursor, selected = e.getSelection(), content = e.getContent()
@@ -736,7 +737,7 @@
         },{
           name: 'cmdHeading',
           title: 'Heading',
-          icon: 'glyphicon glyphicon-header',
+          icon: 'fa fa-text-height',
           callback: function(e){
             // Append/remove ### surround the selection
             var chunk, cursor, selected = e.getSelection(), content = e.getContent(), pointer, prevChar
@@ -772,7 +773,7 @@
         data: [{
           name: 'cmdUrl',
           title: 'URL/Link',
-          icon: 'glyphicon glyphicon-globe',
+          icon: 'fa fa-globe',
           callback: function(e){
             // Give [] surround the selection and prepend the link
             var chunk, cursor, selected = e.getSelection(), content = e.getContent(), link
@@ -796,41 +797,105 @@
             }
           }
         },{
-          name: 'cmdImage',
-          title: 'Image',
-          icon: 'glyphicon glyphicon-picture',
-          callback: function(e){
-            // Give ![] surround the selection and prepend the image link
-            var chunk, cursor, selected = e.getSelection(), content = e.getContent(), link
+            name: 'cmdImage',
+            title: 'Image',
+            icon: 'fa fa-picture-o',
+            callback: function(e){
+                // Give ![] surround the selection and prepend the image link
+                var chunk, cursor, selected = e.getSelection(), content = e.getContent(), link
 
-            if (selected.length == 0) {
-              // Give extra word
-              chunk = 'enter image description here'
-            } else {
-              chunk = selected.text
+                if (selected.length == 0) {
+                    // Give extra word
+                    chunk = 'enter image description here'
+                } else {
+                    chunk = selected.text
+                }
+
+                link = prompt('Insert Image Hyperlink','/uploads/')
+
+                if (link != null) {
+                    // transform selection and set the cursor into chunked text
+                    e.replaceSelection('!['+chunk+']('+link+' "enter image title here")')
+                    cursor = selected.start+2
+
+                    // Set the next tab
+                    e.setNextTab('enter image title here')
+
+                    // Set the cursor
+                    e.setSelection(cursor,cursor+chunk.length)
+                }
             }
+        },{
+            name: 'cmdImageUpload',
+            title: 'Image Upload',
+            icon: 'fa fa-upload',
+            callback: function(e) {
+                // Give ![] surround the selection and prepend the image link
+                var chunk, cursor, selected = e.getSelection(), content = e.getContent(), link
 
-            link = prompt('Insert Image Hyperlink','http://')
+                if (selected.length == 0) {
+                    // Give extra word
+                    chunk = 'enter image description here'
+                } else {
+                    chunk = selected.text
+                }
 
-            if (link != null) {
-              // transform selection and set the cursor into chunked text
-              e.replaceSelection('!['+chunk+']('+link+' "enter image title here")')
-              cursor = selected.start+2
+                var imgChooser = $('#file_file'), imgForm = $('form.file')
 
-              // Set the next tab
-              e.setNextTab('enter image title here')
+                imgForm.submit(function(imgFormEvent) {
+                    var formObj = $(this);
+                    var formURL = formObj.attr("action");
+                    var formData = new FormData(this);
 
-              // Set the cursor
-              e.setSelection(cursor,cursor+chunk.length)
+                    $.ajax({
+                        url: formURL,
+                        type: 'POST',
+                        data: formData,
+                        mimeType: "multipart/form-data",
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function(data, textStatus, jqXHR) {
+                            var loc = jqXHR.getResponseHeader('location');
+                            link = $("<a href='" + loc + "'>").prop("pathname");
+
+                            if (link != null) {
+                                // transform selection and set the cursor into chunked text
+                                e.replaceSelection('!['+chunk+']('+link+' "enter image title here")')
+                                cursor = selected.start+2
+
+                                // Set the next tab
+                                e.setNextTab('enter image title here')
+
+                                // Set the cursor
+                                e.setSelection(cursor,cursor+chunk.length)
+                            }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            // do something clever here
+                        }
+                    });
+
+                    imgFormEvent.preventDefault();
+                });
+
+                // When files selected, submit form
+                imgChooser.change(function(fileEvent) {
+                    imgForm.submit()
+                })
+
+
+                // Open file dialog
+                imgChooser.click()
+
             }
-          }
         }]
       },{
         name: 'groupMisc',
         data: [{
           name: 'cmdList',
           title: 'List',
-          icon: 'glyphicon glyphicon-list',
+          icon: 'fa fa-list-ul',
           callback: function(e){
             // Prepend/Give - surround the selection
             var chunk, cursor, selected = e.getSelection(), content = e.getContent()
@@ -883,7 +948,7 @@
           title: 'Preview',
           btnText: 'Preview',
           btnClass: 'btn btn-primary btn-sm',
-          icon: 'glyphicon glyphicon-search',
+          icon: 'fa fa-refresh',
           callback: function(e){
             // Check the preview mode and toggle based on this flag
             var isPreview = e.$isPreview,content
