@@ -1,3 +1,12 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 <%
   experiences = @r.experiences_by_kind
   username = nil
@@ -5,84 +14,151 @@
     user = User.find(@r.user_id)
     username = user.login
   end
-  split_name = @r.name.split(" ", 2)
-  first_name = split_name[0]
-  family_name = split_name[1]
 %>
 
-\documentclass[]{friggeri-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+              
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+  \textheight=525pt                    % Saving trees ;-)
+\usepackage{url}
 
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%                  % Change font of \section command
+  \usefont{OT1}{phv}{b}{n}%   % bch-b-n: CharterBT-Bold font
+  \sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}      % Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}   % Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+    \Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+    \par \normalsize \normalfont}
+    
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+    \large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+    \par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{        % Box to align text
+    \textit{#1}}           % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{        % Box to align text
+    \textit{#1}}         % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}    % Entry value  
+    
+\newcommand{\EducationEntry}[4]{
+    \noindent \textbf{#1} \hfill      % Study
+    \colorbox{Black}{%
+      \parbox{6em}{%
+      \hfill\color{White}#2}} \par  % Duration
+    \noindent \textit{#3} \par        % School
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\WorkEntry}[4]{         % Same as \EducationEntry
+    \noindent \textbf{#1} \hfill      % Jobname
+    \colorbox{Black}{\color{White}#2} \par  % Duration
+    \noindent \textit{#3} \par              % Company
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
 \begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+% \vspace*{-2em}
+%   \includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
 
-\header{<%=htex first_name %>}{<%=htex family_name %>}{student} % Your name and current job title/field
+\MyName{<%=htex @r.name %>}
 
-%----------------------------------------------------------------------------------------
-%	SIDEBAR SECTION
-%----------------------------------------------------------------------------------------
+\sepspace
 
-\begin{aside} % In the aside, each new line forces a line break
-\section{contact}
-<%=htex @r.street %>
-<%=htex @r.postcode %>, <%=htex @r.city %>
-~
-<%=htex @r.phone %>
-~
-\href{mailto:<%=htex @r.email %>}{<%=htex @r.email %>}<% if r.linkedin_url.present? %>
-\href{<%= @r.full_linkedin_url %>}{linkedin://<%= r.linkedin_url %>} <% end %>
-<% if @r.skills.count > 0 %>\section{skills}
-<%=htex @r.skills.to_sentence %> <% end %>
-\end{aside}
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
-
-<% if experiences["education"].is_a?(Array) && experiences["education"].count > 0 %>
-\section{education}
-
-\begin{entrylist}
-  <% experiences["education"].each do |exp| %>
-\entry
-{<%=htex "#{exp.start_date.strftime('%Y')}--#{exp.end_date ? exp.end_date.strftime('%Y') : 'present'}"%>}
-{<%=htex exp.title%>}
-{<%=htex exp.organization %>, <%=htex exp.location %>}
-{<%= exp.description.present? ? htex(exp.description) : '' %>}
-  <% end %>
-\end{entrylist}
+\PersonalEntry{Address}{<%=htex @r.street %> <%=htex @r.postcode %>, <%=htex @r.city %>}
+\PersonalEntry{Phone}{<%=htex @r.phone %>}
+\PersonalEntry{Mail}{\url{<%=htex @r.email %>}}
+<% if r.linkedin_url.present? %>
+\PersonalEntry{LinkedIn}{\url{<%=htex @r.full_linkedin_url %>}}
 <% end %>
 
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
-
-<% if experiences["work"].is_a?(Array) && experiences["work"].count > 0 %>
-\section{experience}
-
-\begin{entrylist}
-  <% experiences["work"].each do |job| %>
-\entry
-{<%=htex "#{job.start_date.strftime('%Y')}--#{job.end_date ? job.end_date.strftime('%Y') : 'present'}"%>}
-{<%=htex job.organization %>}
-{<%=htex job.location %>}
-{<%=htex job.title %> \\
-<%= job.description.present? ? htex(job.description) : '' %>}
+%%% Education
+%%% ------------------------------------------------------------
+<% if experiences["education"].is_a?(Array) && experiences["education"].count > 0 %>
+\NewPart{Education}{}
+  <% experiences["education"].each do |exp| %>
+\EducationEntry
+{<%=htex exp.title%>}
+{<%=htex "#{exp.start_date.strftime('%Y')}--#{exp.end_date ? exp.end_date.strftime('%Y') : 'present'}"%>}
+{<%=htex exp.organization %>, <%=htex exp.location %>}
+{<%= exp.description.present? ? htex(exp.description) : '' %>}
+\sepspace
   <% end %>
-\end{entrylist}
+<% end %>
+
+%%% Work experience
+%%% ------------------------------------------------------------
+<% if experiences["work"].is_a?(Array) && experiences["work"].count > 0 %>
+\NewPart{Work experience}{}
+
+  <% experiences["work"].each do |job| %>
+\EducationEntry
+{<%=htex job.title %>}
+{<%=htex "#{job.start_date.strftime('%Y')}--#{job.end_date ? job.end_date.strftime('%Y') : 'present'}"%>}
+{<%=htex job.organization %>, <%=htex job.location %>}
+{<%= job.description.present? ? htex(job.description) : '' %>}
+\sepspace
+  <% end %>
 <% end %>
 
 <% if experiences["extracurricular"].is_a?(Array) && experiences["extracurricular"].count > 0 %>
-\section{extracurricular}
+\NewPart{Extracurricular}{}
 
-\begin{entrylist}
   <% experiences["extracurricular"].each do |job| %>
-\entry
+\EducationEntry
+{<%=htex job.title %>}
 {<%=htex "#{job.start_date.strftime('%Y')}--#{job.end_date ? job.end_date.strftime('%Y') : 'present'}"%>}
-{<%=htex job.organization %>}
-{<%=htex job.location %>}
-{<%=htex job.title %> \\
-<%= job.description.present? ? htex(job.description) : '' %>}
+{<%=htex job.organization %>, <%=htex job.location %>}
+{<%= job.description.present? ? htex(job.description) : '' %>}
+\sepspace
   <% end %>
-\end{entrylist}
 <% end %>
 
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+<%=htex @r.skills.to_sentence %>
+
+
+%%% References
+%%% ------------------------------------------------------------
+\NewPart{References}{}
+Available upon request
 \end{document}
