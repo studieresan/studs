@@ -811,15 +811,12 @@
                     chunk = selected.text
                 }
 
-                link = prompt('Insert Image Hyperlink','/uploads/')
+                link = prompt('Insert image hyperlink','/uploads/')
 
                 if (link != null) {
                     // transform selection and set the cursor into chunked text
-                    e.replaceSelection('!['+chunk+']('+link+' "enter image title here")')
+                    e.replaceSelection('!['+chunk+']('+link+')')
                     cursor = selected.start+2
-
-                    // Set the next tab
-                    e.setNextTab('enter image title here')
 
                     // Set the cursor
                     e.setSelection(cursor,cursor+chunk.length)
@@ -842,7 +839,7 @@
 
                 var imgChooser = $('#file_file'), imgForm = $('form.file')
 
-                imgForm.submit(function(imgFormEvent) {
+                imgForm.one("submit", function(imgFormEvent) {
                     var formObj = $(this);
                     var formURL = formObj.attr("action");
                     var formData = new FormData(this);
@@ -860,34 +857,24 @@
                             link = $("<a href='" + loc + "'>").prop("pathname");
 
                             if (link != null) {
-                                // transform selection and set the cursor into chunked text
-                                e.replaceSelection('!['+chunk+']('+link+' "enter image title here")')
+                                e.replaceSelection('!['+chunk+']('+link+')')
                                 cursor = selected.start+2
-
-                                // Set the next tab
-                                e.setNextTab('enter image title here')
 
                                 // Set the cursor
                                 e.setSelection(cursor,cursor+chunk.length)
                             }
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            // do something clever here
                         }
                     });
 
                     imgFormEvent.preventDefault();
                 });
-
                 // When files selected, submit form
-                imgChooser.change(function(fileEvent) {
+                imgChooser.one("change", function(fileEvent) {
                     imgForm.submit()
                 })
 
-
                 // Open file dialog
                 imgChooser.click()
-
             }
         }]
       },{
