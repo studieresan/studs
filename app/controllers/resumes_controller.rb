@@ -31,7 +31,7 @@ class ResumesController < ApplicationController
               tex = TexResume.new(resume, I18n.locale)
               path = tex.save
 
-              if path.present?
+              if path[0].present?
                 zipfile.add("#{tex.base_name}.pdf", path[0])
               end
             end
