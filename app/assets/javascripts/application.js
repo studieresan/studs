@@ -10,6 +10,7 @@
 //= require markdown
 //= require to-markdown
 //= require bootstrap-markdown
+//= require charts
 
 $(function() {
   // Enable suggestions for all inputs with a suggestions data attribute
