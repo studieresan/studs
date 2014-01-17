@@ -2,15 +2,19 @@
 .container
   .row
     .col-md-8.col-md-offset-2
+
       - if can? :create, :files
         %h1= t '.upload'
-
         = ext_form_for :file, url: files_path, method: :post, multipart: true do |f|
           %fieldset
             = f.file_field_row :file
             = f.text_field_row :name, value: params[:name], suggest: @files.map(&:name).sort
           %fieldset
             = f.submit t('actions.upload')
+        - if flash[:notice]
+          %h3= flash[:notice]
+        - if flash[:alert]
+          %h3= flash[:alert]
       %br
       %h1= t '.title'
       = render partial: 'table'
