@@ -31,7 +31,9 @@ class ResumesController < ApplicationController
               tex = TexResume.new(resume, I18n.locale)
               path = tex.save
 
-              zipfile.add("#{tex.base_name}.pdf", path[0])
+              if path.present?
+                zipfile.add("#{tex.base_name}.pdf", path[0])
+              end
             end
           end
         end
@@ -58,7 +60,7 @@ class ResumesController < ApplicationController
         path = tex.save params.include?(:force)
         if path[0]
           send_file path[0], filename: "#{tex.base_name}.pdf",
-            type: 'application/pdf', disposition: 'inline'
+          type: 'application/pdf', disposition: 'inline'
         else
           render text: path[1], status: 403, layout: false, content_type: Mime::TEXT
         end
