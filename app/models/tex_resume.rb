@@ -74,7 +74,7 @@ class TexResume
   # Escapes special TeX character sequences in a string.
   def htex(str)
     return str unless str.kind_of? String
-    str.blank? ? '' : str.gsub(/\&/, '\\\\&').gsub(/%/, '\\\\%').gsub(/\$/, '\\\\$')
+    str.blank? ? '' : str.gsub(/\&/, '\\\\&').gsub(/%/, '\\\\%').gsub(/\$/, '\\\\$').gsub(/\#/, '\\\\#')
   end
 end
 
