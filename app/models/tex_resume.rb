@@ -45,7 +45,7 @@ class TexResume
     tex_path = File.join(OUTPUT_DIR, "#{base_name}.tex")
     out = 'error'
 
-    if !force_render && File.size?(pdf_path) && File.mtime(pdf_path) > @r.updated_at
+    if !force_render && File.size?(pdf_path) && File.mtime(pdf_path) > @r.edited_at
       return pdf_path, 'cached'
     end
 

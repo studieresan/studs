@@ -23,6 +23,11 @@ class Resume < ActiveRecord::Base
     self.tag_counts_on(:skills).order("count DESC").map(&:name)
   end
 
+  def edited_at
+    last_edited_experience = experiences.map { |e| e.updated_at }.max
+    [self.updated_at, last_edited_experience].max
+  end
+
   def experiences_by_kind
     experiences.to_a.group_by(&:kind)
   end
