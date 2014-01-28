@@ -18,7 +18,8 @@
                 .wrap= text_field_tag :s, @filter.s, :'data-suggestions' => Resume.existing_skills.to_json
             .input.actions.btn-group
               = submit_tag t('actions.filter'), name: nil, :class => :"btn btn-default commit"
-              = action_link :reset, resumes_path, :"btn btn-default"
+              - unless @filter.filters?
+                = action_link :reset, resumes_path, :"btn btn-default"
               - if can? :manage, Resume
                 - if current_user.resume == nil
                   %a.btn.btn-primary.pull-right.margin-right{ :href => url_for([:new, :resume]) }

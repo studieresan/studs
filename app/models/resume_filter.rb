@@ -16,6 +16,10 @@ class ResumeFilter
     end
   end
 
+  def filters?
+    return name.nil? && skill_list.nil?
+  end
+
   def skills
     return [] unless skill_list.present?
     ActsAsTaggableOn::TagList.from(skill_list).to_a[0..MAX_SKILLS_FILTERED]
