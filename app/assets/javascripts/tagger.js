@@ -32,6 +32,9 @@
     _init: function() { //{{{
       var self = this;
 
+      this._previousValue = null;    // previous input value
+      this._isSuggestion = false;
+
       this.input.addClass(this.o.tagClass)
         .wrap($('<div />').addClass(this.o.containerClass).addClass('form-control'));
       this.container = this.input.parent();
@@ -69,6 +72,8 @@
             // Always prevent separator from being inserted
             event.preventDefault();
           case KEY.TAB:
+            event.preventDefault();
+            return;
           case KEY.ENTER:
             if (value.length > 0) {
               self.addTag(value);
@@ -92,8 +97,10 @@
       }).bind('keypress focus blur change', function() {
         self._autosize();
       }).bind('suggester-accepted', function() {
+        self._isSuggestion = true;
         self.addTag(self.input.val());
         self.input.val('');
+        self._isSuggestion = false;
       });
     }, //}}}
 
@@ -112,6 +119,10 @@
     }, //}}}
 
     addTag: function(name) { //{{{
+      if(this._previousValue != null && this._isSuggestion) {
+        this.removeTag(this._previousValue);
+      }
+
       if (this.hasTag(name)) {
         this.highlightTag(name);
         return false;
@@ -130,6 +141,7 @@
       if (this.o.allowDragging)
         this._enableDragging($elem);
       this._syncInput();
+      this._previousValue = name;
       return true;
     }, //}}}
 
