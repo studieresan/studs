@@ -14,12 +14,12 @@ en:
   navigation:
     about: about
     contact: contact
-    newsfeed: news
+    newsfeed: blog
     login: login
     resumes: resumes
     events: events
     users: users
-    posts: news posts
+    posts: blog posts
     files: files
     profile: profile
     resume: resume
