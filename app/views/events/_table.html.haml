@@ -12,10 +12,12 @@
         %th= t 'events.table.end_date'
     %tbody
       - events.each do |event|
-        - if can? :read, event
-          %tr
+        %tr{ :class => ('my-event' if organization? && event.users.include?(current_user))}
+          - if can? :read, event
             %td= link_to event.title, event
-            %td= event.users.map {|user| user.to_s}.to_sentence
-            %td= event.location
-            %td= l event.start_date, format: :short
-            %td= l event.end_date, format: :short
+          - else
+            %td= event.title
+          %td= event.users.map {|user| user.to_s}.to_sentence
+          %td= event.location
+          %td= l event.start_date, format: :short
+          %td= l event.end_date, format: :short
