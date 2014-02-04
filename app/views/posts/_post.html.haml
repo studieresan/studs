@@ -1,4 +1,7 @@
-.published= l(post.created_at, :format=>:ymd)
-%h1= post.title
+
+%p
+  .pull-right.published= l(post.created_at, :format=>:ymd)
+  .fb-like{:data => {:href => request.protocol + request.host + url_for(post), :layout => "standard", :action => "like", :share => "false", :'show-faces' => "false"}}
+%h1.clear= link_to post.title, post
 .post-content
   = markdown post.content

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   respond_to :html
   before_filter :set_post, only: [:show, :edit, :update, :delete, :destroy]
-  load_and_authorize_resource except: :feed
+  load_and_authorize_resource except: [:feed, :show]
 
   def feed
     @posts = Post.where(published: true).order("created_at DESC")
