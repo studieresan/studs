@@ -22,6 +22,9 @@
 
 .the-team
 
+.instagram
+  = render partial: 'external_posts', locals: { provider: :instagram, limit: 6 }
+
 %a{ :name => "contact" }
 .container.contact
   .row
