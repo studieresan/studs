@@ -14,12 +14,12 @@ sv:
   navigation:
     about: om studs
     contact: kontakt
-    newsfeed: nyheter
+    newsfeed: blogg
     resumes: cv-databas
     events: event
     login: logga in
     users: användare
-    posts: nyhetsinlägg
+    posts: blogginlägg
     files: filer
     profile: profil
     resume: cv

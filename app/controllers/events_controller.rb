@@ -1,18 +1,12 @@
 class EventsController < ApplicationController
   respond_to :html
   before_filter :set_event, only: [:show, :edit, :update, :destroy, :delete]
-  load_and_authorize_resource
+  load_and_authorize_resource except: :index
 
   def index
     @events = Event.all
     @past_events = Event.where("end_date <= ?", Time.zone.now).order("start_date DESC")
     @upcoming_events = Event.where("end_date > ?", Time.zone.now).order("start_date ASC")
-    if logged_in? && current_user.organization?
-      @my_events = current_user.events
-      if current_user.has_one_event?
-        redirect_to @my_events.first and return
-      end
-    end
     respond_with(@events)
   end
 

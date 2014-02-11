@@ -1,5 +1,7 @@
-google.load('visualization', '1', {'packages':['corechart']});
-google.setOnLoadCallback(drawCharts);
+if (typeof google !== 'undefined') {
+	google.load('visualization', '1', {'packages':['corechart']});
+	google.setOnLoadCallback(drawCharts);
+}
 
 /**
 Draws all charts specified in the charts array

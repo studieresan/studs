@@ -2,14 +2,10 @@
 .container
   .row
     .col-md-8.col-md-offset-2
-      - if student?
-        %h2= t '.upcoming_events'
-        = render partial: 'table', locals: {events: @upcoming_events}
-        %h2= t '.past_events'
-        = render partial: 'table', locals: {events: @past_events}
-      - if organization?
-        %h2= t '.events_with', name: current_user.name
-        = render partial: 'table', locals: {events: @my_events}
+      %h2= t '.upcoming_events'
+      = render partial: 'table', locals: {events: @upcoming_events}
+      %h2= t '.past_events'
+      = render partial: 'table', locals: {events: @past_events}
       %br
       - if can? :create, Event
         %a.btn.btn-primary{ :href => url_for([:new, :event]) }
