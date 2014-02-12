@@ -1,5 +1,5 @@
 set :application, 'studs'
-set :repository, 'https://mbark@github.com/mogelbrod/studs'
+set :repository, 'https://mogelbro@github.com/mogelbrod/studs'
 set :scm, :git
 
 set :branch, fetch(:branch, 'master')
@@ -10,7 +10,7 @@ role :web, webfactional_domain, :alias => 'webfactional'
 role :db,  webfactional_domain, :alias => 'webfactional', :primary => true
 
 set :user, "studs"
-set :scm_username, "mogelbrod"
+set :scm_username, "mbark"
 set :use_sudo, false
 default_run_options[:pty] = true
 
@@ -28,6 +28,7 @@ namespace :deploy do
     run "#{deploy_to}/bin/restart"
   end
 end
+
 
 # If you are using Passenger mod_rails uncomment this:
 # namespace :deploy do
