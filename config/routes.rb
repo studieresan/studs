@@ -1,9 +1,8 @@
 Studs::Application.routes.draw do
 
-
-
   scope '/(:locale)', locale: /en|sv/ do
-    
+    resources :post_images
+
     resources :posts do
       get 'delete', on: :member
     end

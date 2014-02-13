@@ -837,7 +837,7 @@
                     chunk = selected.text
                 }
 
-                var imgChooser = $('#file_file'), imgForm = $('form.file')
+                var imgChooser = $('#post_image_image'), imgForm = $('form.post_image')
 
                 imgForm.one("submit", function(imgFormEvent) {
                     var formObj = $(this);

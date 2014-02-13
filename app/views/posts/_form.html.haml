@@ -1,7 +1,7 @@
 
 .hidden
-  = ext_form_for :file, url: files_path, method: :post, multipart: true, :html => { :class => [:file] } do |f|
-    = f.file_field :file
+  = ext_form_for :post_image, url: post_images_path, method: :post, multipart: true, :html => { :class => [:post_image] } do |f|
+    = f.file_field :image
 = ext_form_for @post, :html => {:class => [:resume, 'form-horizontal'], :role => 'form'} do |f|
   - if @post.errors.any?
     #error_explanation

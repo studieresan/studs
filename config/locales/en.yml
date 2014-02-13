@@ -20,6 +20,7 @@ en:
     events: events
     users: users
     posts: blog posts
+    post_images: blog images
     files: files
     profile: profile
     resume: resume
@@ -292,6 +293,8 @@ en:
       size: Size
       mtime: Modified
       file: File
+    post_image:
+      image: Image
     contact_form:
       name: Name
       company: Company
