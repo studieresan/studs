@@ -16,7 +16,7 @@ module Studs
     config.autoload_paths << "#{config.root}/app/libs"
 
     config.assets.initialize_on_precompile = false
-    #config.assets.enabled = true
+    config.assets.enabled = true
     config.assets.version = '1.0'
     config.assets.precompile += %w(application.js application.css global.js)
 
