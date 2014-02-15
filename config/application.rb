@@ -23,7 +23,6 @@ module Studs
     config.generators do |g|
       g.template_engine :haml
       g.helper          false
-      g.test_framework  :mini_test, spec: false, fixture: false
       g.view_specs      false
       g.helper_specs    false
       g.assets          false
