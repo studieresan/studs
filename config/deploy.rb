@@ -2,7 +2,7 @@ set :application, 'studs'
 set :repository, 'https://mogelbro@github.com/mogelbrod/studs'
 set :scm, :git
 
-set :branch, fetch(:branch, 'master')
+set :branch, fetch(:branch, 'webfaction-deploy')
 
 webfactional_domain = 'studs.webfactional.com'
 role :app, webfactional_domain, :alias => 'webfactional'
