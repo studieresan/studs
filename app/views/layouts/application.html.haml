@@ -49,6 +49,8 @@
                             = link_to t('navigation.introduction'), intro_users_path, :class => (:intro == active_menu ? :active : nil)
                           - if can? :manage, Post
                             = link_to t('navigation.posts'), posts_path, :class => (:posts == active_menu ? :active : nil)
+                          - if can? :manage, PostImage
+                            = link_to t('navigation.post_images'), post_images_path, :class => (:post_images == active_menu ? :active : nil)
                           - if can? :manage, File
                             = link_to t('navigation.files'), files_path, :class => (:files == active_menu ? :active : nil)
                           -if can? :index, User

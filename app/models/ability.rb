@@ -26,6 +26,7 @@ class Ability
       can [:index, :create], User
       can [:update, :delete, :destroy], User, role: 'organization'
       can :manage, Post
+      can :manage, PostImage
       can :manage, Event
     end
 

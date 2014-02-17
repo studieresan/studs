@@ -20,6 +20,7 @@ sv:
     login: logga in
     users: användare
     posts: blogginlägg
+    post_images: bloggbilder
     files: filer
     profile: profil
     resume: cv
@@ -203,6 +204,12 @@ sv:
       cannot_replace: >
         Det finns redan en fil med samma namn, och du har inte rättighet att
         ersätta den. Ange ett unikt filnamn för att ladda upp filen.
+  post_images:
+    index:
+      upload: Ladda upp
+      images: Bilder
+    show:
+      image: Bild
   contact_form:
     create:
       thanks: >
@@ -278,6 +285,8 @@ sv:
       size: Storlek
       mtime: Modifierad
       file: Fil
+    post_image:
+      image: Bildfil
     contact_form:
       name: Namn
       company: Företag
