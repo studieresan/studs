@@ -8,7 +8,6 @@ set :stages, %w(production)
 set :default_stage, 'production'
 require 'capistrano/ext/multistage'
 
-
 webfactional_domain = 'studs.webfactional.com'
 role :app, webfactional_domain, :alias => 'webfactional'
 role :web, webfactional_domain, :alias => 'webfactional'
@@ -24,19 +23,16 @@ default_environment['RAILS_ENV'] = 'production'
 
 set :deploy_to, "/home/studs/webapps/rails"
 
-set :bundle_cmd, "/home/studs/webapps/rails/bin/bundle"
-require 'bundler/capistrano'
+set :default_environment, {
+  'PATH' => "#{deploy_to}/bin:$PATH",
+  'GEM_HOME' => "#{deploy_to}/gems" 
+}
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
-
-set :default_environment, {
-  'PATH' => "#{deploy_to}/bin:$PATH",
-  'GEM_HOME' => "#{deploy_to}/gems" 
-}
 
 namespace :deploy do
 	desc "Restart nginx"
