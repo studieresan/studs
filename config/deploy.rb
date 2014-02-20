@@ -24,8 +24,8 @@ default_environment['RAILS_ENV'] = 'production'
 set :deploy_to, "/home/studs/webapps/rails"
 
 set :default_environment, {
-  'PATH' => "#{deploy_to}/bin:$PATH",
-  'GEM_HOME' => "#{deploy_to}/gems" 
+	'PATH' => "#{deploy_to}/bin:$PATH",
+	'GEM_HOME' => "#{deploy_to}/gems"
 }
 
 # if you want to clean up old releases on each deploy uncomment this:
@@ -38,6 +38,21 @@ namespace :deploy do
 	desc "Restart nginx"
 	task :restart do
 		run "/home/studs/webapps/rails/bin/restart"
+	end
+
+	desc "Run database migrations"
+	task :migrate, :except => {:no_release => true} do
+		run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake db:migrate"
+	end
+
+	desc "Reset database"
+	task :reset do
+		run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake db:reset"
+	end
+
+	desc "Clear cached objects"
+	task :clear_cache do
+		run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake resumes:clean"
 	end
 end
 
