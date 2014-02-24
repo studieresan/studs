@@ -23,6 +23,12 @@ default_environment['RAILS_ENV'] = 'production'
 
 set :deploy_to, "/home/studs/webapps/rails"
 
+# Additional shared paths
+set :shared_children, shared_children + %w(public/uploads)
+set :shared_files, %w(config/database.yml)
+set(:shared_file_path) { shared_path }
+require 'capistrano/shared_file'
+
 set :default_environment, {
 	'PATH' => "#{deploy_to}/bin:$PATH",
 	'GEM_HOME' => "#{deploy_to}/gems"
@@ -30,9 +36,6 @@ set :default_environment, {
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
-
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
 
 namespace :deploy do
 	desc "Restart nginx"
