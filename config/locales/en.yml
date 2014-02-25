@@ -20,6 +20,7 @@ en:
     events: events
     users: users
     posts: blog posts
+    post_images: blog images
     files: files
     profile: profile
     resume: resume
@@ -232,6 +233,12 @@ en:
       heading: Listing all posts
       title: Title
       published: Published
+    feed:
+      heading: Studs blog
+      readmore: Read more
+      info-heading: Behind the blog
+      info-text: During the workkk
+      info-responsible: Mattis Kancans Envall - Blog responsible
   events:
     index:
       upcoming_events: Upcoming events
@@ -292,6 +299,8 @@ en:
       size: Size
       mtime: Modified
       file: File
+    post_image:
+      image: Image
     contact_form:
       name: Name
       company: Company

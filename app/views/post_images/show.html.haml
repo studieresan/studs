@@ -1,0 +1,12 @@
+- active_menu :post_images
+.container
+  .row
+    .col-md-8.col-md-offset-2
+      %h3= t('.url')
+      %p= @post_image.image
+      %hr
+      %h3= t('.image')
+      = image_tag @post_image.image
+      %hr
+      = button_to t('actions.delete'), @post_image, method: :delete, :class => :"destroy btn btn-danger pull-left margin-right"
+      = action_link :cancel, post_images_path, :"btn btn-default"
