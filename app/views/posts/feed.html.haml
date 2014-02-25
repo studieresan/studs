@@ -13,13 +13,6 @@
           %a.read-more{ :href => '#' + post.id.to_s }
             =t('.readmore')
             %i.fa.fa-arrow-circle-o-down.pull-right
-          - if can? :manage, Post
-            .btn-group
-              %a.btn.btn-primary{ :href => url_for(post) }
-                = t('actions.show')
-              %a.btn.btn-primary{ :href => url_for([:edit, post]) }
-                %i.fa.fa-edit
-                = t('actions.edit')
     .col-md-3
       %h1=t('.info-heading')
       %p=t('.info-text')
