@@ -6,10 +6,6 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  unless Rails.env.production?
-    SetEnv GEM_HOME "/usr/lib/ruby/gems/1.8"
-  end
-
   rescue_from CanCan::AccessDenied do |exception|
     if logged_in?
       redirect_to index_url, :alert => t('flash.unauthorized_html')
