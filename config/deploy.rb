@@ -38,6 +38,13 @@ set :default_environment, {
 # after "deploy:restart", "deploy:cleanup"
 
 namespace :deploy do
+	desc "Deploy"
+	task :default do
+		update
+		restart
+		clear_cache
+	end
+	
 	desc "Restart nginx"
 	task :restart do
 		run "/home/studs/webapps/rails/bin/restart"
