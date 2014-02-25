@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   unless Rails.env.production?
-    SetEnv GEM_HOME /usr/lib/ruby/gems/1.8
+    SetEnv GEM_HOME "/usr/lib/ruby/gems/1.8"
   end
 
   rescue_from CanCan::AccessDenied do |exception|
