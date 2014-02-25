@@ -8,7 +8,6 @@
           %i.fa.fa-circle.fa-stack-2x
           %i.fa.fa-chevron-down.fa-stack-1x.fa-inverse
 
-
 .container.news
   .row
     .blog.col-sm-7.col-md-6.col-md-offset-1.col-lg-5.col-lg-offset-2
@@ -16,4 +15,4 @@
       = render :partial => 'posts/front_page', :collection => @posts, :as => :post
     .instagram.col-sm-5.col-md-4.col-lg-3
       %h2 Instagramfeed
-
+      = render partial: 'external_posts', locals: { provider: :instagram, limit: 6 }

@@ -24,4 +24,10 @@ module FeedHelper
     
     return msg
   end
+
+  def instagram_to_html(entry)
+    img = '<img src="' + entry.url + '" title="' + entry.title + '"/>'
+
+    return img;
+  end
 end
