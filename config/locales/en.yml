@@ -233,6 +233,12 @@ en:
       heading: Listing all posts
       title: Title
       published: Published
+    feed:
+      heading: Studs blog
+      readmore: Read more
+      info-heading: Behind the blog
+      info-text: During the workkk
+      info-responsible: Mattis Kancans Envall - Blog responsible
   events:
     index:
       upcoming_events: Upcoming events

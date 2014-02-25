@@ -225,6 +225,12 @@ sv:
       heading: Listar alla inlägg
       title: Titel
       published: Publicerad
+    feed:
+      heading: Studsbloggen
+      readmore: Läs mer
+      info-heading: Vi bakom bloggen
+      info-text: Under arbetets gång med studs kommer vi att dokumentera allt som händer, både med text och bilder. Följ med oss på resan här!
+      info-responsible: Mattis Kancans Envall - Bloggansvarig
   events:
     index:
       upcoming_events: Kommande event
