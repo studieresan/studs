@@ -3,6 +3,7 @@ class TexResume
     ActionView::Helpers::TranslationHelper
 
   TEMPLATE_PATH = File.join(Rails.root, 'app', 'views', 'resumes', 'show.tex.erb')
+  STYLE_DIR     = File.join(Rails.root, 'app', 'views', 'resumes', 'moderncv')
   OUTPUT_DIR    = File.join(Rails.root, 'tmp', 'resumes')
 
   attr_reader :r, :url, :lang
@@ -50,6 +51,7 @@ class TexResume
     end
 
     Dir.mkdir(OUTPUT_DIR) unless File.directory?(OUTPUT_DIR)
+    FileUtils.cp_r(STYLE_DIR, OUTPUT_DIR)
 
     Dir.chdir OUTPUT_DIR do
       File.open(tex_path, 'w') do |file|
