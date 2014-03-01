@@ -34,8 +34,8 @@
 \name{<%=htex @r.name %>}{}
 \address{<%=htex @r.street %>}{<%=htex @r.postcode %> <%=htex @r.city %>}{Sweden}\phone[mobile]{<%=htex @r.phone %>}
 \email{<%=htex @r.email %>}
-<% if username.present? %> 
-  <% file = File.join(Rails.public_path, 'uploads', "#{username}.jpg") %>
+<% if username.present? %>
+  <% file = File.join(Rails.public_path, 'profile_pictures', "#{username}.jpg") %>
   <% if File.exist?(file) %>
     \photo[64pt][0.0pt]{<%=htex file%>}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
   <% end %>
