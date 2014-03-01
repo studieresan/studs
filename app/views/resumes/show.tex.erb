@@ -71,9 +71,7 @@
 
 <% if @r.skills.count > 0 %>
   \section{Skills}
-  <% @r.skills.each do |skill| %>
-  \cvlistitem{<%=htex skill.name %>}
-  <% end %>
+  \cvlistitem{<%=htex @r.skills.to_sentence %>}
 <% end %>
 
 \end{document}
