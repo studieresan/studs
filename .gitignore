@@ -10,4 +10,5 @@
 /public/uploads/*
 /public/uploads/**/*
 /public/assets/
+/public/profile_pictures/*
 .DS_Store
