@@ -60,7 +60,7 @@ class TexResume
 
       File.unlink(pdf_path) if File.file?(pdf_path)
 
-      cmd = "pdflatex #{tex_path}"
+      cmd = "pdflatex --halt-on-error #{tex_path}"
       
       # Compile tex source twice (to sync AUX file and stuff)
       out = `#{cmd} && #{cmd}`
