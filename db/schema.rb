@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140107163106) do
+ActiveRecord::Schema.define(:version => 20140213170912) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -60,6 +60,12 @@ ActiveRecord::Schema.define(:version => 20140107163106) do
   add_index "external_posts", ["guid"], :name => "index_external_posts_on_guid", :unique => true
   add_index "external_posts", ["provider"], :name => "index_external_posts_on_provider"
   add_index "external_posts", ["pubdate"], :name => "index_external_posts_on_pubdate"
+
+  create_table "post_images", :force => true do |t|
+    t.string   "image"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "title"
