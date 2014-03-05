@@ -6,10 +6,8 @@
     %thead
       %tr
         %th= t 'events.table.title'
-        %th= t 'events.table.organizations'
         %th= t 'events.table.location'
         %th= t 'events.table.start_date'
-        %th= t 'events.table.end_date'
     %tbody
       - events.each do |event|
         %tr{ :class => ('my-event' if organization? && event.users.include?(current_user))}
@@ -17,7 +15,5 @@
             %td= link_to event.title, event
           - else
             %td= event.title
-          %td= event.users.map {|user| user.to_s}.to_sentence
           %td= event.location
           %td= l event.start_date, format: :short
-          %td= l event.end_date, format: :short

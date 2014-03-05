@@ -233,10 +233,8 @@ sv:
     table:
       no_events: Inga event
       title: Event
-      organizations: Företag
       location: Plats
-      start_date: Start
-      end_date: Slut
+      start_date: Tid
     show: 
       stats: Statistik från eventenkät
     form:

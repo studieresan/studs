@@ -241,10 +241,8 @@ en:
     table:
       no_events: No events
       title: Event
-      organizations: Company
       location: Location
-      start_date: Start
-      end_date: End
+      start_date: Time
     show: 
       stats: Statistics from event survey
     form: 
