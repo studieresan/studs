@@ -26,8 +26,9 @@ module FeedHelper
   end
 
   def instagram_to_html(entry)
-    img = '<img src="' + entry.url + '" title="' + entry.title + '"/>'
+    img_tag = image_tag(entry.url, alt: entry.title, title: entry.title)
+    link = link_to(img_tag, entry.url, class: 'thumbnail', data: {lightbox: 'instagram'}, title: entry.title, rel: 'nofollow')
 
-    return img;
+    return link;
   end
 end
