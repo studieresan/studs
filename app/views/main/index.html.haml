@@ -16,3 +16,5 @@
       = render :partial => 'posts/front_page', :collection => @posts, :as => :post
     .instagram.col-sm-5.col-md-4.col-lg-3
       = render partial: 'external_posts', locals: { provider: :instagram, limit: 6 }
+      %a.btn.btn-primary{ :href => url_for(:controller=>'external_posts', :action=>'index') }
+        = t('.all_instagram_entries')

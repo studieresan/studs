@@ -83,6 +83,7 @@ sv:
       contact_send: Skicka
       latest_from_the_blog: Senaste från bloggen
       latest_from_instagram_html: Instagramflöde
+      all_instagram_entries: Se alla inlägg
     contact:
       title: Konktakta oss
     earlier:
@@ -227,6 +228,9 @@ sv:
       heading: Listar alla inlägg
       title: Titel
       published: Publicerad
+  external_posts:
+    index:
+      heading: Alla inlägg från Instagram
   events:
     index:
       upcoming_events: Kommande event

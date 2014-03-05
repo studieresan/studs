@@ -475,6 +475,11 @@ ul.suggestions li.more {
   background: #f0f0f0;
 }
 
+/* Front page news */
+.news {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 /* Instagram */
 .news ul.instagram {
   padding: 0px;
@@ -487,4 +492,37 @@ ul.suggestions li.more {
 }
 .news .instagram img {
   width: 110px;
+}
+/* Instagram index*/
+.external-posts ul.instagram {
+  padding: 0px;
+  list-style-type: none;
+}
+.external-posts .instagram li {
+  padding: 0 10px 10px 0px;
+  display: inline;
+  float: left;
+  text-align: center;
+}
+.external-posts .instagram a.instagram {
+  width: 200px;
+  margin-bottom: 5px;
+}
+@media (min-width: 768px) {
+  .external-posts .instagram a.instagram {
+    width: 230px;
+  }
+}
+@media (min-width: 992px) {
+  .external-posts .instagram a.instagram {
+    width: 195px;
+  }
+}
+@media (min-width: 1200px) {
+  .external-posts .instagram a.instagram {
+    width: 240px;
+  }
+}
+.external-posts .instagram img {
+  width: 100%;
 }
