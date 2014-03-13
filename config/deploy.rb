@@ -4,8 +4,8 @@ set :scm, :git
 
 set :branch, fetch(:branch, 'master')
 
-set :stages, %w(production)
-set :default_stage, 'production'
+set :stages, ['staging', 'production']
+set :default_stage, 'staging'
 require 'capistrano/ext/multistage'
 
 webfactional_domain = 'studs.webfactional.com'
@@ -20,8 +20,6 @@ default_run_options[:pty] = true
 
 set :rails_env, 'production'
 default_environment['RAILS_ENV'] = 'production'
-
-set :deploy_to, "/home/studs/webapps/rails"
 
 # Additional shared paths
 set :shared_children, shared_children + %w(public/uploads)
