@@ -27,11 +27,6 @@ set :shared_files, %w(config/database.yml)
 set(:shared_file_path) { shared_path }
 require 'capistrano/shared_file'
 
-set :default_environment, {
-	'PATH' => "#{deploy_to}/bin:$PATH",
-	'GEM_HOME' => "#{deploy_to}/gems"
-}
-
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
