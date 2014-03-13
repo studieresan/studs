@@ -177,8 +177,8 @@ sv:
     credentials_mail:
       subject: Inloggningsuppgifter till studs hemsida
       body: |
-        Ett konto har skapats åt dig på studieresan.se.
-        Du kan nu logga in via http://studieresan.se/login med nedanstående uppgifter.
+        Ett konto har skapats åt dig på studs.datasektionen.se.
+        Du kan nu logga in via http://studs.datasektionen.se/login med nedanstående uppgifter.
         Efter att du har loggat in har du möjlighet att uppdatera dina uppgifter genom
         att klicka på ditt användarnamn i fältet uppe till höger på sidan.
 

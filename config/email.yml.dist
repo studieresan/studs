@@ -1,7 +1,0 @@
-development: &development
-  delivery_method: :sendmail
-  sendmail_settings:
-    arguments: '-i'
-
-production:
-  <<: *development
