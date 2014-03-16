@@ -59,7 +59,8 @@ function handleQueryResponse(response, id, options) {
 	{
 		title: data.yf[0].label,
 		titleTextStyle: {fontSize: 15, fontName: 'Avenir', color: '#333333'},
-		pieHole: 0.6, 
+        colors: ['#EC1976', '#B03AF6', '#4C40DF', '#3A91F6', '#3EBFBF'],
+        pieHole: 0.6,
 		height: 300, 
 		pieSliceText: 'none', 
 		legend: {position: 'right', alignment: 'center', textStyle: 
