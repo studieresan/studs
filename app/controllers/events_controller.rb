@@ -5,8 +5,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @past_events = Event.where("end_date <= ?", Time.zone.now).order("start_date DESC")
-    @upcoming_events = Event.where("end_date > ?", Time.zone.now).order("start_date ASC")
+    @past_events = Event.where("start_date <= ?", Time.zone.now).order("start_date DESC")
+    @upcoming_events = Event.where("start_date > ?", Time.zone.now).order("start_date ASC")
     respond_with(@events)
   end
 
