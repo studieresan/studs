@@ -3,6 +3,7 @@ class ContactFormController < ApplicationController
   	begin
         contact_form = ContactForm.new(params[:contact_form])
         contact_form.request = request
+        contact_form.delivery_method :sendmail
         if contact_form.deliver
           flash.now[:notice] = t 'contact_form.create.thanks'
         else

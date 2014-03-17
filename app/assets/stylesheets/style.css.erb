@@ -470,6 +470,27 @@ ul.suggestions li.more {
 }
 
 /*Events*/
+.event-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    background: url(<%= asset_path 'people.jpg' %>) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.event-header h1 {
+    font-size: 4em;
+    color: #fff;
+    text-transform: uppercase;
+}
+@media(max-width: 768px) {
+    .event-header h1 {
+        font-size: 3em;
+    }
+}
 .my-event {
   color: #000000;
   background: #f0f0f0;

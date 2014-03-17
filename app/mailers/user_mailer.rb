@@ -1,9 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: "StuDs ledning <studs-ledning@d.kth.se>"
+  default from: "<no-reply@d.kth.se>"
 
   def credentials_mail(user, password)
     raise "Can't send credentials mail for an unsaved user!" if user.new_record?
-
+    
     @hash = Hash[%w(login name email).map(&:to_sym).map { |a| [a, user.send(a)] }]
     @hash[:password] = password
 

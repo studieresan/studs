@@ -15,6 +15,7 @@ module Studs
 
     config.autoload_paths << "#{config.root}/app/libs"
 
+    config.assets.initialize_on_precompile = false
     config.assets.enabled = true
     config.assets.version = '1.0'
     config.assets.precompile += %w(application.js application.css global.js)
@@ -22,7 +23,6 @@ module Studs
     config.generators do |g|
       g.template_engine :haml
       g.helper          false
-      g.test_framework  :mini_test, spec: false, fixture: false
       g.view_specs      false
       g.helper_specs    false
       g.assets          false

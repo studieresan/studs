@@ -191,8 +191,8 @@ en:
     credentials_mail:
       subject: Login credentials for studs' homepage
       body: |
-        An account has been created for you at studieresan.se.
-        You can now log in at http://studieresan.se/login with the following credentials.
+        An account has been created for you at studs.datasektionen.se.
+        You can now log in at http://studs.datasektionen.se/login with the following credentials.
         After logging in you'll have the ability to update your information and/or password
         by clicking on your username in the field on the top right.
 
@@ -233,6 +233,13 @@ en:
       heading: Listing all posts
       title: Title
       published: Published
+    feed:
+      heading: Studs blog
+      readmore: Read more
+      info-heading: Behind the blog
+      info-text: Hey, how great that you have found us! We spend lots of time and energy on Studs, in order to get to know companies, make new friends and have lots of fun. Here you can get an insight into what we do, and follow us on our journey (in Swedish). Welcome!
+      info-responsible: Mattis Kancans Envall - Blog responsible
+      close: Close
   events:
     index:
       upcoming_events: Upcoming events

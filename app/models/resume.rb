@@ -25,7 +25,11 @@ class Resume < ActiveRecord::Base
 
   def edited_at
     last_edited_experience = experiences.map { |e| e.updated_at }.max
-    [self.updated_at, last_edited_experience].max
+    if last_edited_experience.nil?
+      self.updated_at
+    else
+      [self.updated_at, last_edited_experience].max
+    end
   end
 
   def experiences_by_kind

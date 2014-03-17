@@ -177,8 +177,8 @@ sv:
     credentials_mail:
       subject: Inloggningsuppgifter till studs hemsida
       body: |
-        Ett konto har skapats åt dig på studieresan.se.
-        Du kan nu logga in via http://studieresan.se/login med nedanstående uppgifter.
+        Ett konto har skapats åt dig på studs.datasektionen.se.
+        Du kan nu logga in via http://studs.datasektionen.se/login med nedanstående uppgifter.
         Efter att du har loggat in har du möjlighet att uppdatera dina uppgifter genom
         att klicka på ditt användarnamn i fältet uppe till höger på sidan.
 
@@ -225,6 +225,13 @@ sv:
       heading: Listar alla inlägg
       title: Titel
       published: Publicerad
+    feed:
+      heading: Studsbloggen
+      readmore: Läs mer
+      info-heading: Vi bakom bloggen
+      info-text: Hej, vad roligt att du har hittat hit! Vi lägger ned massor av tid och energi på studs. I gengäld lär vi känna företag, varandra och har väldigt kul. Här kan du få en inblick i vad vi gör, och följa oss på vår resa till resan. Och under resan förstås. Välkommen!
+      close: Stäng
+      info-responsible: Mattis Kancans Envall - Bloggansvarig
   events:
     index:
       upcoming_events: Kommande event

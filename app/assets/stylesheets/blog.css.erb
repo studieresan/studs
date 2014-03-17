@@ -1,7 +1,35 @@
+.posts-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    background: url(<%= asset_path 'airplane.jpg' %>) no-repeat top center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.posts-header h1 {
+    font-size: 4em;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+@media(max-width: 768px) {
+    .posts-header h1 {
+        font-size: 3em;
+    }
+}
+
 .post {
 	padding-bottom: 20px;
 	border-bottom: 1px solid #e6e6e6;
 	margin-bottom: 20px;
+}
+.post-content {
+    display: block;
+    overflow: hidden;
+    max-height: 500px;
 }
 /* Images in posts */
 .post img {
@@ -11,7 +39,11 @@
     margin-top: 5px;
 }
 .post h1 a {
-    color: black;
+    color: #000;
+    text-decoration: none;
+}
+.post h1 a:hover {
+    border-bottom: 3px solid #E11880;
 }
 .input.content {
 	padding: 0;
@@ -21,7 +53,24 @@
     font-size: 16px;
     margin: 20px 0;
 }
+
 .posts .pull-right {
     min-width: 250px;
     text-align: right;
+}
+a.read-more-open, a.read-more-close {
+    font-size: 1.5em;
+    padding: 15px;
+    display: block;
+    background: #E11880;
+    color: #fff;
+    margin-top: 20px;
+    text-decoration: none;
+    line-height: 22px;
+}
+a.read-more-close {
+    margin-top: 0;
+}
+a.read-more-open:hover, a.read-more-close:hover {
+    background: #b20f63;
 }

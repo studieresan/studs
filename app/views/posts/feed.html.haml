@@ -1,14 +1,25 @@
 - active_menu :newsfeed
+.posts-header
+  .container
+    .row
+      .col-md-8.col-md-offset-1
+        %h1=t('.heading')
 .container
   .row
-    .col-md-8.col-md-offset-2
+    .col-md-7.col-md-offset-1
       - @posts.each do |post|
         .post
           = render post
-          - if can? :manage, Post
-            .btn-group
-              %a.btn.btn-primary{ :href => url_for(post) }
-                = t('actions.show')
-              %a.btn.btn-primary{ :href => url_for([:edit, post]) }
-                %i.fa.fa-edit
-                = t('actions.edit')
+          %a.read-more-open{ :href => '#' + post.id.to_s }
+            =t('.readmore')
+            %i.fa.fa-arrow-circle-o-down.pull-right
+          %a.read-more-close.hide{ :href => '#' + post.id.to_s }
+            =t('.close')
+            %i.fa.fa-times-circle.pull-right
+    .col-md-3
+      %h1=t('.info-heading')
+      %p=t('.info-text')
+      %br
+      %p
+        %img.img-responsive.img-rounded{ :src => image_path("mattis.jpg")}
+      %p.text-center=t('.info-responsible')

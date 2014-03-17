@@ -56,15 +56,16 @@ function handleQueryResponse(response, id, options) {
 
 	var data = response.getDataTable();
 	var opts = $.extend(true, //deep extension
-		{
-			title: data.yf[0].label,
-			titleTextStyle: {fontSize: 15, fontName: 'Avenir', color: '#333333'},
-			pieHole: 0.6, 
-			height: 300, 
-			pieSliceText: 'none', 
-			legend: {position: 'right', alignment: 'center', textStyle: 
-						{fontSize: 14, fontName: 'Avenir', color: '#333333'}},
-			chartArea: {width: '100%', height: '55%'}
+	{
+		title: data.yf[0].label,
+		titleTextStyle: {fontSize: 15, fontName: 'Avenir', color: '#333333'},
+        colors: ['#EC1976', '#B03AF6', '#4C40DF', '#3A91F6', '#3EBFBF'],
+        pieHole: 0.6,
+		height: 300, 
+		pieSliceText: 'none', 
+		legend: {position: 'right', alignment: 'center', textStyle: 
+		{fontSize: 14, fontName: 'Avenir', color: '#333333'}},
+		chartArea: {width: '100%', height: '55%'}
 		}, options);//Add user supplied options
 	visualization = new google.visualization.PieChart(document.getElementById(id));
 	visualization.draw(data, opts);

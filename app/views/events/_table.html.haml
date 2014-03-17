@@ -2,18 +2,19 @@
   %p.no-events
     = t '.no_events'
 - unless events.empty?
-  %table.events.table
-    %thead
-      %tr
-        %th= t 'events.table.title'
-        %th= t 'events.table.location'
-        %th= t 'events.table.start_date'
-    %tbody
-      - events.each do |event|
-        %tr{ :class => ('my-event' if organization? && event.users.include?(current_user))}
-          - if can? :read, event
-            %td= link_to event.title, event
-          - else
-            %td= event.title
-          %td= event.location
-          %td= l event.start_date, format: :short
+  .table-responsive
+    %table.events.table.table-hover
+      %thead
+        %tr
+          %th= t 'events.table.organizations'
+          %th= t 'events.table.location'
+          %th= t 'events.table.start_date'
+      %tbody
+        - events.each do |event|
+          %tr{ :class => ('my-event' if organization? && event.users.include?(current_user))}
+            - if can? :read, event
+              %td= link_to event.title, event
+            - else
+              %td= event.title
+            %td= event.location
+            %td= l event.start_date, format: :long
