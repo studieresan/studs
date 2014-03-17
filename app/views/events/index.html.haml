@@ -1,9 +1,14 @@
 - active_menu :events
+.event-header
+  .container
+    .col-md-8.col-md-offset-2
+      %h1= t 'Event'
 .container
   .row
     .col-md-8.col-md-offset-2
       %h2= t '.upcoming_events'
       = render partial: 'table', locals: {events: @upcoming_events}
+      %br
       %h2= t '.past_events'
       = render partial: 'table', locals: {events: @past_events}
       %br
