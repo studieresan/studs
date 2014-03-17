@@ -242,6 +242,7 @@ en:
       close: Close
   events:
     index:
+      event: Event
       upcoming_events: Upcoming events
       past_events: Past events
       events_with: Events with %{name}
@@ -250,6 +251,7 @@ en:
       title: Event
       location: Location
       start_date: Time
+      organizations: Organizations
     show: 
       stats: Statistics from event survey
     form: 

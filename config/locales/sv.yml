@@ -234,6 +234,7 @@ sv:
       info-responsible: Mattis Kancans Envall - Bloggansvarig
   events:
     index:
+      event: Event
       upcoming_events: Kommande event
       past_events: Tidigare event
       events_with: Event med %{name}
@@ -242,6 +243,7 @@ sv:
       title: Event
       location: Plats
       start_date: Tid
+      organizations: Företag
     show: 
       stats: Statistik från eventenkät
     form:
