@@ -242,7 +242,7 @@ en:
       close: Close
   events:
     index:
-      event: Event
+      event: Events
       upcoming_events: Upcoming events
       past_events: Past events
       events_with: Events with %{name}
