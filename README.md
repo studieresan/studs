@@ -24,9 +24,7 @@ rails server
 ```
 
 Open up [localhost:3000](http://0.0.0.0:3000/) in your favorite browser and verify that it works.
-You can then log in to the admin account by visiting [localhost:3000/login](http://0.0.0.0:3000/login)
-and entering the credentials output by the `rake db:setup` command earlier.
-
+You can now login using the credentials of rake db:setup.
 
 Generating PDF resumes
 ----------------------
@@ -37,8 +35,28 @@ additional stuff for the `pdflatex` compatible tools you use.
 
 * Ubuntu: `sudo apt-get install texlive-latex-extra texlive-lang-swedish`.
 
+Webfaction
+----------
+
+The server is hosted on [webfaction](http://www.webfaction.com). The login credentials can be found in shared
+Google Doc. For problems with Webfactional refer to their [documentation](https://docs.webfaction.com/software/index.html).
+
+Database configuration
+----------------------
+
+The configuration file for the database can be found in 
+
 Deploying
 ---------
+
+
+When deploying to the staging server use
+
+```bash
+bundle exec cap deploy
+```
+
+When deploying to the production server use
 
 ```bash
 bundle exec cap production deploy
