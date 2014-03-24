@@ -46,20 +46,115 @@ Database configuration
 
 The configuration file for the database can be found in 
 
+    /home/studs/webapps/PROJECT/shared
+
+where PROJECT is rails for the production server and rails_staging for the staging one. 
 Deploying
 ---------
 
+Deploying can be done either to the staging server or the production one. For the general configuration see
 
-When deploying to the staging server use
+    config/deploy.rb
+
+### Staging
+
+The staging server is deployed to using
 
 ```bash
 bundle exec cap deploy
 ```
 
-When deploying to the production server use
+The staging-specific configuration can be found at
+
+    config/deploy/staging.rb
+
+### Production
+
+The code will be pulled from the be the *master* branch and the command to run is
 
 ```bash
 bundle exec cap production deploy
+```
+
+The production-specific configuration can be found at
+
+    config/deploy/production.rb
+
+Workflow
+--------
+
+* The *master* branch should always be up to date, that is it should at any given time be possible to deploy the code to the live server.
+* The *staging* branch should only be used as the final step to verify all code works in production mode on the server.
+* The *dev* branch is the one where finished featues and changes should be added.
+
+Below is the workflow to use when developing. The workflow ensures that the staging and master branches remain up to date, and in sync with each other.
+
+### Adding a new feature
+
+When adding a new feature develop it on a separate branch.
+
+```bash
+# Create a new branch
+git checkout -b branch-name
+
+# Do your edits on the branch, comming and pushing them
+
+# When you are done switch back to the dev branch
+git checkout dev
+
+# Then merge your branch into the dev one
+git merge branch-name
+```
+
+### Releasing a new version
+
+When a new release is deployed always verify it works on the staging server first.
+
+```bash
+# Switch to the staging branch
+git checkout staging
+
+# Merge dev branch into staging
+git merge dev
+
+# Deploy your code
+cap deploy
+
+# Verify everything works on the server
+
+# Now switch to master and merge the staging branch into it
+git checkout master
+git merge staging
+
+# Deploy your code to the production server
+cap production deploy
+```
+
+### Hotfixing
+
+When a new release is deployed always verify it works on the staging server first.
+
+```bash
+# Switch to the staging branch
+git checkout staging
+
+# Add the code necessary to fix it
+
+# Deploy your code
+cap deploy
+
+# Verify everything works on the server
+
+# Now switch to master and merge the staging branch into it
+git checkout master
+git merge staging
+
+# Deploy your code to the production server
+cap production deploy
+
+# Merge the staging branch into dev to ensure both are up to date
+git checkout dev
+git merge staging
 ```
 
 Authors
