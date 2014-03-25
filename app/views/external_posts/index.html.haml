@@ -1,0 +1,14 @@
+- active_menu :external_posts
+.container
+  .row
+    .col-md-8.col-md-offset-2.external-posts
+      %h1= t '.heading'
+      %ul.feed.instagram
+        - @entries.each do |entry|
+          %li{ class: entry.provider }<
+            - if entry.provider == 'instagram'
+              != instagram_to_html(entry)
+            - if can? :manage, ExternalPost
+              %a.btn.btn-primary{ :href => url_for([:delete, entry]) }
+                %i.fa.fa-trash-o
+                = t('actions.delete')

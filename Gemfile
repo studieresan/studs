@@ -24,6 +24,9 @@ gem 'redcarpet'
 gem 'mini_magick'
 gem 'carrierwave'
 
+# RSS feed parsing
+gem 'feedzirra', git: "https://github.com/pauldix/feedzirra.git"
+
 # Cron jobs
 gem 'whenever', :require => false
 

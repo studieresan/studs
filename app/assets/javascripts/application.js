@@ -12,6 +12,7 @@
 //= require bootstrap-markdown
 //= require charts
 //= require readmore
+//= require lightbox
 
 $(function() {
   // Enable suggestions for all inputs with a suggestions data attribute

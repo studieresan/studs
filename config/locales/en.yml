@@ -93,6 +93,10 @@ en:
       contact_mail: Email
       contact_message: Message
       contact_send: Send
+      latest_from_the_blog: Latest from the blog
+      all_blog_entries: See all entries
+      latest_from_instagram_html: Instagram feed
+      all_instagram_entries: See all entries
     contact:
       title: Contact Us
     earlier:
@@ -240,6 +244,11 @@ en:
       info-text: Hey, how great that you have found us! We spend lots of time and energy on Studs, in order to get to know companies, make new friends and have lots of fun. Here you can get an insight into what we do, and follow us on our journey (in Swedish). Welcome!
       info-responsible: Mattis Kancans Envall - Blog responsible
       close: Close
+    form:
+      delete_featured_image: Delete featured image
+  external_posts:
+    index:
+      heading: All entries from Instagram
   events:
     index:
       event: Events
@@ -312,6 +321,8 @@ en:
       title: Title
       content: Content
       published: Published
+    post[post_image_attributes]:
+      image: Featured image
     event:
       title: Event
       organizations: Companies
