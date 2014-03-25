@@ -3,6 +3,7 @@
   .row
     .col-md-8.col-md-offset-2
       - @posts.each do |post|
+        %a{name: post.id}
         .post
           = render post
           - if can? :manage, Post

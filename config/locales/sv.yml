@@ -82,6 +82,7 @@ sv:
       contact_message: Meddelande
       contact_send: Skicka
       latest_from_the_blog: Senaste från bloggen
+      all_blog_entries: Se alla inlägg
       latest_from_instagram_html: Instagramflöde
       all_instagram_entries: Se alla inlägg
     contact:
@@ -228,6 +229,8 @@ sv:
       heading: Listar alla inlägg
       title: Titel
       published: Publicerad
+    form:
+      delete_featured_image: Ta bort utvald bild
   external_posts:
     index:
       heading: Alla inlägg från Instagram
@@ -303,6 +306,8 @@ sv:
       title: Titel
       content: Innehåll
       published: Publicerad
+    post[post_image_attributes]:
+      image: Utvald bild
     event:
       title: Event
       organizations: Företag

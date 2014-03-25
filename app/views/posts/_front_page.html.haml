@@ -1,2 +1,4 @@
-%h3= post.title
-%p= l(post.created_at, :format=>:ymd)
+.post
+  - unless post.post_image.blank?
+    = image_tag post.post_image.image, :class => 'front-page-featured-image'
+  %h3= link_to post.title, newsfeed_path(anchor: post.id)
