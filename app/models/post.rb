@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  has_one :post_image
+  has_one :post_image, dependent: :destroy
   accepts_nested_attributes_for :post_image,
     :allow_destroy => true,
     :reject_if     => :all_blank

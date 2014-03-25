@@ -16,7 +16,7 @@
     = ff.file_field_row :image
  
     - if ff.object.persisted?
-      .featured-image-preview
+      .featured-image-preview.col-sm-8.col-sm-offset-4.col-xs-12
         = image_tag ff.object.image
         = ff.check_box :_destroy
         = ff.label :_destroy, t('.delete_featured_image')

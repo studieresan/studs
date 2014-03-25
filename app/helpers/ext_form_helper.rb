@@ -12,7 +12,9 @@ module ExtFormHelper
   end
 
   def setup_post(post)
-    post.post_image ||= PostImage.new
+    if post.post_image.nil?
+      post.build_post_image
+    end
     post
   end
 
