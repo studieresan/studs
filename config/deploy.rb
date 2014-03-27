@@ -57,6 +57,22 @@ namespace :deploy do
 	task :clear_cache do
 		run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake resumes:clean"
 	end
+
+	after "deploy:setup", "deploy:profile_pictures:setup"
+	after "deploy:symlink", "deploy:profile_pictures:symlink"
+
+	namespace :profile_pictures do
+		desc "Create the profile_pictures dir in the shared path."
+		task :setup do
+			run "cd #{shared_path}; mkdir profile_pictures"
+		end
+
+		desc "Link pictures from shared to common."
+		task :symlink do
+			run "cd #{current_path}/public; rm -rf profile_pictures; ln -s #{shared_path}/profile_pictures ."
+		end
+
+	end
 end
 
 # vi borde kanske köra något med rake db:migrate
