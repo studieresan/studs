@@ -40,7 +40,7 @@ namespace :deploy do
 	
 	desc "Restart nginx"
 	task :restart do
-		run "/home/studs/webapps/rails/bin/restart"
+		run "#{deploy_to}/bin/restart"
 	end
 
 	desc "Run database migrations"
