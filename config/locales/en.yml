@@ -252,6 +252,7 @@ en:
       location: Location
       start_date: Time
       organizations: Organizations
+      event: Event
     show: 
       stats: Statistics from event survey
     form: 

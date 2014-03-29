@@ -244,6 +244,7 @@ sv:
       location: Plats
       start_date: Tid
       organizations: Företag
+      event: Event
     show: 
       stats: Statistik från eventenkät
     form:
