@@ -7,6 +7,8 @@ This is the website for studs, which can be found at [here](http://studs.datasek
 Getting started
 ---------------
 
+[Install the latest version of ruby 2.*](https://www.ruby-lang.org/en/installation/) and [the latest 3.* version of rails](http://rubyonrails.org/download).
+
 ```bash
 
 # Install all gem dependencies through bundle (optionally skipping gems required in production)
