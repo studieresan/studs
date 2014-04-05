@@ -434,6 +434,7 @@ en:
     replace: Replace
     back: Back
     delete_prompt_html: "Are you sure that you wish to delete the %{type} <em>%{name}</em>?"
+    linkedin: Show LinkedIn-profile
   flash:
     unauthorized_html: >
       You are not authorized to view this page.

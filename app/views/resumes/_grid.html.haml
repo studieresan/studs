@@ -1,0 +1,20 @@
+- max_skills_shown = 5
+- resumes ||= @resumes
+- filtered_skills ||= @filter.skills || []
+.container
+  .row.cv-grid
+    - resumes.each do |res|
+      - user = res.user
+      .col-sm-4.col-xs-12.cv-box
+        - #image_path = File.join(Rails.public_path, 'profile_pictures', "#{user.login}.jpg")
+        - image_path = '/assets/bratt.jpg'
+        .cv-image{style: "background-image: url('#{image_path}')"}
+          .cv-content
+            .cv-links
+              = link_to resume_path(res, format: :pdf), {class: [:action, :download], title: t('actions.download')} do
+                %i.fa.fa-download.fa-2x
+              - if res.linkedin_url?
+                = link_to res.full_linkedin_url, {class: 'action', title: t('actions.linkedin')} do
+                  %i.fa.fa-linkedin-square.fa-2x
+            .cv-email= mail_to res.email
+        .cv-name= user.name
