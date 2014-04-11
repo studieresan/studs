@@ -30,8 +30,6 @@ gem 'whenever', :require => false
 # Mail form
 gem 'mail_form'
 
-gem 'net-ssh', '~> 2.7.0'
-
 group :development do
   gem 'sqlite3'
 
