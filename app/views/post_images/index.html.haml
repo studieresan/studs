@@ -11,8 +11,10 @@
             = f.submit t('actions.upload')
       %br
       %h1= t '.images'
+
       - @post_images.each do |post_image|
-        .col-md-3
-          %a.thumbnail{ :href => post_image_path(post_image) }
-            = image_tag post_image.image.url(:thumb)
-          %br
+        -if post_image
+          .col-md-3
+            %a.thumbnail{ :href => post_image_path(post_image) }
+              = image_tag post_image.image.url(:thumb)
+            %br
