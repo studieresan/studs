@@ -2,7 +2,7 @@
 .hidden
   = ext_form_for :post_image, url: post_images_path, method: :post, multipart: true, :html => { :class => [:post_image] } do |f|
     = f.file_field :image
-= ext_form_for @post, :html => {:class => [:resume, 'form-horizontal'], :role => 'form'} do |f|
+= ext_form_for setup_post(@post), :html => {:class => [:resume, 'form-horizontal'], :role => 'form'} do |f|
   - if @post.errors.any?
     #error_explanation
       %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
@@ -12,7 +12,15 @@
 
   = f.text_field :title, :placeholder => t('posts.index.title')
   = f.text_area :content, rows: 20, hint: true, :data => {:provide => "markdown"}
-
+  = f.fields_for :post_image do |ff|
+    = ff.file_field_row :image
+ 
+    - if ff.object.persisted?
+      .featured-image-preview.col-sm-8.col-sm-offset-4.col-xs-12
+        = image_tag ff.object.image
+        = ff.check_box :_destroy
+        = ff.label :_destroy, t('.delete_featured_image')
+    
   = f.submit
   - if can? :read, Post
     = action_link :cancel, @post, :"btn btn-default"

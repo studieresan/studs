@@ -81,6 +81,10 @@ sv:
       contact_mail: Epost
       contact_message: Meddelande
       contact_send: Skicka
+      latest_from_the_blog: Senaste från bloggen
+      all_blog_entries: Se alla inlägg
+      latest_from_instagram_html: Instagramflöde
+      all_instagram_entries: Se alla inlägg
     contact:
       title: Konktakta oss
     earlier:
@@ -232,6 +236,11 @@ sv:
       info-text: Hej, vad roligt att du har hittat hit! Vi lägger ned massor av tid och energi på studs. I gengäld lär vi känna företag, varandra och har väldigt kul. Här kan du få en inblick i vad vi gör, och följa oss på vår resa till resan. Och under resan förstås. Välkommen!
       close: Stäng
       info-responsible: Mattis Kancans Envall - Bloggansvarig
+    form:
+      delete_featured_image: Ta bort utvald bild
+  external_posts:
+    index:
+      heading: Alla inlägg från Instagram
   events:
     index:
       event: Event
@@ -305,6 +314,8 @@ sv:
       title: Titel
       content: Innehåll
       published: Publicerad
+    post[post_image_attributes]:
+      image: Utvald bild
     event:
       title: Event
       organizations: Företag

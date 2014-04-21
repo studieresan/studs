@@ -1,5 +1,9 @@
 class ExternalPostsController < ApplicationController
-  before_filter :authorize
+  before_filter :authorize, except: :index
+
+  def index
+    @entries = ExternalPost.from('instagram')
+  end
 
   def delete
     model_name = t('models.the.external_post')

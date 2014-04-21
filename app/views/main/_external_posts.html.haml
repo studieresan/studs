@@ -5,11 +5,11 @@
   %ul.feed{ class: provider }
     - scope.each do |entry|
       %li{ class: entry.provider }<
-        %i.icon
         - if entry.provider == 'twitter'
           != tweet_to_html(entry.title)
+        - if entry.provider == 'instagram'
+          != instagram_to_html(entry)
         - else
           = link_to entry.title, entry.url
-        %span.date{ title: l(entry.pubdate) }= l entry.pubdate, format: :date
-        - if can? :manage, ExternalPost
-          = link_to 'x', delete_external_post_path(entry), class: 'action delete'
+        -# if can? :manage, ExternalPost
+        -#  = link_to 'x', delete_external_post_path(entry), class: 'action delete'

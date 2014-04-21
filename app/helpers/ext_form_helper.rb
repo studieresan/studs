@@ -11,6 +11,13 @@ module ExtFormHelper
     module_eval src, __FILE__, __LINE__
   end
 
+  def setup_post(post)
+    if post.post_image.nil?
+      post.build_post_image
+    end
+    post
+  end
+
   class ExtFormBuilder < ActionView::Helpers::FormBuilder
     helpers = field_helpers +
               %w(date_select datetime_select time_select) +
@@ -179,6 +186,11 @@ module ExtFormHelper
       @template.submit_tag(value, opts)
     end
 
+    def object
+      # @template.instance_variable_get("@#{@object_name.to_s.sub(/\[.+/, '')}")
+      @object ||= @template.instance_variable_get("@#{@object_name}")
+    end
+    
     private
 
     def i18n_text(type, field)
@@ -188,11 +200,6 @@ module ExtFormHelper
 
     def suggestion_data_for(attribute)
       @object.class.uniq.pluck(attribute).to_a.reject(&:blank?)
-    end
-
-    def object
-      # @template.instance_variable_get("@#{@object_name.to_s.sub(/\[.+/, '')}")
-      @object ||= @template.instance_variable_get("@#{@object_name}")
     end
 
     def error_on(field)

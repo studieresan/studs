@@ -4,14 +4,12 @@
 env :PATH, ENV['PATH']
 set :output, 'log/whenever.log'
 
-# Location of bundle binary depends on environment
-bundle_cmd = if @environment == 'development'
-  '/usr/local/bin/bundle'
-else
-  '/usr/local/bin/1.9.2_bundle'
-end
+home_path = "$HOME/webapps/rails_staging/current"
+gem_home = "GEM_HOME=$HOME/webapps/rails_staging/gems"
+rubylib = "RUBYLIB=$HOME/webapps/rails_staging/lib"
+path = "PATH=$HOME/webapps/rails_staging/bin:/usr/local/bin/:$PATH"
 
-job_type :rake, "cd :path && RAILS_ENV=:environment #{bundle_cmd} exec rake :task --silent :output"
+job_type :rake, "cd #{home_path} && #{gem_home} #{rubylib} #{path} RAILS_ENV=:environment bundle exec rake :task --silent :output"
 
 every 5.minutes do
   rake 'feeds'
