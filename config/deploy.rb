@@ -21,6 +21,9 @@ default_run_options[:pty] = true
 set :rails_env, 'production'
 default_environment['RAILS_ENV'] = 'production'
 
+# Bundler
+require 'bundler/capistrano'
+
 # Additional shared paths
 set :shared_children, shared_children + %w(public/uploads)
 set :shared_files, %w(config/database.yml)
