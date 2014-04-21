@@ -3,24 +3,23 @@
     #header-box.col-md-10.col-md-offset-1.text-center
       %h1= t '.splash_title'
       %p.lead= t '.splash_lead'
-      %a{ :href => "#about" }
+      %a{ :href => "#news" }
         %span.fa-stack.fa-lg.read-more.fa-2x
           %i.fa.fa-circle.fa-stack-2x
           %i.fa.fa-chevron-down.fa-stack-1x.fa-inverse
 
-%a{ :name => "about" }
-.container.about
+%a{ :name => "news"}
+.container.news
   .row
-    .col-md-8.col-md-offset-2
-      %h2= t '.about_title'
-      %p.lead= t '.about_lead'
-      .text-center
-        %a{ :href => "#contact" }
-          %span.fa-stack.fa-lg.read-more.fa-2x
-            %i.fa.fa-circle.fa-stack-2x
-            %i.fa.fa-chevron-down.fa-stack-1x.fa-inverse
-
-.the-team
+    .blog.col-sm-7.col-md-6.col-md-offset-1.col-lg-5.col-lg-offset-2
+      %h2= t '.latest_from_the_blog'
+      = render :partial => 'posts/front_page', :collection => @posts, :as => :post
+      %a.btn.btn-primary{ :href => url_for(:controller=>'posts', :action=>'feed') }
+        = t '.all_blog_entries'
+    .instagram.col-sm-5.col-md-4.col-lg-3
+      = render partial: 'external_posts', locals: { provider: :instagram, limit: 10 }
+      %a.btn.btn-primary{ :href => url_for(:controller=>'external_posts', :action=>'index') }
+        = t '.all_instagram_entries'
 
 %a{ :name => "contact" }
 .container.contact

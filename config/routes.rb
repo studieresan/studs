@@ -37,7 +37,7 @@ Studs::Application.routes.draw do
       get 'delete', on: :member
     end
 
-    resources :external_posts, only: [:destroy] do
+    resources :external_posts, only: [:index, :destroy] do
       get 'delete', on: :member
     end
 
