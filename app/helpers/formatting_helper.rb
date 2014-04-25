@@ -51,7 +51,7 @@ class StudsRenderer < Redcarpet::Render::HTML
       media = PostImage.find_by_image(parse[:id])
       if media
         size = media.image.size
-        link = media.image.url(parse[:size])
+        link = media.image.url()
         klass = parse[:class]
       end
     end
