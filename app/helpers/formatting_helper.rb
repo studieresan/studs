@@ -35,9 +35,20 @@ class StudsRenderer < Redcarpet::Render::HTML
   def parse_media_link(link)
     puts link
     matches = link.match(/^\/uploads\/post_image\/([\w\d\.\/]+)(?:\|(\w+))?$/)
+
+    unless matches.nil?
+      if ["left", "right", "square", "textright", "textleft"].include?(matches[2])
+        size = "square"
+      elsif matches[2] == "full"
+        size = "full"
+      else
+        size = "original"
+      end
+    end
+
     {
         :id => matches[1],
-        :size => ["left", "right", "square", "textright", "textleft"].include?(matches[2]) ? "square" : "full",
+        :size => size,
         :class => matches[2]
 
     } if matches
@@ -51,7 +62,12 @@ class StudsRenderer < Redcarpet::Render::HTML
       media = PostImage.find_by_image(parse[:id])
       if media
         size = media.image.size
-        link = media.image.url()
+        if parse[:size] == "original"
+          link = media.image.url()
+        else
+          link = media.image.url(parse[:size])
+        end
+
         klass = parse[:class]
       end
     end
