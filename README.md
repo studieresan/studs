@@ -96,7 +96,7 @@ Below is the workflow to use when developing. The workflow ensures that the stag
 When adding a new feature develop it on a separate branch.
 
 ```bash
-# Create a new branch
+# Create a new branch (make sure you are currently on the dev branch when doing this)
 git checkout -b branch-name
 
 # Do your edits on the branch, committing and pushing them
