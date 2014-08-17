@@ -11,10 +11,10 @@
         %a{name: post.id, class: 'anchor'}
         .post
           = render post
-          %a.read-more-open{ :href => '#' + post.id.to_s }
+          %a.read-more-open
             =t('.readmore')
             %i.fa.fa-arrow-circle-o-down.pull-right
-          %a.read-more-close.hide{ :href => '#' + post.id.to_s }
+          %a.read-more-close.hide
             =t('.close')
             %i.fa.fa-times-circle.pull-right
     .col-md-3
