@@ -1,4 +1,4 @@
-$(function() {
+$(window).bind("load", function() {
     $('.post').each(function(i, e) {
         var expandedHeight;
         var postContent = $(e).find('.post-content');
