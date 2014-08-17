@@ -48,9 +48,13 @@ Studs::Application.routes.draw do
 
     # External redirects
     get '/'       => 'main#index', as: :index
+
+    get 'apply' => 'main#apply', as: :apply
+    get 'ansokan' => 'main#apply', as: :apply
   end
 
   root to: 'main#index'
 
   match '*not_found', to: 'application#not_found'
+
 end
