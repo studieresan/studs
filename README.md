@@ -99,7 +99,7 @@ When adding a new feature develop it on a separate branch.
 # Create a new branch
 git checkout -b branch-name
 
-# Do your edits on the branch, comming and pushing them
+# Do your edits on the branch, committing and pushing them
 
 # When you are done switch back to the dev branch
 git checkout dev
