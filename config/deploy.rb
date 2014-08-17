@@ -21,6 +21,15 @@ default_run_options[:pty] = true
 set :rails_env, 'production'
 default_environment['RAILS_ENV'] = 'production'
 
+# Bundler
+require 'bundler/capistrano'
+
+# Whenever gem CRON jobs
+set :whenever_command, "bundle exec whenever"
+set :whenever_environment, defer { stage }
+set :whenever_identifier, defer { "#{application}_#{stage}" }
+require 'whenever/capistrano'
+
 # Additional shared paths
 set :shared_children, shared_children + %w(public/uploads)
 set :shared_files, %w(config/database.yml)
@@ -40,7 +49,7 @@ namespace :deploy do
 	
 	desc "Restart nginx"
 	task :restart do
-		run "/home/studs/webapps/rails/bin/restart"
+		run "#{deploy_to}/bin/restart"
 	end
 
 	desc "Run database migrations"
@@ -56,6 +65,22 @@ namespace :deploy do
 	desc "Clear cached objects"
 	task :clear_cache do
 		run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake resumes:clean"
+	end
+
+	after "deploy:setup", "deploy:profile_pictures:setup"
+	after "deploy:symlink", "deploy:profile_pictures:symlink"
+
+	namespace :profile_pictures do
+		desc "Create the profile_pictures dir in the shared path."
+		task :setup do
+			run "cd #{shared_path}; mkdir profile_pictures"
+		end
+
+		desc "Link pictures from shared to common."
+		task :symlink do
+			run "cd #{current_path}/public; rm -rf profile_pictures; ln -s #{shared_path}/profile_pictures ."
+		end
+
 	end
 end
 

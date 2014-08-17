@@ -1,10 +1,12 @@
 - active_menu :posts
 .container
   .row
-    .col-md-8.col-md-offset-2
-      %p#notice= notice
+    .col-md-10.col-md-offset-1
       .post
-        = render @post
+        .published= l(@post.created_at, :format=>:ymd)
+        %h1.clear= @post.title
+        .post-content.one-post
+          = markdown @post.content
         %p
           .btn-group
             - if can? :manage, @post

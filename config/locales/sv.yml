@@ -253,6 +253,7 @@ sv:
       location: Plats
       start_date: Tid
       organizations: Företag
+      event: Event
     show: 
       stats: Statistik från eventenkät
     form:
@@ -433,6 +434,7 @@ sv:
     replace: Ersätt
     back: Tillbaka
     delete_prompt_html: "Är du säker på att du vill ta bort %{type} <em>%{name}</em>?"
+    linkedin: Visa LinkedIn-profil
   flash:
     unauthorized_html: >
       Du har inte rättighet att visa denna sida.

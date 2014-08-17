@@ -20,3 +20,38 @@
       = render partial: 'external_posts', locals: { provider: :instagram, limit: 10 }
       %a.btn.btn-primary{ :href => url_for(:controller=>'external_posts', :action=>'index') }
         = t '.all_instagram_entries'
+
+%a{ :name => "contact" }
+.container.contact
+  .row
+    .col-md-8.col-md-offset-2.heading
+      %h2= t '.contact'
+      %p.lead= t '.contact_lead'
+  .row
+    .col-md-3.col-xs-col-12.col-md-offset-2
+      .contact-card
+        .contact-photo
+          %img.img-responsive.img-circle{ :src => image_path("bratt.jpg")}
+        .contact-details
+          %h4
+            Jesper Bratt
+          %p
+            =t 'roles.project_leader'
+          %p
+            0730887497
+          %p
+            jbratt@kth.se
+      .contact-card
+        .contact-photo
+          %img.img-responsive.img-circle{ :src => image_path("engstrom.jpg")}
+        .contact-details
+          %h4
+            Gustav Engström
+          %p
+            = t 'roles.sales_manager'
+          %p
+            0704949447
+          %p
+            guseng@kth.se
+    .contact-form.col-md-5
+      = render :partial => 'contact_form/form'

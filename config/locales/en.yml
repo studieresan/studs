@@ -65,8 +65,8 @@ en:
     index:
       splash_title: Get to know 31 computer science students
       splash_lead: >
-        We are 31 students who are close to exam and we are eager to
-        to meet business for upcoming master theses and jobs.
+        We are 31 students who are close to graduation and we are eager to
+        meet businesses for upcoming master theses and jobs.
         Through this project, you will meet and get to know us, but
         you will also be able to tell us about your business and what
         you  have to offer.
@@ -261,6 +261,7 @@ en:
       location: Location
       start_date: Time
       organizations: Organizations
+      event: Event
     show: 
       stats: Statistics from event survey
     form: 
@@ -444,6 +445,7 @@ en:
     replace: Replace
     back: Back
     delete_prompt_html: "Are you sure that you wish to delete the %{type} <em>%{name}</em>?"
+    linkedin: Show LinkedIn-profile
   flash:
     unauthorized_html: >
       You are not authorized to view this page.
