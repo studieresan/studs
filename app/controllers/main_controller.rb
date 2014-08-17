@@ -11,4 +11,7 @@ class MainController < ApplicationController
 
   def pub
   end
+
+  def apply
+  end
 end
