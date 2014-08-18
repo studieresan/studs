@@ -63,7 +63,9 @@ class ApplicationController < ActionController::Base
 
   # I18n language selection
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    # Uncomment the following line and delete the line below it to enable multiple languages
+    # I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = :en
   end
 
   # URL options
