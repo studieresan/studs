@@ -2,7 +2,7 @@
 %html(xmlns="http://www.w3.org/1999/xhtml"){ lang: I18n.locale }
   %head
     %meta{ :charset => "utf-8" }
-    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"}
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" }
     %meta{ :name => "description", :content => "" }
     %meta{ :name => "author", :content => "" }
     %title= t('common.title')
@@ -34,13 +34,13 @@
                   - [%w(sv Svenska), %w(en English)].each do |lang, name|
                     - next if I18n.locale.to_s == lang
                     - css_class = [lang, (:active if I18n.locale.to_s == lang)]
-                    %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
+                    / %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
                   - if not logged_in?
                     %li
                       = link_to t('navigation.login'), login_path
                   - if logged_in?
                     %li.dropdown
-                      %a.dropdown-toggle{ :href => "#", :data => { :toggle => "dropdown"}}
+                      %a.dropdown-toggle{ :href => "#", :data => { :toggle => "dropdown"} }
                         = current_user.login
                         %b.caret
                       %ul.dropdown-menu

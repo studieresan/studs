@@ -50,7 +50,7 @@ Studs::Application.routes.draw do
     get '/'       => 'main#index', as: :index
 
     get 'apply' => 'main#apply', as: :apply
-    get 'ansokan' => 'main#apply', as: :apply
+    get 'ansokan' => 'main#ansokan', as: :ansokan
   end
 
   root to: 'main#index'
