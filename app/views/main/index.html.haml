@@ -9,17 +9,17 @@
           %i.fa.fa-chevron-down.fa-stack-1x.fa-inverse
 
 %a{ :name => "news"}
-.container.news
-  .row
-    .blog.col-sm-7.col-md-6.col-md-offset-1.col-lg-5.col-lg-offset-2
-      %h2= t '.latest_from_the_blog'
-      = render :partial => 'posts/front_page', :collection => @posts, :as => :post
-      %a.btn.btn-primary{ :href => url_for(:controller=>'posts', :action=>'feed') }
-        = t '.all_blog_entries'
-    .instagram.col-sm-5.col-md-4.col-lg-3
-      = render partial: 'external_posts', locals: { provider: :instagram, limit: 10 }
-      %a.btn.btn-primary{ :href => url_for(:controller=>'external_posts', :action=>'index') }
-        = t '.all_instagram_entries'
+/ .container.news
+/   .row
+/     .blog.col-sm-7.col-md-6.col-md-offset-1.col-lg-5.col-lg-offset-2
+/       %h2= t '.latest_from_the_blog'
+/       = render :partial => 'posts/front_page', :collection => @posts, :as => :post
+/       %a.btn.btn-primary{ :href => url_for(:controller=>'posts', :action=>'feed') }
+/         = t '.all_blog_entries'
+/     .instagram.col-sm-5.col-md-4.col-lg-3
+/       = render partial: 'external_posts', locals: { provider: :instagram, limit: 10 }
+/       %a.btn.btn-primary{ :href => url_for(:controller=>'external_posts', :action=>'index') }
+/         = t '.all_instagram_entries'
 
 %a{ :name => "contact" }
 .container.contact
@@ -30,28 +30,28 @@
   .row
     .col-md-3.col-xs-col-12.col-md-offset-2
       .contact-card
-        .contact-photo
-          %img.img-responsive.img-circle{ :src => image_path("bratt.jpg")}
+        / .contact-photo
+        /   %img.img-responsive.img-circle{ :src => image_path("bratt.jpg")}
         .contact-details
           %h4
-            Jesper Bratt
+            Andreas Johansson
           %p
             =t 'roles.project_leader'
           %p
-            0730887497
+            0704245454
           %p
-            jbratt@kth.se
+            andjoh3@kth.se
       .contact-card
-        .contact-photo
-          %img.img-responsive.img-circle{ :src => image_path("engstrom.jpg")}
+        / .contact-photo
+        /   %img.img-responsive.img-circle{ :src => image_path("engstrom.jpg")}
         .contact-details
           %h4
-            Gustav Engström
+            Johan Arnör
           %p
             = t 'roles.sales_manager'
           %p
-            0704949447
+            0735020548
           %p
-            guseng@kth.se
+            jarnor@kth.se
     .contact-form.col-md-5
       = render :partial => 'contact_form/form'
