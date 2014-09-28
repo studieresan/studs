@@ -1,7 +1,7 @@
 en:
   common:
-    title: studs 2014
-    year: 2014
+    title: studs 2015
+    year: 2015
     delimeter_html: ' - '
     my_resume: My resume
     users: Users
@@ -63,9 +63,9 @@ en:
 
   main:
     index:
-      splash_title: Get to know 31 computer science students
+      splash_title: Get to know 28 computer science students
       splash_lead: >
-        We are 31 students who are close to graduation and we are eager to
+        We are 28 students who are close to graduation and we are eager to
         meet businesses for upcoming master theses and jobs.
         Through this project, you will meet and get to know us, but
         you will also be able to tell us about your business and what
@@ -86,8 +86,8 @@ en:
       about_plane: It ends with a journey
       contact: Contact
       contact_lead: >
-        For more information, please contact the project leader Jesper Bratt, 
-        sales manager Gustav Engström, or send us a message via the contact form.
+        For more information, please contact the project leader Andreas Johansson, 
+        sales manager Johan Arnör, or send us a message via the contact form.
       contact_name: Name
       contact_company: Company
       contact_mail: Email
