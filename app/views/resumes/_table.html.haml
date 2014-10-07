@@ -1,6 +1,5 @@
 - max_skills_shown = 5
 - resumes ||= @resumes
-- filtered_skills ||= @filter.skills || []
 %table.resumes.table
   - cols = %w(name email skills)
   %thead
@@ -20,7 +19,6 @@
         %td.name= res
         %td.email= mail_to res.email
         %td.skills<
-          - skills = res.skills_except(filtered_skills)
           - skills[0...max_skills_shown].each do |s|
             = link_to s, url_for(params.merge({s: s})), :class => :itag
           - if skills.size > max_skills_shown

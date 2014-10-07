@@ -9,17 +9,7 @@
         = form_tag resumes_path, method: :get, :class => 'resume-search form' do
           %fieldset.inline
             .input.text.name.form-group.row
-              .col-md-6.col-xs-12
-                = label_tag :n, t_attribute(:resume, :name)
-                .wrap= text_field_tag :n, @filter.n, :'data-suggestions' => Resume.uniq.pluck(:name).to_json, :class => "form-control"
-            .input.text.name.form-group.row
-              .col-md-6.col-xs-12
-                = label_tag :s, t_attribute(:resume, :skills)
-                .wrap= text_field_tag :s, @filter.s, :'data-suggestions' => Resume.existing_skills.to_json, class: "form-control"
             .input.actions.btn-group
-              = submit_tag t('actions.filter'), name: nil, :class => :"btn btn-default commit"
-              - unless @filter.filters?
-                = action_link :reset, resumes_path, :"btn btn-default"
               %a.btn.btn-primary{ :href => resumes_path(format: :zip, :params => params)}
                 %i.fa.fa-download
                 = t('actions.download_all')

@@ -13,8 +13,7 @@ class ResumesController < ApplicationController
 
   def index
     @filer_params = params.to_hash.slice(*%w(n name s skill_list))
-    @filter = ResumeFilter.new(params.to_hash.slice(*%w(n name s skill_list)))
-    @resumes = @filter.resumes
+    @resumes = Resume.scoped
     authorize! :read, Resume
 
     respond_to do |format|

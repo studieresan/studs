@@ -25,10 +25,10 @@
                   %img.logo{ :src => image_path("studs_2014_small.png") }
               .collapse.navbar-collapse
                 %ul.nav.navbar-nav.navbar-right
-                  / %li
-                  /   = link_to t('navigation.newsfeed'), newsfeed_path, :class => (:newsfeed == active_menu ? :active : nil)
-                  / %li
-                  /   = link_to t('navigation.events'), events_path, :class => (:events == active_menu ? :active : nil)
+                  %li
+                    = link_to t('navigation.newsfeed'), newsfeed_path, :class => (:newsfeed == active_menu ? :active : nil)
+                  %li
+                    = link_to t('navigation.events'), events_path, :class => (:events == active_menu ? :active : nil)
                   %li
                     = link_to t('navigation.resumes'), resumes_path, :class => (:resumes == active_menu ? :active : nil)
                   - [%w(sv Svenska), %w(en English)].each do |lang, name|
