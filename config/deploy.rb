@@ -2,13 +2,13 @@ set :application, 'studs'
 set :repository, 'https://mogelbro@github.com/mogelbrod/studs'
 set :scm, :git
 
-set :branch, fetch(:branch, 'master')
+set :branch, fetch(:branch, 'studs2014')
 
-set :stages, ['staging', 'production']
-set :default_stage, 'staging'
+set :stages, ['production']
+set :default_stage, 'production'
 require 'capistrano/ext/multistage'
 
-webfactional_domain = 'studs.webfactional.com'
+webfactional_domain = '2014.studs.webfactional.com'
 role :app, webfactional_domain, :alias => 'webfactional'
 role :web, webfactional_domain, :alias => 'webfactional'
 role :db,  webfactional_domain, :alias => 'webfactional', :primary => true
