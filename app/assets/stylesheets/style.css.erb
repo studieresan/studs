@@ -1,25 +1,12 @@
 /* Font Face */
-
 @font-face {
-    font-family: 'Avenir';
-    src: url(<%= asset_path 'avenirltstd-roman-webfont.eot' %>);
-    src: url(<%= asset_path 'avenirltstd-roman-webfont.eot?#iefix' %>) format('embedded-opentype'),
-    url(<%= asset_path 'avenirltstd-roman-webfont.woff' %>) format('woff'),
-    url(<%= asset_path 'avenirltstd-roman-webfont.ttf' %>) format('truetype'),
-    url(<%= asset_path 'avenirltstd-roman-webfont.svg#avenir_lt_std55_roman' %>) format('svg');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'HelveticaNeueLight';
+    src: url(<%= asset_path 'HelveticaNeueLight.ttf' %>) format('truetype');
 }
 
 @font-face {
-    font-family: 'Avenir';
-    src: url(<%= asset_path 'avenirltstd-heavy-webfont.eot' %>);
-    src: url(<%= asset_path 'avenirltstd-heavy-webfont.eot?#iefix' %>) format('embedded-opentype'),
-    url(<%= asset_path 'avenirltstd-heavy-webfont.woff' %>) format('woff'),
-    url(<%= asset_path 'avenirltstd-heavy-webfont.ttf' %>) format('truetype'),
-    url(<%= asset_path 'avenirltstd-heavy-webfont.svg#avenir_lt_std85_heavy' %>) format('svg');
-    font-weight: bold;
-    font-style: normal;
+    font-family: 'HelveticaNeueThin';
+    src: url(<%= asset_path 'HelveticaNeueThin.ttf' %>) format('truetype');
 }
 /* Global Styles */
 
@@ -27,13 +14,12 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: 'Avenir', sans-serif;
+  font-family: 'HelveticaNeueLight', sans-serif;
   font-size: 15px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Avenir', sans-serif;
-  font-weight: 600;
+  font-family: 'HelveticaNeueThin', sans-serif;
 }
 
 a {
@@ -135,7 +121,7 @@ form .check {
 /* Navigation bar */
 .navbar {
     margin: 0;
-    font-family: 'Avenir', sans-serif;
+    font-family: 'HelveticaNeueThin', sans-serif;
     height: 70px;
     font-size: 17px;
 }
@@ -171,9 +157,8 @@ form .check {
 
 #header-box > h1 {
     font-size: 4.5em;
-    font-family: 'Avenir', sans-serif;
+    font-family: 'HelveticaNeueThin', sans-serif;
     text-align: center;
-    font-weight: 600;
     max-width: 650px;
     margin: 0 auto;
 }
@@ -196,7 +181,7 @@ form .check {
 }
 
 #header-box > p {
-    font-family: 'Avenir', sans-serif;
+    font-family: 'HelveticaNeueThin', sans-serif;
     text-align: center;
     padding-top: 30px;
     max-width: 600px;
