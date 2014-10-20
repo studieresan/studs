@@ -76,71 +76,67 @@ form .check {
 }
 
 /* Navigation bar */
-.navbar {
-  margin: 0;
-}
-.navbar-collapse.collapse {
-  padding-left: 0;
-  padding-right: 0;
-
-}
-#navigation-bar .navbar-collapse.in,
-#navigation-bar .navbar-collapse.collapsing {
-  background: #f8f8f8;
-  min-height: 280px;
-  border: 1px solid #dddddd;
-  border-top: none;
-  margin-top: 10px;
+.right {
+    position: absolute;
+    left: auto;
+    right: 0;
 }
 
-#navigation-bar .navbar-toggle:hover {
-  background-color: #eeeeee;
-}
-
-#navigation-bar .navbar-toggle {
-  background-color: #f8f8f8;
-  margin-top: 18px;
-}
-
-.navbar-default .navbar-nav > li > a.active {
-  color: #333333;
-}
-
-.navbar-default .navbar-nav ul.dropdown-menu > li > a.active {
-  background: #e7e7e7;
-}
-
-.navbar-default .navbar-nav ul.dropdown-menu > li > a.active:hover {
-  background: #428bca;
-}
-
-.navbar-collapse.in .navbar-nav > li > a:hover {
-  background-color: #eee;
-}
-
-/* Navigation bar */
-.navbar {
-    margin: 0;
+#navcontainer {
     font-family: 'HelveticaNeueThin', sans-serif;
     height: 70px;
-    font-size: 17px;
+    background-color: #F6F6F6;
+    position: relative;
 }
-.navbar-collapse .navbar-nav {
-    height: 70px;
-}
-.navbar .logo {
-    height: 55px;
-    padding-top: 15px;
-}
-.navbar-nav > li {
-    padding-top: 10px;
-    height: 50px;
-}
-/* Full Page Image Header Area */
 
+#navcontainer > a > .logo {
+    padding: 5px;
+    height: 70px;
+    position: absolute;
+}
+
+
+#navlist {
+    padding-top: 34px;
+    list-style-type: none;
+}
+
+#navlist > li {
+    font-size: 21px;
+    display: inline;
+    padding-right: 20px;
+}
+
+#navlist > li > a {
+    text-decoration: none;
+    color: #777777;
+}
+
+#navlist > li > a:hover {
+    color: #aaaaaa;
+}
+
+#navlist > li > a.active {
+    color: #FF35BB;
+}
+
+#navdropdown > li {
+    font-size: 16px;
+    background-color: #FFFFFF;
+}
+
+#navdropdown > li > a {
+    color: #777777;
+}
+
+#navdropdown > li > a:hover {
+    background-color: #FFA3E4;
+}
+
+/* Full Page Image Header Area */
 .header {
     display: table;
-    margin-top: -50px;
+    margin-top: 0px;
     padding-top: 220px;
     width: 100%;
     min-height: 800px;

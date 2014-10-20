@@ -11,54 +11,44 @@
     = favicon_link_tag 'favicon.ico'
     = render partial: '/google_analytics'
   %body
-    .navbar-main#navigation-bar
-      .navbar.navbar-fixed-top.navbar-default{ :role => "navigation" }
-        .container
-          .row
-            .col-md-offset-2.col-md-8
-              .navbar-header
-                %button.navbar-toggle{ :type => "button", :data => { :toggle => "collapse", :target => ".navbar-collapse" }}
-                  %span.icon-bar
-                  %span.icon-bar
-                  %span.icon-bar
-                %a{ :href => index_path }
-                  %img.logo{ :src => image_path("studs_2015_small.png") }
-              .collapse.navbar-collapse
-                %ul.nav.navbar-nav.navbar-right
-                  %li
-                    = link_to t('navigation.newsfeed'), newsfeed_path, :class => (:newsfeed == active_menu ? :active : nil)
-                  %li
-                    = link_to t('navigation.events'), events_path, :class => (:events == active_menu ? :active : nil)
-                  %li
-                    = link_to t('navigation.resumes'), resumes_path, :class => (:resumes == active_menu ? :active : nil)
-                  - [%w(sv Svenska), %w(en English)].each do |lang, name|
-                    - next if I18n.locale.to_s == lang
-                    - css_class = [lang, (:active if I18n.locale.to_s == lang)]
-                    / %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
-                  - if not logged_in?
-                    %li
-                      = link_to t('navigation.login'), login_path
-                  - if logged_in?
-                    %li.dropdown
-                      %a.dropdown-toggle{ :href => "#", :data => { :toggle => "dropdown"} }
-                        = current_user.login
-                        %b.caret
-                      %ul.dropdown-menu
-                        %li
-                          - if organization?
-                            = link_to t('navigation.introduction'), intro_users_path, :class => (:intro == active_menu ? :active : nil)
-                          - if can? :manage, Post
-                            = link_to t('navigation.posts'), posts_path, :class => (:posts == active_menu ? :active : nil)
-                          - if can? :manage, PostImage
-                            = link_to t('navigation.post_images'), post_images_path, :class => (:post_images == active_menu ? :active : nil)
-                          - if can? :manage, File
-                            = link_to t('navigation.files'), files_path, :class => (:files == active_menu ? :active : nil)
-                          -if can? :index, User
-                            = link_to t('navigation.users'), users_path, :class => (:users == active_menu ? :active : nil)
-                          = link_to t('navigation.profile'), me_users_path, :class => (:me_users == active_menu ? :active : nil)
-                          - if student?
-                            = link_to t('navigation.resume'), mine_resumes_path
-                          = link_to t('navigation.logout'), logout_path
+    #navcontainer{ :role => "navigation" }
+      %a{ :href => index_path }
+        %img.logo{ :src => image_path("studs_2015_small.png") }
+      %ul.right#navlist
+        %li
+          = link_to t('navigation.newsfeed'), newsfeed_path, :class => (:newsfeed == active_menu ? :active : nil)
+        %li
+          = link_to t('navigation.events'), events_path, :class => (:events == active_menu ? :active : nil)
+        %li
+          = link_to t('navigation.resumes'), resumes_path, :class => (:resumes == active_menu ? :active : nil)
+        - [%w(sv Svenska), %w(en English)].each do |lang, name|
+          - next if I18n.locale.to_s == lang
+          - css_class = [lang, (:active if I18n.locale.to_s == lang)]
+          / %li= link_to t("common.languages.#{lang}"), url_for(locale: lang), :class => css_class
+        - if not logged_in?
+          %li
+            = link_to t('navigation.login'), login_path
+        - if logged_in?
+          %li
+            %a{ :href => "#", :data => { :toggle => "dropdown"} }
+              = current_user.login
+              %b.caret
+            %ul.dropdown-menu.pull-right#navdropdown
+              %li
+                - if organization?
+                  = link_to t('navigation.introduction'), intro_users_path, :class => (:intro == active_menu ? :active : nil)
+                - if can? :manage, Post
+                  = link_to t('navigation.posts'), posts_path, :class => (:posts == active_menu ? :active : nil)
+                - if can? :manage, PostImage
+                  = link_to t('navigation.post_images'), post_images_path, :class => (:post_images == active_menu ? :active : nil)
+                - if can? :manage, File
+                  = link_to t('navigation.files'), files_path, :class => (:files == active_menu ? :active : nil)
+                -if can? :index, User
+                  = link_to t('navigation.users'), users_path, :class => (:users == active_menu ? :active : nil)
+                = link_to t('navigation.profile'), me_users_path, :class => (:me_users == active_menu ? :active : nil)
+                - if student?
+                  = link_to t('navigation.resume'), mine_resumes_path
+                = link_to t('navigation.logout'), logout_path
 
 
     - if current_page?index_path or current_page?('/')
