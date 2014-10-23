@@ -132,23 +132,46 @@ form .check {
 #navdropdown > li > a:hover {
     background-color: #FFA3E4;
 }
-
 /* Full Page Image Header Area */
 .header {
-    display: table;
-    margin-top: 0px;
-    padding-top: 220px;
+    padding-top: 20px;
+    min-height: 840px;
+    text-align: center;
+    background-image: url(<%= asset_path 'bubbles.svg' %>), url(<%= asset_path 'bubbles.svg' %>);
+    background-repeat: no-repeat;
+    background-size: 840px;
+    background-position: -45px -80px, 680px -80px;
     width: 100%;
-    min-height: 800px;
-    background: url(<%= asset_path 'd1.jpg' %>) no-repeat center top;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
 }
+
+.main-circle {
+  width: 600px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+.main-logo {
+  width: 400px;
+  padding-top: 130px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+.main-text {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 300px;
+  position: absolute;
+}
+
 #header-box {
-    color: #ffffff;
+    color: #000000;
 }
 
 #header-box > h1 {
@@ -161,8 +184,6 @@ form .check {
 
 @media(max-width: 768px) {
   .header {
-      min-height: 640px;
-      padding-top: 120px;
   }
   #header-box > h1{
     font-size: 3em;
@@ -599,3 +620,4 @@ a.anchor {
 .btn-xlarge {
   font-size: 40px;
 }
+

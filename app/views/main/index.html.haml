@@ -1,12 +1,20 @@
-#top.header
-  .container
-    #header-box.col-md-10.col-md-offset-1.text-center
-      %h1= t '.splash_title'
-      %p.lead= t '.splash_lead'
-      %a{ :href => "#news" }
-        %span.fa-stack.fa-lg.read-more.fa-2x
-          %i.fa.fa-circle.fa-stack-2x
-          %i.fa.fa-chevron-down.fa-stack-1x.fa-inverse
+#top
+  .header
+    %object.main-circle{ :type => "image/svg+xml", :data => image_path("transparent-yellow-circle.svg")} 
+    %img.main-logo{ :src => image_path("studs_2015.png") }
+    .container
+      %h1.main-text
+        Get to know 28 computer
+        %br science students
+
+      / %object.bubbles{ :type => "image/svg+xml", :data => image_path("bubbles.svg")} 
+    / #header-box.col-md-10.col-md-offset-1.text-center
+    /   %h1= t '.splash_title'
+    /   %p.lead= t '.splash_lead'
+    /   %a{ :href => "#news" }
+    /     %span.fa-stack.fa-lg.read-more.fa-2x
+    /       %i.fa.fa-circle.fa-stack-2x
+    /       %i.fa.fa-chevron-down.fa-stack-1x.fa-inverse
 
 %a{ :name => "news"}
 / .container.news
