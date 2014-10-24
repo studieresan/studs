@@ -2,10 +2,14 @@
   .header
     %object.main-circle{ :type => "image/svg+xml", :data => image_path("transparent-yellow-circle.svg")} 
     %img.main-logo{ :src => image_path("studs_2015.png") }
-    .container
-      %h1.main-text
-        Get to know 28 computer
-        %br science students
+    %h1.main-text
+      = t '.splash_title'
+    %object.description-circle.front{ :type => "image/svg+xml", :data => image_path("opaque-cerise-circle.svg")}
+    %h3.front-circle-text
+      = t '.splash_first_description'
+    %h3.back-circle-text
+      = t '.splash_second_description'
+    %object.description-circle.back{ :type => "image/svg+xml", :data => image_path("opaque-cerise-circle.svg")}
 
       / %object.bubbles{ :type => "image/svg+xml", :data => image_path("bubbles.svg")} 
     / #header-box.col-md-10.col-md-offset-1.text-center

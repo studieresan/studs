@@ -134,14 +134,13 @@ form .check {
 }
 /* Full Page Image Header Area */
 .header {
-    padding-top: 20px;
-    min-height: 840px;
-    text-align: center;
-    background-image: url(<%= asset_path 'bubbles.svg' %>), url(<%= asset_path 'bubbles.svg' %>);
-    background-repeat: no-repeat;
-    background-size: 840px;
-    background-position: -45px -80px, 680px -80px;
-    width: 100%;
+  padding-top: 20px;
+  min-height: 840px;
+  text-align: center;
+  background-image: url(/assets/bubbles.svg), url(/assets/bubbles.svg),url(/assets/bubbles.svg);
+  background-repeat: no-repeat;
+  background-size: 722px;
+  background-position: -45px -80px, 553px -80px, 1140px -80px;
 }
 
 .main-circle {
@@ -151,23 +150,69 @@ form .check {
   margin-right: auto;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 .main-logo {
   width: 400px;
-  padding-top: 130px;
+  top: 225px;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 .main-text {
+  top: 400px;
+  width: 500px;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  bottom: 300px;
   position: absolute;
+  z-index: 1;
+}
+.description-circle {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+.description-circle.front {
+  width: 400px;
+  top: 562px;
+  right: 510px;
+  z-index: 2;
+}
+.description-circle.back {
+  width: 380px;
+  top: 578px;
+  left: 475px;
+  z-index: 0;
+}
+.front-circle-text {
+  color: #ffffff;
+  top: 681px;
+  width: 270px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 500px;
+  position: absolute;
+  z-index: 2;
+}
+.back-circle-text {
+  color: #ffffff;
+  top: 670px;
+  width: 266px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 475px;
+  right: 0px;
+  position: absolute;
+  z-index: 1;
 }
 
 #header-box {
@@ -183,7 +228,7 @@ form .check {
 }
 
 @media(max-width: 768px) {
-  .header {
+  .main-circle {
   }
   #header-box > h1{
     font-size: 3em;
