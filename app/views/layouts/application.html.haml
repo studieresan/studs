@@ -11,10 +11,10 @@
     = favicon_link_tag 'favicon.ico'
     = render partial: '/google_analytics'
   %body
-    #navcontainer{ :role => "navigation" }
+    #nav-container{ :role => "navigation" }
       %a{ :href => index_path }
-        %img.logo{ :src => image_path("studs_2015.png") }
-      %ul.right#navlist
+        %img#nav-logo{ :src => image_path("studs_2015.png") }
+      %ul.right#nav-list
         %li
           = link_to t('navigation.newsfeed'), newsfeed_path, :class => (:newsfeed == active_menu ? :active : nil)
         %li
@@ -33,7 +33,7 @@
             %a{ :href => "#", :data => { :toggle => "dropdown"} }
               = current_user.login
               %b.caret
-            %ul.dropdown-menu.pull-right#navdropdown
+            %ul.dropdown-menu.pull-right#nav-dropdown
               %li
                 - if organization?
                   = link_to t('navigation.introduction'), intro_users_path, :class => (:intro == active_menu ? :active : nil)

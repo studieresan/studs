@@ -16,6 +16,7 @@ body {
   width: 100%;
   font-family: 'HelveticaNeueLight', sans-serif;
   font-size: 15px;
+  font-weight: lighter;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,9 +26,11 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: #A32C78;
 }
+
 a:hover {
     color: #751E55;
 }
+
 .flash {
   text-align: center;
   margin-bottom: 0px;
@@ -75,147 +78,281 @@ form .check {
   margin-top: 7px;
 }
 
+/* Positioning */
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
 /* Navigation bar */
-.right {
+#nav-container {
+    font-family: 'HelveticaNeueThin', sans-serif;
+    height: 70px;
+    width: 100%;
+    background-color: rgba(246, 246, 246, 0.95);
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+}
+
+#nav-container > * {
     position: absolute;
+}
+
+
+#nav-logo {
+    padding: 5px;
+    height: 70px;
+}
+
+
+#nav-list {
+    padding-top: 34px;
     left: auto;
     right: 0;
 }
 
-#navcontainer {
-    font-family: 'HelveticaNeueThin', sans-serif;
-    height: 70px;
-    background-color: #F6F6F6;
-    position: relative;
-}
-
-#navcontainer > a > .logo {
-    padding: 5px;
-    height: 70px;
-    position: absolute;
-}
-
-
-#navlist {
-    padding-top: 34px;
-    list-style-type: none;
-}
-
-#navlist > li {
+#nav-list > li {
     font-size: 21px;
     display: inline;
     padding-right: 20px;
 }
 
-#navlist > li > a {
+#nav-list > li > a {
     text-decoration: none;
     color: #777777;
 }
 
-#navlist > li > a:hover {
+#nav-list > li > a:hover {
     color: #aaaaaa;
 }
 
-#navlist > li > a.active {
+#nav-list > li > a.active {
     color: #FF35BB;
 }
 
-#navdropdown > li {
+#nav-dropdown {
+    opacity: 0.95;
+}
+
+#nav-dropdown > li {
     font-size: 16px;
     background-color: #FFFFFF;
 }
 
-#navdropdown > li > a {
+#nav-dropdown > li > a {
     color: #777777;
 }
 
-#navdropdown > li > a:hover {
+#nav-dropdown > li > a:hover {
     background-color: #FFA3E4;
 }
-/* Full Page Image Header Area */
-.header {
-  padding-top: 20px;
-  min-height: 840px;
-  text-align: center;
+
+/* Circles */
+.circle {
+  border-radius: 50%;
+}
+
+.circle.yellow {
+  background-color: rgb(255,244,62);
+}
+
+.circle.cerice {
+  background-color: rgb(255,53,187);
+  color: #ffffff;
+}
+
+/* Vertical segments 
+ * The basic building block, each page contains of
+ * multiple, vertically stacked segments. Direct 
+ * children are absolutely positioned.
+*/
+.vertical-segment {
+  position: relative;
+  width: 100%;
+  margin: 0px;
+}
+
+.vertical-segment > * {
+  position: absolute;
+}
+
+/* Header */
+#header-segment {
+  /*background-color: rgba(0,0,255,0.5); /* TEMP */
+  margin-top: 70px;
+  width: 100%;
+  height: 900px;
   background-image: url(/assets/bubbles.svg), url(/assets/bubbles.svg),url(/assets/bubbles.svg);
   background-repeat: no-repeat;
   background-size: 722px;
   background-position: -45px -80px, 553px -80px, 1140px -80px;
 }
 
-.main-circle {
+#center-circle {
+  background-color: rgba(255,244,62,0.9);
+  text-align: center;
   width: 600px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
+  height: 600px;
+  top: 20px;
   z-index: 1;
-}
-.main-logo {
-  width: 400px;
-  top: 225px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
-.main-text {
-  top: 400px;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  position: absolute;
-  z-index: 1;
-}
-.description-circle {
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  position: absolute;
 }
 
-.description-circle.front {
+#center-circle > img {
+  position: absolute;
   width: 400px;
-  top: 562px;
-  right: 510px;
+  top: 135px;
+}
+
+#center-circle > h1 {
+  position: absolute;
+  width: 75%;
+  bottom: 135px;
+}
+
+#left-circle {
+  text-align: center;
+  line-height: 400px;
+  width: 400px;
+  height: 400px;
+  top: 492px;
+  right: 50%;
+  margin-right: 60px;
   z-index: 2;
 }
-.description-circle.back {
+
+#right-circle {
+  text-align: center;
+  line-height: 380px;
   width: 380px;
-  top: 578px;
-  left: 475px;
+  height: 380px;
+  top: 508px;
+  left: 50%;
+  margin-left: 60px;
   z-index: 0;
 }
-.front-circle-text {
-  color: #ffffff;
-  top: 681px;
-  width: 270px;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 500px;
-  position: absolute;
-  z-index: 2;
-}
-.back-circle-text {
-  color: #ffffff;
-  top: 670px;
-  width: 266px;
-  margin-left: auto;
-  margin-right: auto;
-  left: 475px;
-  right: 0px;
-  position: absolute;
-  z-index: 1;
+
+#left-circle > h3, #right-circle > h3 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 75%;
 }
 
-#header-box {
+/* Contact */
+#contact-segment {
+  height: 300px;
+  margin-top: -40px;
+}
+
+#contact-circle {
+  text-align: center;
+  width: 300px;
+  height: 300px;
+}
+
+#contact-circle h1 {
+  margin-top: 60px;
+  font-size: 45px;
+}
+
+#contact-circle h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#contact-circle h3 {
+  margin-top: 2px;
+  margin-bottom: 0px;
+}
+
+#contact-circle a {
+  color: inherit;
+}
+
+/* Latest from blog */
+#latestblog-segment {
+  min-height: 300px;
+  margin-top: 20px;
+}
+
+#latestblog-circle {
+  text-align: left;
+  line-height: 300px;
+  width: 300px;
+  height: 300px;
+  right: 50%;
+  margin-right: 100px;
+}
+
+#latestblog-circle h1 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 75%;
+  margin-left: 40px;
+  font-size: 45px;
+}
+
+/* This div will expand downwards as text gets longer,
+ * hence it is styled such that #latestblog-segment
+ * will expand with it when that happens. This will 
+ * cause segments that are following to still look good.
+ */
+#latestblog-text {
+  position: relative;
+  overflow: auto;
+  padding-top: 100px;
+  left: 50%;
+  width: 400px;
+}
+
+/* Instagram */
+#instagram-segment {
+  float: right;
+  min-height: 700px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#instagram-circle {
+  text-align: center;
+  line-height: 250px;
+  width: 250px;
+  height: 250px;
+  left: 50%;
+  margin-left: 150px;
+}
+
+#instagram-circle h1 {
+  margin-top: 95px;
+  font-size: 45px;
+}
+
+/* This div will expand downwards as images are added,
+ * hence it is styled such that #isntagram-segment
+ * will expand with it when that happens. This will 
+ * cause segments that are following to still look good.
+ */
+#instagram-img-container {
+  position: relative;
+  overflow: auto;
+  padding-top: 90px;
+  left: 50%;
+  margin-left: -530px;
+  width: 600px;
+  min-height: 600px;
+}
+
+#instagram-img-container > img {
+  float: right;
+  padding-top: 90;
+  margin: 5px;
+  width: 190px;
+  height: 190px;
+}
+
+/*#header-box {
     color: #000000;
 }
 
@@ -263,7 +400,7 @@ form .check {
         margin-top: 60px;
         margin-bottom: 60px;
     }
-}
+}*/
 
 /* About */
 
@@ -339,7 +476,7 @@ form .check {
 
 /* Contact */
 
-.contact {
+/*.contact {
   padding: 50px 0;
 }
 
@@ -388,7 +525,8 @@ form .check {
     .contact .contact-details {
         text-align: center;
     }
-}
+}*/
+
 /* Footer */
 
 footer {
