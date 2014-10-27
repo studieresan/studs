@@ -1,4 +1,6 @@
-.post
-  - unless post.post_image.blank?
-    = image_tag post.post_image.image, :class => 'front-page-featured-image'
-  %h3= link_to post.title, newsfeed_path(anchor: post.id)
+%a.no-link-style{ :href => url_for(:controller=>'posts', :action=>'feed') }
+	- unless post.post_image.blank?
+		= image_tag post.post_image.image, :class => 'front-page-featured-image'
+	%h2= post.title
+	.post-teaser
+		= markdown post.content

@@ -18,10 +18,11 @@
 #latestblog-segment.vertical-segment
   #latestblog-circle.circle.cerice
     %h1= t '.latest_from_the_blog'
-  #latestblog-text= t 'Shabby chic seitan bicycle rights hella, vinyl brunch hashtag narwhal, PBR banh mi disrupt biodiesel kogi, Etsy iPhone Odd Future direct trade, Pitchfork skateboard beard art party cray, pug mustache direct trade kogi Banksy DIY, Twee skateboard wayfarers, next level mumblecore crucifix pug, Readymade yr American Apparel, shabby chic Intelligentsia blog brunch aesthetic selvage pop-up, Occupy letterpress chambray butcher mustache, Literally tofu farm-to-table, irony bespoke McSweeney''s retro American Apparel kale chips Pitchfork seitan,'
+  #latestblog-text
+    = render :partial => 'posts/front_page', :collection => @posts, :as => :post
 #instagram-segment.vertical-segment
   #instagram-circle.circle.yellow
-    %h1.centered= t 'Instagram'
+    %h1.centered= t '.latest_from_instagram_html'
   #instagram-img-container
     %img{ :src => "/assets/d1.jpg" }
     %img{ :src => "/assets/bratt.jpg" }
