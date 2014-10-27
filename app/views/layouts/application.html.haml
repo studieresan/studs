@@ -12,8 +12,9 @@
     = render partial: '/google_analytics'
   %body
     #nav-container{ :role => "navigation" }
-      %a{ :href => index_path }
-        %img#nav-logo{ :src => image_path("studs_2015.png") }
+      - unless active_menu == nil
+        %a{ :href => index_path }
+          %img#nav-logo{ :src => image_path("studs_2015.png") }
       %ul.right#nav-list
         %li
           = link_to t('navigation.newsfeed'), newsfeed_path, :class => (:newsfeed == active_menu ? :active : nil)

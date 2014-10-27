@@ -13,6 +13,9 @@
 //= require charts
 //= require readmore
 //= require lightbox
+//= require TweenMax.min
+//= require jquery.scrollmagic.min
+//= require animate-logo
 
 $(function() {
   // Enable suggestions for all inputs with a suggestions data attribute
