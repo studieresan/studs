@@ -25,6 +25,13 @@ module FormattingHelper
 
     markdown.render(string).html_safe
   end
+
+  def teaser(string)
+    string = string[0, 300]
+    # Trim the string from the last non-word character(s) to avoid cut off words
+    string = string[0...string.rindex(/\W+/)]
+    string + '...'
+  end
 end
 
 class StudsRenderer < Redcarpet::Render::HTML

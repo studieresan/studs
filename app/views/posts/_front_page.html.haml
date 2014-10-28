@@ -1,6 +1,9 @@
-%a{ :href => url_for(:controller=>'posts', :action=>'feed') }
+.image-teaser
 	- unless post.post_image.blank?
 		= image_tag post.post_image.image, :class => 'front-page-featured-image'
-	%h2= post.title
-	.post-teaser
-		= markdown post.content
+%h2= post.title
+.post-teaser
+	%p= markdown (teaser post.content)
+/ %a.btn.btn-primary{ :href => url_for(:controller=>'posts', :action=>'feed') }
+/ 	= t 'posts.feed.readmore'
+%h2= link_to 'Read more', newsfeed_path(anchor: post.id)
