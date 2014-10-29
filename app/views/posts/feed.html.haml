@@ -1,9 +1,7 @@
 - active_menu :newsfeed
-.posts-header
-  .container
-    .row
-      .col-md-8.col-md-offset-1
-        %h1=t('.heading')
+.posts-header.vertical-segment
+  #blog-circle.circle.yellow
+    %h1.centered= t '.heading'
 .container
   .row
     .col-md-7.col-md-offset-1
@@ -17,10 +15,11 @@
           %a.read-more-close.hide
             =t('.close')
             %i.fa.fa-times-circle.pull-right
-    / .col-md-3
-    /   %h1=t('.info-heading')
-    /   %p=t('.info-text')
-    /   %br
-    /   %p
-    /     %img.img-responsive.img-rounded{ :src => image_path("mattis.jpg")}
-    /   %p.text-center=t('.info-responsible')
+    .col-md-2
+      #behind-the-blog-circle.circle.cerise.vertical-segment
+        %h1=t('.info-heading')
+        %div.centered=t('.info-text')
+      %br
+      .vertical-segment.centered
+        %img#blog-responsible-image{ :src => image_path("mattis.jpg")}
+        %p.text-center#blog-responsible-text=t('.info-responsible')

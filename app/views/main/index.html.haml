@@ -3,9 +3,9 @@
     %img.centered#main-logo{ :src => image_path("studs_2015.png") }
   #center-circle.circle.centered
     %h1.centered= t '.splash_title'
-  #left-circle.circle.cerice
+  #left-circle.circle.cerise
     %h3.centered= t '.splash_first_description'
-  #right-circle.circle.cerice
+  #right-circle.circle.cerise
     %h3.centered= t '.splash_second_description'
 #contact-segment.vertical-segment
   #contact-circle.circle.yellow.centered
@@ -17,7 +17,7 @@
     %a{ :href => "mailto:andjoh3@kth.se" }
       %h3.centered andjoh3@kth.se
 #latestblog-segment.vertical-segment
-  #latestblog-circle.circle.cerice
+  #latestblog-circle.circle.cerise
     %h1= t '.latest_from_the_blog'
   #latestblog-text
     = render :partial => 'posts/front_page', :collection => @posts, :as => :post
