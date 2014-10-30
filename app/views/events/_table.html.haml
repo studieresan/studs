@@ -13,8 +13,8 @@
         - events.each do |event|
           %tr{ :class => ('my-event' if organization? && event.users.include?(current_user))}
             - if can? :read, event
-              %td= link_to event.title, event
+              %td.text-center= link_to event.title, event
             - else
-              %td= event.title
-            %td= event.location
-            %td= l event.start_date, format: :long
+              %td.text-center= event.title
+            %td.text-center= event.location
+            %td.text-center= l event.start_date, format: :long
