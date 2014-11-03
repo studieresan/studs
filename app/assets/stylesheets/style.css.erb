@@ -1,25 +1,12 @@
 /* Font Face */
-
 @font-face {
-    font-family: 'Avenir';
-    src: url(<%= asset_path 'avenirltstd-roman-webfont.eot' %>);
-    src: url(<%= asset_path 'avenirltstd-roman-webfont.eot?#iefix' %>) format('embedded-opentype'),
-    url(<%= asset_path 'avenirltstd-roman-webfont.woff' %>) format('woff'),
-    url(<%= asset_path 'avenirltstd-roman-webfont.ttf' %>) format('truetype'),
-    url(<%= asset_path 'avenirltstd-roman-webfont.svg#avenir_lt_std55_roman' %>) format('svg');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'HelveticaNeueLight';
+    src: url(<%= asset_path 'HelveticaNeueLight.ttf' %>) format('truetype');
 }
 
 @font-face {
-    font-family: 'Avenir';
-    src: url(<%= asset_path 'avenirltstd-heavy-webfont.eot' %>);
-    src: url(<%= asset_path 'avenirltstd-heavy-webfont.eot?#iefix' %>) format('embedded-opentype'),
-    url(<%= asset_path 'avenirltstd-heavy-webfont.woff' %>) format('woff'),
-    url(<%= asset_path 'avenirltstd-heavy-webfont.ttf' %>) format('truetype'),
-    url(<%= asset_path 'avenirltstd-heavy-webfont.svg#avenir_lt_std85_heavy' %>) format('svg');
-    font-weight: bold;
-    font-style: normal;
+    font-family: 'HelveticaNeueThin';
+    src: url(<%= asset_path 'HelveticaNeueThin.ttf' %>) format('truetype');
 }
 /* Global Styles */
 
@@ -27,21 +14,27 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: 'Avenir', sans-serif;
+  font-family: 'HelveticaNeueLight', sans-serif;
   font-size: 15px;
+  font-weight: lighter;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Avenir', sans-serif;
-  font-weight: 600;
+  font-family: 'HelveticaNeueThin', sans-serif;
 }
-
+  
 a {
     color: #A32C78;
 }
+
 a:hover {
     color: #751E55;
 }
+
+a.no-link-style {
+  color: initial;
+}
+
 .flash {
   text-align: center;
   margin-bottom: 0px;
@@ -89,99 +82,302 @@ form .check {
   margin-top: 7px;
 }
 
-/* Navigation bar */
-.navbar {
-  margin: 0;
-}
-.navbar-collapse.collapse {
-  padding-left: 0;
-  padding-right: 0;
-
-}
-#navigation-bar .navbar-collapse.in,
-#navigation-bar .navbar-collapse.collapsing {
-  background: #f8f8f8;
-  min-height: 280px;
-  border: 1px solid #dddddd;
-  border-top: none;
-  margin-top: 10px;
-}
-
-#navigation-bar .navbar-toggle:hover {
-  background-color: #eeeeee;
-}
-
-#navigation-bar .navbar-toggle {
-  background-color: #f8f8f8;
-  margin-top: 18px;
-}
-
-.navbar-default .navbar-nav > li > a.active {
-  color: #333333;
-}
-
-.navbar-default .navbar-nav ul.dropdown-menu > li > a.active {
-  background: #e7e7e7;
-}
-
-.navbar-default .navbar-nav ul.dropdown-menu > li > a.active:hover {
-  background: #428bca;
-}
-
-.navbar-collapse.in .navbar-nav > li > a:hover {
-  background-color: #eee;
+/* Positioning */
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 /* Navigation bar */
-.navbar {
-    margin: 0;
-    font-family: 'Avenir', sans-serif;
+#nav-container {
+    font-family: 'HelveticaNeueThin', sans-serif;
     height: 70px;
-    font-size: 17px;
-}
-.navbar-collapse .navbar-nav {
-    height: 70px;
-}
-.navbar .logo {
-    height: 55px;
-    padding-top: 15px;
-}
-.navbar-nav > li {
-    padding-top: 10px;
-    height: 50px;
-}
-/* Full Page Image Header Area */
-
-.header {
-    display: table;
-    margin-top: -50px;
-    padding-top: 220px;
     width: 100%;
-    min-height: 800px;
-    background: url(<%= asset_path 'd1.jpg' %>) no-repeat center top;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
+    background-color: rgba(246, 246, 246, 0.95);
+    position: fixed;
+    top: 0px;
+    z-index: 10;
 }
-#header-box {
-    color: #ffffff;
+
+#nav-container > * {
+    position: absolute;
+}
+
+
+#nav-logo {
+    padding: 5px;
+    height: 70px;
+}
+
+
+#nav-list {
+    padding-top: 34px;
+    left: auto;
+    right: 0;
+}
+
+#nav-list > li {
+    font-size: 21px;
+    display: inline;
+    padding-right: 20px;
+}
+
+#nav-list > li > a {
+    text-decoration: none;
+    color: #777777;
+}
+
+#nav-list > li > a:hover {
+    color: #aaaaaa;
+}
+
+#nav-list > li > a.active {
+    color: #FF35BB;
+}
+
+#nav-dropdown {
+    opacity: 0.95;
+}
+
+#nav-dropdown > li {
+    font-size: 16px;
+    background-color: #FFFFFF;
+}
+
+#nav-dropdown > li > a {
+    color: #777777;
+}
+
+#nav-dropdown > li > a:hover {
+    background-color: #FFA3E4;
+}
+
+/* Circles */
+.circle {
+  border-radius: 50%;
+}
+
+.circle.yellow {
+  background-color: rgb(255,244,62);
+}
+
+.circle.cerise {
+  background-color: rgb(255,53,187);
+  color: #ffffff;
+}
+
+/* Vertical segments 
+ * The basic building block, each page contains of
+ * multiple, vertically stacked segments. Direct 
+ * children are absolutely positioned.
+*/
+.vertical-segment {
+  position: relative;
+  width: 100%;
+  margin: 0px;
+}
+  
+.vertical-segment > * {
+  position: absolute;
+}
+
+/* Header */
+#header-segment {
+  /*background-color: rgba(0,0,255,0.5); /* TEMP */
+  margin-top: 70px;
+  width: 100%;
+  height: 900px;
+  background-image: url(/assets/bubbles.svg), url(/assets/bubbles.svg), url(/assets/bubbles.svg), url(/assets/bubbles.svg);
+  background-repeat: no-repeat;
+  background-size: 722px;
+  background-position: -45px -80px, 553px -80px, 1140px -80px, 1697px -80px;
+}
+
+#center-circle {
+  background-color: rgba(255,244,62,0.9);
+  text-align: center;
+  width: 600px;
+  height: 600px;
+  top: 20px;
+  z-index: 1;
+}
+
+#center-circle > img {
+  position: absolute;
+  width: 400px;
+  top: 135px;
+}
+
+#main-logo {
+  position: fixed;
+  padding: 5px;
+  top: 230px;
+  height: 180px;
+  z-index: 10;
+}
+
+#center-circle > h1 {
+  position: absolute;
+  width: 75%;
+  bottom: 135px;
+}
+
+#left-circle {
+  text-align: center;
+  line-height: 400px;
+  width: 400px;
+  height: 400px;
+  top: 492px;
+  right: 50%;
+  margin-right: 60px;
+  z-index: 2;
+}
+
+#right-circle {
+  text-align: center;
+  line-height: 380px;
+  width: 380px;
+  height: 380px;
+  top: 508px;
+  left: 50%;
+  margin-left: 60px;
+  z-index: 0;
+}
+
+#left-circle > h3, #right-circle > h3 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 75%;
+}
+
+/* Contact */
+#contact-segment {
+  height: 300px;
+  margin-top: -40px;
+}
+
+#contact-circle {
+  text-align: center;
+  width: 300px;
+  height: 300px;
+}
+
+#contact-circle h1 {
+  margin-top: 60px;
+  font-size: 45px;
+}
+
+#contact-circle h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#contact-circle h3 {
+  margin-top: 2px;
+  margin-bottom: 0px;
+}
+
+#contact-circle a {
+  color: inherit;
+}
+
+/* Latest from blog */
+#latestblog-segment {
+  min-height: 300px;
+  margin-top: 20px;
+}
+
+#latestblog-circle {
+  text-align: left;
+  line-height: 300px;
+  width: 300px;
+  height: 300px;
+  right: 50%;
+  margin-right: 100px;
+}
+
+#latestblog-circle h1 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 75%;
+  margin-left: 40px;
+  font-size: 45px;
+}
+
+/* This div will expand downwards as text gets longer,
+ * hence it is styled such that #latestblog-segment
+ * will expand with it when that happens. This will 
+ * cause segments that are following to still look good.
+ */
+#latestblog-text {
+  position: relative;
+  overflow: auto;
+  padding-top: 100px;
+  left: 50%;
+  width: 400px;
+}
+
+/* Instagram */
+#instagram-segment {
+  float: right;
+  min-height: 700px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#instagram-circle {
+  text-align: center;
+  line-height: 250px;
+  width: 250px;
+  height: 250px;
+  left: 50%;
+  margin-left: 150px;
+}
+
+#instagram-circle h1 {
+  margin-top: 95px;
+  font-size: 45px;
+}
+
+/* This div will expand downwards as images are added,
+ * hence it is styled such that #isntagram-segment
+ * will expand with it when that happens. This will 
+ * cause segments that are following to still look good.
+ */
+#instagram-img-container {
+  position: relative;
+  overflow: auto;
+  padding-top: 90px;
+  left: 50%;
+  margin-left: -530px;
+  width: 600px;
+  min-height: 600px;
+}
+
+#instagram-img-container > img {
+  float: right;
+  padding-top: 90;
+  margin: 5px;
+  width: 190px;
+  height: 190px;
+}
+
+/*#header-box {
+    color: #000000;
 }
 
 #header-box > h1 {
     font-size: 4.5em;
-    font-family: 'Avenir', sans-serif;
+    font-family: 'HelveticaNeueThin', sans-serif;
     text-align: center;
-    font-weight: 600;
     max-width: 650px;
     margin: 0 auto;
 }
 
 @media(max-width: 768px) {
-  .header {
-      min-height: 640px;
-      padding-top: 120px;
+  .main-circle {
   }
   #header-box > h1{
     font-size: 3em;
@@ -196,7 +392,7 @@ form .check {
 }
 
 #header-box > p {
-    font-family: 'Avenir', sans-serif;
+    font-family: 'HelveticaNeueThin', sans-serif;
     text-align: center;
     padding-top: 30px;
     max-width: 600px;
@@ -216,7 +412,7 @@ form .check {
         margin-top: 60px;
         margin-bottom: 60px;
     }
-}
+}*/
 
 /* About */
 
@@ -292,7 +488,7 @@ form .check {
 
 /* Contact */
 
-.contact {
+/*.contact {
   padding: 50px 0;
 }
 
@@ -341,7 +537,8 @@ form .check {
     .contact .contact-details {
         text-align: center;
     }
-}
+}*/
+
 /* Footer */
 
 footer {
@@ -458,6 +655,23 @@ ul.suggestions li.more {
     width: 250px;
     text-align: right;
 }
+#resumes-circle {
+    text-align: center;
+    line-height: 380px;
+    width: 220px;
+    height: 220px;
+    margin-top: 8px;
+}
+#resumes-circle > h1 {
+    font-size: 45px;
+    position: relative;
+    top: 65px;
+}
+#download-button {
+  position: absolute;
+  width: 150px;
+  z-index: 10;
+}
 /* Login */
 .session {
   padding-top: 30px;
@@ -470,31 +684,30 @@ ul.suggestions li.more {
 }
 
 /*Events*/
-.event-header {
-    padding-top: 120px;
-    padding-bottom: 40px;
-    margin-top: -20px;
-    margin-bottom: 40px;
-    background: url(<%= asset_path 'people.jpg' %>) no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+#event-circle {
+  text-align: center;
+  line-height: 380px;
+  width: 220px;
+  height: 220px;
+  margin-top: 8px;
 }
-.event-header h1 {
-    font-size: 4em;
-    color: #fff;
-    text-transform: uppercase;
-}
-@media(max-width: 768px) {
-    .event-header h1 {
-        font-size: 3em;
-    }
+#event-circle > h1 {
+  font-size: 50px;
+  position: relative;
+  top: 62px;
 }
 .my-event {
   color: #000000;
   background: #f0f0f0;
 }
+.events.table thead>tr>th {
+  text-align: center;
+  width: 33%;
+  font-weight: lighter;
+  font-size: 19px;
+  border-bottom: 2px solid black;
+}
+
 
 /** CV Grid **/
 .cv-grid {
@@ -617,4 +830,16 @@ a.anchor {
 }
 .btn-xlarge {
   font-size: 40px;
+}
+
+/*Common elements*/
+.thin-header {
+    margin-top: -20px;
+    background-image: url(/assets/bubbles_thin.svg), url(/assets/bubbles_thin.svg),url(/assets/bubbles_thin.svg),
+    url(/assets/bubbles_thin.svg), url(/assets/bubbles_thin.svg);
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: -45px -70px, 370px -70px, 770px -70px,
+    1170px -70px, 1570px -70px;
+    height: 300px;
 }

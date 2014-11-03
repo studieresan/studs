@@ -64,6 +64,12 @@ en:
   main:
     index:
       splash_title: Get to know 28 computer science students
+      splash_first_description: >
+        We are 28 students who are close to graduation and we are eager to 
+        meet businesses for upcoming master's theses and jobs.
+      splash_second_description: >
+        Through this project, you will not only meet and get to know us, but you will 
+        also be able to tell us about your business and what you have to offer.
       splash_lead: >
         We are 28 students who are close to graduation and we are eager to
         meet businesses for upcoming master theses and jobs.
@@ -95,7 +101,7 @@ en:
       contact_send: Send
       latest_from_the_blog: Latest from the blog
       all_blog_entries: See all entries
-      latest_from_instagram_html: Instagram feed
+      latest_from_instagram_html: Instagram
       all_instagram_entries: See all entries
     contact:
       title: Contact Us
@@ -163,7 +169,7 @@ en:
       signup: Sign up
   resumes:
     index:
-      title: Resume Database
+      title: Resumes
     logged_out:
       title: Resume Database
       body_html: >
@@ -238,10 +244,10 @@ en:
       title: Title
       published: Published
     feed:
-      heading: Studs blog
+      heading: Blog
       readmore: Read more
       info-heading: Behind the blog
-      info-text: Hey, how great that you have found us! We spend lots of time and energy on Studs, in order to get to know companies, make new friends and have lots of fun. Here you can get an insight into what we do, and follow us on our journey (in Swedish). Welcome!
+      info-text: Welcome to the Studs blog! Here you can get an insight into what we do, and follow us on our journey - from beginning to end.
       info-responsible: Mattis Kancans Envall - Blog responsible
       close: Close
     form:

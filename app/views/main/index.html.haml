@@ -1,57 +1,36 @@
-#top.header
-  .container
-    #header-box.col-md-10.col-md-offset-1.text-center
-      %h1= t '.splash_title'
-      %p.lead= t '.splash_lead'
-      %a{ :href => "#news" }
-        %span.fa-stack.fa-lg.read-more.fa-2x
-          %i.fa.fa-circle.fa-stack-2x
-          %i.fa.fa-chevron-down.fa-stack-1x.fa-inverse
-
-%a{ :name => "news"}
-/ .container.news
-/   .row
-/     .blog.col-sm-7.col-md-6.col-md-offset-1.col-lg-5.col-lg-offset-2
-/       %h2= t '.latest_from_the_blog'
-/       = render :partial => 'posts/front_page', :collection => @posts, :as => :post
-/       %a.btn.btn-primary{ :href => url_for(:controller=>'posts', :action=>'feed') }
-/         = t '.all_blog_entries'
-/     .instagram.col-sm-5.col-md-4.col-lg-3
-/       = render partial: 'external_posts', locals: { provider: :instagram, limit: 10 }
-/       %a.btn.btn-primary{ :href => url_for(:controller=>'external_posts', :action=>'index') }
-/         = t '.all_instagram_entries'
-
-%a{ :name => "contact" }
-.container.contact
-  .row
-    .col-md-8.col-md-offset-2.heading
-      %h2= t '.contact'
-      %p.lead= t '.contact_lead'
-  .row
-    .col-md-3.col-xs-col-12.col-md-offset-2
-      .contact-card
-        / .contact-photo
-        /   %img.img-responsive.img-circle{ :src => image_path("bratt.jpg")}
-        .contact-details
-          %h4
-            Andreas Johansson
-          %p
-            =t 'roles.project_leader'
-          %p
-            0704245454
-          %p
-            andjoh3@kth.se
-      .contact-card
-        / .contact-photo
-        /   %img.img-responsive.img-circle{ :src => image_path("engstrom.jpg")}
-        .contact-details
-          %h4
-            Johan Arnör
-          %p
-            = t 'roles.sales_manager'
-          %p
-            0735020548
-          %p
-            jarnor@kth.se
-    .contact-form.col-md-5
-      = render :partial => 'contact_form/form'
+#header-segment.vertical-segment
+  %a{ :href => index_path }
+    %img.centered#main-logo{ :src => image_path("studs_2015.png") }
+  #center-circle.circle.centered
+    %h1.centered= t '.splash_title'
+  #left-circle.circle.cerise
+    %h3.centered= t '.splash_first_description'
+  #right-circle.circle.cerise
+    %h3.centered= t '.splash_second_description'
+#contact-segment.vertical-segment
+  #contact-circle.circle.yellow.centered
+    %h1.centered= t '.contact'
+    %h2.centered Andreas Johansson
+    %h3.centered=t 'roles.project_leader'
+    %a{ :href => "tel:+46704245454" }
+      %h3.centered 070-424 54 54
+    %a{ :href => "mailto:andjoh3@kth.se" }
+      %h3.centered andjoh3@kth.se
+#latestblog-segment.vertical-segment
+  #latestblog-circle.circle.cerise
+    %h1= t '.latest_from_the_blog'
+  #latestblog-text
+    = render :partial => 'posts/front_page', :collection => @posts, :as => :post
+/ #instagram-segment.vertical-segment
+/   #instagram-circle.circle.yellow
+/     %h1.centered= t '.latest_from_instagram_html'
+/   #instagram-img-container
+/     %img{ :src => "/assets/d1.jpg" }
+/     %img{ :src => "/assets/bratt.jpg" }
+/     %img{ :src => "/assets/engstrom.jpg" }
+/     %img{ :src => "/assets/bratt.jpg" }
+/     %img{ :src => "/assets/newyork.jpg" }
+/     %img{ :src => "/assets/d1.jpg" }
+/     %img{ :src => "/assets/newyork.jpg" }
+/     %img{ :src => "/assets/airplane.jpg" }
+/     %img{ :src => "/assets/bratt.jpg" }

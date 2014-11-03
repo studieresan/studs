@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def index
-  	@posts = Post.where(published: true).order("created_at DESC").limit(2)
+  	@posts = Post.where(published: true).order("created_at DESC").limit(1)
   end
 
   def earlier
