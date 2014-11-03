@@ -1,23 +1,19 @@
 - active_menu :resumes
+.thin-header.vertical-segment
+  #resumes-circle.circle.yellow.centered
+    %h1.centered= t '.title'
+%a.btn.btn-primary.centered#download-button{ :href => resumes_path(format: :zip, :params => params)}
+  %i.fa.fa-download
+  = t('actions.download_all')
 .container
   .row
     .col-md-8.col-md-offset-2.col-xs-12
-      .full
-        %h2<
-          = t '.title'
-
-        = form_tag resumes_path, method: :get, :class => 'resume-search form' do
-          %fieldset.inline
-            .input.text.name.form-group.row
-            .input.actions.btn-group
-              %a.btn.btn-primary{ :href => resumes_path(format: :zip, :params => params)}
-                %i.fa.fa-download
-                = t('actions.download_all')
-              - if can? :manage, Resume
-                - if current_user.resume == nil
-                  %a.btn.btn-primary.pull-right.margin-right{ :href => url_for([:new, :resume]) }
-                    %i.fa.fa-file-o
-                    = t('actions.new')
-
-
+      = form_tag resumes_path, method: :get, :class => 'resume-search form' do
+        %fieldset.inline
+          .input.actions.btn-group
+            - if can? :manage, Resume
+              - if current_user.resume == nil
+                %a.btn.btn-primary.pull-right.margin-right{ :href => url_for([:new, :resume]) }
+                  %i.fa.fa-file-o
+                  = t('actions.new')
         = render partial: 'grid'
