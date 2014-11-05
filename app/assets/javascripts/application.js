@@ -16,6 +16,8 @@
 //= require TweenMax.min
 //= require jquery.scrollmagic.min
 //= require animate-logo
+//= require instagram
+//= require auto-size-instagram
 
 $(function() {
   // Enable suggestions for all inputs with a suggestions data attribute
