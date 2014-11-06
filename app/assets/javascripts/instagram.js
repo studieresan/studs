@@ -4,7 +4,7 @@ $(function() {
     var limit = parseInt(container.attr('limit'));
 
     CLIENT_ID = '763c0316965b4483b1b97e024bbcb6e1';
-    TAGS = ['studs2014', 'studs14']
+    TAGS = ['studs2014', 'studs14', 'studs2015']
 
     var photos = [];
 
