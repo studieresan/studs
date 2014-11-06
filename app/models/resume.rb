@@ -1,4 +1,5 @@
 class Resume < ActiveRecord::Base
+  default_scope order('name ASC')
 
   belongs_to :user
   has_many :experiences, inverse_of: :resume, dependent: :destroy
