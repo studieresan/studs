@@ -108,7 +108,7 @@
     text-decoration: none;
 }
 .post h1 a:hover {
-    border-bottom: 3px solid #E11880;
+    border-bottom: 3px solid #FF35BB;
 }
 .input.content {
     padding: 0;
@@ -127,13 +127,19 @@ a.read-more-open, a.read-more-close {
     font-size: 1.5em;
     padding: 15px;
     display: block;
-    background: #E11880;
+    background: #FF35BB;
     color: #fff;
     margin-top: 20px;
     text-decoration: none;
     line-height: 22px;
     cursor: pointer;
 }
-a.read-more-open:hover, a.read-more-close:hover {
-    background: #b20f63;
+
+a.read-more-open > i, a.read-more-close > i {
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+a.read-more-open:hover > i, a.read-more-close:hover > i {
+    opacity: 1;
 }

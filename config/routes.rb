@@ -1,6 +1,8 @@
 Studs::Application.routes.draw do
 
   scope '/(:locale)', locale: /en|sv/ do
+    resources :instagram, only: [:index]
+
     resources :post_images
 
     resources :posts do

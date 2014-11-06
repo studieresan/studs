@@ -1,7 +1,7 @@
 #header-segment.vertical-segment
-  %a{ :href => index_path }
-    %img.centered#main-logo{ :src => image_path("studs_2015.png") }
   #center-circle.circle.centered
+    %a{ :href => index_path }
+      %img.centered#main-logo{ :src => image_path("studs_2015.png") }
     %h1.centered= t '.splash_title'
   #left-circle.circle.cerise
     %h3.centered= t '.splash_first_description'
@@ -21,16 +21,9 @@
     %h1= t '.latest_from_the_blog'
   #latestblog-text
     = render :partial => 'posts/front_page', :collection => @posts, :as => :post
-/ #instagram-segment.vertical-segment
-/   #instagram-circle.circle.yellow
-/     %h1.centered= t '.latest_from_instagram_html'
-/   #instagram-img-container
-/     %img{ :src => "/assets/d1.jpg" }
-/     %img{ :src => "/assets/bratt.jpg" }
-/     %img{ :src => "/assets/engstrom.jpg" }
-/     %img{ :src => "/assets/bratt.jpg" }
-/     %img{ :src => "/assets/newyork.jpg" }
-/     %img{ :src => "/assets/d1.jpg" }
-/     %img{ :src => "/assets/newyork.jpg" }
-/     %img{ :src => "/assets/airplane.jpg" }
-/     %img{ :src => "/assets/bratt.jpg" }
+#instagram-segment.vertical-segment
+  #instagram-circle.circle.yellow
+    %h1.centered= t '.latest_from_instagram_html'
+    %a{ :href => instagram_index_path }
+      %h4.centered= t '.all_instagram_entries'
+  #instagram-frontpage-images.instagram-img-container{ :limit => 9 }
