@@ -1,7 +1,11 @@
 $(function() {
-	var controller = new ScrollMagic();
-	var tween = TweenMax.to("#main-logo", 1, {right: '100%', height: '70px', top: '0px'});
-	var scene = new ScrollScene({duration: 400, offset: 0})
-								.setTween(tween)
-                .addTo(controller);
+    var logo = $(".hide-nav-logo");
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll >= 320) {
+        	logo.fadeIn(400);
+        } else {
+        	logo.fadeOut(400);
+        }
+    });
 });
