@@ -1,5 +1,5 @@
 $(function() {
-    var logo = $("#nav-logo");
+    var logo = $(".hide-nav-logo");
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         if (scroll >= 320) {
