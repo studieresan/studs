@@ -3,10 +3,10 @@ en:
     title: studs 2015
     year: 2015
     delimeter_html: ' - '
-    my_resume: My resume
+    my_resume: My resumé
     users: Users
     resume_note: >
-      The resume should be written in English, only the limited options are
+      The resumé should be written in English, only the limited options are
       automatically translated.
     languages:
       en: english
@@ -16,14 +16,14 @@ en:
     contact: contact
     newsfeed: blog
     login: login
-    resumes: resumes
+    resumes: resumés
     events: events
     users: users
     posts: blog posts
     post_images: blog images
     files: files
     profile: profile
-    resume: resume
+    resume: resumé
     introduction: introduction
     logout: logout
   titles:
@@ -31,7 +31,7 @@ en:
     pub: Startup Pub
     blog: Blog
     earlier: 2012
-    resumes: Resumes
+    resumes: Resumés
     contact: Contact
     files: Files
     users: Users
@@ -68,7 +68,7 @@ en:
         We are 28 students who are close to graduation and we are eager to 
         meet businesses for upcoming master's theses and jobs.
       splash_second_description: >
-        Through this project, you will not only meet and get to know us, but you will 
+        Through Studs, you will not only meet and get to know us, but you will 
         also be able to tell us about your business and what you have to offer.
       splash_lead: >
         We are 28 students who are close to graduation and we are eager to
@@ -169,11 +169,11 @@ en:
       signup: Sign up
   resumes:
     index:
-      title: Resumes
+      title: Resumés
     logged_out:
-      title: Resume Database
+      title: Resumé Database
       body_html: >
-        The resume database contain all participants resumes and contact information.
+        The resumé database contain all participants resumés and contact information.
         The database is available to all companies we work with.
     show:
       birthdate: "%{date} (%{age} years old)"
@@ -184,7 +184,7 @@ en:
       linkedin: LinkedIn
       generated: "@"
       babel_language: swedish
-    no_results: Found no resumes matching your criteria.
+    no_results: Found no resumés matching your criteria.
   users:
     index:
       title: Users
@@ -196,7 +196,7 @@ en:
       about: This portal contains information about events, us in the organization and other additional information.
       contact: For questions please do not hesitate to contact your contact person %{name} (%{phone}).
       event_html: Information about your event can be found under %{href} in the menu.
-      resumes_html: In %{href} in the menu, you can download and read the resumes of studs.
+      resumes_html: In %{href} in the menu, you can download and read the resumés of studs.
       profile_html: Your profile name and password can be edited under %{href}.
     credentials_mail:
       subject: Login credentials for studs' homepage
@@ -341,14 +341,14 @@ en:
       quotes: Selected free text answers
   hints:
     resume:
-      user_id: Owner of this resume
+      user_id: Owner of this resumé
       name: First and last name
       masters: The master programme you are studying towards
       birthdate: Your birthdate
       email: Preferably your @kth.se address
       linkedin_url: Make sure you have a public <a href="http://help.linkedin.com/app/answers/detail/a_id/87">LinkedIn profile</a>. Write your public LinkedIn-username above.
       phone: A cell phone number is preferred
-      image: (Profile) image which will be shown in your resume (400x500 px)
+      image: (Profile) image which will be shown in your resumé (400x500 px)
       presentation: |
         A short presentation of yourself (optional) - don't list experiences here.
         This text is formatted through Markdown, enabling limited text styling.
@@ -418,7 +418,7 @@ en:
       ended_html: '%{start} &ndash; %{end} (%{months} months)'
   models:
     a: &a_model
-      resume: resume
+      resume: resumé
       experience: experience
       user: user
       file: file
@@ -426,7 +426,7 @@ en:
       post: post
       event: event
     the: &the_model
-      resume: resume
+      resume: resumé
       experience: experience
       user: user
       file: file
