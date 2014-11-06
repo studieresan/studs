@@ -4,7 +4,7 @@ $(function() {
     if (container.length === 0)
     	return; // Element not found
 
-    var min_img_width = 200;
+    var min_img_width = 220;
 
     function onResize() {
 

@@ -23,6 +23,7 @@
     = render :partial => 'posts/front_page', :collection => @posts, :as => :post
 #instagram-segment.vertical-segment
   #instagram-circle.circle.yellow
+    %h1.centered= t '.latest_from_instagram_html'
     %a{ :href => instagram_index_path }
-      %h1.centered= t '.latest_from_instagram_html'
+      %h4.centered= t '.all_instagram_entries'
   #instagram-frontpage-images.instagram-img-container{ :limit => 9 }
