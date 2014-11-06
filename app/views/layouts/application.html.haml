@@ -12,7 +12,10 @@
     = render partial: '/google_analytics'
   %body
     #nav-container{ :role => "navigation" }
-      - unless active_menu == nil
+      -if active_menu == nil
+        %a{ :href => index_path }
+          %img#nav-logo.hide-nav-logo{ :src => image_path("studs_2015.png") }
+      -else
         %a{ :href => index_path }
           %img#nav-logo{ :src => image_path("studs_2015.png") }
       %ul.right#nav-list
