@@ -231,7 +231,26 @@ form .check {
   bottom: 135px;
 }
 
-
+@media(max-width: 600px) {
+  #center-circle {
+    width: 400px;
+    height: 400px;
+    top: 100px;
+  }
+  #main-logo {
+    position: relative;
+    padding: 5px;
+    top: 80px;
+    height: 140px;
+    z-index: 10;
+  }
+  #center-circle > h1 {
+    position: absolute;
+    width: 75%;
+    bottom: 65px;
+    font-size: 28px;
+  }
+}
 
 #left-circle {
   text-align: center;
@@ -284,6 +303,8 @@ form .check {
       margin-right: auto;
       left: 0;
       right: 0;
+      width: 400px;
+      height: 400px;
       top: 1050px;
     }
 }
