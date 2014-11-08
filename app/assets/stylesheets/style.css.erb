@@ -196,6 +196,11 @@ form .check {
   background-size: 722px;
   background-position: -45px -80px, 553px -80px, 1140px -80px, 1697px -80px;
 }
+@media(max-width: 780px) {
+  #header-segment {
+    height: 1500px;
+  }
+}
 
 #center-circle {
   background-color: rgba(255,244,62,0.9);
@@ -226,6 +231,8 @@ form .check {
   bottom: 135px;
 }
 
+
+
 #left-circle {
   text-align: center;
   line-height: 400px;
@@ -252,6 +259,33 @@ form .check {
   display: inline-block;
   vertical-align: middle;
   width: 75%;
+}
+
+@media(max-width: 940px) {
+    #left-circle {
+      right: 50%;
+      margin-right: 0px;
+    }
+    #right-circle {
+      left: 51%;
+      margin-left: 0px;
+    }
+}
+@media(max-width: 780px) {
+    #left-circle {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 640px;
+    }
+    #right-circle {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 1050px;
+    }
 }
 
 /* Contact */
@@ -300,6 +334,7 @@ form .check {
   margin-right: 100px;
 }
 
+
 #latestblog-circle h1 {
   display: inline-block;
   vertical-align: middle;
@@ -319,6 +354,24 @@ form .check {
   padding-top: 100px;
   left: 50%;
   width: 400px;
+}
+@media(max-width: 780px) {
+    #latestblog-segment {
+      height: 800px;
+    }
+    #latestblog-circle {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+    }
+    #latestblog-text {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 220px;
+    }
 }
 
 /* Instagram */
@@ -376,6 +429,21 @@ form .check {
 #instagram-all-images > div > p {
   font-size: 14px;
   margin: 3px;
+}
+@media(max-width: 1000px) {
+  #instagram-circle {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+  #instagram-frontpage-images {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 170px;
+  }
 }
 
 /* This div will expand downwards as images are added,
