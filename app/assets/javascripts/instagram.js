@@ -98,4 +98,16 @@ $(function() {
         if ($(window).scrollTop() > $(document).height() - $(window).height() - 220) // 220 min img width/height
             loadMore();
     });
+
+    // Hide the last image when the grid changes to two columns
+    $(window).resize(function() {
+        var frontpageImages = $('#instagram-frontpage-images').find('img');
+        var width = $(window).width();
+        if (width <= 600) {
+            if (frontpageImages.length > 8)
+                frontpageImages.last().hide();
+        } else {
+            frontpageImages.last().show();
+        }
+    });
 });
