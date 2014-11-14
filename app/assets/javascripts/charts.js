@@ -58,7 +58,7 @@ function handleQueryResponse(response, id, options) {
 	console.log(data);
 	var opts = $.extend(true, //deep extension
 	{
-		title: data.uf[0].label,
+		title: data.Pf[0].label,
 		titleTextStyle: {fontSize: 15, fontName: 'Avenir', color: '#333333'},
         colors: ['#EC1976', '#B03AF6', '#4C40DF', '#3A91F6', '#3EBFBF'],
         pieHole: 0.6,
