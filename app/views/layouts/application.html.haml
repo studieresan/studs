@@ -13,12 +13,12 @@
   %body
     #nav-container{ :role => "navigation" }
       -if active_menu == nil
-        %a{ :href => index_path }
+        %a#nav-logo-link{ :href => index_path }
           %img#nav-logo.hide-nav-logo{ :src => image_path("studs_2015.png") }
       -else
-        %a{ :href => index_path }
+        %a#nav-logo-link{ :href => index_path }
           %img#nav-logo{ :src => image_path("studs_2015.png") }
-      %ul.right#nav-list
+      %ul#nav-list
         %li
           = link_to t('navigation.newsfeed'), newsfeed_path, :class => (:newsfeed == active_menu ? :active : nil)
         %li
