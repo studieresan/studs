@@ -15,6 +15,6 @@
               - if res.linkedin_url?
                 = link_to res.full_linkedin_url, {class: 'action', title: t('actions.linkedin')} do
                   %i.fa.fa-linkedin-square.fa-2x
-            .cv-email= mail_to res.email
+            .cv-email.centered= mail_to res.email
         .cv-name= user.name
         
