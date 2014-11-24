@@ -364,7 +364,7 @@ en:
       kind: What kind of experience this is
       organization: Company, organization or school
       title: The title you had, or programme/discipline for education
-      location: City if relevant, followed by country unless in Sweden
+      location: City, followed by country unless in Sweden
       start_date: Month during which the experience began
       end_date: End date of experience unless it is still ongoing (Present in that case)
       description: A short description of what you did, including relevant keywords
@@ -440,6 +440,7 @@ en:
     create: Create
     save: Save
     edit: Edit
+    update: Update
     delete: Delete
     cancel: Cancel
     close: Close

@@ -6,7 +6,7 @@ class Experience < ActiveRecord::Base
   include NullableDateTime
   nullable_datetime :end_date, :no_end_date, true
 
-  validates_presence_of :organization, :title, :start_date
+  validates_presence_of :organization, :location, :title, :start_date
 
   auto_strip_attributes :organization, :location, :title, :description, squish: false
 
