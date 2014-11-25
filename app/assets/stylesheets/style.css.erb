@@ -283,17 +283,30 @@ form .check {
     top: 100px;
   }
   #main-logo {
-    position: relative;
-    padding: 5px;
-    top: 80px;
     height: 140px;
-    z-index: 10;
+    top: 80px;
   }
   #center-circle > h1 {
     position: absolute;
-    width: 75%;
     bottom: 65px;
     font-size: 28px;
+  }
+}
+
+@media(max-width: 400px) {
+  #center-circle {
+    width: 300px;
+    height: 300px;
+    top: 150px;
+  }
+  #main-logo {
+    height: 90px;
+    top: 65px;
+    z-index: 10;
+  }
+  #center-circle > h1 {
+    bottom: 55px;
+    font-size: 24px;
   }
 }
 
@@ -353,6 +366,22 @@ form .check {
       top: 1050px;
     }
 }
+@media(max-width: 400px) {
+    #left-circle {
+      width: 300px;
+      height: 300px;
+      line-height: 305px;
+    }
+    #right-circle {
+      width: 300px;
+      height: 300px;
+      line-height: 290px;
+    }
+    #left-circle > h3, #right-circle > h3 {
+      font-size: 20px;
+    }
+  }
+
 
 /* Contact */
 #contact-segment {
@@ -443,6 +472,11 @@ form .check {
       top: 220px;
     }
 }
+@media(max-width: 400px) {
+  #latestblog-text {
+    width: 95%;
+  }
+}
 
 /* Instagram */
 #instagram-segment {
@@ -470,7 +504,7 @@ form .check {
   padding-top: 90px;
   left: 50%;
   margin-left: -530px;
-  width: 600px;
+  width: 576px;
   min-height: 600px;
 }
 
@@ -517,7 +551,17 @@ form .check {
 }
 @media(max-width: 600px) {
   #instagram-frontpage-images {
-    width: 400px;
+    width: 384px;
+  }
+}
+@media(max-width: 400px) {
+  #instagram-frontpage-images {
+    width: 284px;
+    right: 10px;
+  }
+  #instagram-frontpage-images > div{
+    width: 140px;
+    height: 140px;
   }
 }
 
