@@ -57,6 +57,10 @@ function handleQueryResponse(response, id, options) {
 	var data = response.getDataTable();
 	data.sort([{column: 1}]);
 	console.log(data);
+	var threeWordsQuestion = "Describe your interpretation";
+	if (data.Pf[0].label.substring(0, threeWordsQuestion.length) === threeWordsQuestion) {
+		data = buildCustomDatatable(data);
+	};
 	var opts = $.extend(true, //deep extension
 	{
 		title: data.Pf[0].label,
@@ -71,4 +75,42 @@ function handleQueryResponse(response, id, options) {
 		}, options);//Add user supplied options
 	visualization = new google.visualization.PieChart(document.getElementById(id));
 	visualization.draw(data, opts);
+}
+
+/**
+Insanely ugly custom hack to counter a specific question in the surveys of studs 2015, where the combination
+["Attractive benefits", "Felt that I will fit in at the company", "Right development platform for me"] counted
+as a unique answser, instead of increasing the count for each sentence by one.
+*/
+function buildCustomDatatable(originalData) {
+	var answers = {
+		'Interesting scope of practice' : 0,
+		'Interesting methodology' : 0,
+		'Optimal geographic location' : 0,
+		'Attractive benefits' : 0,
+		'High demands' : 0,
+		'Felt that I will fit in at the company' : 0,
+		'Right development platform for me' : 0,
+		'Great possibilities for career development' : 0,
+		'Attractive office' : 0,
+		'Flexibility' : 0,
+		'International possibilities' : 0
+	};
+	for (var i = 0; i < originalData.getNumberOfRows(); i++) {
+		var sentences = originalData.getValue(i, 0).split(', ');
+		var number = originalData.getValue(i, 1);
+		$.each(sentences, function (idx, sentence) {
+			answers[sentence] += number;
+		})
+	};
+	var data = new google.visualization.DataTable(
+    {
+      cols: [{id: 'sentence', label: originalData.Pf[0].label, type: 'string'},
+             {id: 'number', label: 'Number', type: 'number'}]
+    });
+	$.each(answers, function (answer) {
+		console.log(answer + ": " + answers[answer]);
+		data.addRow([answer, answers[answer]]);
+	})
+	return data;
 }
