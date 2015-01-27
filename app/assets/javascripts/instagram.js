@@ -3,7 +3,7 @@ $(function() {
     var container = $('.instagram-img-container').first();
     var limit = parseInt(container.attr('limit'));
 
-    CLIENT_ID = '763c0316965b4483b1b97e024bbcb6e1';
+    CLIENT_ID = '5729a233c2a04f9fb6d4161dde9c2986';
     TAGS = ['studs15']
 
     var next_max_tag_ids = $.map(TAGS, function() { return 'null'; });
