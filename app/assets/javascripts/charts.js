@@ -55,12 +55,13 @@ function handleQueryResponse(response, id, options) {
 	}
 
 	var data = response.getDataTable();
-	data.sort([{column: 1}]);
 	console.log(data);
 	var threeWordsQuestion = "Describe your interpretation";
-	if (data.Pf[0].label.substring(0, threeWordsQuestion.length) === threeWordsQuestion) {
+	if (startsWith(data.Pf[0].label, threeWordsQuestion)) {
 		data = buildCustomDatatable(data);
-	};
+	} else {
+		data = sortData(data);
+	}
 	var opts = $.extend(true, //deep extension
 	{
 		title: data.Pf[0].label,
@@ -109,8 +110,42 @@ function buildCustomDatatable(originalData) {
              {id: 'number', label: 'Number', type: 'number'}]
     });
 	$.each(answers, function (answer) {
-		console.log(answer + ": " + answers[answer]);
 		data.addRow([answer, answers[answer]]);
 	})
 	return data;
+}
+
+function sortData(data) {
+	var sortedData = data.clone();
+	var columnIndex = sortedData.addColumn('number', 'Priority');
+	for (var i = 0; i < sortedData.getNumberOfRows(); i++) {
+		if (isPositiveWord(sortedData.getValue(i,0))) {
+			sortedData.setValue(i, columnIndex, 1);
+		}
+		if (isNegativeWord(sortedData.getValue(i,0))) {
+			sortedData.setValue(i, columnIndex, 2);
+		}
+		if (isNeutralWord(sortedData.getValue(i,0))) {
+			sortedData.setValue(i, columnIndex, 3);
+		}
+	};
+	sortedData.sort({column: columnIndex});
+	sortedData.removeColumn(columnIndex);
+	return sortedData;
+}
+
+function startsWith (text, prefix) {
+	return text.substring(0, prefix.length) === prefix;
+}
+
+function isPositiveWord (word) {
+	return word === "Yes" || word === "Positively" || word === "Positive";
+}
+
+function isNegativeWord (word) {
+	return word === "No" || word === "Negatively" || word === "Negative";
+}
+
+function isNeutralWord (word) {
+	return word === "No opinion" || word === "Unchanged" || word === "Neutral";
 }
