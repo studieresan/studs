@@ -63,7 +63,8 @@ function handleQueryResponse(response, id, options) {
 	var data = response.getDataTable();
 	console.log(data);
 	var threeWordsQuestion = "Describe your interpretation";
-	if (startsWith(data.Pf[0].label, threeWordsQuestion)) {
+  var title = data.getColumnLabel(0);
+	if (startsWith(title, threeWordsQuestion)) {
 		data = buildCustomDatatable(data);
 		drawBubbleChart(data, id, options);
 	} else {
@@ -75,7 +76,7 @@ function handleQueryResponse(response, id, options) {
 function drawPieChart (data, id, options) {
 	var opts = $.extend(true, //deep extension
 	{
-		title: data.Pf[0].label,
+		title: data.getColumnLabel(0),
 		titleTextStyle: {fontSize: 15, fontName: 'Avenir', color: '#333333'},
 	      colors: ['#FF35BB', '#FFF43E', '#D8D8D8', '#3A91F6', '#3EBFBF'],
 	      pieHole: 0.6,
@@ -92,7 +93,7 @@ function drawPieChart (data, id, options) {
 function drawBubbleChart (data, id, options) {
 	var opts = $.extend(true, //deep extension
 	{
-		title: data.Pf[0].label,
+		title: data.getColumnLabel(0),
 		titleTextStyle: {fontSize: 15, fontName: 'Avenir', color: '#333333'},
         colors: ['#FF35BB', '#FFF43E', '#D8D8D8', '#3A91F6', '#3EBFBF'],
 		height: 300,
@@ -161,7 +162,7 @@ function buildCustomDatatable(originalData) {
 
 	var data = new google.visualization.DataTable(
     {
-      cols: [{id: 'sentence', label: originalData.Pf[0].label, type: 'string'},
+      cols: [{id: 'sentence', label: originalData.getColumnLabel(0), type: 'string'},
       			 {id: 'x', type: 'number'},
       			 {id: 'y', type: 'number'},
       			 {id: 'colorIndex', type: 'string'},
