@@ -1,5 +1,5 @@
 set :application, 'studs'
-set :repository, 'https://mogelbro@github.com/mogelbrod/studs'
+set :repository, 'https://github.com/studieresan/studs.git'
 set :scm, :git
 
 set :branch, fetch(:branch, 'master')
