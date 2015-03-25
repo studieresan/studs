@@ -246,8 +246,8 @@ en:
     feed:
       heading: Blog
       readmore: Read more
-      info-heading: Behind the blog
-      info-text: Welcome to the Studs blog! Here you can get an insight into what we do, and follow us on our journey - from beginning to end.
+      info-heading: Welcome to the blog
+      info-text: The blog provides an insight into what we do. Follow us on our journey - from beginning to end.
       info-responsible: Mattis Kancans Envall - Blog responsible
       close: Close
     form:
