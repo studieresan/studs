@@ -1,5 +1,7 @@
 $(function() {
 
+    console.log("yolo");
+
     var container = $('.instagram-img-container').first();
     var limit = parseInt(container.attr('limit'));
 
