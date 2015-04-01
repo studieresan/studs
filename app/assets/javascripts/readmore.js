@@ -19,12 +19,6 @@ $(window).bind("load", function() {
         readMoreClose.on('click', function() {
             readMoreOpen.removeClass("hide");
             readMoreClose.addClass("hide");
-            // Only scroll if the expanded height is bigger than collapsed height
-            if (parseInt(expandedHeight) > parseInt(collapsedHeight)) {
-                $('html, body').animate({
-                    scrollTop: postContent.offset().top
-                }, 1000);
-            }
             postContent.animate({
                 height: collapsedHeight + "px"
             }, 1000);
