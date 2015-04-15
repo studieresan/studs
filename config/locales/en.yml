@@ -270,6 +270,8 @@ en:
       event: Event
     show: 
       stats: Statistics from event survey
+      before: "Before the event:"
+      after: "After the event:"
     form: 
       stats: Statistics from event survey
   attributes:
