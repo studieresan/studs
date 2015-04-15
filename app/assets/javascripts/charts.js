@@ -25,7 +25,11 @@ function drawCharts() {
 			sentenceChart = $('<div></div>').prop('id','chart-'+i).addClass('chart col-md-12');
 		} else {
 			var chartDiv = $('<div></div>').prop('id','chart-'+i).addClass('chart col-md-6');
-			$('#charts').append(chartDiv);
+			if (i < 3) {
+				$('#before-charts').append(chartDiv);
+			} else {
+				$('#after-charts').append(chartDiv);
+			}
 		}
 		var queryString = null;
 		if (chart.column != undefined)
@@ -61,7 +65,6 @@ function handleQueryResponse(response, id, options) {
 	}
 
 	var data = response.getDataTable();
-	console.log(data);
 	var threeWordsQuestion = "Describe your interpretation";
   var title = data.getColumnLabel(0);
 	if (startsWith(title, threeWordsQuestion)) {
