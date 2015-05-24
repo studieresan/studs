@@ -33,6 +33,7 @@
         .container
         - @post_images.each do |post_image|
           -if post_image.image.url(:thumb)
-            .col-md-12.modal-image= image_tag post_image.image.url(:thumb)
+            .col-md-12
+              %span.modal-image= image_tag post_image.image.url(:thumb )
             %p= post_image.image.url
             %br
