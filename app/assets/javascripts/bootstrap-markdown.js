@@ -829,7 +829,6 @@
                 $('#post-image-modal').unbind();
                 $('#post-image-modal').modal('show')
                 $('#post-image-modal').find('img').each(function(index, el) {
-                  console.log(el);
                   $(el).unbind();
                   $(el).one('click', function(event) {
                     link = $(el).attr('src').replace('thumb_', '');
