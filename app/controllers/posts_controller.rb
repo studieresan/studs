@@ -19,7 +19,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    respond_with(@post)
+    @post_images = PostImage.order("id DESC").all
+    respond_with(@post, @post_images)
   end
 
   def edit
