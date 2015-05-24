@@ -26,3 +26,13 @@
     = action_link :cancel, @post, :"btn btn-default"
 
   = f.check_box_label :published
+.modal.fade#post-image-modal{role: "dialog", tabindex: 1}
+  .modal-dialog
+    .modal-content
+      .modal-body
+        .container
+        - @post_images.each do |post_image|
+          -if post_image.image.url(:thumb)
+            .col-md-12.modal-image= image_tag post_image.image.url(:thumb)
+            %p= post_image.image.url
+            %br
