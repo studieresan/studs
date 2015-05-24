@@ -811,16 +811,40 @@
                     chunk = selected.text
                 }
 
-                link = prompt('Insert image hyperlink','/uploads/')
 
-                if (link != null) {
+                /* Original implementation */
+                // link = prompt('Insert image hyperlink','/uploads/')
+
+                // if (link != null) {
+                //     // transform selection and set the cursor into chunked text
+                //     e.replaceSelection('!['+chunk+']('+link+')')
+                //     cursor = selected.start+2
+
+                //     // Set the cursor
+                //     e.setSelection(cursor,cursor+chunk.length)
+                // }
+
+                /* Hack specific for the Studs website */
+                var link;
+                $('#post-image-modal').unbind();
+                $('#post-image-modal').modal('show')
+                $('#post-image-modal').find('img').each(function(index, el) {
+                  console.log(el);
+                  $(el).unbind();
+                  $(el).one('click', function(event) {
+                    link = $(el).attr('src').replace('thumb_', '');
+                   $('#post-image-modal').modal('hide')
+                  });
+                });
+                $('#post-image-modal').on('hidden.bs.modal', function (evt) {
+                  if (link) {
                     // transform selection and set the cursor into chunked text
                     e.replaceSelection('!['+chunk+']('+link+')')
                     cursor = selected.start+2
-
                     // Set the cursor
                     e.setSelection(cursor,cursor+chunk.length)
-                }
+                  }
+                });
             }
         },{
             name: 'cmdImageUpload',
