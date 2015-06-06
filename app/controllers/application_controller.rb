@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   end
 
   def save_return_url(url = nil)
-    url = request.fullpath if url.nil?
+    url = request.referer if url.nil?
     session[:return_to_url] = url
   end
 
