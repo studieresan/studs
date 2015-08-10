@@ -104,8 +104,10 @@ git checkout -b branch-name
 # When you are done switch back to the dev branch
 git checkout dev
 
-# Then merge your branch into the dev one
+# Pull dev, merge the new branch into dev and push to dev
+git pull origin dev
 git merge branch-name
+git push origin dev
 ```
 
 ### Releasing a new version
@@ -116,17 +118,23 @@ When a new release is deployed always verify it works on the staging server firs
 # Switch to the staging branch
 git checkout staging
 
-# Merge dev branch into staging
+# Pull staging, merge dev branch into staging and push to staging
+git pull origin staging
 git merge dev
+git push origin staging
 
 # Deploy your code
 cap deploy
 
 # Verify everything works on the server
 
-# Now switch to master and merge the staging branch into it
+# Now switch to master
 git checkout master
+
+# Pull master, merge dev branch into master and push to master
+git pull origin master
 git merge staging
+git push origin master
 
 # Deploy your code to the production server
 cap production deploy
