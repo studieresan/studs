@@ -1,4 +1,4 @@
-studs 2014
+studs
 ==========
 
 This is the website for studs, which can be found at [here](http://studs.datasektionen.se).
@@ -131,7 +131,7 @@ cap deploy
 # Now switch to master
 git checkout master
 
-# Pull master, merge dev branch into master and push to master
+# Pull master, merge staging branch into master and push to master
 git pull origin master
 git merge staging
 git push origin master
@@ -174,3 +174,9 @@ Authors
 * Per Classon <<pclasson@kth.se>>
 * Victor Hallberg <<victorha@kth.se>>
 * Jonas Sköld <<jonassko@kth.se>>
+* Dexter Gramfors <<dexter.gramfors@gmail.com>>
+* Dennis Ekström <<dennis.ekstrom@gmail.com>>
+ 
+Designer
+--------
+* Bobben, the one only, Jacob Håkansson <<jacobhakansson@gmail.com>>
