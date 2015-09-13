@@ -102,9 +102,15 @@ en:
       latest_from_the_blog: Latest from the blog
       all_blog_entries: See all entries
       latest_from_instagram_html: Instagram
-      all_instagram_entries: '#studs15'
+      all_instagram_entries: '#studs16'
     contact:
       title: Contact Us
+    leadgroup:
+      splash_title: The Leadgroup for Studs 2016
+      splash_first_description: >
+        We are the leadgroup for Studs 2016 and we would like YOU to join us!
+      splash_second_description: >
+        studs.se/ansokan  
     earlier:
       title: StuDs 2012
       body_html: >

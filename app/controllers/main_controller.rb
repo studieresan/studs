@@ -14,4 +14,7 @@ class MainController < ApplicationController
 
   def apply
   end
+
+  def leadgroup
+  end
 end

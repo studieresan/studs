@@ -1,9 +1,9 @@
 require 'feedzirra'
 
-TWITTER_QUERY = "#studs2013"
+TWITTER_QUERY = "#studs2016"
 TWITTER_RSS_FEED = "http://search.twitter.com/search.rss?q=%s&include_entities=false&show_user=true&result_type=recent"
 TUMBLR_RSS_FEED = "http://studs13.tumblr.com/rss"
-INSTAGRAM_HASHTAGS = ["studs2014", "studs14"]
+INSTAGRAM_HASHTAGS = ["studs2016", "studs16"]
 INSTAGRAM_RSS_FEED = "http://instagr.am/tags/%s/feed/recent.rss"
 
 def puts_with_time(string)

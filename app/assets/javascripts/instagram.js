@@ -4,7 +4,7 @@ $(function() {
     var limit = parseInt(container.attr('limit'));
 
     CLIENT_ID = '5729a233c2a04f9fb6d4161dde9c2986';
-    TAGS = ['studs15']
+    TAGS = ['studs16']
 
     var next_max_tag_ids = $.map(TAGS, function() { return 'null'; });
     var is_loading = false;

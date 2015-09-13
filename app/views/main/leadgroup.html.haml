@@ -1,0 +1,46 @@
+#header-segment.vertical-segment
+  #center-circle.circle.centered
+    %a{ :href => index_path }
+      %img.centered#main-logo{ :src => image_path("studs_2015.png") }
+    %h1.centered= t '.splash_title'
+  #left-circle.circle.cerise
+    %h3.centered= t '.splash_first_description'
+
+#contact-segment.vertical-segment
+  #contact-circle.circle.yellow.centered
+    %h1.centered= t '.Project_leaders'
+    %h2.centered Axel Samuelsson & Katja Röös
+    %a{ :href => "mailto:studs-ansvarig@d.kth.se " }
+      %h3.centered studs-ansvarig@d.kth.se 
+    %a{ :href => "tel:+46730395052" }
+      %h3.centered 073-039 50 52
+.pictures-project-leaders
+  %img.centered{ :src => image_path("axel.jpg"), :width =>"20%"}
+  %img.centered{ :src => image_path("katja.jpg"), :width =>"20%"}
+
+
+.pictures
+  .subgroup
+    %h1.centered= t 'Sales'
+    %h2.centered= t 'Brian Ye'
+    %img.centered{ :src => image_path("briany.jpg")}
+  .subgroup
+    %h1.centered= t 'Event'
+    %h2.centered= t 'Denise Nordlöf'
+    %img.centered{ :src => image_path("denien.jpg")}
+  .subgroup
+    %h1.centered= t 'Travels'
+    %h2.centered= t 'Lickitung Kane'
+    %img.centered{ :src => image_path("bq.jpg")}
+  .subgroup
+    %h1.centered= t 'Economy'
+    %h2.centered= t 'Jenny Hansdotter'
+    %img.centered{ :src => image_path("jenny.jpg")}
+  .subgroup
+    %h1.centered= t 'Report'
+    %h2.centered= t 'Marcus Nordberg'
+    %img.centered{ :src => image_path("marcus.jpg")}
+  .subgroup
+    %h1.centered= t 'IT'
+    %h2.centered= t 'Rasmus Elmgren'
+    %img.centered{ :src => image_path("relmgren.jpg")}

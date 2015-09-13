@@ -1,5 +1,7 @@
 Studs::Application.routes.draw do
 
+  get "leadgroup/leadgroup"
+
   scope '/(:locale)', locale: /en|sv/ do
     resources :instagram, only: [:index]
 
@@ -53,6 +55,7 @@ Studs::Application.routes.draw do
 
     get 'apply' => 'main#apply', as: :apply
     get 'ansokan' => 'main#ansokan', as: :ansokan
+    get 'leadgroup' => 'main#leadgroup', as: :leadgroup
   end
 
   root to: 'main#index'
