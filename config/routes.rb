@@ -55,7 +55,7 @@ Studs::Application.routes.draw do
 
     get 'apply' => 'main#apply', as: :apply
     get 'ansokan' => 'main#ansokan', as: :ansokan
-    get 'leadgroup' => 'main#leadgroup', as: :leadgroup
+    get 'executives' => 'main#executives', as: :executives
   end
 
   root to: 'main#index'

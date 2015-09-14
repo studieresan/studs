@@ -15,6 +15,6 @@ class MainController < ApplicationController
   def apply
   end
 
-  def leadgroup
+  def executives
   end
 end
