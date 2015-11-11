@@ -56,6 +56,7 @@ Studs::Application.routes.draw do
     get 'apply' => 'main#apply', as: :apply
     get 'ansokan' => 'main#ansokan', as: :ansokan
     get 'executives' => 'main#executives', as: :executives
+    get 'reserv' => redirect('https://docs.google.com/forms/d/1wQ_YUnOShrvC-ZeJR9REhU6vWb_BR6e9R_Z80CI7I_M/viewform?usp=send_form'), as: :reserv
   end
 
   root to: 'main#index'
