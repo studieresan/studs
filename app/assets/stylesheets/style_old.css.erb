@@ -1,0 +1,1151 @@
+Skip to content
+This repository  
+Search
+Pull requests
+Issues
+Gist
+ @relmgren
+ Switch to new design
+Introducing a new repository design
+Hey there! We're rolling out a faster, more streamlined repository experience and would love to give you early access.
+ Watch 4
+  Star 0
+ Fork 2 studieresan/studs
+forked from mogelbrod/studs
+ Branch: master  studs/app/assets/stylesheets/style.css.erb
+b033a88  on Sep 13
+@relmgren relmgren added bootstrap to leadgroup webpage
+6 contributors @Dexterminator @perclasson @jonasskold @dennisekstrom @mbark @relmgren
+RawBlameHistory    Executable File  1130 lines (1003 sloc)  18.8 KB
+/* Font Face */
+@font-face {
+    font-family: 'HelveticaNeueLight';
+    src: url(<%= asset_path 'HelveticaNeueLight.ttf' %>) format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueThin';
+    src: url(<%= asset_path 'HelveticaNeueThin.ttf' %>) format('truetype');
+}
+/* Global Styles */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'HelveticaNeueLight', sans-serif;
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'HelveticaNeueThin', sans-serif;
+}
+  
+a {
+    color: #FF35BB;
+}
+
+a:hover {
+    color: #FF35BB;
+}
+
+a.no-link-style {
+  color: initial;
+}
+
+.flash {
+  text-align: center;
+  margin-bottom: 0px;
+  background: #ffffff;
+  border: 0;
+  border-radius: 0;
+}
+
+.alert {
+  color: #ff0000;
+}
+
+.warning {
+  color: #f59000;
+}
+
+.notice {
+  color: #2f9b11;
+}
+
+.content {
+  padding-top: 90px;
+  padding-bottom: 20px;
+}
+
+.vert-text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.vert-text h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 4.5em;
+  font-weight: 700;
+}
+
+.form-control-inline {
+  display: inline-block;
+  width: auto;
+}
+
+form .check {
+  margin-top: 7px;
+}
+
+/* Positioning */
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+/* Navigation bar */
+#nav-container {
+    font-family: 'HelveticaNeueThin', sans-serif;
+    height: 70px;
+    width: 100%;
+    background-color: rgba(246, 246, 246, 0.95);
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+}
+
+#nav-container > * {
+    position: absolute;
+}
+
+#nav-logo {
+    padding: 5px;
+    height: 50px;
+}
+
+.hide-nav-logo {
+  display: none;
+  height: 50px;
+}
+
+#nav-list {
+    padding: 0px;
+    top: 34px;
+    left: auto;
+    right: 0;
+}
+
+#nav-list > li {
+    font-size: 21px;
+    display: inline;
+    padding-right: 20px;
+}
+
+#nav-list > li > a {
+    text-decoration: none;
+    color: #777777;
+}
+
+#nav-list > li > a:hover {
+    color: #aaaaaa;
+}
+
+#nav-list > li > a.active {
+    color: #FF35BB;
+}
+
+#nav-dropdown {
+    opacity: 0.95;
+}
+
+#nav-dropdown > li {
+    font-size: 16px;
+    background-color: #FFFFFF;
+    text-align: right;
+}
+
+#nav-dropdown > li > a {
+    color: #777777;
+}
+
+#nav-dropdown > li > a:hover {
+    background-color: #FFA3E4;
+}
+
+@media (max-width: 600px) {
+
+  #nav-logo-link {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+
+  #nav-logo {
+    height: 50px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+
+  #nav-list {
+    text-align: justify;
+    width: 100%;
+    height: 30px;
+  }
+
+  #nav-list:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+  #nav-list > li {
+    padding: 0px 10px 0px 10px;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 400px) {
+  #nav-list > li {
+    padding-top: 5px;
+    font-size: 16px;
+  }
+}
+
+/* Circles */
+.circle {
+  border-radius: 50%;
+}
+
+.circle.yellow {
+  background-color: rgb(255,244,62);
+}
+
+.circle.cerise {
+  background-color: rgb(255,53,187);
+  color: #ffffff;
+}
+
+/* Vertical segments 
+ * The basic building block, each page contains of
+ * multiple, vertically stacked segments. Direct 
+ * children are absolutely positioned.
+*/
+.vertical-segment {
+  position: relative;
+  width: 100%;
+  margin: 0px;
+}
+  
+.vertical-segment > * {
+  position: absolute;
+}
+
+/* Header */
+#header-segment {
+  /*background-color: rgba(0,0,255,0.5); /* TEMP */
+  margin-top: 70px;
+  width: 100%;
+  height: 900px;
+  background-image: url(/assets/bubbles.svg), url(/assets/bubbles.svg), url(/assets/bubbles.svg), url(/assets/bubbles.svg);
+  background-repeat: no-repeat;
+  background-size: 722px;
+  background-position: -45px -80px, 553px -80px, 1140px -80px, 1697px -80px;
+}
+@media(max-width: 780px) {
+  #header-segment {
+    height: 1500px;
+  }
+}
+
+#center-circle {
+  background-color: rgba(255,244,62,0.9);
+  text-align: center;
+  width: 600px;
+  height: 600px;
+  top: 20px;
+  z-index: 1;
+}
+
+#center-circle > img {
+  position: absolute;
+  width: 400px;
+  top: 135px;
+}
+
+#main-logo {
+  position: relative;
+  padding: 5px;
+  top: 140px;
+  height: 180px;
+  z-index: 10;
+}
+
+#center-circle > h1 {
+  position: absolute;
+  width: 75%;
+  bottom: 135px;
+}
+
+@media(max-width: 600px) {
+  #center-circle {
+    width: 400px;
+    height: 400px;
+    top: 100px;
+  }
+  #main-logo {
+    height: 140px;
+    top: 80px;
+  }
+  #center-circle > h1 {
+    position: absolute;
+    bottom: 65px;
+    font-size: 28px;
+  }
+}
+
+@media(max-width: 400px) {
+  #center-circle {
+    width: 300px;
+    height: 300px;
+    top: 150px;
+  }
+  #main-logo {
+    height: 90px;
+    top: 65px;
+    z-index: 10;
+  }
+  #center-circle > h1 {
+    bottom: 55px;
+    font-size: 24px;
+  }
+}
+
+#left-circle {
+  text-align: center;
+  line-height: 400px;
+  width: 400px;
+  height: 400px;
+  top: 492px;
+  right: 50%;
+  margin-right: 60px;
+  z-index: 2;
+}
+
+#right-circle {
+  text-align: center;
+  line-height: 380px;
+  width: 380px;
+  height: 380px;
+  top: 508px;
+  left: 50%;
+  margin-left: 60px;
+  z-index: 0;
+}
+
+#left-circle > h3, #right-circle > h3 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 75%;
+}
+
+@media(max-width: 940px) {
+    #left-circle {
+      right: 50%;
+      margin-right: 0px;
+    }
+    #right-circle {
+      left: 51%;
+      margin-left: 0px;
+    }
+}
+@media(max-width: 780px) {
+    #left-circle {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 640px;
+    }
+    #right-circle {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      width: 400px;
+      height: 400px;
+      top: 1050px;
+    }
+}
+@media(max-width: 400px) {
+    #left-circle {
+      width: 300px;
+      height: 300px;
+      line-height: 305px;
+    }
+    #right-circle {
+      width: 300px;
+      height: 300px;
+      line-height: 290px;
+    }
+    #left-circle > h3, #right-circle > h3 {
+      font-size: 20px;
+    }
+  }
+
+
+/* Contact */
+#contact-segment {
+  height: 300px;
+  margin-top: -40px;
+}
+
+#contact-circle {
+  text-align: center;
+  width: 365px;
+  height: 355px;
+}
+
+#contact-circle h1 {
+  margin-top: 80px;
+  font-size: 45px;
+}
+
+#contact-circle h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#contact-circle h3 {
+  margin-top: 2px;
+  margin-bottom: 0px;
+}
+
+#contact-circle a {
+  color: inherit;
+}
+
+/* Latest from blog */
+#latestblog-segment {
+  min-height: 300px;
+  margin-top: 20px;
+}
+
+#latestblog-circle {
+  text-align: left;
+  line-height: 300px;
+  width: 300px;
+  height: 300px;
+  right: 50%;
+  margin-right: 100px;
+}
+
+
+#latestblog-circle h1 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 75%;
+  margin-left: 40px;
+  font-size: 45px;
+}
+
+/* This div will expand downwards as text gets longer,
+ * hence it is styled such that #latestblog-segment
+ * will expand with it when that happens. This will 
+ * cause segments that are following to still look good.
+ */
+#latestblog-text {
+  position: relative;
+  overflow: auto;
+  padding-top: 100px;
+  left: 50%;
+  width: 400px;
+}
+@media(max-width: 780px) {
+    #latestblog-segment {
+      height: 800px;
+      margin-top: 10px;
+    }
+    #latestblog-circle {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+    }
+    #latestblog-circle h1 {
+      text-align: center;
+    }
+    #latestblog-text {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 220px;
+    }
+}
+@media(max-width: 400px) {
+  #latestblog-text {
+    width: 95%;
+  }
+}
+
+/* Instagram */
+#instagram-segment {
+  float: right;
+  min-height: 700px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#instagram-circle {
+  text-align: center;
+  line-height: 250px;
+  width: 250px;
+  height: 250px;
+  left: 50%;
+  margin-left: 150px;
+}
+
+#instagram-circle h1 {
+  margin-top: 95px;
+  font-size: 45px;
+}
+
+#instagram-frontpage-images {
+  padding-top: 90px;
+  left: 50%;
+  margin-left: -530px;
+  width: 576px;
+  min-height: 600px;
+}
+
+#instagram-frontpage-images > div {
+  float: right;
+  margin: 1px;
+  width: 190px;
+  height: 190px;
+}
+
+#instagram-frontpage-images > div > p {
+  font-size: 14px;
+  margin: 3px;
+}
+
+#instagram-all-images {
+  margin-top: -20px;
+  width: 100%;
+}
+
+#instagram-all-images > div {
+  float: left;
+  margin: 0px;
+}
+
+#instagram-all-images > div > p {
+  font-size: 14px;
+  margin: 3px;
+}
+@media(max-width: 1000px) {
+  #instagram-circle {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+  #instagram-frontpage-images {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 170px;
+  }
+}
+@media(max-width: 600px) {
+  #instagram-frontpage-images {
+    width: 384px;
+  }
+}
+@media(max-width: 400px) {
+  #instagram-frontpage-images {
+    width: 284px;
+    right: 10px;
+  }
+  #instagram-frontpage-images > div{
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* This div will expand downwards as images are added,
+ * hence it is styled such that #isntagram-segment
+ * will expand with it when that happens. This will 
+ * cause segments that are following to still look good.
+ */
+.instagram-img-container {
+  position: relative;
+  overflow: auto;
+}
+
+.instagram-img-container > div {
+  position: relative;
+}
+
+.instagram-img-container > div > p {
+  opacity: 0;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  cursor: default;
+}
+
+.instagram-img-container > div:hover > p {
+  opacity: 1;
+}
+
+.instagram-img-container > div > .tags {
+  color: #FF35BB;
+  bottom: 0px;
+}
+
+.instagram-img-container > div > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.instagram-img-container > div:hover > img {
+  opacity: 0.25;
+}
+
+
+/*#header-box {
+    color: #000000;
+}
+
+#header-box > h1 {
+    font-size: 4.5em;
+    font-family: 'HelveticaNeueThin', sans-serif;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+@media(max-width: 768px) {
+  .main-circle {
+  }
+  #header-box > h1{
+    font-size: 3em;
+    margin-top: 50px;
+  }
+}
+
+@media(max-width: 400px) {
+    #header-box > h1 {
+        font-size: 2.5em;
+    }
+}
+
+#header-box > p {
+    font-family: 'HelveticaNeueThin', sans-serif;
+    text-align: center;
+    padding-top: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.read-more {
+    margin-top: 100px;
+}
+
+.read-more .fa-circle {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+@media(max-width: 768px) {
+    .read-more {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}*/
+
+/* About */
+
+.about {
+    background: #ffffff;
+    padding-top: 80px;
+}
+.features {
+    margin-top: 30px;
+}
+.features > div {
+    margin-top: 20px;
+}
+@media(max-width: 768px) {
+    .about {
+        padding: 30px;
+        padding-bottom: 40px;
+    }
+    .features {
+        margin-top: 10px;
+    }
+}
+.about .read-more {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.the-team {
+  background: url(<%= asset_path 'bibblan.jpg' %>) no-repeat;
+  background-position: 0 -100px;
+  min-height: 400px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+@media(max-width: 768px) {
+    .the-team {
+        background-position: center center;
+    }
+}
+
+/* Input styles */
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: #fff;
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 1px;
+    font-weight: normal;
+    outline: none;
+    position: relative;
+    background: #333;
+    padding: 8px 15px;
+}
+.btn-group > .btn:not(:last-child) {
+    border-right: 3px solid #666;
+}
+.btn:hover {
+    color: #fff;
+    background: #666;
+}
+
+
+#password_generator {
+  margin-top: 10px;
+}
+
+/* Contact */
+
+/*.contact {
+  padding: 50px 0;
+}
+
+.contact .heading {
+  padding-bottom: 50px;
+}
+
+@media(max-width: 768px) {
+    .contact {
+        padding: 30px;
+    }
+
+    .contact .heading {
+        padding-bottom: 20px;
+    }
+}
+.contact .contact-card {
+  width: 340px;
+  max-width: 95%;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.contact .contact-photo {
+  width: 90px;
+  margin-right: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contact .contact-details {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+
+@media(max-width: 400px) {
+    .contact .contact-card {
+        width: 200px;
+        text-align: center;
+    }
+    .contact .contact-photo {
+        clear: both;
+        margin: 5px;
+    }
+    .contact .contact-details {
+        text-align: center;
+    }
+}*/
+
+/* Footer */
+
+footer {
+  padding: 100px 0;
+}
+
+/* Not Found */
+.not-found {
+  padding: 100px;
+}
+.not-found .body {
+  margin-top: 10px;
+}
+
+/* Admin forms */
+
+.dialog.delete .btn.cancel, .btn.margin-right {
+    margin-right: 10px;
+}
+
+.btn.margin-left {
+    margin-left: 10px;
+}
+
+
+/* Suggester */
+.tag-container {
+  padding-left: 4px;
+  cursor: text;
+}
+.tag-container.form-control {
+  height: auto;
+}
+.tag-container a.tag, a.itag {
+  color: #444444;
+  background: #eeeeee;
+  border: 1px solid #cccccc;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  padding: 1px 4px;
+  margin: 2px;
+  font-size: 12px;
+  vertical-align: baseline;
+  display: inline-block;
+}
+.tag-container a.tag:hover, a.itag:hover {
+  text-decoration: none;
+  color: #222222;
+  background: #dddddd;
+}
+.tag-container a.tag span {
+  color: #999999;
+  margin-left: 3px;
+}
+.tag-container a.tag:hover span {
+  color: #900000;
+}
+.tag-container input.tag {
+  border: 0;
+  outline: none !important;
+  vertical-align: baseline;
+  display: inline-block;
+}
+ul.suggestions {
+  margin: 0;
+  padding: 0;
+  background: #eeeeee;
+  border: 1px solid #cccccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  list-style: none;
+  min-width: 100px;
+}
+ul.suggestions li { 
+  margin: 0; 
+}
+ul.suggestions li a {
+  display: block;
+  padding: 4px 5px;
+  color: #444444;
+  cursor: pointer;
+}
+ul.suggestions li.active a {
+  background: #dddddd;
+}
+ul.suggestions li a:hover {
+  text-decoration: none;
+}
+ul.suggestions li a em {
+  color: #000;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: underline;
+}
+ul.suggestions li.more {
+  margin-top: 2px;
+  border-top: 1px dotted #666;
+  height: 2px;
+}
+.has-error.error {
+   font-weight: bold;
+    color: maroon;
+}
+.table.resumes {
+    margin-top: 20px;
+
+}
+.table.resumes .actions {
+    width: 80px;
+}
+.table.files .actions {
+    width: 250px;
+    text-align: right;
+}
+#resumes-circle {
+    text-align: center;
+    line-height: 380px;
+    width: 220px;
+    height: 220px;
+    margin-top: 8px;
+}
+#resumes-circle > h1 {
+    font-size: 45px;
+    position: relative;
+    top: 65px;
+}
+#download-button {
+  position: absolute;
+  width: 150px;
+  z-index: 9;
+}
+/* Login */
+.session {
+  padding-top: 30px;
+}
+.session h2 {
+  margin-bottom: 20px;
+}
+.form-horizontal .checkbox input[type="checkbox"] {
+  margin-left: -5px;
+}
+
+/*Leadgroup*/
+.pictures-project-leaders {
+  width:80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.pictures{
+  width:80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 0px;
+}
+
+.pictures h1, h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.pictures .subgroup {
+  float:left;
+  width:32%;
+  margin-right:1px;
+  margin-bottom: 5px;
+}
+
+
+
+/*Events*/
+#event-circle {
+  text-align: center;
+  line-height: 380px;
+  width: 220px;
+  height: 220px;
+  margin-top: 8px;
+}
+#event-circle > h1 {
+  font-size: 50px;
+  position: relative;
+  top: 62px;
+}
+.my-event {
+  color: #000000;
+  background: #f0f0f0;
+}
+.events.table thead>tr>th {
+  text-align: center;
+  width: 33%;
+  font-weight: lighter;
+  font-size: 19px;
+  border-bottom: 2px solid black;
+}
+
+
+/** CV Grid **/
+.cv-grid {
+  margin-top: 70px;
+}
+.cv-box {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.cv-image {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 185px;
+  height: 185px;
+  margin: auto;
+  border-radius: 50%;
+  display: table;
+}
+.cv-content {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  display: table-cell;
+}
+.cv-box:hover .cv-content {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+.cv-links {
+  margin-bottom: 10px;
+}
+.cv-links a {
+  text-decoration: none;
+  margin: 0px 5px;
+}
+.cv-email {
+  font-size: 1.05em;
+  position: absolute;
+}
+.cv-name {
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+
+/* Front page news */
+/*.news {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+*/
+/* Instagram */
+/*
+.news ul.instagram {
+  padding: 0px;
+}
+.news .instagram li {
+  list-style-type: none;
+  padding: 0 10px 10px 0px;
+  display: inline;
+  float: left;
+}
+.news .instagram img {
+  width: 120px;
+}
+*/
+/* Instagram index*/
+/*
+.external-posts ul.instagram {
+  padding: 0px;
+  list-style-type: none;
+}
+.external-posts .instagram li {
+  padding: 0 10px 10px 0px;
+  display: inline;
+  float: left;
+  text-align: center;
+}
+.external-posts .instagram a.instagram {
+  width: 205px;
+  margin-bottom: 5px;
+  display: block;
+}
+@media (min-width: 768px) {
+  .external-posts .instagram a.instagram {
+    width: 230px;
+  }
+}
+@media (min-width: 992px) {
+  .external-posts .instagram a.instagram {
+    width: 195px;
+  }
+}
+@media (min-width: 1200px) {
+  .external-posts .instagram a.instagram {
+    width: 240px;
+  }
+}
+.external-posts .instagram img {
+  width: 100%;
+}
+*/
+
+.modal-image:hover {
+ cursor: pointer;
+ opacity: 0.5;
+}
+.news .blog .post h3 {
+  margin: 10px 0px 0px;
+}
+img.front-page-featured-image {
+  max-width: 100%;
+}
+.featured-image-preview {
+  margin-bottom: 30px;
+}
+.featured-image-preview img {
+  max-width: 100%;
+}
+a.anchor {
+  display: block;
+  position: relative;
+  top: -90px;
+  visibility: hidden;
+}
+.btn-xlarge {
+  font-size: 40px;
+}
+
+/*Common elements*/
+.thin-header {
+    margin-top: -20px;
+    background-image: url(/assets/bubbles_thin.svg), url(/assets/bubbles_thin.svg),url(/assets/bubbles_thin.svg),
+    url(/assets/bubbles_thin.svg), url(/assets/bubbles_thin.svg);
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: -45px -70px, 370px -70px, 770px -70px,
+    1170px -70px, 1570px -70px;
+    height: 300px;
+}
+Status API Training Shop Blog About Pricing
+© 2015 GitHub, Inc. Terms Privacy Security Contact Help
